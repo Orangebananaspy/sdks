@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 7499DDF8-9358-36DD-9B5D-AA674F4E7CFC' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HSAAuthentication.framework/HSAAuthentication
+current-version:       800
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _HSAAuthenticationProcessIncomingMessage,
+                          _HSAAuthenticationRegisterIncomingAuthenticationTokenBlockWithIdentifier,
+                          _HSAAuthenticationUnregisterIncomingAuthenticationTokenBlockWithIdentifier ]
+    objc-classes:       [ _HSAAuthenticationServer ]
+...

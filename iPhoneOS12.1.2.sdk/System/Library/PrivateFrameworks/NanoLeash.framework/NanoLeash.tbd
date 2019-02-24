@@ -1,0 +1,23 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: CD4DA1A1-11D0-39FB-BC77-86ED3801E4D7' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _NFMFindGizmoIdentifier, _NFMFindLocalDeviceEntitlementName, _NFMFindLocalDeviceServerName,
+                          _NFMHotterColderIdentifier, _NFMLeashIdentifier, _NFMLeashManagerLeashWarningCloseValue,
+                          _NFMLeashManagerLeashWarningFarValue, _NFMLeashManagerLeashWarningImmediateValue,
+                          _NFMLeashManagerLeashWarningInsaneDistanceValue, _NFMPEPLog,
+                          _NFMProtoDidPlaySoundAndFlashLEDResponseReadFrom, _NFMProtoDidPlaySoundResponseReadFrom,
+                          _NFMProtoPlaySoundAndFlashLEDRequestReadFrom, _NFMProtoPlaySoundRequestReadFrom, _NFMProtoSend,
+                          _NFMUnlockIdentifier, _count, _nfm_log ]
+    objc-classes:       [ _NFMIDSMessageInstance, _NFMIDSServiceDelegate, _NFMLeashManager, _NFMProtoDidPlaySoundAndFlashLEDResponse,
+                          _NFMProtoDidPlaySoundResponse, _NFMProtoPlaySoundAndFlashLEDRequest, _NFMProtoPlaySoundRequest,
+                          _NFMWhereIsMyCompanionConnection, _NFMWiFiManager ]
+    objc-ivars:         [ _NFMLeashManager._proximityChangeHandler ]
+...

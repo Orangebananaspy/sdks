@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: E846CAB1-AB90-3677-A1C5-010A526E8287' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DAEASOAuthFramework.framework/DAEASOAuthFramework
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    objc-classes:       [ _DAEASOAuthClient, _DAEASOAuthFlowController, _DAEASOAuthIdentity, _DAEASOAuthMigrationRequest,
+                          _DAEASOAuthRequest, _DAEASOAuthTokenRefreshResponse, _DAEASOAuthTokenRequest, _DAEASOAuthTokenResponse,
+                          _DAEASOAuthWebViewController, _DAEASOpenIDMetadataRequest, _DAEASOpenIDMetadataResponse,
+                          _DAExchangeOAuthFlowController, _DAOAuthSafariViewController ]
+...

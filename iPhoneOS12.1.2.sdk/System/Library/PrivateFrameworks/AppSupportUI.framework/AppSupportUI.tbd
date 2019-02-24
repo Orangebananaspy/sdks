@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: D4F951F0-D05E-35B2-94BA-CA1A0485F2B6' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _NUIContainerViewDefaultDimension, _NUIContainerViewDefaultDirectionalInsets,
+                          _NUIContainerViewDefaultInsets, _NUIContainerViewDefaultSize, _NUIContainerViewSystemDimension ]
+    objc-classes:       [ _NUIBoxArrangement, _NUIContainerBoxView, _NUIContainerGridView, _NUIContainerStackView, _NUIContainerView,
+                          _NUIContentScrollView, _NUIGridArrangement, _NUIMultilineSizingHelper, _NUISizeCache, _NUIWidgetGridView,
+                          _NUIWidgetGridViewCell, _NUIWidgetGridViewEmptyCell ]
+...

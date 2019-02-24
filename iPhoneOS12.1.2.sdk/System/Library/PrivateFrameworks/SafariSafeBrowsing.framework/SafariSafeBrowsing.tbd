@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: DD7ACBBB-F488-3F85-8E18-7AAC8F10A0DE' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/SafariSafeBrowsing
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _SSBLookupContextDatabasesDidUpdateNotification,
+                          _SSBLookupContextDatabasesDidUpdateNotificationUserInfoProviderKey, _SSBProviderGoogle, _SSBProviderTencent,
+                          __ZN12SafeBrowsing7Service4mainEv ]
+    objc-classes:       [ _SSBAvailability, _SSBDatabaseUpdaterStatus, _SSBLookupContext, _SSBLookupResult, _SSBServiceLookupResult,
+                          __SSBDatabaseStatus, __SSBSafeHashCache, __SSBServiceStatus ]
+...

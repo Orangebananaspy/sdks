@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 8618634E-048B-3079-96BF-F6629E1E24D6' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/InputContext.framework/InputContext
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _InputContextVersionNumber, _InputContextVersionString, __ICMachTimeToNanoseconds, _isEquivalentDictionary ]
+    objc-classes:       [ __ICContact, __ICContactRecord, __ICInputContextManager, __ICInternalSource, __ICLexiconManager,
+                          __ICLexiconUtilities, __ICLexiconView, __ICNamedEntityRecord, __ICNamedEntityStore, __ICNullLexiconManager,
+                          __ICNullSource, __ICPortraitLexiconSource, __ICPortraitPredictionSource, __ICPortraitUtilities,
+                          __ICPredictedItem, __ICPredictionManager, __ICProactiveTrigger, __ICResultCache, __ICSearchContext,
+                          __ICTransientLexicon ]
+...

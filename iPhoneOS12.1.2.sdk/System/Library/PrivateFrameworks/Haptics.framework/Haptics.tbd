@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 9E7708DD-17B9-3EAC-A043-F8851D9D4F74' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Haptics.framework/Haptics
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _HAButtonHapticParameterAudioPreSilenceKey, _HAButtonHapticParameterHapticPreSilenceKey,
+                          _HAButtonHapticParameterPostSilenceKey, _HAButtonHapticsLoaderServiceIsAvailableNotification,
+                          _HapticsVersionNumber, _HapticsVersionString ]
+    objc-classes:       [ _HAButtonHapticsLoader ]
+...

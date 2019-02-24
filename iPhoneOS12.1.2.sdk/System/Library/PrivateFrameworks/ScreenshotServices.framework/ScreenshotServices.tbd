@@ -1,0 +1,34 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: DDB013A2-9A01-3BA3-AE45-72FD19199FF5' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ScreenshotServices.framework/ScreenshotServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _SSAlertServiceViewControllerClassName, _SSApplyDebuggingCustomizationsToViewIfAppropriate,
+                          _SSCGImageBackedImageFromImage, _SSCGImageFromSSImageSurface, _SSRemoteViewControllerDebuggingIsEnabled,
+                          _SSScreenshotsDisplayModeDidChangeToFullscreenNotificationName,
+                          _SSScreenshotsDisplayModeDidChangeToPictureInPictureNotificationName,
+                          _SSScreenshotsDisplayModeWillChangeToFullscreenNotificationName,
+                          _SSScreenshotsDisplayModeWillChangeToPictureInPictureNotificationName, _SSServiceBundleIdentifier,
+                          _SSServiceViewControllerClassName, _SSUIRunPPTEntitlement, _SSUIServiceIdentifier,
+                          _SSUIShowScreenshotUIEntitlement, _ScreenshotServicesVersionNumber, _ScreenshotServicesVersionString,
+                          __SSIsAnnotationKitEnabled, __SSIsObfuscationToolEnabled, __SSIsRemoteViewControllerDebuggingEnabled,
+                          __SSIsScreenshotManagerDebuggingEnabled, __SSIsViewSnapshotDebuggingEnabled, __SSObfuscationToolSize,
+                          __SSShouldHomeButtonDismiss, __SSSignpostLog, __SSUserDefaults, __SSUserDefaultsBooleanForKeyWithNODefault,
+                          __SSUserDefaultsCGFloatForKeyWith0Default ]
+    objc-classes:       [ _SSActiveInterfaceOrientationObserver, _SSDittoHostViewController, _SSDittoRemoteConnection,
+                          _SSEnvironmentDescription, _SSEnvironmentDescriptionAppleInternalOptions, _SSEnvironmentElement,
+                          _SSImageIdentifierAction, _SSImageIdentifierUpdate, _SSImageSurface, _SSMainScreenSnapshotter,
+                          _SSOtherScreenSnapshotter, _SSRemoteAlertHandleProvider, _SSScreenCaptureAbilityCheck, _SSScreenCapturer,
+                          _SSScreenCapturerPresentationOptions, _SSScreenSnapshot, _SSScreenSnapshotter, _SSScreenshotAction,
+                          _SSScreenshotAssetManager, _SSScreenshotAssetManagerPhotoLibraryBackend,
+                          _SSScreenshotAssetManagerRegistrationOptions, _SSScreenshotsWindow, _SSScreenshotsWindowRootViewController,
+                          _SSSnapshotter, _SSTestingCoordinator, _SSUIRunPPTServiceRequest, _SSUIService, _SSUIServiceClient,
+                          _SSUIServiceOptions, _SSUIServiceRequest, _SSUIServiceServer, _SSUIShowScreenshotUIWithImageServiceRequest,
+                          __SSScreenCaptureResults ]
+...

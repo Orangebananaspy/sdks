@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 72B4EFD5-ABE2-3601-93BF-0A556072A558' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Swift/libswiftGLKit.dylib
+current-version:       0
+compatibility-version: 1
+swift-version:         5
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _$S5GLKit22_indexHomogeneousValueyq_SPyxG_Sitr0_lF, _$SSo11_GLKMatrix2V5GLKitEySfSicig,
+                          _$SSo11_GLKMatrix3V5GLKitEySfSicig, _$SSo11_GLKMatrix4V5GLKitEySfSicig, _$SSo11_GLKVector2V5GLKitEySfSicig,
+                          _$SSo11_GLKVector3V5GLKitEySfSicig, _$SSo11_GLKVector4V5GLKitEySfSicig,
+                          _$SSo14_GLKQuaternionV5GLKitEySfSicig, __swift_FORCE_LOAD_$_swiftGLKit ]
+...

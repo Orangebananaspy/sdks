@@ -1,0 +1,13 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: C4955500-4318-361A-B56D-EAA2B1C390D9' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FontServices.framework/FontServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _FontServicesVersionNumber, _FontServicesVersionString, _XTCopyAvailableFontURLs, _XTCopyFontWithName ]
+...

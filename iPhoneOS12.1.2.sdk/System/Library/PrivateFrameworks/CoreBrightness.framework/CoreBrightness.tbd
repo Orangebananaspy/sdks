@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 20795417-42CC-3D52-81B1-95AECCDED858' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreBrightness.framework/CoreBrightness
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    objc-classes:       [ _BrightnessSystem, _BrightnessSystemClient, _BrightnessSystemClientInternal, _CBAdaptationClient,
+                          _CBBlueLightClient, _CBClient ]
+...

@@ -1,0 +1,20 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 5549FB29-479C-3901-A795-5B5F186342A4' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IntentsCore.framework/IntentsCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _INCDeserializeNSUserActivityData, _INCExtensionErrorDomain, _INCExtensionTransactionStateTypeGetName,
+                          _INCExtractPreferencesResponseFromMetricsContext, _INCGenerateMetricsContextUsingAppPreferenceResponse,
+                          _INCIsCarPlayActive, _INCLaunchAppWithCompletion, _INCLaunchAppWithSockPuppet, _INCLaunchAppWithUserActivity,
+                          _INCRouteAudioToAirplayOutputDevices, _INCSerializeNSUserActivity, _IntentsCoreVersionNumber,
+                          _IntentsCoreVersionString ]
+    objc-classes:       [ _INCAppProxy, _INCExtensionConnection, _INCExtensionError, _INCExtensionManager,
+                          _INCExtensionPlugInBundleManager, _INCExtensionProxy, _INCExtensionRequest, _INCExtensionTransaction,
+                          _INCExtensionTransactionState, _INCLocalExtensionRegistry ]
+...

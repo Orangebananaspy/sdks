@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 99549819-A369-3D87-B3AD-10A81A6C14F9' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccountNotification.framework/AccountNotification
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _ANAccountNotificationClientEntitlement, _ANAccountNotificationManagerEntitlement, _ANDaemonMachServiceName,
+                          _AccountNotificationVersionNumber, _AccountNotificationVersionString, __ANLogSystem ]
+    objc-classes:       [ _ANAccountNotification, _ANAccountNotifier, _ANClientCallbackInterface, _ANDaemonInterface,
+                          _ANManagedAccountNotification, _ANManagedNotificationAction, _ANNotificationAction,
+                          _ANSectionSubtypeDescriptor ]
+...

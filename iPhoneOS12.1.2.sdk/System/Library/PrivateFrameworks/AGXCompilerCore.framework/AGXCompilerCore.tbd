@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 6D53EE6D-DB3B-3C7A-9E13-AE95B4AD1AC9' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AGXCompilerCore.framework/AGXCompilerCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _GLCompilerBuildRequest, _GLCompilerCreate, _GLCompilerDelete, _GLCompilerLogBuildRequest,
+                          _GLCompilerReleaseReply, _MTLCompilerBuildRequestWithOptions, _MTLCompilerCreate, _MTLCompilerDelete,
+                          _MTLCompilerReleaseReply ]
+...

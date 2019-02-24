@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: CDE6B3A8-FC54-37AF-8126-D98B8392A287' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WirelessCoexManager.framework/WirelessCoexManager
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _WCMEnabled, _WirelessRadioManagerDumpLog, _WirelessRadioManagerSetLogToFile ]
+    objc-classes:       [ _WCMClientProxy, _WCMSetting, _WRMClientInterface, _WRM_iRATInterface, _WRM_iRATProximityRecommendation,
+                          _WRM_iRATProximityRecommendationLogging ]
+...

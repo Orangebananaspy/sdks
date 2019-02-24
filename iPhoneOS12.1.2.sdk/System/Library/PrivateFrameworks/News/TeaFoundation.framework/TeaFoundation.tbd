@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 61ABD7A7-0038-3648-A577-3077EA8132FA' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/News/TeaFoundation.framework/TeaFoundation
+current-version:       1
+compatibility-version: 1
+swift-version:         5
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _TeaFoundationVersionNumber, _TeaFoundationVersionString ]
+    objc-classes:       [ _TFCapabilities ]
+...

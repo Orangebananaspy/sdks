@@ -1,0 +1,21 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 5868999C-9D3A-3477-A3A4-57968BBF9383' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RemoteManagement.framework/Frameworks/RemoteManagementProtocol.framework/RemoteManagementProtocol
+current-version:       15.1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _RMPRemoteManagementProtocolVersionNumber, _RMPRemoteManagementProtocolVersionString ]
+    objc-classes:       [ _RMPChangeRequest, _RMPChangeRequest_RemoveDeclarationsItem, _RMPCheckInProtocolAuthenticateRequest,
+                          _RMPCheckInProtocolCapabilitiesRequest, _RMPCheckInProtocolCheckOutRequest,
+                          _RMPCheckInProtocolTokenUpdateRequest, _RMPCommandsRequest, _RMPCommandsRequest_RemoveCommandsItem,
+                          _RMPDeviceMessageRequest, _RMPErrorResponse, _RMPEventRequest, _RMPEventRequest_MessagesItem,
+                          _RMPRegisteredTypeResolver, _RMPRemoteManagementRequest, _RMPRemoteManagementResponse,
+                          _RMPServerMessagesRequest, _RMPSetRequest, _RMPStatusRequest, _RMPStatusRequest_MessagesItem,
+                          _RMPStatusRequest_MessagesItemStatesItem, _RMPStatusRequest_MessagesItemStatesItemAssetsUsedItem,
+                          _RMPStatusRequest_MessagesItemStatesItemReasonItem ]
+...

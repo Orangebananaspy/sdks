@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 95BCECC9-3E5C-38E1-91A6-A26139AEF2A9' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/DiagnosticExtensions
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _DiagnosticExtensionsVersionNumber, _DiagnosticExtensionsVersionString, _pgrep, _signal_USR2 ]
+    objc-classes:       [ _DEArchive, _DEArchiveReader, _DEArchiver, _DEAttachmentGroup, _DEAttachmentItem, _DEExtension, _DEExtensionContext,
+                          _DEExtensionHostContext, _DEExtensionManager, _DEExtensionProvider, _DELogMover, _DELogging, _DEUtils ]
+...

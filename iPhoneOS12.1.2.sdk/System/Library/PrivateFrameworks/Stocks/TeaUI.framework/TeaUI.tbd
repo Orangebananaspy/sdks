@@ -1,0 +1,42 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 599E18AA-2BC6-31F8-BEB6-4031F32273DB' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Stocks/TeaUI.framework/TeaUI
+current-version:       1
+compatibility-version: 1
+swift-version:         5
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    allowable-clients:  [ NewsArticles, NewsArticlesTests, NewsFeed, NewsFeedTests, Stocks, StocksAnalytics, StocksAnalyticsTests, StocksCore,
+                          StocksCoreTests, StocksTests, StocksToday, StocksUI, StocksUITests, TeaActivities, TeaActivitiesTests, TeaCharts,
+                          TeaChartsTests, TeaDB, TeaDBTests, TeaSettings, TeaSettingsTests, TeaTemplate, TeaTemplateTests, TeaUI, TeaUITests ]
+    symbols:            [ _TSAccessibilityBlockPostingOfNotification, _TSAccessibilityCharacterLiteralAttributedString,
+                          _TSAccessibilityIgnoreNextNotification, _TSAccessibilitySpeakAndDoNotBeInterrupted,
+                          _TSAccessibilityUnblockPostingOfNotification, _TeaUIVersionNumber, _TeaUIVersionString ]
+    objc-classes:       [ _TSAppMonitor, _TSBlueprintManualImpressionUpdateProvider, _TSCardContainerController, _TSCardView,
+                          _TSFeedNavImageAssetHandle, _TSFeedNavImageProcessorRequest, _TSImageCache, _TSMemoryCacheAccessQueue,
+                          _TSMemoryImageCache, _TSPublisherLogoProcessor, _TSPublisherLogoProcessorRequest, _TSTableView,
+                          _TSThumbnailProcessor, _TSThumbnailProcessorRequest, _TUAccessibilityAnnouncer, _TUAlertAssembly,
+                          _TUAppAssembly, _TUApplicationWorkspace, _TUAssembly, _TUBackdropView, _TUDebugAssembly, _TUImages,
+                          _TUManagerAssembly, _TUMenuBarConfiguration, _TUMenuBarItem, _TUMenuBarItemHandler,
+                          _TUMenuBarItemHandlerProviderWrapper, _TUMenuBarManager, _TUMenuBarMenu, _TUSettingsAssembly,
+                          _TUWindowToolbarButtonItemHandler, _TUWindowToolbarItem, _TUWindowToolbarItemHandler,
+                          _TUWindowToolbarItemHandlerProviderWrapper, _TUWindowToolbarManager, _TUWindowToolbarShareItem,
+                          _TUWindowToolbarShareItemHandler, __TtC5TeaUI10PillButton, __TtC5TeaUI10RightArrow, __TtC5TeaUI11DebugWindow,
+                          __TtC5TeaUI12Bootstrapper, __TtC5TeaUI12GradientView, __TtC5TeaUI13ScrollTracker, __TtC5TeaUI13SeparatorView,
+                          __TtC5TeaUI13StatusBarView, __TtC5TeaUI13SwappableView, __TtC5TeaUI13TappableLabel,
+                          __TtC5TeaUI14TwoLabelButton, __TtC5TeaUI16TouchInsetsLabel, __TtC5TeaUI17BlankReusableView,
+                          __TtC5TeaUI17CardViewTitleView, __TtC5TeaUI17NonAnimatingLayer, __TtC5TeaUI17TouchInsetsButton,
+                          __TtC5TeaUI18BlockBarButtonItem, __TtC5TeaUI18LabelBarButtonItem, __TtC5TeaUI19DebugViewController,
+                          __TtC5TeaUI19RendererEnvironment, __TtC5TeaUI21FeedNavImageProcessor, __TtC5TeaUI21MemoryCacheAccessMain,
+                          __TtC5TeaUI22AccessoryContainerView, __TtC5TeaUI22SegmentedControlButton,
+                          __TtC5TeaUI22SelectedBackgroundView, __TtC5TeaUI22SettingsViewController,
+                          __TtC5TeaUI23CardSplitViewController, __TtC5TeaUI24CardNavigationController,
+                          __TtC5TeaUI26MenuBarItemHandlerProvider, __TtC5TeaUI27MemoryCacheAccessMainWriter,
+                          __TtC5TeaUI28CardViewAnimationCoordinator, __TtC5TeaUI28SettingsNavigationController,
+                          __TtC5TeaUI29CardViewScrollViewCoordinator, __TtC5TeaUI32WindowToolbarItemHandlerProvider,
+                          __TtC5TeaUI41BlueprintLayoutCollectionLayoutAttributes, __TtC5TeaUI9ErrorView ]
+...

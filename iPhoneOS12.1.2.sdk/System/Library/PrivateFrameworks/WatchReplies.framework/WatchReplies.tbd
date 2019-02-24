@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: A4316174-8BCE-3295-9C42-FEE0B647118D' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WatchReplies.framework/WatchReplies
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _WRBundle, _WRDeviceLanguage, _WRLocalizedCategoryString, _WRLocalizedStringForLanguage, _WRSmartRepliesMarker,
+                          _WatchRepliesVersionNumber, _WatchRepliesVersionString, __WRCannedRepliesStore_handleStoreChange ]
+    objc-classes:       [ _WRCalendarReplyStoreInfo, _WRCannedRepliesStore, _WRCannedRepliesViewController, _WRCannedReply,
+                          _WRMailReplyStoreInfo, _WRMessagesReplyStoreInfo, _WRPhoneReplyStoreInfo, _WRReplyStoreInfo,
+                          _WRThirdPartyReplyStoreInfo ]
+...

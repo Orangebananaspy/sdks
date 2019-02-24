@@ -1,0 +1,24 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 73B3B2EC-B028-31A0-885D-0F098C0C1094' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DASubCal.framework/DASubCal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _NSStringFromSubCalRefreshTaskError, _SubCalCopyAuthNeededForHostNotification,
+                          _SubCalCopyDuplicateAccountNotification, _SubCalCopyInvalidAccountNotification,
+                          _SubCalCopySaveAccountNotification, _SubCalCopyWhereToAccountNotification, __subCalLegacyDigestForCalendar,
+                          __subCalLegacySetDigestOnCalendar, _kSubCalCalDAVURLKey, _kSubCalExternalRepDigestKey,
+                          _kSubCalExternalRepRefreshFlagsKey, _kSubCalExternalRepresentation, _kSubCalFilterAlarmsKey,
+                          _kSubCalFilterAttachmentsKey, _kSubCalFilterTasksKey, _kSubCalIsHolidaySubscribedCalendar,
+                          _kSubCalIsManagedByServerKey, _kSubCalRefreshIntervalKey, _kSubCalShouldRemoveAlarms,
+                          _kSubCalSubscribedCalendarType, _kSubCalSubscriptionURLKey, _kSubCalSyncId, _kSubCalTitleKey,
+                          _kSubCalURLSanitized, _kSubCalValidationTaskErrorDomain, _kSubCaliCalTypeKey, _subCalDigestForCalendar,
+                          _subCalExternalRep, _subCalRefreshFlagsForCalendar, _subCalSetDigestOnCalendar,
+                          _subCalSetRefreshFlagsOnCalendar ]
+    objc-classes:       [ _SubCalAccount, _SubCalDATask, _SubCalLocalDBHelper, _SubCalURLRequest, _SubCalValidationTask ]
+...

@@ -1,0 +1,13 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 7E452590-C949-3691-9B4E-2E75389C5BEB' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AMPCoreUI.framework/AMPCoreUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    objc-classes:       [ _AMPOnboardingFeature, _AMPOnboardingViewController, _AMPPrivacyViewController ]
+...

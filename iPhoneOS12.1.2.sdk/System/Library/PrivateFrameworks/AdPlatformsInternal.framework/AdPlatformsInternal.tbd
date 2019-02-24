@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: EF1676D7-3A9B-3238-8AB2-F574391501EB' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AdPlatformsInternal.framework/AdPlatformsInternal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _AdPlatformsInternalVersionNumber, _AdPlatformsInternalVersionString ]
+    objc-classes:       [ _ADAttributionRequester, _ADAttributionService ]
+...

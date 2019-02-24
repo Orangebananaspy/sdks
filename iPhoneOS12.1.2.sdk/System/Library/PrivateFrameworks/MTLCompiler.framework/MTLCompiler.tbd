@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 13AAEE36-9CCD-302F-A373-565B05281974' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MTLCompiler.framework/MTLCompiler
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _MTLCodeGenServiceBuildRequest, _MTLCodeGenServiceCreate, _MTLCodeGenServiceDestroy,
+                          _MTLCodeGenServiceSetPluginPath ]
+...

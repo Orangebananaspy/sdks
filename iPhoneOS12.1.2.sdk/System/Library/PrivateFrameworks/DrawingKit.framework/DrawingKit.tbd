@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 24EA5F22-598D-3A4D-B5B7-8BE526314734' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DrawingKit.framework/DrawingKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _CGPointIsUnrepresentable, _CGRectIsUnrepresentable, _DKDistanceBetweenPoints, _DKDrawingIsValid,
+                          _DKInkViewTouchesBeganNotification, _DKInkViewTouchesEndedLocationInViewUserInfoKey,
+                          _DKInkViewTouchesEndedNotification, _DKRenderPointWidthForPoint, _MaxForceValue, _MaxVelocityValue,
+                          _NSStringFromVectorFloat4 ]
+    objc-classes:       [ _DKDrawing, _DKDrawingStroke, _DKDrawingStrokePoint, _DKInkThumbnailRenderer, _DKInkView ]
+...

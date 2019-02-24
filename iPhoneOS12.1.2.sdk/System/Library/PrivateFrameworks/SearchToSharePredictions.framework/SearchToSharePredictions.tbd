@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 85995F1F-7711-3D80-B1C8-2F2392CEF4A8' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SearchToSharePredictions.framework/SearchToSharePredictions
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _SGQPPredictionTypeName, _SGQPPredictionTypesMapping, _SGQPWeightForPredictionType,
+                          _SearchToSharePredictionsVersionNumber, _SearchToSharePredictionsVersionString ]
+    objc-classes:       [ _SGQPClient, _SGQPFeedbackReport, _SGQPPrediction, _SGQPServerInterfaces ]
+...

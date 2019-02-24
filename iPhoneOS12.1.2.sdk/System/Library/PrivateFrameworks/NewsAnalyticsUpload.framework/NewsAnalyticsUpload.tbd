@@ -1,0 +1,20 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 5A96148B-E6F8-3BFC-8170-7D986C2E968B' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NewsAnalyticsUpload.framework/NewsAnalyticsUpload
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    allowable-clients:  [ NewsServices, NewsServicesInternal, newsd ]
+    symbols:            [ _NDAnalyticsEntryCanBeUploaded, _NDAnalyticsEntryDeliveryWindow, _NDAnalyticsEntryDeliveryWindowEarlierDate,
+                          _NDAnalyticsEnvelopeContentTypesFromEntries, _NDAnalyticsEnvelopeStoreEntriesFromStringRepresentations,
+                          _NDAnalyticsEnvelopeStoreStringRepresentationsOfEntries, _NDAnalyticsEnvelopeSubmissionDatesByContentType,
+                          _NDSharedClientLog, _NDSharedServiceLog, _NewsAnalyticsUploadVersionNumber, _NewsAnalyticsUploadVersionString ]
+    objc-classes:       [ _NDAnalyticsEnvelopeManager, _NDAnalyticsEnvelopeStore, _NDAnalyticsEnvelopeStoreEntry,
+                          _NDAnalyticsPayloadAssembler, _NDAnalyticsPayloadInfo, _NDAnalyticsPayloadUploader,
+                          _NDAnalyticsUploadScheduler, _NDAppConfigAnalyticsPayloadAssemblerConfigProvider ]
+...

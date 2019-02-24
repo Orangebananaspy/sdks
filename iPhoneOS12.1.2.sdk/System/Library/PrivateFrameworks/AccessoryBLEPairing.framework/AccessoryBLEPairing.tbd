@@ -1,0 +1,22 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 89DD99A8-0D88-37C4-BE6A-86E619F48875' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccessoryBLEPairing.framework/AccessoryBLEPairing
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _ACCBLEPairingAccFwPendingVer, _ACCBLEPairingAccFwVer, _ACCBLEPairingAccHwVer, _ACCBLEPairingAccManufacturer,
+                          _ACCBLEPairingAccModel, _ACCBLEPairingAccName, _ACCBLEPairingAccSerialNum, _ACCBLEPairingConnectionIDKey,
+                          _ACCBLEPairingDidConnectKey, _ACCBLEPairingDidDisconnectKey, _ACCBLEPairingDidSendPairDataKey,
+                          _ACCBLEPairingDidSendPairInfoKey, _ACCBLEPairingDidUpdateStateKey, _ACCBLEPairingIsSupported,
+                          _ACCBLEPairingLaunchNotification, _ACCBLEPairingPairDataKey, _ACCBLEPairingPairInfoArrayKey,
+                          _ACCBLEPairingPairModeKey, _ACCBLEPairingPairStateKey, _ACCBLEPairingRadioStateKey,
+                          _ACCBLEPairingSupports2WayKey, _ACCBLEPairingTypesSupportedKey, _ACCBLEPairingUUIDKey,
+                          _AccessoryBLEPairingVersionNumber, _AccessoryBLEPairingVersionString, _oobPairing_bleToOobPairingType,
+                          _oobPairing_oobToBlePairingType ]
+    objc-classes:       [ _ACCBLEPairingAccessory, _ACCBLEPairingProvider ]
+...

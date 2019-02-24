@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: C033C330-7789-3A9F-A917-884AE9DB1053' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/snatmap.framework/snatmap
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _GetSNATMAPServer, _MakeSNATMAPRequest, _ProcessSNATMAPResponse ]
+...

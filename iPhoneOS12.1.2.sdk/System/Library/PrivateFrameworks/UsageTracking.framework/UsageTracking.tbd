@@ -1,0 +1,19 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 80AF1123-54FB-319E-87F7-BB3DBEDA7045' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UsageTracking.framework/UsageTracking
+current-version:       51
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    allowable-clients:  [ DeviceManagementTests, PowerlogHelperdOperators, PowerlogLiteOperators, RemoteManagementTests, SafariShared,
+                          UsageTrackingAgent, dmd, remotemanagementd, usagetool ]
+    symbols:            [ _USDuetClientNameUsageTracking, _USErrorDomain, _USNotificationReceivedValue, _USUsageTrackingMachServiceName,
+                          _USUsageTrackingVersionNumber, _USUsageTrackingVersionString ]
+    objc-classes:       [ _USApplicationUsageReport, _USBudget, _USCategoryUsageReport, _USDomainNormalization, _USTrackingAgentProxy,
+                          _USUsageMonitor, _USUsageQuerying, _USUsageReport, _USUsageReporter, _USUsageStorage, _USUsageTrackingBundle,
+                          _USWebHistory, _USWebUsageReport, _USWebpageUsage ]
+...

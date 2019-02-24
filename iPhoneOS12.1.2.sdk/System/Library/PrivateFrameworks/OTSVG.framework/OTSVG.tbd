@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 63EDB9F6-4216-343B-99D6-022AA891776F' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/OTSVG.framework/OTSVG
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _OTSVGDocumentCreate, _OTSVGDocumentCreateWithData, _OTSVGDocumentEnumerateIDs,
+                          _OTSVGDocumentGetIntrinsicRect, _OTSVGDocumentRelease, _OTSVGGlyphRecordingCreate,
+                          _OTSVGGlyphRecordingCreateFromDocument, _OTSVGGlyphRecordingCreateFromID,
+                          _OTSVGGlyphRecordingGetBoundingRect, _OTSVGGlyphRecordingPlayback,
+                          _OTSVGGlyphRecordingPlaybackRecordingsAtPositions, _OTSVGGlyphRecordingRelease, _OTSVGTableCreateFromData,
+                          _OTSVGTableGetDocumentIndexForGlyph, _OTSVGTableRelease ]
+...

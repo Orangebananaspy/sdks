@@ -1,0 +1,27 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 6521EC88-CEBF-3028-94C9-B587C95BDD6C' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MediaControls.framework/MediaControls
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _MediaControlsButtonLeftRightPadding, _MediaControlsCoverSheetPadding, _MediaControlsHeaderViewArtworkSize,
+                          _MediaControlsHeaderViewCaptionBaselineToBaseline, _MediaControlsLargeModulePadding,
+                          _MediaControlsMaxHeightOfPillModule, _MediaControlsMaxWidthOfCondensedModule,
+                          _MediaControlsPanelCenterViewHeight, _MediaControlsPanelHeaderViewHeight,
+                          _MediaControlsPanelVolumeSliderHeight, _MediaControlsSmallModulePadding, _MediaControlsVersionNumber,
+                          _MediaControlsVersionString ]
+    objc-classes:       [ _MediaControlsAnalytics, _MediaControlsCollectionViewController, _MediaControlsCollectionViewCountData,
+                          _MediaControlsContainerView, _MediaControlsEndpointController, _MediaControlsEndpointsManager,
+                          _MediaControlsEndpointsViewController, _MediaControlsHeaderView, _MediaControlsHomeObserver,
+                          _MediaControlsMasterVolumeSlider, _MediaControlsMaterialView, _MediaControlsPanelViewController,
+                          _MediaControlsParentContainerView, _MediaControlsRouteLabel, _MediaControlsRoutingButtonPackageView,
+                          _MediaControlsRoutingButtonView, _MediaControlsRoutingCornerView, _MediaControlsRoutingViewController,
+                          _MediaControlsStandaloneEndpointController, _MediaControlsStyleCoordinator, _MediaControlsTheme,
+                          _MediaControlsTimeControl, _MediaControlsTransportButton, _MediaControlsTransportStackView,
+                          _MediaControlsVolumeContainerView, _MediaControlsVolumeSlider, __MediaControlsTapHoldGestureRecognizer ]
+...

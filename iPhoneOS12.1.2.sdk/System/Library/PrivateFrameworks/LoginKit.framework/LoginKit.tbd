@@ -1,0 +1,22 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: C2387179-2583-3FFA-81FB-905FEA3A6980' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LoginKit.framework/LoginKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _LKCourseDescriptionKey, _LKCourseEnrolledStudentIdentifiersKey, _LKCourseGroupNameKey, _LKCourseGroupsKey,
+                          _LKCourseIDKey, _LKCourseIDsKey, _LKCourseInstructorIdentifiersKey, _LKCourseNameKey, _LKCoursesKey,
+                          _LKErrorDomain, _LKErrorPasscodeBackOffInterval, _LKLogParsing, _LKLogSubsystem,
+                          _LKLoginDaemonClientEntitlement, _LKLoginDaemonClientServiceName, _LKLoginDaemonLoginUIEntitlement,
+                          _LKLoginDaemonLoginUIServiceName, _LKOrganizationDisplayNameKey, _LKPayloadCertificatePersistentID,
+                          _LKRegisterLoginKitLogging, _LKUserAppleIDKey, _LKUserFamilyNameKey, _LKUserFullNameKey, _LKUserGivenNameKey,
+                          _LKUserIdentifierKey, _LKUserLargeImageURLKey, _LKUserMediumImageURLKey, _LKUserPasswordTypeKey,
+                          _LKUserPhoneticFamilyNameKey, _LKUserPhoneticGivenNameKey, _LKUsersKey ]
+    objc-classes:       [ _LKClass, _LKClassConfiguration, _LKClassGroup, _LKClasses, _LKError, _LKLoginController, _LKNamingSimilarity,
+                          _LKUser, _LKUsers ]
+...

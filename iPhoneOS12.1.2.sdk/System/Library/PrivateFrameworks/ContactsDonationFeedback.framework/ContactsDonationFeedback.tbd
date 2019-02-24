@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 67FBF63B-7459-3240-842A-9843AC88820D' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ContactsDonationFeedback.framework/ContactsDonationFeedback
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _ContactsDonationFeedbackVersionNumber, _ContactsDonationFeedbackVersionString, _kCDFErrorDomain,
+                          _kCDFInsufficientValuesToHashError, _kCDFMissingIdentifierError, _kCDFUnhandledValueTypeError ]
+    objc-classes:       [ _CDFDonationFeedbackStore, _CNDFDonationStringCollector ]
+...

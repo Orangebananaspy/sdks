@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 58330A04-595C-392D-8B75-C775A28B12DC' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DeviceCheckInternal.framework/DeviceCheckInternal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _DCCryptoErrorDomain, _DCFetchErrorDomain, _DeviceCheckInternalVersionNumber,
+                          _DeviceCheckInternalVersionString, _fallback_server_pubkey ]
+    objc-classes:       [ _DCAsset, _DCAssetFetcher, _DCAssetFetcherContext, _DCCertificateGenerator, _DCCryptoProxyImpl,
+                          _DCDDeviceMetadata, _DCXPCActivityController ]
+...

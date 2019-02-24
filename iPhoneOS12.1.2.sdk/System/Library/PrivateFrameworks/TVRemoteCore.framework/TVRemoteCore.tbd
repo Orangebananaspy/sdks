@@ -1,0 +1,29 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 434C9D84-620E-3EAC-BF8E-94355652D997' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TVRemoteCore.framework/TVRemoteCore
+current-version:       45.20
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _TVRCButtonSkipIntervalKey, _TVRCButtonTypeDescription, _TVRCErrorDomain,
+                          _TVRCErrorMediaRemotePairingLockoutDelayKey, _TVRCMakeError, _TVRCPreferredDeviceIdentifier,
+                          _TVRCTouchPhaseDescription, _TVRemoteCoreVersionNumber, _TVRemoteCoreVersionString,
+                          __TVRCButtonLongPressBeginActionKey, __TVRCButtonLongPressEndActionKey, __TVRCGeneralLog,
+                          __TVRCMRTelevisionWrapperAssociatedObject, __TVRCMediaRemoteConnectionLog, __TVRCMediaRemoteKeyboardLog,
+                          __TVRCRemoteTextInputLog, __TVRCSendVirtualTouchEvent, __TVRCSetLastConnectedDeviceIdentifier ]
+    objc-classes:       [ _TVRCButton, _TVRCButtonEvent, _TVRCDevice, _TVRCDeviceAuthenticationChallenge, _TVRCDeviceQuery,
+                          _TVRCGameControllerEvent, _TVRCKeyboardAttributes, _TVRCKeyboardController, _TVRCPINEntryAttributes,
+                          _TVRCTouchEvent, _TVRCVoiceRecorder, __TVRCDeviceState, __TVRCKeyboardState, __TVRCMRAudioBufferWrapper,
+                          __TVRCMRCommandInfoWrapper, __TVRCMROriginWrapper, __TVRCMRTelevisionWrapper,
+                          __TVRCMRTextEditingAttributesWrapper, __TVRCMRTextEditingSessionWrapper, __TVRCMRVirtualTouchDeviceWrapper,
+                          __TVRCMRVirtualVoiceInputDeviceWrapper, __TVRCMediaRemoteCommandParser, __TVRCMediaRemoteDeviceImpl,
+                          __TVRCMediaRemoteDeviceQuery, __TVRCMediaRemoteEventTranslator, __TVRCMediaRemoteKeyboardAdapter,
+                          __TVRCMediaRemoteKeyboardImpl, __TVRCRemoteTextInputKeyboardImpl, __TVRCWeakObjectWrapper, __TVRCWifiMonitor,
+                          __TVRCXPCClient, __TVRCXPCProtocolManager, __TVRDeviceAggregate, __TVRXDevice,
+                          __TVRXDeviceAuthenticationChallenge, __TVRXDeviceDescriptor, __TVRXDeviceQuery, __TVRXKeyboardController,
+                          __TVRXMetrics, __TVRXVoiceRecorder ]
+...

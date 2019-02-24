@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 6515167E-4646-34BB-BC8B-EAC5F4E9E3AE' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/News/TeaActivities.framework/TeaActivities
+current-version:       1
+compatibility-version: 1
+swift-version:         5
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    allowable-clients:  [ ArticleNotificationExtension, ArticleNotificationServiceExtension, "Feldspar Tests", NVCDemo, News,
+                          NewsAnalyticsUpload, NewsInternalExtras, NewsInternalSettings, NewsServices, NewsServicesInternal, NewsSettings,
+                          NewsToday, NewsUI, OpenInNews, Tea, TeaActivities, TeaActivitiesTests, TeaCharts, TeaChartsTests, TeaDB, TeaDBTests,
+                          TeaSettings, TeaSettingsTests, TeaTemplate, TeaTemplateTests, TeaTests, TeaUI, TeaUITests, com.apple.news, newsd ]
+    symbols:            [ _TeaActivitiesVersionNumber, _TeaActivitiesVersionString ]
+...

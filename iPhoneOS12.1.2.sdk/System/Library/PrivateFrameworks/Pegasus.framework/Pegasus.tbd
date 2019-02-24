@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 9181E3DA-5F7D-35B7-A66A-A65FBD61210D' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Pegasus.framework/Pegasus
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _PGPegasusErrorDomain, _PGPictureInPictureProxyPictureInPictureActiveChangedNotification ]
+    objc-classes:       [ _PGPictureInPictureApplication, _PGPictureInPictureController, _PGPictureInPictureProxy,
+                          _PGPictureInPictureViewController ]
+...

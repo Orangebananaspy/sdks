@@ -1,0 +1,37 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 3BE5BA53-8C16-36B7-99B8-98663BB8A1CF' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WiFiKitUI.framework/WiFiKitUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _OSLogForWFLogLevel, _WFCapabilityIsChinaDevice, _WFCurrentLogLevel, _WFDescriptionFromIdentity,
+                          _WFLogForCategory, _WFManagedConfigurationUIClassFromString, _WFScanRecordAlphaSortCompartor,
+                          _WFScanRecordDefaultSortCompartor, _WFSecurityTypeRequiresPassword, _WFSecurityTypeRequiresUsername,
+                          _WFSetExtraLoggingEnabled, _WFSignalBarsFromScaledRSSI, _WFStringFromDeviceCapability,
+                          _WiFiKitUIVersionNumber, _WiFiKitUIVersionString, _kWFAutoJoinCellIdentifier, _kWFAutoLoginCellIdentifier,
+                          _kWFDNSCellIdentifier, _kWFDNSChangesKey, _kWFForgetCellIdentifier, _kWFIPv4ChangesKey, _kWFIPv6ChangesKey,
+                          _kWFImageBlueCheckmark, _kWFImageCellularBars0, _kWFImageCellularBars1, _kWFImageCellularBars2,
+                          _kWFImageCellularBars3, _kWFImageCellularBars4, _kWFImageLock, _kWFImagePersonalHotspot, _kWFImageWiFiBars0,
+                          _kWFImageWiFiBars1, _kWFImageWiFiBars2, _kWFImageWiFiBars3, _kWFImageWiFiBarsError, _kWFJoinCellIdentifier,
+                          _kWFKnownNetworkCellIdentifier, _kWFKnownNetworkDetailScoreCellIdentifier,
+                          _kWFKnownNetworkDetailsCellIdentifier, _kWFKnownNetworkDetailsGeoTagMapPinIdentifier,
+                          _kWFManageCellIdentifier, _kWFNetworkPriorityChangesKeys, _kWFPriorityCellIdentifier, _kWFProxyChangesKey,
+                          _kWFRecommendationCellIdentifier, _kWFScreenHeight_hugePhone, _kWFScreenHeight_superHugePhone,
+                          _kWFSegmentedCellIdentifier, _kWFTextFieldCellIdentifier ]
+    objc-classes:       [ _WFAirportViewController, _WFAssociationStateView, _WFBuddyNetworkListCell, _WFBuddyViewController,
+                          _WFCarPlayAlertController, _WFChooseNetworkHeaderViewController, _WFDNSConfigViewController,
+                          _WFDiagnosticsViewController, _WFErrorAlertController, _WFHealthIssue, _WFHotspotAlertController,
+                          _WFHotspotCell, _WFHotspotDetails, _WFHotspotDetailsView, _WFHyperlinkFooterView, _WFIPConfigViewController,
+                          _WFIPViewController, _WFImageCache, _WFKnownNetworkDetailsViewController, _WFKnownNetworkGeoTagViewController,
+                          _WFKnownNetworkScoreViewController, _WFKnownNetworksStyle1TableViewCell, _WFKnownNetworksViewController,
+                          _WFLegacyNetworkSettingsViewController, _WFNetworkListCell, _WFNetworkListViewController,
+                          _WFNetworkSettingsCellFactory, _WFNetworkSettingsConfig, _WFNetworkSettingsViewController,
+                          _WFOtherNetworkViewController, _WFPasswordAlertController, _WFPromptAlertController,
+                          _WFProxyConfigViewController, _WFRecommendationCell, _WFSegmentedCell, _WFTextFieldCell,
+                          _WFValueListViewController ]
+...

@@ -1,0 +1,42 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: ADCC7A6B-6167-3ED3-829C-2B4AFD2AB370' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BiometricKit.framework/BiometricKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _AppendCommentToPGM, _BKErrorDomain, _BKLogCode, _BKLogEvent, _ComponentSetInit, _ComponentSetRelease,
+                          _ComponentSetUpdate, _ConvertTransToNodeArea, _ConvertVectorForGUI, _FindRectangleForComponent,
+                          _GenerateEnrollProgressInfo, _GenerateMatchTemplateTopology, _GenerateTemplateTopology,
+                          _GenerateTemplateTopologyInfo, _LoadRawImageAsPGM, _RIESAdd, _RIESClear, _RIESDelete, _RIESInit, _RIESLoad, _RIESSave,
+                          _RIESUpdate, _SaveRawImageAsPGM, __BKLogEventOrCode, ___faceDetectFeedback, ___osLog, ___osLogTrace,
+                          _absoluteToMiliseconds, _absoluteToNanoseconds, _dictionaryGetBool, _dictionaryGetDouble, _dictionaryGetInteger,
+                          _getSensorPatchVersion, _isEphemeralMultiUser, _isFaceIDPlatform, _isTouchIDPlatform,
+                          _kBiometricKitEnrollProgressDetailExtendedComponentID,
+                          _kBiometricKitEnrollProgressDetailMergedInComponents, _kBiometricKitEnrollProgressDetailNewComponentID,
+                          _kBiometricKitEnrollProgressDetailNewNodeCoordinates, _kBiometricKitEnrollProgressDetailNewNodeID,
+                          _kBiometricKitEnrollProgressDetailReason, _kBiometricKitEnrollProgressDetailRedundantNode,
+                          _kBiometricKitEnrollProgressDetailRemovedComponentID, _kBiometricKitEnrollProgressDetailRemovedNodeID,
+                          _kBiometricKitEnrollProgressDetailResultComponentID, _kBiometricKitIdentityAttributeKey,
+                          _kBiometricKitIdentityCreationTimeKey, _kBiometricKitIdentityEntityKey, _kBiometricKitIdentityMatchCountKey,
+                          _kBiometricKitIdentityNameKey, _kBiometricKitIdentityTypeKey, _kBiometricKitIdentityUUIDKey,
+                          _kBiometricKitIdentityUpdateCountKey, _kBiometricKitIdentityUserIDKey,
+                          _kBiometricKitTemplateDetailLargestComponentArea, _kBiometricKitTemplateDetailLargestComponentNodes,
+                          _kBiometricKitTemplateDetailTotalArea, _kBiometricKitTemplateDetailTotalNodes,
+                          _kBiometricKitTemplateUpdated, _localizeAbsolute, _nanosecondsToAbsolute, _rotateBitmap90Data16,
+                          _rotateBitmap90Data8, _roundMostSignificant, _setError, _setErrorWithOSStatus ]
+    objc-classes:       [ _BKDevice, _BKDeviceDescriptor, _BKDeviceManager, _BKDevicePearl, _BKDeviceTouchID, _BKEnrollOperation,
+                          _BKEnrollPearlOperation, _BKEnrollPearlProgressInfo, _BKEnrollTouchIDOperation, _BKErrorHelper,
+                          _BKExtendEnrollTouchIDOperation, _BKFaceDetectOperation, _BKFaceDetectStateInfo, _BKFingerDetectOperation,
+                          _BKIdentity, _BKMatchOperation, _BKMatchPearlOperation, _BKMatchPearlResultInfo, _BKMatchResultInfo,
+                          _BKMatchTouchIDOperation, _BKOperation, _BKPresenceDetectOperation, _BKSystemProtectedConfiguration,
+                          _BKUserProtectedConfiguration, _BiometricKit, _BiometricKitEnrollProgressCoordinates,
+                          _BiometricKitEnrollProgressInfo, _BiometricKitEnrollProgressMergedComponent, _BiometricKitIdentity,
+                          _BiometricKitMatchInfo, _BiometricKitStatistics, _BiometricKitTemplateInfo, _BiometricKitXPCClient,
+                          _BiometricKitXPCClientConnection ]
+    objc-ivars:         [ _BKDevice._xpcClient, _BKOperation._cancelPending, _BKOperation._startPending, _BKOperation._xpcClient ]
+...

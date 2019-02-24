@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 961B2C70-534F-37F2-B180-82DEDD92B496' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WelcomeKitUI.framework/WelcomeKitUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _WelcomeKitUIVersionNumber, _WelcomeKitUIVersionString ]
+    objc-classes:       [ _WLAvailabilityRequestController, _WLIntroViewController, _WLMigrationCompletedViewController,
+                          _WLMigrationProgressViewController, _WLPairingViewController, _WLWelcomeGroupViewController,
+                          _WLWelcomeViewController, _WLWelcomeViewControllerMetrics ]
+...

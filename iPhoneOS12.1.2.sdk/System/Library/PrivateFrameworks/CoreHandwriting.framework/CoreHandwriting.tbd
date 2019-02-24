@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 2443DFDD-03DB-3CF6-AE38-243C0F44F08C' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreHandwriting.framework/CoreHandwriting
+current-version:       0
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _CHRecognitionOptionTextBefore ]
+    objc-classes:       [ _CHBottomUpStrokeGroupingStrategy, _CHBoxcarFilterPointFIFO, _CHCharacterSetRules, _CHDrawing,
+                          _CHIndexableContentQuery, _CHPatternGraph, _CHPointFIFO, _CHPointStrokeFIFO, _CHQuadCurvePointFIFO, _CHQuery,
+                          _CHRecognitionResult, _CHRecognitionSession, _CHRecognitionSessionIndexableContent,
+                          _CHRecognitionSessionResult, _CHRecognizer, _CHSearchQuery, _CHStrokeGroup, _CHStrokeGroupRecognitionResult,
+                          _CHStrokeGroupingResult, _CHStrokeGroupingStrategy, _CHTitleQuery, _CHVisualizationManager ]
+...

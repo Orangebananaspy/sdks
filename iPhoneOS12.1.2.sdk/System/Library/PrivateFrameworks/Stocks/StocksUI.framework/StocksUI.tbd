@@ -1,0 +1,26 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 9AF4A5D4-2321-3FE8-BBC6-351EBC186D6A' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Stocks/StocksUI.framework/StocksUI
+current-version:       1
+compatibility-version: 1
+swift-version:         5
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    allowable-clients:  [ NewsArticles, NewsArticlesTests, NewsFeed, NewsFeedTests, Stocks, StocksAnalytics, StocksAnalyticsTests, StocksCore,
+                          StocksCoreTests, StocksTests, StocksToday, StocksUI, StocksUITests ]
+    symbols:            [ _StocksUIVersionNumber, _StocksUIVersionString ]
+    objc-classes:       [ _SUArticleAssembly, _SUBootstrapAssembly, _SUEditStockListAssembly, _SUEditStockListModule, _SULaunchPad,
+                          _SUMainAssembly, _SUPPTAssembly, _SURendererAssembly, _SUSettingsAssembly, _SUShortcutItemHandlerAssembly,
+                          _SUStockChartAssembly, _SUStocksUIAssembly, _SUStylerAssembly, _SUTickerAssembly, _SUURLHandlerAssembly,
+                          _SUUserActivityHandlerAssembly, _SUUserPreferencesAssembly, _TSDebugAppConfigurationAssembly,
+                          _TSDebugAppConfigurationModule, _TSSearchAssembly, _TSStockListAssembly, __TtC8StocksUI13WelcomeModule,
+                          __TtC8StocksUI15FactoryAssembly, __TtC8StocksUI15ManagerAssembly, __TtC8StocksUI15MenuBarAssembly,
+                          __TtC8StocksUI15WelcomeAssembly, __TtC8StocksUI16ProviderAssembly, __TtC8StocksUI17StockFeedAssembly,
+                          __TtC8StocksUI17StockSearchModule, __TtC8StocksUI18ForYouFeedAssembly,
+                          __TtC8StocksUI21StockChartCalloutView, __TtC8StocksUI21WindowToolbarAssembly,
+                          __TtC8StocksUI24StockChartViewController, __TtC8StocksUI26StockChartRangeCalloutView ]
+...

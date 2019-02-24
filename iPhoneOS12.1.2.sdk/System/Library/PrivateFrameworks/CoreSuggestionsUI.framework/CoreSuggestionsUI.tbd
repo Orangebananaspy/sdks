@@ -1,0 +1,19 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: BE6C6E07-8E3D-3214-8B63-AC659664A24B' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreSuggestionsUI.framework/CoreSuggestionsUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _CoreSuggestionsUIVersionNumber, _CoreSuggestionsUIVersionString ]
+    objc-classes:       [ _SGUIAddAllTableViewCell, _SGUIBannerStringGenerator, _SGUIBannerView, _SGUIContactConfirmationController,
+                          _SGUIContactSuggestionTableViewCell, _SGUIDateFormatting, _SGUIEventConfirmationController,
+                          _SGUIEventSuggestionTableViewCell, _SGUIEventsAndContactsTableViewController,
+                          _SGUISuggestionConfirmationController ]
+    objc-ivars:         [ _SGUIContactConfirmationController._finished, _SGUIContactConfirmationController._realtimeContact,
+                          _SGUIEventConfirmationController._finished, _SGUIEventConfirmationController._realtimeEvent ]
+...

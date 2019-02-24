@@ -1,0 +1,23 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 44997CB7-F257-32FC-98F2-D18BEDD6D092' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/DADaemonCalDAV
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    objc-classes:       [ _CalDAVAgent, _CalDAVGetToFileWithProgressTask, _MobileCalDAVAttachmentDownloader,
+                          _MobileCalDAVCalendarAvailabilityRequest, _MobileCalDAVDaemonAccount, _MobileCalDAVDirectorySearch,
+                          _MobileCalDAVDownloadContext, _MobileCalDAVFacebookDaemonAccount, _MobileCalDAVSharingResponse,
+                          _MobileCalDAViCloudDaemonAccount ]
+    objc-ivars:         [ _CalDAVGetToFileWithProgressTask._downloader, _CalDAVGetToFileWithProgressTask._previousETag,
+                          _MobileCalDAVAttachmentDownloader._account, _MobileCalDAVAttachmentDownloader._attachmentSize,
+                          _MobileCalDAVAttachmentDownloader._attachmentType, _MobileCalDAVAttachmentDownloader._attachmentURL,
+                          _MobileCalDAVAttachmentDownloader._attachmentUUID, _MobileCalDAVAttachmentDownloader._consumers,
+                          _MobileCalDAVAttachmentDownloader._etag, _MobileCalDAVAttachmentDownloader._holdingGatekeeperLock,
+                          _MobileCalDAVAttachmentDownloader._localFilename, _MobileCalDAVAttachmentDownloader._taskManager,
+                          _MobileCalDAVAttachmentDownloader._waiterID, _MobileCalDAVAttachmentDownloader._waitingForGatekeeper ]
+...

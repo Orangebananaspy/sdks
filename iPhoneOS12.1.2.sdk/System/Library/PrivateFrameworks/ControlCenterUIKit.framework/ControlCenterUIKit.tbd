@@ -1,0 +1,32 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: ED3A05AB-CB43-3DFB-AD97-DE560A32CDA5' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ControlCenterUIKit.framework/ControlCenterUIKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _CCUIAffineTransformBetweenInterfaceOrientations, _CCUIAppLaunchOriginControlCenter,
+                          _CCUICompactModuleContinuousCornerRadius, _CCUIDefaultExpandedContentModuleFullWidth,
+                          _CCUIDefaultExpandedContentModuleWidth, _CCUIEdgeInsetsRTLSwap, _CCUIExpandedModuleContinuousCornerRadius,
+                          _CCUIExpandedModuleEdgeInsets, _CCUIIsPortrait, _CCUIItemEdgeSize, _CCUILayoutEdgeInsets,
+                          _CCUILayoutEdgeInsetsForcePortrait, _CCUILayoutGutter, _CCUILogUserInterface, _CCUIReferenceScreenBounds,
+                          _CCUIRegisterControlCenterLogging, _CCUIScreenBounds, _CCUISliderExpandedContentModuleHeight,
+                          _CCUISliderExpandedContentModuleWidth, _ControlCenterUIKitBundle, _ControlCenterUIKitVersionNumber,
+                          _ControlCenterUIKitVersionString, _kCCUIControlCenterBaseMaterialBlurGroupName ]
+    objc-classes:       [ _CCUIAppLauncherModule, _CCUIAppLauncherViewController, _CCUIButtonModuleView,
+                          _CCUIButtonModuleViewController, _CCUICAPackageDescription, _CCUICAPackageView, _CCUIContentModuleContext,
+                          _CCUIControlCenterButton, _CCUIControlCenterLabel, _CCUIControlCenterMaterialView, _CCUIControlCenterSlider,
+                          _CCUIControlCenterVisualEffect, _CCUILabeledRoundButton, _CCUILabeledRoundButtonViewController,
+                          _CCUIMenuModuleAnimationController, _CCUIMenuModuleItemView, _CCUIMenuModulePresentationController,
+                          _CCUIMenuModuleStackView, _CCUIMenuModuleTransitioningDelegate, _CCUIMenuModuleViewController,
+                          _CCUIModuleSliderView, _CCUIPunchOutMask, _CCUIRoundButton, _CCUISliderModuleBackgroundViewController,
+                          _CCUIStatusUpdate, _CCUIToggleModule, _CCUIToggleViewController ]
+    objc-ivars:         [ _CCUIAppLauncherViewController._application, _CCUIAppLauncherViewController._assetProvider,
+                          _CCUIToggleViewController._glyphImage, _CCUIToggleViewController._glyphImageView,
+                          _CCUIToggleViewController._glyphPackageDescription, _CCUIToggleViewController._glyphState,
+                          _CCUIToggleViewController._selectedColor, _CCUIToggleViewController._selectedGlyphImage ]
+...

@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: C3B55936-26BD-3E38-A891-C5DF26C5B194' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ProactiveWidgetTracker.framework/ProactiveWidgetTracker
+current-version:       126.35
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _ProactiveWidgetTrackerVersionNumber, _ProactiveWidgetTrackerVersionString ]
+    objc-classes:       [ __PWTWidgetEventTracker ]
+...

@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 66BE511E-C932-3F2E-A59C-1B391E24E25A' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DACoreDAVGlue.framework/DACoreDAVGlue
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _coreDAVValidationErrorFromRawError ]
+    objc-classes:       [ _DACoreDAVLogger, _DACoreDAVTaskManager ]
+    objc-ivars:         [ _DACoreDAVTaskManager._applicationsShowingActivity ]
+...

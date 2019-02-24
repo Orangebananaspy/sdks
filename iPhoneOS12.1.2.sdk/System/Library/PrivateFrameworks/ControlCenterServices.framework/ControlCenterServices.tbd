@@ -1,0 +1,20 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 4A0227B3-2732-32C3-9D7B-4C2CB45D42E4' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ControlCenterServices.framework/ControlCenterServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    allowable-clients:  [ ControlCenterServicesTests, ControlCenterSettings, ControlCenterUI, HearingAidUIServer, HomeKitDaemon,
+                          SpringBoard, "SpringBoard-Tests", TVRemoteConnectionService, com.apple.BarcodeSupport.Helper ]
+    symbols:            [ _CCSLogModuleSettings, _CCSLogRemoteService, _CCSModuleVisibilityPreferenceDescription,
+                          _CCSModuleVisibilityPreferenceFromNumber, _CCSRegisterControlCenterLogging, _CCSRemoteServiceName,
+                          _CCSRemoteServiceServerInterface, _CCSResolveModuleVisibility, _ControlCenterServicesVersionNumber,
+                          _ControlCenterServicesVersionString, _kVersionNumber ]
+    objc-classes:       [ _CCSControlCenterDefaults, _CCSControlCenterService, _CCSModuleMetadata, _CCSModuleRepository,
+                          _CCSModuleSettingsProvider, _CCSRemoteServiceConnection, _CCSRemoteServiceProvider, _CCSUsageMetrics ]
+...

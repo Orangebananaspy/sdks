@@ -1,0 +1,73 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 488AA9C7-F77A-3B32-B638-667232953995' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    allowable-clients:  [ SpringBoard, "SpringBoard-Tests", UNUIKitTestsHostApp, UserNotificationsUIKitTests ]
+    symbols:            [ _NCBulletinDestinationBanner, _NCBulletinDestinationCar, _NCBulletinDestinationCoverSheet,
+                          _NCBulletinDestinationLockScreen, _NCBulletinDestinationNotificationCenter,
+                          _NCEventTrackerFeatureIdentifier, _NCFrictionForCriticallyDampedSpringWithTension, _NCGetEventTrackerQueue,
+                          _NCIconImageForApplicationIdentifier, _NCMainScreenReferenceBounds, _NCNotificationDestinationIdentifier,
+                          _NCNotificationSectionSettingsKeyContentPreviewSetting,
+                          _NCNotificationSectionSettingsKeyCriticalAlertsEnabled, _NCNotificationSectionSettingsKeyGroupingSetting,
+                          _NCNotificationSectionSettingsKeyNotificationsEnabled, _NCNotificationSectionSettingsKeyShowsInLockScreen,
+                          _NCNotificationSectionSettingsKeyShowsInNotificationCenter,
+                          _NCNotificationSectionSettingsKeySubSectionPriority, _NCRectApplyInsets, _NCRectConfinedToRect,
+                          _NCRectWithSize, _NCRoundToScale, _NCStringFromLookStyle, _NCTimeIntervalBinForTimeInterval,
+                          _NCUserNotificationsUIKitFrameworkBundle, _UNNotificationExtensionCategoryKey,
+                          _UNNotificationExtensionCustomSectionIdentifierKey, _UNNotificationExtensionDefaultContentHiddenKey,
+                          _UNNotificationExtensionInitialContentSizeRatioKey, _UNNotificationExtensionLegacyEntitlementKey,
+                          _UNNotificationExtensionOverridesDefaultTitleKey, _UNNotificationExtensionPointName,
+                          _UNNotificationExtensionUserInteractionEnabledKey, _UserNotificationsUIKitVersionNumber,
+                          _UserNotificationsUIKitVersionString, __NCDeviceDesiresHapticTouch, __NCEqualLegibilitySettings,
+                          __NCForceTouchEnabled, __NCMainScreenScale, __NCSizeCategoryIsAX, __stringForItemType,
+                          _kNCMediaPlayPauseButtonImageSizeLimit, _kNCMediaPlayPauseButtonVideoImageRatio,
+                          _kNCNotificationListCellActionButtonGroupName ]
+    objc-classes:       [ _NCAnimationCoordinator, _NCAttachmentViewController, _NCAudioAccessoryHostingView,
+                          _NCAudioAttachmentViewController, _NCAudioPlayerController, _NCAudioPlayerControlsView,
+                          _NCAudioPlayerControlsViewController, _NCAudioPlayerTimelineSlider, _NCAuxiliaryOptionsButton,
+                          _NCAuxiliaryOptionsView, _NCBannerPresentationAnimator, _NCBannerPresentationController,
+                          _NCBannerPresentationTransitionDelegate, _NCBlockTouchesView, _NCBulletinActionRunner,
+                          _NCBulletinAttachmentFactory, _NCBulletinNotificationSource, _NCEventTrackerNotificationMetadata,
+                          _NCImageAttachmentViewController, _NCKeyLineView, _NCLongLookDefaultPresentationController,
+                          _NCLongLookTransitioningDelegate, _NCMaterialButton, _NCMediaPlayPauseButton,
+                          _NCNotificationChronologicalList, _NCNotificationCombinedListViewController,
+                          _NCNotificationContentContainerViewController, _NCNotificationContentView, _NCNotificationEventTracker,
+                          _NCNotificationExtensionCache, _NCNotificationExtensionContainerViewController,
+                          _NCNotificationExtensionLoader, _NCNotificationExtensionsManager, _NCNotificationGrabberView,
+                          _NCNotificationHiddenRequestsList, _NCNotificationListCell, _NCNotificationListCellActionButton,
+                          _NCNotificationListCellActionButtonsView, _NCNotificationListCoalescingControlsCell,
+                          _NCNotificationListCoalescingControlsItem, _NCNotificationListCoalescingControlsView,
+                          _NCNotificationListCoalescingHeaderCell, _NCNotificationListCoalescingHeaderItem,
+                          _NCNotificationListCoalescingManager, _NCNotificationListCollectionView,
+                          _NCNotificationListCollectionViewFlowLayout, _NCNotificationListCollectionViewLayoutAttributes,
+                          _NCNotificationListHeaderTitleView, _NCNotificationListHiddenPreviewCoalescingManager,
+                          _NCNotificationListLegibilityLabelCache, _NCNotificationListNotificationRequestItem,
+                          _NCNotificationListPhoneCoalescingManager, _NCNotificationListSection, _NCNotificationListSectionHeaderView,
+                          _NCNotificationListSectionRevealHintView, _NCNotificationListStalenessEventTracker,
+                          _NCNotificationListViewController, _NCNotificationLongLookView, _NCNotificationLongLookViewController,
+                          _NCNotificationManagementAlertController, _NCNotificationManagementBlueButton,
+                          _NCNotificationManagementDemotionAlertController, _NCNotificationManagementPromotionAlertController,
+                          _NCNotificationManagementView, _NCNotificationManagementViewController,
+                          _NCNotificationManagementViewPresenter, _NCNotificationPriorityList,
+                          _NCNotificationRequestCoalescingContentProvider, _NCNotificationRequestContentProvider,
+                          _NCNotificationRequestCustomContentProvider, _NCNotificationRequestHiddenPreviewContentProvider,
+                          _NCNotificationSectionList, _NCNotificationShortLookView, _NCNotificationShortLookViewController,
+                          _NCNotificationSingleSectionList, _NCNotificationSummaryBuilder, _NCNotificationTextInputView,
+                          _NCNotificationViewController, _NCNotificationViewControllerView, _NCPreviewInteractionPresentedContentView,
+                          _NCPreviewInteractionPresentedControl, _NCPreviewInteractionPresenter,
+                          _NCPreviewInteractionPresenterContentView, _NCToggleControl, _NCToggleControlPair,
+                          _NCTouchEaterGestureRecognizer, _NCUIMappedImageCache, _NCUserNotificationsUIKitDefaults,
+                          _NCVideoAttachmentViewController, __NCActionButtonDescription, __NCNotificationShortLookScrollView,
+                          __NCTransitionAnimationStateManagingViewController ]
+    objc-ivars:         [ _NCAuxiliaryOptionsButton._backgroundMaterialView, _NCAuxiliaryOptionsButton._materialOptions,
+                          _NCAuxiliaryOptionsButton._materialRecipe, _NCNotificationViewController._lookView,
+                          __NCActionButtonDescription._selectorString,
+                          __NCTransitionAnimationStateManagingViewController._ncTransitionAnimationState ]
+...

@@ -1,0 +1,20 @@
+--- !tapi-tbd-v2
+archs:                 [ arm64 ]
+uuids:                 [ 'arm64: 60D0F05F-719A-32C7-A5A5-5E04430E0F63' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Stocks/AppAnalytics.framework/AppAnalytics
+current-version:       1
+compatibility-version: 1
+swift-version:         5
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    allowable-clients:  [ AppAnalyticsTests, NewsArticles, NewsArticlesTests, NewsFeed, NewsFeedTests, Stocks, StocksAnalytics,
+                          StocksAnalyticsTests, StocksCore, StocksCoreTests, StocksTests, StocksToday, StocksUI, StocksUITests ]
+    symbols:            [ _AppAnalyticsVersionNumber, _AppAnalyticsVersionString ]
+    objc-classes:       [ _AAAccessSessionManager, _AAAccessTracker, _AAClient, _AADataEventTraits, _AADelayedToken, _AAEndpoint,
+                          _AAEventData, _AAEventProperty, _AAGroup, _AAJSON, _AALoggingEventProcessor, _AAProcessEvent, _AAProcessorManager,
+                          _AARawDataEvent, _AARawEvent, _AARawEventProperty, _AASession, _AASessionData, _AASessionManager,
+                          _AASessionObserver, _AATimedData, _AATracker, _AAUploadBatchEventConfig, _AAUploadBatchEventProcessor ]
+...
