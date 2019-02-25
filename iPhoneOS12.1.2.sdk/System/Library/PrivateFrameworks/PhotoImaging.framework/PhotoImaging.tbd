@@ -1,0 +1,43 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 209A692C-3696-3C46-85FC-5EDCF3E9E4DE' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PhotoImaging.framework/PhotoImaging
+current-version:       3402.2.130
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _GUInvertMatrix, _GUMatrixVector, _PIAutoLoopFlavorFromString, _PIAutoLoopFlavorToString,
+                          _PIAutoLoopFlavorValueAutoLoop, _PIAutoLoopFlavorValueLongExposure, _PIAutoLoopFlavorValueMirror,
+                          _PIAutoLoopRecipeForFlavor, _PIAutoLoopRecipeFrameTransformGetHomography,
+                          _PIAutoLoopRecipeFrameTransformGetTime, _PIAutoLoopRecipeGetCropRect,
+                          _PIAutoLoopRecipeGetCropRectDictionary, _PIAutoLoopRecipeGetFlavorParameters,
+                          _PIAutoLoopRecipeGetFrameDuration, _PIAutoLoopRecipeGetInstructionAtTime,
+                          _PIAutoLoopRecipeHasGoodStabilization, _PIAutoLoopRecipeIsValid, _PIDepthApertureKey, _PIDepthInfoKey,
+                          _PIPortraitDisableStageKey, _PIPortraitInfoKey, _PIWhiteBalanceTypeFaceBalance,
+                          _PIWhiteBalanceTypeNeutralGray, _PIWhiteBalanceTypeTempTint, _PhotoImagingVersionNumber,
+                          _PhotoImagingVersionString, _apertureValue, _fixRedeye, _flashFired, _isoValue, _shutterSpeedValue ]
+    objc-classes:       [ _GUBWBilateralConvolution, _GUBilateralConvolution, _GUMsgImageBuffer, _PIApertureRedEyeFilter,
+                          _PIApertureRedEyeProcessorKernel, _PIAutoLoopAnalysisClient, _PIAutoLoopAnalysisJob,
+                          _PIAutoLoopAnalysisRequest, _PIAutoLoopAutoCalculator, _PIAutoLoopCacheNode, _PIAutoLoopExportClient,
+                          _PIAutoLoopExportJob, _PIAutoLoopExportRequest, _PIAutoLoopFrameNode, _PIAutoLoopKernels,
+                          _PIAutoLoopMirrorVideoNode, _PIAutoLoopStabVideoNode, _PIAutoLoopVideoNode, _PIBilateralFilter, _PIClone,
+                          _PICropAutoCalculator, _PICurvesFilter, _PIDefinitionFilter, _PIDepthEffectApertureAutoCalculator,
+                          _PIFaceBalanceAutoCalculator, _PIForwardFakeBoost, _PIImageIO, _PIInverseFakeBoost,
+                          _PILevelsAutoAbstractCalculator, _PILevelsFilter, _PILevelsLuminanceAutoCalculator,
+                          _PILevelsRGBAutoCalculator, _PILongExposureAccumulator, _PILongExposureCacheNode, _PILongExposureFusion,
+                          _PILongExposureFusionAutoCalculator, _PILongExposureRegistrationJob, _PILongExposureRegistrationRequest,
+                          _PIMakerNoteUtilities, _PIManualRedEyeAutoCalculator, _PINeutralGrayWhiteBalanceFilter, _PIPhotoEditHelper,
+                          _PIPipelineFilters, _PIPortraitApertureValues, _PIPortraitAutoCalculator, _PIRAWFaceBalance,
+                          _PIRAWTempTintSampler, _PIRedEye, _PIRedEyeAutoCalculator, _PISchema, _PISelectiveColorFilter,
+                          _PISmartBlackAndWhiteAutoCalculator, _PISmartColorAutoCalculator, _PISmartToneAutoCalculator,
+                          _PISourceSampler, _PITempTintFilter, _PIWhiteBalanceAutoCalculator, __GUWhiteColorCalculator,
+                          __PIAutoLoopAnalysisResult, __PILongExposureRegistrationResult ]
+    objc-ivars:         [ _GUMsgImageBuffer.bufferColorspace, _GUMsgImageBuffer.elementByteSize, _GUMsgImageBuffer.format,
+                          _GUMsgImageBuffer.height, _GUMsgImageBuffer.rowElements, _GUMsgImageBuffer.width,
+                          _PIApertureRedEyeFilter.inputImage, _PIApertureRedEyeFilter.inputSpots, _PICurvesFilter.inputBlueData,
+                          _PICurvesFilter.inputGrayChoice, _PICurvesFilter.inputGreenData, _PICurvesFilter.inputImage,
+                          _PICurvesFilter.inputRGBData, _PICurvesFilter.inputRedData ]
+...

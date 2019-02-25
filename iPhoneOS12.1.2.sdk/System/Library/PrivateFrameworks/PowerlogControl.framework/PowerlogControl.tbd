@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: C4A7F9BF-8EDB-3DD3-90FF-7B43E43E233A' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PowerlogControl.framework/PowerlogControl
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _PowerlogControlDefaultsChanged, _PowerlogControlEnablePowerLog, _PowerlogControlEnablePowerLogOld,
+                          _PowerlogControlModeKey, _PowerlogControlModeKeyOld, _PowerlogControlReadMode, _PowerlogControlSwitchMode,
+                          _allowModeTransition, _containerPath, _validValue ]
+...

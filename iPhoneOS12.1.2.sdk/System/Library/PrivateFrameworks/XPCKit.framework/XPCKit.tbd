@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 83B13E99-AC7F-3082-A650-71F5C61A75F9' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/XPCKit.framework/XPCKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _XPCSetLogBlocks, __XPCLog, __XPCShouldLog, _kXPCSequenceKey ]
+    objc-classes:       [ _XPCClientConnection, _XPCNSClientConnection, _XPCNSRequest, _XPCNSServiceConnection, _XPCNSServiceListener,
+                          _XPCRequest, _XPCServiceConnection, _XPCServiceListener ]
+...

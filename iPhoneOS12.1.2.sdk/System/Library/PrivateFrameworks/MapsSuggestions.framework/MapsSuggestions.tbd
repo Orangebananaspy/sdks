@@ -1,0 +1,60 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 447AEB20-CB82-3155-9480-E26E98CE7BBC' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MapsSuggestions.framework/MapsSuggestions
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _GEOComposedWaypointFromMapsSuggestionsEntry, _GEOMapItemCityName, _GEOMapItemFromMapsSuggestionsEntry,
+                          _GEOMapItemShortAddress, _GEOMapItemStreetName, _MapsSuggestionsBestLocation, _MapsSuggestionsDestinationKey,
+                          _MapsSuggestionsEntriesAreBothOfType, _MapsSuggestionsEntriesAtLeastOneIsOfType,
+                          _MapsSuggestionsEntriesFromNSData, _MapsSuggestionsEntriesShouldBeOfOneOfEachType,
+                          _MapsSuggestionsEntryTypeEnumerate, _MapsSuggestionsEntryTypeFromString, _MapsSuggestionsIsInTheFuture,
+                          _MapsSuggestionsIsInThePast, _MapsSuggestionsIsValidLocation, _MapsSuggestionsIsValidVisit,
+                          _MapsSuggestionsLoggingEnableVerbose, _MapsSuggestionsLoggingIsVerbose,
+                          _MapsSuggestionsMapItemConvertIfNeeded, _MapsSuggestionsMapItemsAreEqual, _MapsSuggestionsNow,
+                          _MapsSuggestionsRemovalBehaviorEnumerate, _MapsSuggestionsSetFakeNow,
+                          _MapsSuggestionsStringDataEncodingTypeOfString, _MapsSuggestionsTrackerIsUsableLocation,
+                          _MapsSuggestionsVersionNumber, _MapsSuggestionsVersionString, _NSDataFromMapsSuggestionsEntries,
+                          _NSStringFromMapsSuggestionsDistance, _NSStringFromMapsSuggestionsETA, _NSStringFromMapsSuggestionsEntries,
+                          _NSStringFromMapsSuggestionsEntry, _NSStringFromMapsSuggestionsEntryType,
+                          _NSStringFromMapsSuggestionsEventTime, _NSStringFromMapsSuggestionsGEOMapItem,
+                          _NSStringFromMapsSuggestionsRemovalBehavior, _NSStringFromMapsSuggestionsShortETA,
+                          _ParkedCarLocationNameForMapItem, _localizedLabelForCoreRoutineType, _maps_home_string, _maps_work_string ]
+    objc-classes:       [ _LocationOfInterestType, _MapsSuggestionsAppConnectionAndRecentsDeduper,
+                          _MapsSuggestionsAppConnectionDeduper, _MapsSuggestionsAppConnectionFilter, _MapsSuggestionsBaseDeduper,
+                          _MapsSuggestionsBaseFilter, _MapsSuggestionsBaseImprover, _MapsSuggestionsBaseSource,
+                          _MapsSuggestionsBaseTitleFormatter, _MapsSuggestionsBlockDeduper, _MapsSuggestionsBlockFilter,
+                          _MapsSuggestionsCache, _MapsSuggestionsCalendarEventDeduper, _MapsSuggestionsCalendarEventImprover,
+                          _MapsSuggestionsCalendarEventTitleFormatter, _MapsSuggestionsCalendarSource, _MapsSuggestionsCanKicker,
+                          _MapsSuggestionsCarRentalImprover, _MapsSuggestionsCompositeSource, _MapsSuggestionsCompositeSourceBuilder,
+                          _MapsSuggestionsDeleteSupportImprover, _MapsSuggestionsDeletedFilter, _MapsSuggestionsDonater,
+                          _MapsSuggestionsDualLocationUpdater, _MapsSuggestionsETA, _MapsSuggestionsETAFormatter,
+                          _MapsSuggestionsETARequester, _MapsSuggestionsETARequirements, _MapsSuggestionsEngine,
+                          _MapsSuggestionsEngineBuilder, _MapsSuggestionsEntry, _MapsSuggestionsExpiredFilter,
+                          _MapsSuggestionsFakeSource, _MapsSuggestionsFakeSourceScripter, _MapsSuggestionsFakeSourceScripterStep,
+                          _MapsSuggestionsFavoritesImprover, _MapsSuggestionsFoundInMailTitleFormatter,
+                          _MapsSuggestionsFrequentLocationDeduper, _MapsSuggestionsFrequentLocationImprover,
+                          _MapsSuggestionsFrequentLocationTitleFormatter, _MapsSuggestionsGEOMapItemDeduper,
+                          _MapsSuggestionsHomeWorkDeduper, _MapsSuggestionsHomeWorkImprover, _MapsSuggestionsHomeWorkTitleFormatter,
+                          _MapsSuggestionsHotelImprover, _MapsSuggestionsLeechingLocationUpdater, _MapsSuggestionsLimitedDictionary,
+                          _MapsSuggestionsLockscreenImprover, _MapsSuggestionsManager, _MapsSuggestionsMutableWeakEntries,
+                          _MapsSuggestionsNetworkRequester, _MapsSuggestionsNoAddressFilter,
+                          _MapsSuggestionsNoOperationTitleFormatter, _MapsSuggestionsNoTitleFilter, _MapsSuggestionsParkedCarDeduper,
+                          _MapsSuggestionsParkedCarImprover, _MapsSuggestionsParkedCarTitleFormatter, _MapsSuggestionsQueue,
+                          _MapsSuggestionsReInjectSource, _MapsSuggestionsRecentHistoryDeduper, _MapsSuggestionsRecentHistoryImprover,
+                          _MapsSuggestionsRemoteSource, _MapsSuggestionsReservationDeduper, _MapsSuggestionsReservationImprover,
+                          _MapsSuggestionsResumeRouteDeduper, _MapsSuggestionsResumeRouteImprover,
+                          _MapsSuggestionsResumeRouteTitleFormatter, _MapsSuggestionsRideBookingAppConnectionDeduper,
+                          _MapsSuggestionsRoutineSource, _MapsSuggestionsSameRidesharingRideDeduper,
+                          _MapsSuggestionsSameVisualsDeduper, _MapsSuggestionsServerSideFilter, _MapsSuggestionsSharedEventStore,
+                          _MapsSuggestionsSimpleStrategy, _MapsSuggestionsSinkRankImprover, _MapsSuggestionsSuppressor,
+                          _MapsSuggestionsTicketedEventImprover, _MapsSuggestionsTooEarlyFilter, _MapsSuggestionsTooFewVisitsFilter,
+                          _MapsSuggestionsTracker, _MapsSuggestionsTrafficAndETAResult, _MapsSuggestionsTravelFlightImprover,
+                          _MapsSuggestionsUniqueIdentifierDeduper, _MapsSuggestionsUnknownFilter,
+                          _MapsSuggestionsVisitTrackingLocationUpdater ]
+...

@@ -1,0 +1,35 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 066B0D52-99F8-3AD6-99E7-E19D18E24E59' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/iCloudQuotaDaemon.framework/iCloudQuotaDaemon
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _ICQActionParameterServerLinkIdentifierKey, _ICQActionParameterURLKey,
+                          _ICQActionParameterURLQueryParametersKey, _ICQCreateError, _ICQCreateErrorWithMessage,
+                          _ICQDaemonBundleIdentifierKey, _ICQErrorDomain, _ICQLogDebugDataTaskComplete, _ICQLogDictKeys,
+                          _ICQLogOfferDetailsForServerDictionary, _ICQOpenURL, _ICQUpdateOfferKeyIsZeroAction,
+                          _ICQVolumeStatusFlagsError, __ICQActionForServerActionString, __ICQActionForString,
+                          __ICQActionParametersForServerActionParameters, __ICQAlertSpecificationForServerDict,
+                          __ICQAppendServerMessageFormatAndLinks, __ICQBindingsKeyForServerMessageParameterKey,
+                          __ICQBooleanForServerObjectDefault, __ICQBundleIDForKnownContainerID, __ICQContainerIDForKnownBundleID,
+                          __ICQDaemonOfferChangedDueToPushDarwinNotificationName, __ICQDaemonOfferPersistedNotificationName,
+                          __ICQDictionaryForKey, __ICQDictionaryForOneOfKeys, __ICQGetLogSystem, __ICQIntegerFromDictionaryKey,
+                          __ICQIsBuddyOfferDictionary, __ICQLevelForString, __ICQLinkButtonForServerMessage,
+                          __ICQLinkForServerMessageParameter, __ICQLinkForServerMessageParameterWithOptions, __ICQLinkForServerValues,
+                          __ICQLinkVisibleKeyForServerMessageParameter, __ICQLinksForServerMessageParameters,
+                          __ICQLinksForServerMessageParametersWithOptions, __ICQMessageForServerHeader, __ICQMessageWithFormat,
+                          __ICQOfferTypeForServerString, __ICQOfferTypeForString, __ICQOpenFamilySetupInSettings,
+                          __ICQOpenManageStorageInSettings, __ICQOpenPurchaseFlowInSettings, __ICQServerDictToOfferTypeAndLevel,
+                          __ICQServerHeaderGetFormatAndLinks, __ICQStringForAction, __ICQStringForKey, __ICQStringForLevel,
+                          __ICQStringForOfferType, __ICQStringForOneOfKeys, __ICQStringFromDictionaryKey,
+                          _iCloudQuotaDaemonVersionNumber, _iCloudQuotaDaemonVersionString ]
+    objc-classes:       [ _ICQDaemonAlert, _ICQDaemonBuddyOffer, _ICQDaemonOffer, _ICQDaemonOfferConditions, _ICQDaemonOfferCriteria,
+                          _ICQDaemonOfferManager, _ICQDaemonOfferStub, _ICQDaemonOfferStubs, _ICQDaemonPersisted, _ICQLink,
+                          _ICQOfferUpdateController, _ICQOfferUpdateRequestContext, _ICQRequestProvider, __ICQAlertSpecification,
+                          __ICQFollowupSpecification ]
+...

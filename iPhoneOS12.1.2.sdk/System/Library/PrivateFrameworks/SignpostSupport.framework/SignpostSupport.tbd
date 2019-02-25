@@ -1,0 +1,28 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 086026B2-E53E-3F5D-97FA-44E55C905986' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SignpostSupport.framework/SignpostSupport
+current-version:       17
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _SignpostPlatformForDevice, _SignpostPlatformForString, _SignpostSerializationErrorDomain,
+                          _SignpostSupportDeserializationEnumerateObjectArrayFromData, _SignpostSupportVersionNumber,
+                          _SignpostSupportVersionString, _SignpostSystemTimebaseRatio, _StringForSignpostPlatform,
+                          __SignpostSerializeableObjectFromSerializedObjectDictionary,
+                          __SignpostSupportSerializationDataFromObjectArray, __signpost_debug_log,
+                          _kSignpostSupportMachTimeTranslator_UnknownTime ]
+    objc-classes:       [ _SignpostAnimationInterval, _SignpostEvent, _SignpostInterval, _SignpostIntervalBuilder, _SignpostObject,
+                          _SignpostStreamEvent, _SignpostSupportCompositorInterval, _SignpostSupportExactProcessNameBlacklist,
+                          _SignpostSupportExactProcessNameFilter, _SignpostSupportExactProcessNameWhitelist,
+                          _SignpostSupportLogMessage, _SignpostSupportMachTimeTranslationRange, _SignpostSupportMachTimeTranslator,
+                          _SignpostSupportMessageArgument, _SignpostSupportMetadataSegment, _SignpostSupportObject,
+                          _SignpostSupportObjectExtractor, _SignpostSupportObjectFilter, _SignpostSupportPIDBlacklist,
+                          _SignpostSupportPIDFilter, _SignpostSupportPIDWhitelist, _SignpostSupportSerializabledObjectCollection,
+                          _SignpostSupportSubsystemCategoryBlacklist, _SignpostSupportSubsystemCategoryFilter,
+                          _SignpostSupportSubsystemCategoryFilterEntry, _SignpostSupportSubsystemCategoryWhitelist,
+                          _SignpostSupportUniquePIDBlacklist, _SignpostSupportUniquePIDFilter, _SignpostSupportUniquePIDWhitelist ]
+...

@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 55210EAB-E337-376A-AA0B-C067C8A91692' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/ZoomServices.framework/ZoomServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _ZOTDeviceRotation, _ZOTDisplayMainScreenSize, _ZOTMainScreenRect, _ZOTMainScreenSize, _ZOTRotateFromScreen,
+                          _ZOTRotateToScreen, _ZOTTimeUnset, _ZOTWindowServerDisplay, _ZoomServicesPrimaryZoomWindowClientIdentifier ]
+    objc-classes:       [ _AXZoomListenerContainer, _ZoomServices ]
+...

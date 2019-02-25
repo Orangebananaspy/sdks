@@ -1,0 +1,25 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 2D3F81E6-6961-3759-B6E0-CA6FA7007017' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SafariFoundation.framework/SafariFoundation
+current-version:       606.3.4
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _SFAutoFillHelperErrorDomain, _SFAutoFillPasswordsPreferenceKey, _SFAutoFillWebUIPreferencesDomain,
+                          _SFCredentialProviderDeveloperEntitlement, _SFCredentialProviderExtensionPointIdentifier,
+                          _SFCredentialProviderShowsConfigurationUIKey, _SFCredentialProviderSystemEntitlement,
+                          _SFDefaultValueForPasswordAndCreditCardAutoFillPreferenceKey,
+                          _SFExternalCredentialIdentityStoreErrorDomain, _SFPasswordCredentialIdentityInvalidRowIdentifier,
+                          _SFPasswordGenerationNoLengthLimit, _SFSharablePasswordURLSchemeForAirDrop,
+                          _maximumNumberOfWebCredentialEntriesToReturnForAppID ]
+    objc-classes:       [ _SFAutoFillFeatureManager, _SFAutoFillHelperProxy, _SFCredentialProviderExtensionHelperProxy,
+                          _SFCredentialProviderExtensionManager, _SFCredentialProviderExtensionState, _SFDomainAssociationUtilities,
+                          _SFExternalCredentialIdentityStore, _SFExternalCredentialIdentityStoreManager,
+                          _SFPasswordCredentialIdentity, _SFSafariCredential, _SFSafariCredentialStore, _SFSharablePassword,
+                          _SFSharablePasswordReceiver, _SFSharedWebCredentialsDatabaseEntry, _SFStrongPasswordGenerator,
+                          _SFSuggestedUser, _SFSuggestedUserProvider, __SFSharablePasswordEncryptionInformation ]
+...

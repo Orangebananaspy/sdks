@@ -1,0 +1,44 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 2251D736-1594-32C0-9FB5-AC860010C4D0' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SoftwareUpdateBridge.framework/SoftwareUpdateBridge
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _SUBActiveNRDevice, _SUBCompatibilityVersion, _SUBDocumentationAssetKeyDevice,
+                          _SUBDocumentationAssetKeyDeviceName, _SUBDocumentationAssetKeyID, _SUBDuetDenialDomain, _SUBError,
+                          _SUBErrorDomain, _SUBErrorUserInfo, _SUBErrorUserInfoChargerConnected, _SUBErrorUserInfoDenialReasons,
+                          _SUBIPCClientIsEntitled, _SUBIPCDecodeObjectForKey, _SUBIPCDictionaryToXPC, _SUBIPCEncodeObject,
+                          _SUBIPCXPCToDictionary, _SUBIsChargerConnected, _SUBIsRunningInStoreDemoMode, _SUBLoggingInit,
+                          _SUBMachServiceName, _SUBMaxCompanionCompatibilityVersion, _SUBMessageCanProceedWithInstallationKey,
+                          _SUBMessageCompanionLockState, _SUBMessageCreateStashBagResponseKey, _SUBMessageCreatedStashBagResponse,
+                          _SUBMessageDescriptorKey, _SUBMessageDocumentationAssetServerURLKey, _SUBMessageDocumentationKey,
+                          _SUBMessageDownloadKey, _SUBMessageErrorKey, _SUBMessageManagerStateKey, _SUBMessagePairedUnlockNotSupported,
+                          _SUBMessagePasscodeKey, _SUBMessageRequiredDiskSpaceKey, _SUBMessageSsoTokenKey,
+                          _SUBMessageSupportsInstallTonightKey, _SUBMessageTypeAddClient, _SUBMessageTypeBadgeBridgeApp,
+                          _SUBMessageTypeCreateStashBag, _SUBMessageTypeDisplayTerms, _SUBMessageTypeDownloadProgress,
+                          _SUBMessageTypeFetchDocumentation, _SUBMessageTypeGetCompanionLockState,
+                          _SUBMessageTypeGetSupportsInstallTonight, _SUBMessageTypeGizmoOSVersionDidChange,
+                          _SUBMessageTypeInstallResult, _SUBMessageTypeInstallUpdate, _SUBMessageTypeInstallationCanProceed,
+                          _SUBMessageTypeInstallationWillProceed, _SUBMessageTypeKey, _SUBMessageTypePerformMigration,
+                          _SUBMessageTypePurgeUpdate, _SUBMessageTypeQueryManagerState, _SUBMessageTypeRetrieveSsoToken,
+                          _SUBMessageTypeScanForUpdates, _SUBMessageTypeScanResult, _SUBMessageTypeSetUserInstallRequestType,
+                          _SUBMessageTypeSetUserInstallRequestTypeCompletion, _SUBMessageTypeShowDownloadAndPrepareError,
+                          _SUBMessageTypeShowDuetConditions, _SUBMessageTypeShowInstallError, _SUBMessageTypeShowUpdateAvailable,
+                          _SUBMessageTypeStartDownload, _SUBMessageTypeUnlockCompanion,
+                          _SUBMessageTypeUserDidAcceptTermsAndConditions, _SUBMessageTypeUserDidAcceptTermsAndConditionsChanged,
+                          _SUBMessageTypeUserDidAcceptTermsAndConditionsCompletion,
+                          _SUBMessageTypeUserDidAcceptTermsAndConditionsWithReply, _SUBMessageTypeUserInstallRequestTypeChanged,
+                          _SUBMessageUserDidAcceptTermsAndConditionsKey, _SUBMessageUserInstallRequestTypeKey,
+                          _SUBMinCompanionCompatibilityVersion, _SUBNSURLSessionProxyDenialDomain, _SUBPhaseDownloading,
+                          _SUBPhasePreparingUpdate, _SUBPhaseStalled, _SUBPhaseWaitingForAdmissionControl, _SUBResultTypeForMessageType,
+                          _SUBSoftwareUpdateAssetType, _SUBStringForManagerState, _SUBStringForUserInstallRequestType,
+                          _SUBTCPConnectionDenialDomain, _SUBWatchUpdateBrainAssetType, __SUBTransactionCounter,
+                          ___SoftwareUpdateBridgeVersionNumber, ___SoftwareUpdateBridgeVersionString, _softwareupdatebridge_log,
+                          _stringForMAAssetCancelResult, _stringForMAAssetPurgeResult ]
+    objc-classes:       [ _SUBDescriptor, _SUBDocumentation, _SUBDownload, _SUBManager, _SUBProgress ]
+...

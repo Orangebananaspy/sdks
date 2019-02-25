@@ -1,0 +1,20 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 3798218E-44CF-332A-B33B-B6F8B0659C92' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IOCEC.framework/IOCEC
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _IOCECFrameStringWithFrame, _IOCECInterfaceCloseReceiveQueue, _IOCECInterfaceCopyProperty,
+                          _IOCECInterfaceCreate, _IOCECInterfaceCreateWithService, _IOCECInterfaceGetTypeID,
+                          _IOCECInterfaceListenerCreate, _IOCECInterfaceListenerGetTypeID,
+                          _IOCECInterfaceListenerRegisterAddInterfaceCallback, _IOCECInterfaceListenerScheduleWithDispatchQueue,
+                          _IOCECInterfaceListenerUnscheduleFromDispatchQueue, _IOCECInterfaceOpenReceiveQueue,
+                          _IOCECInterfaceRegisterReceiveCallback, _IOCECInterfaceRegisterStatusCallback,
+                          _IOCECInterfaceRegisterTerminatedCallback, _IOCECInterfaceScheduleWithDispatchQueue,
+                          _IOCECInterfaceSendFrame, _IOCECInterfaceSetLogicalAddressMask, _IOCECInterfaceUnscheduleFromDispatchQueue,
+                          _IOCECPhysicalAddressStringWithAddress ]
+...

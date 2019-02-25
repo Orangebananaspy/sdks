@@ -1,0 +1,20 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 29CA9196-A93D-3696-B8A5-248FBEA5720E' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WorkflowKit.framework/WorkflowKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _WFLActionErrorDomain, _WFLErrorDomain, _WFLForceExecutionOnPhoneKey, _WFLHandleIntentActionIdentifier,
+                          _WFLIntentDataKey, _WFLLogContext, _WFLLogInitIfNeeded, _WFLOpenUserActivityActionIdentifier,
+                          _WFLUnderlyingIntentResponseKey, _WFLWorkflowActionIdentifierKey, _WFLWorkflowActionParametersKey,
+                          _WFLWorkflowActionsKey, _WFLWorkflowAssociatedAppBundleIdentifierKey, _WFLWorkflowDescriptionKey,
+                          _WFLWorkflowNameKey, _WorkflowKitVersionNumber, _WorkflowKitVersionString ]
+    objc-classes:       [ _WFLAction, _WFLActionImplementation, _WFLHandleIntentAction, _WFLHandleIntentActionImplementation,
+                          _WFLOpenUserActivityAction, _WFLOpenUserActivityActionImplementation, _WFLWorkflow, _WFLWorkflowController,
+                          _WFLWorkflowSerialization ]
+...

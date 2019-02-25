@@ -1,0 +1,32 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: D1D8B71C-C004-3892-A5E7-47BE2D7A73A2' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccessibilitySharedSupport.framework/AccessibilitySharedSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _AXCKVOPronunciationPushTopic, _AXSSDeviceTypeAppleTV, _AXSSDeviceTypeMac, _AXSSDeviceTypePad,
+                          _AXSSDeviceTypePhone, _AXSSLogForCategory, _AXSSSwitchActionATVArrowDown, _AXSSSwitchActionATVArrowLeft,
+                          _AXSSSwitchActionATVArrowRight, _AXSSSwitchActionATVArrowUp, _AXSSSwitchActionATVHome,
+                          _AXSSSwitchActionATVMenu, _AXSSSwitchActionATVPlayPause, _AXSSSwitchActionATVSelect,
+                          _AXSSSwitchActionActivate, _AXSSSwitchActionAppSwitcher, _AXSSSwitchActionControlCenter,
+                          _AXSSSwitchActionCustom, _AXSSSwitchActionDictation, _AXSSSwitchActionForceTouch, _AXSSSwitchActionHome,
+                          _AXSSSwitchActionMenu, _AXSSSwitchActionMoveToNextItem, _AXSSSwitchActionMoveToPreviousItem,
+                          _AXSSSwitchActionNotificationCenter, _AXSSSwitchActionRun, _AXSSSwitchActionSelect, _AXSSSwitchActionSiri,
+                          _AXSSSwitchActionSiriShortcutsMenu, _AXSSSwitchActionStop, _AXSSSwitchActionTripleClick,
+                          _AXSSSwitchActionVolumeDown, _AXSSSwitchActionVolumeUp, _AXSSSwitchControlCursorSizeLarge,
+                          _AXSSSwitchControlCursorSizeMedium, _AXSSSwitchControlCursorSizeSmall,
+                          _AXSSSwitchControlPostActivationScanLocationCurrentItem,
+                          _AXSSSwitchControlPostActivationScanLocationDefault, _AXSSSwitchControlScanningStyleAuto,
+                          _AXSSSwitchControlScanningStyleManual, _AXSSSwitchControlScanningStyleSingleSwitchStep,
+                          _AXSSSwitchControlTapBehaviorAlways, _AXSSSwitchControlTapBehaviorAuto,
+                          _AXSSSwitchControlTapBehaviorDefault, _AXSSSwitchControlTimeIntervalNotApplicable,
+                          _AccessibilitySharedSupportVersionNumber, _AccessibilitySharedSupportVersionString ]
+    objc-classes:       [ _AXSSInterDeviceCommunicator, _AXSSInterDeviceSearchResult, _AXSSInterDeviceSecurityHelper,
+                          _AXSSInterDeviceSwitchEvent, _AXSSPronunciationDatabase, _AXSSPronunciationSubstitution,
+                          _AXSSSwitchControlSettings, _VOBundle, _VOLanguage, _VOSubstitution, _VOVoice ]
+...

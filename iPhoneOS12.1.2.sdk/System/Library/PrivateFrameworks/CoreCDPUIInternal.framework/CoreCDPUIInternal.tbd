@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 9AE8BA18-C94D-3BFD-92E3-D61C6C5C0EB2' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreCDPUIInternal.framework/CoreCDPUIInternal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _CoreCDPUIInternalVersionNumber, _CoreCDPUIInternalVersionString ]
+    objc-classes:       [ _CDPRecoveryTestController, _DummyLocalDeviceSecretHandler, _DummyRemoteDeviceSecretValidator,
+                          _SettingsController ]
+...

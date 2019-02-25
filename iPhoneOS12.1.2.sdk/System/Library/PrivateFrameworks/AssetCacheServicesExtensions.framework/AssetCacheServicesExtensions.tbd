@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: C7502DA2-2972-3DD3-8DBB-5B0BA120B79E' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AssetCacheServicesExtensions.framework/AssetCacheServicesExtensions
+current-version:       83.3
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _AssetCacheServicesExtensionsVersionNumber, _AssetCacheServicesExtensionsVersionString, _kACSEAllServersKey,
+                          _kACSEMightHaveKey, _kACSEPersonalCachingAndImportKey, _kACSEPersonalCachingKey, _kACSEPublicIPAddressKey,
+                          _kACSEPublicIPAddressRangesKey, _kACSEReachabilityKey, _kACSERefreshedServersKey, _kACSESavedServersKey,
+                          _kACSESharedCachingKey ]
+    objc-classes:       [ _AssetCacheServicesReporter ]
+...

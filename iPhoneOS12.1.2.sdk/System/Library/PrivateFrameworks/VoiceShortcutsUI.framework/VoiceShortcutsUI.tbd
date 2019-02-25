@@ -1,0 +1,31 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: F6965CC6-C211-3EA5-934F-9E8FFD90FFCF' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/VoiceShortcutsUI.framework/VoiceShortcutsUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _VCLoggingCategory, _VCLoggingSubsystem, _VCUIIsTypeToSiriEnabled, _VCUILogContext, _VCUILogInitIfNeeded,
+                          _VCUIPhraseRecognizerErrorDomain, _VCUIShortcutSeparatorInsetLargeScreen,
+                          _VCUIShortcutSeparatorInsetSmallScreen, _VCUIShortcutSmallScreenMaxWidth, _VoiceShortcutsUIVersionNumber,
+                          _VoiceShortcutsUIVersionString, _kVCUIGallerySectionHeaderViewHorizontalPadding,
+                          _kVCUIGallerySectionHeaderViewPaddingText, _kVCUIGallerySectionHeaderViewSeeAllButtonPadding ]
+    objc-classes:       [ _VCUIActionDonationCell, _VCUIActionDonationDataSource, _VCUIActionDonationDetailView,
+                          _VCUIActionDonationDetailsViewController, _VCUIActionDonationsListViewController, _VCUIActionStatusView,
+                          _VCUIActiveVoiceShortcutsViewController, _VCUIAlternativeTranscriptionsView, _VCUIAppGalleryViewController,
+                          _VCUIAppIconImageCache, _VCUIButton, _VCUIButtonTray, _VCUICKPEntryPoint,
+                          _VCUICreateVoiceShortcutViewController, _VCUIDebugWorkflowViewController,
+                          _VCUIEditVoiceShortcutViewController, _VCUIGalleryDataSource, _VCUIGallerySection,
+                          _VCUIGallerySectionHeaderView, _VCUIGalleryViewController, _VCUIHeadlineView, _VCUIIntentCachePrewarmer,
+                          _VCUIInteractionDonationDataSource, _VCUILoadingCell, _VCUIManageVoiceShortcutConfirmationView,
+                          _VCUIManageVoiceShortcutInterstitialView, _VCUIManageVoiceShortcutRecordingView,
+                          _VCUIManageVoiceShortcutSetupView, _VCUIManageVoiceShortcutView, _VCUIManageVoiceShortcutViewController,
+                          _VCUIPerformActionCardProvider, _VCUIPerformActionCardViewController, _VCUIPhraseRecognizer,
+                          _VCUIProgressCardViewController, _VCUIRecordButton, _VCUITypeToSiriField, _VCUIUserActivityDonationDataSource,
+                          _VCUIVoiceShortcutCard, _VCUIVoiceShortcutCell, _VCUIVoiceShortcutsViewController,
+                          __VCUIActionStatusErrorView ]
+...

@@ -1,0 +1,13 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: B9D30ED0-8A3C-3413-B57D-39D63E25E8B8' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AccessibilityUIViewServices.framework/AccessibilityUIViewServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    objc-classes:       [ _AXVSBaseService, _AXVSVoiceOverItemChooserService ]
+...

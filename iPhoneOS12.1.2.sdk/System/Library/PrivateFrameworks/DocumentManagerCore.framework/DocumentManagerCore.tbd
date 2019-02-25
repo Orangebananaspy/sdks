@@ -1,0 +1,42 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 733FF550-6B0C-364C-8B6F-11E8929CAF36' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DocumentManagerCore.framework/DocumentManagerCore
+current-version:       68.100.40
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _AreTagsEqualByNameAndColor, _DOCApplicationWithBundleIdentifierSupportsDocuments,
+                          _DOCChromelessDocumentManagerViewIdentifier, _DOCContentTypeIsKindOfContentTypes,
+                          _DOCContentTypeQueryStringForFileTypes, _DOCContentTypesInDocumentTypes,
+                          _DOCContentTypesReadableByApplicationWithBundleIdentifier, _DOCDefaultFetchedAttributes,
+                          _DOCDocumentBrowserViewControllerNavigationBarDismissButtonIdentifier, _DOCDocumentSourceIdentifierICloud,
+                          _DOCDocumentSourceIdentifierLocal, _DOCDocumentSourceIdentifierRecents, _DOCDocumentsAppBundleIdentifier,
+                          _DOCEscapedStringForSearchQuery, _DOCFileProviderEnumerationPropertiesUserInfoKeyExcludedFileTypes,
+                          _DOCFileProviderEnumerationPropertiesUserInfoKeyMaximumNumberOfItems,
+                          _DOCFileProviderEnumerationPropertiesUserInfoKeyTagIdentifiers,
+                          _DOCFileProviderEnumerationPropertiesUserInfoKeyTargetApplicationIdentifier,
+                          _DOCFileProviderOriginatedItemsQueryStringFragment,
+                          _DOCFullDocumentManagerViewControllerNavigationBarCreateButtonIdentifier,
+                          _DOCFullDocumentManagerViewControllerNavigationBarIdentifier,
+                          _DOCFullDocumentManagerViewControllerNavigationBarSearchFieldIdentifier,
+                          _DOCFullDocumentManagerViewControllerTemplateChooserIdentifier, _DOCGetDefaultUserTags, _DOCInitLogging,
+                          _DOCIsTrashedQueryStringFragment, _DOCLocalProviderLocalizedDisplayName,
+                          _DOCLocalStorageFileProviderIdentifier, _DOCLocalizedDisplayName, _DOCLogAssertionFailure,
+                          _DOCPresentDocumentManagerButtonIdentifier, _DOCRecencyQualifyingAttributes,
+                          _DOCRecentActivitiesQueryStringForBundleIdentifier, _DOCRecentDocumentsQueryStringForTypes,
+                          _DOCSelfTaskHasBooleanEntitlement, _DOCShouldApplicationShowRecentsPopover, _DOCTagFromFPTag,
+                          _DOCTagRegistryChangeDiscoveredTagsDidChangeKey, _DOCTagRegistryChangeUserTagsDidChangeKey,
+                          _DOCTagRegistryLocalStorageDidChangeNotification, _DOCTagRegistryTagsDidChangeNotification,
+                          _DOCTagsFromFPTags, _DocumentManagerCoreVersionNumber, _DocumentManagerCoreVersionString, _FPTagFromDOCTag,
+                          _FPTagsFromDOCTags, __DOCAllowedFileProviderBundleIdentifiers, _docLogHandle, _docPickerLogHandle,
+                          _docSourceLogHandle, _docTestsLogHandle, _docUILogHandle, _doc_os_signpost_end_browsing,
+                          _doc_os_signpost_start_browsing, _doc_signpost_debug_end, _doc_signpost_debug_start,
+                          _documentmanager_perf_log, _kDOCItemCountUnset, _kFinderTagsDictKey, _kFinderTagsKey,
+                          _kFinderTagsSerialNumberKey, _kFinderTagsVersionKey ]
+    objc-classes:       [ _DOCConfiguration, _DOCManagedPermission, _DOCTag, _DOCTagLocalStorage, _DOCTagRegistry,
+                          _DOCTagRegistryICloudDataSource ]
+...

@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: FD524B30-2B12-3962-9C73-8385B2BAF1BE' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LimitAdTracking.framework/LimitAdTracking
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _LimitAdTrackingVersionNumber, _LimitAdTrackingVersionString ]
+    objc-classes:       [ _ADOptInStatusClient ]
+...

@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 3F22D7F6-2E05-3CEE-9BC3-5187435F04D6' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreNameParser.framework/CoreNameParser
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _CoreNameParserVersionNumber, _CoreNameParserVersionString, __NPCollapseWhitespaceAndStrip,
+                          __NPRemoveAppSignature, __NPRemoveEmojis, __NPRemoveParenthesisBracketsAndInside, __NPStripDiatritics,
+                          __NPStripQuotationMarks, __NPTokenizeName, __NPTrimNonLetters, _charSetWithEndpoints ]
+    objc-classes:       [ _NPComponentSequence, _NPHMMClassifier, _NPNameComponentsData, _NPNameParser ]
+...

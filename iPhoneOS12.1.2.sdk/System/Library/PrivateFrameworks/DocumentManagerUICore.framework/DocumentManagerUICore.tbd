@@ -1,0 +1,42 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: C6CB99E5-7874-3B86-BCF9-AA026889FE2D' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DocumentManagerUICore.framework/DocumentManagerUICore
+current-version:       68.100.40
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _AttrValueString, _DOCBackgroundColorForTagColor, _DOCConstraintWithPriority,
+                          _DOCConstraintsToCenterWithSuperview, _DOCConstraintsToResizeViewsWithSuperview,
+                          _DOCConstraintsToResizeWithSuperview, _DOCConstraintsToResizeWithSuperviewMargins,
+                          _DOCConstraintsToResizeWithSuperviewSafeAreaInsets, _DOCDotViewColorForTagColor,
+                          _DOCPrimaryColorForTagColor, _DOCSanitizedTagIdentifier, _DOCShareInfoThumbnailForFPItem,
+                          _DOCShareInfoThumbnailSizeForSizeClass, _DOCSkipConstraint, _DOCSpotlightEnumeratedItemIdentifierActivities,
+                          _DOCSpotlightEnumeratedItemIdentifierFavoriteFolders, _DOCSpotlightEnumeratedItemIdentifierRecents,
+                          _DOCSpotlightEnumeratedItemIdentifierSearch, _DOCSpotlightEnumeratedItemIdentifierSharedDocuments,
+                          _DOCSpotlightEnumeratedItemIdentifierTaggedDocuments, _DOCSpotlightEnumeratedItemIdentifierTrashedItems,
+                          _DOCTagViewCornerRadius, _DOC_createICQBannerView, _DOC_shouldShowICQBannerViewForOffer,
+                          _DOC_updateICQBannerViewAttributes, _DocumentManagerUICoreVersionNumber,
+                          _DocumentManagerUICoreVersionString, _KindValueString ]
+    objc-classes:       [ _DCDocumentAttributesShareSheetPlugIn, _DOCAddTagView, _DOCAggdReporter, _DOCBaseThumbnail,
+                          _DOCByteCountFormatter, _DOCDateFormatter, _DOCDeterminateProgressRingView, _DOCDownloadButton,
+                          _DOCDownloadCircleView, _DOCDownloadProgressView, _DOCDownloadSpinningArcView, _DOCDownloadStopView,
+                          _DOCFileProviderMonitor, _DOCFittingImageView, _DOCGhostRingView, _DOCIconThumbnail,
+                          _DOCIndeterminateProgressRingView, _DOCItemInfoViewController, _DOCItemPathFormatter, _DOCItemQueryCollector,
+                          _DOCItemQueryCollectorManager, _DOCItemQueryDescriptor, _DOCItemThumbnail, _DOCLargeTagView, _DOCProgressView,
+                          _DOCQueryObservation, _DOCSearchQueryObservation, _DOCShareFPItemLoader, _DOCShareHeaderView,
+                          _DOCShareSheetAccessoryViewController, _DOCShareSheetBaseViewController,
+                          _DOCShareSheetModifyTagsViewController, _DOCSpotlightCollection, _DOCStackedThumbnailView,
+                          _DOCTagCheckableDotView, _DOCTagCheckmarkView, _DOCTagColorPicker, _DOCTagDotView, _DOCTagEditorColorPickerCell,
+                          _DOCTagEditorTagCell, _DOCTagEditorTextFieldCell, _DOCTagEditorViewController, _DOCTagIconView, _DOCTagView,
+                          _DOCTagsCollectionView, _DOCTagsCollectionViewAddTagCell, _DOCTagsCollectionViewTagCell, _DOCTagsLineView,
+                          _DOCThumbnailBaseOperation, _DOCThumbnailCache, _DOCThumbnailFittingImageView, _DOCThumbnailFolderIcon,
+                          _DOCThumbnailIconKey, _DOCThumbnailIconOperation, _DOCThumbnailItemFolderOperation,
+                          _DOCThumbnailItemOperation, _DOCThumbnailKey, _DOCVisualEffectLabel, _FavoriteFoldersQueryDescriptor,
+                          _PointerKey, _RecentActivitiesQueryDescriptor, _RecentDocumentsItemQueryDescriptor, _SearchQueryDescriptor,
+                          _SharedDocumentsQueryDescriptor, _TaggedDocumentsItemQueryDescriptor, _TaggedDocumentsObserver,
+                          _TrashedItemsQueryDescriptor ]
+...

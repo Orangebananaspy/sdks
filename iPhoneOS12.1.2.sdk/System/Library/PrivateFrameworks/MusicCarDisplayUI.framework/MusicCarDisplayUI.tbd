@@ -1,0 +1,42 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: A2B06D56-1397-3EC3-BD46-1292564166BA' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _MCDAlbumDetailFormat, _MCDAlbumPlaceholderImageWithStyle, _MCDAlbumsDetailViewControllerIdentifier,
+                          _MCDAlbumsViewControllerIdentifier, _MCDArtistsViewControllerIdentifier, _MCDBarButtonItemForNegativeSpacer,
+                          _MCDBrowsableContentNowPlayingIdentifiersUpdatedNotification, _MCDBrowseViewControllerIdentifier,
+                          _MCDCarDisplayBundle, _MCDCarDisplayScreen, _MCDCarDisplayUIMode, _MCDClearTableViewSelection,
+                          _MCDCompilationsViewControllerIdentifier, _MCDComposersViewControllerIdentifier,
+                          _MCDDownloadedMusicViewControllerIdentifier, _MCDFilteredStringForString,
+                          _MCDForYouTableViewControllerIdentifier, _MCDFormatArtistAlbumString, _MCDFormattedNumberString,
+                          _MCDFormattedPlaybackRateString, _MCDGeneralLogging, _MCDGenresViewControllerIdentifier,
+                          _MCDGetNowPlayingButton, _MCDLibraryViewControllerIdentifier, _MCDLovedMusicViewControllerIdentifier,
+                          _MCDMPModelObjectForGenericObject, _MCDMusicBundle, _MCDMusicGeneralLogging, _MCDNetworkConnectionAvailable,
+                          _MCDNetworkRestrictedCellularData, _MCDPCAppReadyToFetchNotificationName,
+                          _MCDPCDidInitiatePlaybackNotificationName, _MCDPCDidInvalidateNotificationName,
+                          _MCDPCDidUpdateContentNotificationName, _MCDPCErrorDomain, _MCDPCErrorKey, _MCDPCIndexPathKey, _MCDPCItemKey,
+                          _MCDPCItemsKey, _MCDPCModelKey, _MCDPCNowPlayingDidChangeNotificationName,
+                          _MCDPlaylistTracksViewControllerIdentifier, _MCDPlaylistsViewControllerIdentifier,
+                          _MCDRadioViewControllerIdentifier, _MCDRecentlyAddedControllerIdentifier, _MCDSetAllowsCellularData,
+                          _MCDSetChargeOnDescendantsOfView, _MCDSetSharedAVPlayer, _MCDSetSharedDefaults, _MCDSetupTableHeaderView,
+                          _MCDSharedAVPlayer, _MCDSharedDefaults, _MCDSongsViewControllerIdentifier, _MCDSortByArtist,
+                          _MCDSortByPlaylistType, _MCDSortByRecentlyAdded, _MCDSortByTitle, _MCDSortByYearAscending,
+                          _MCDSortByYearDescending, _MCDTiledArtworkForPlaylist, _MCDTimeDurationForSeconds, __MCDStringFromIndexPath,
+                          ___gMCDSharedDefaults, __nonCapturedPressType ]
+    objc-classes:       [ _MCDAlertController, _MCDBarButton, _MCDBrowsableContentNavigationController,
+                          _MCDBrowsableContentTableViewController, _MCDBrowsableContentUtilities, _MCDButton, _MCDErrorLoadingView,
+                          _MCDLabelButton, _MCDLoadingContentView, _MCDMediaRemoteNowPlayingViewController,
+                          _MCDMediaRemoteSerialQueueManager, _MCDNoContentView, _MCDNowPlayingButton, _MCDNowPlayingViewController,
+                          _MCDPCContainer, _MCDPCItem, _MCDPCModel, _MCDPlayModeButton, _MCDPlayModeControlView,
+                          _MCDPlayableContentPlaybackManager, _MCDPlayableContentQueueTableViewController,
+                          _MCDPlayableContentTableViewCell, _MCDPlayableContentViewController, _MCDPlaybackProgressView,
+                          _MCDProgressBarView, _MCDProgressView, _MCDRepeatButton, _MCDTitleView, _MCDTransportControlView,
+                          __MCDBrowsableTableView, __MCDNowPlayingHostView, __MCDStackItem ]
+...

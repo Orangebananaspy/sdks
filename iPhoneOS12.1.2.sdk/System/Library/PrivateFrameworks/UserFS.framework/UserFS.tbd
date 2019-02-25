@@ -1,0 +1,13 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 24E1BDFF-C201-3D21-9F50-C4CCF3445399' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UserFS.framework/UserFS
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    objc-classes:       [ _UserFSFile, _UserFSFolder, _UserFSItem, _UserFSStream, _UserFSVolume ]
+...

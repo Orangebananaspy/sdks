@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 45993D8C-AB9D-37C7-9890-0542A5F395DB' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ProactiveEventTracker.framework/ProactiveEventTracker
+current-version:       126.35
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _ProactiveEventTrackerVersionNumber, _ProactiveEventTrackerVersionString ]
+    objc-classes:       [ _PETAggdLoggingOutlet, _PETDeviceInfo, _PETDistributionEventTracker, _PETEventEnumMappedProperty,
+                          _PETEventFreeValuedProperty, _PETEventNumericalProperty, _PETEventProperty, _PETEventStringValidator,
+                          _PETEventStringValuedProperty, _PETEventTracker, _PETGoalConversionEventTracker, _PETLoggingUtils,
+                          _PETScalarEventTracker, _PETStringPairs, _PETTestLoggingOutlet ]
+...

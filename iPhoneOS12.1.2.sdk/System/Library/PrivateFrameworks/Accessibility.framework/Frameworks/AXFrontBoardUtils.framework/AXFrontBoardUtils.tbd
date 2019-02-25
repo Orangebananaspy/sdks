@@ -1,0 +1,25 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: B5024A9C-386B-3381-B667-8AB37E88C9D8' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXFrontBoardUtils.framework/AXFrontBoardUtils
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _AXApplicationNameLabelForBundleIdentifier, _AXFrontBoardCategoriesDidInstallNotification,
+                          _AXFrontBoardFBSceneManager, _AXFrontBoardFocusedAppPID, _AXFrontBoardFocusedAppPIDs,
+                          _AXFrontBoardFocusedAppPIDsIgnoringSiri, _AXFrontBoardFocusedAppProcess,
+                          _AXFrontBoardFocusedAppProcessExcludingSiri, _AXFrontBoardFocusedAppProcesses,
+                          _AXFrontBoardFocusedAppProcessesExcludingSiri, _AXFrontBoardFocusedApps,
+                          _AXFrontBoardIsSystemAppShowingAlert, _AXFrontBoardPurpleBuddyPID, _AXFrontBoardRebootDevice,
+                          _AXFrontBoardRunningAppPIDs, _AXFrontBoardRunningAppProcesses, _AXFrontBoardSpeakThisAppPIDForPoint,
+                          _AXFrontBoardSpeakThisAppPIDs, _AXFrontBoardSystemAppPID, _AXFrontBoardSystemAppProcess,
+                          _AXFrontBoardUtilsVersionNumber, _AXFrontBoardUtilsVersionString, _AXFrontBoardVisibleAppProcesses,
+                          _AXIsPurpleBuddyFrontmost, _AXSpokenNameLabelForBundleURL, _AXValidateFocusedAppsNotification,
+                          __stringForValidationEvent ]
+    objc-classes:       [ _AXFBFakeProcess, _AXFBFakeProcessState, _AXFrontBoardProcessWatcher, _SBSheetControllerFBSceneAccessibility,
+                          ___SBSheetControllerFBSceneAccessibility_super ]
+...

@@ -1,0 +1,33 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 08038564-A72D-31F2-904C-12ED6903E24A' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/OnBoardingKit.framework/OnBoardingKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _OBPrivacyActivityIdentifier, _OBPrivacyAdvertisingIdentifier, _OBPrivacyAnalyticsAppIdentifier,
+                          _OBPrivacyAnalyticsDeviceIdentifier, _OBPrivacyAnalyticsiCloudIdentifier, _OBPrivacyAppStoreIdentifier,
+                          _OBPrivacyAppleIDIdentifier, _OBPrivacyAppleMusicFriendsIdentifier, _OBPrivacyAppleMusicIdentifier,
+                          _OBPrivacyApplePayCashIdentifier, _OBPrivacyApplePayIdentifier, _OBPrivacyAskSiriIdentifier,
+                          _OBPrivacyCloudCallingIdentifier, _OBPrivacyDictationdentifier, _OBPrivacyEmergencySOSIdentifier,
+                          _OBPrivacyFaceIDDiagnosticsIdentifier, _OBPrivacyFaceIDIdentifier, _OBPrivacyGymKitIdentifier,
+                          _OBPrivacyHealthRecordsIdentifier, _OBPrivacyImproveHealthIdentifier,
+                          _OBPrivacyImproveHealthRecordsIdentifier, _OBPrivacyImproveMapsIdentifier,
+                          _OBPrivacyLocationServicesIdentifier, _OBPrivacyMapsRAPIdentifier, _OBPrivacyNewsIdentifier,
+                          _OBPrivacyPodcastsIdentifier, _OBPrivacyPrivacyPaneIdentifier, _OBPrivacyPrivacyPaneMiniIdentifier,
+                          _OBPrivacySafariIdentifier, _OBPrivacySafariSearchIdentifier, _OBPrivacySearchIdentifier,
+                          _OBPrivacySiriIdentifier, _OBPrivacySiriSuggestionsIdentifier, _OBPrivacySpotlightSearchIdentifier,
+                          _OBPrivacySpotlightSuggestionsIdentifier, _OBPrivacyStocksIdentifier, _OBPrivacyTVAppIdentifier,
+                          _OBPrivacyTVProviderIdentifier, _OBPrivacyVideosIdentifier, _OBPrivacyWheelchairIdentifier,
+                          _OBPrivacyiBooksIdentifier, _OBPrivacyiCloudKeychainIdentifier, _OBPrivacyiMessageFaceTimeIdentifier,
+                          _OBPrivacyiTunesStoreIdentifier, _OBPrivacyiTunesUIdentifier, _OBProcessNameForPID, __OBCGFloatByDeviceHeight,
+                          __OBHeaderTextStyle, __OBHeightByDeviceSize, __OBLoggingFacility, __OBWidthByDeviceSize ]
+    objc-classes:       [ _OBAnalyticsManager, _OBBuddyContinueButton, _OBBuddyPaneHeaderView, _OBBuddyStyle, _OBBundle, _OBBundleManager,
+                          _OBCapabilities, _OBFlow, _OBPrivacyCombinedController, _OBPrivacyFlow, _OBPrivacyLinkController,
+                          _OBPrivacyLinkController_iOS, _OBPrivacyPresenter, _OBPrivacySplashController, _OBPrivacySplashListView,
+                          _OBSplashBullet, _OBSplashContent, _OBSplashController, _OBStackedIconTextList ]
+...

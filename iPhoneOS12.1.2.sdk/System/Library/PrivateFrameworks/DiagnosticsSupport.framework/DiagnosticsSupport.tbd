@@ -1,0 +1,51 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 3398A910-9291-324C-A5F0-057ADD529BAE' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DiagnosticsSupport.framework/DiagnosticsSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _DALogFileName, _DAMobileLogPath, _DARootLogPath, _DSArchiveClose, _DSArchiveOpen, _DSArchiveWrite,
+                          _DSEnhancedLoggingEventAskedForEnrollConsent, _DSEnhancedLoggingEventAskedForUploadConsent,
+                          _DSEnhancedLoggingEventCKRecordType, _DSEnhancedLoggingEventCancelledByUser,
+                          _DSEnhancedLoggingEventEndedWithIssueDidNotOccur, _DSEnhancedLoggingEventEndedWithIssueDidOccur,
+                          _DSEnhancedLoggingEventEnrollConsentApproved, _DSEnhancedLoggingEventEnrollConsentApprovedWithReview,
+                          _DSEnhancedLoggingEventEnrollConsentDenied, _DSEnhancedLoggingEventEvent,
+                          _DSEnhancedLoggingEventIssueDidNotOccurRetry, _DSEnhancedLoggingEventNotFound,
+                          _DSEnhancedLoggingEventSession, _DSEnhancedLoggingEventSessionKey,
+                          _DSEnhancedLoggingEventUploadConsentApproved, _DSEnhancedLoggingEventUploadConsentApprovedCellular,
+                          _DSEnhancedLoggingEventUploadConsentDenied, _DSEnhancedLoggingStateDefaultConsent,
+                          _DSEnhancedLoggingStateDefaultDates, _DSEnhancedLoggingStateDefaultDatesEnd,
+                          _DSEnhancedLoggingStateDefaultDatesStart, _DSEnhancedLoggingStateDefaultFollowUpOptions,
+                          _DSEnhancedLoggingStateDefaultIdentifiersToRetry, _DSEnhancedLoggingStateDefaultMetadata,
+                          _DSEnhancedLoggingStateDefaultQueue, _DSEnhancedLoggingStateDefaultQueueEntryExecuteAfterDuration,
+                          _DSEnhancedLoggingStateDefaultQueueEntryParameters, _DSEnhancedLoggingStateDefaultQueueEntryRetry,
+                          _DSEnhancedLoggingStateDefaultQueueEntryType, _DSEnhancedLoggingStateDefaultRetriesRemaining,
+                          _DSEnhancedLoggingStateDefaultStatus, _DSEnhancedLoggingStateDefaultUploadCompletedPercentage,
+                          _DSEnhancedLoggingStateDidBatchUpdate, _DSEnhancedLoggingStateDidUpdateStatus,
+                          _DSEnhancedLoggingStateDomain, _DSEnhancedLoggingStateFollowUpFrequency,
+                          _DSEnhancedLoggingStateFollowUpUseSpringBoardNotification,
+                          _DSEnhancedLoggingStateMetadataDeviceSerialNumber, _DSEnhancedLoggingStateMetadataDeviceType,
+                          _DSEnhancedLoggingStateMetadataEnrollmentTicketNumber, _DSEnhancedLoggingStateMetadataGigafilesToken,
+                          _DSEnhancedLoggingStateMetadataUserAppleID, _DSEnhancedLoggingStateParameterCommand,
+                          _DSEnhancedLoggingStateParameterPayload, _DSEnhancedLoggingStateParameterPayloadsDict,
+                          _DSEnhancedLoggingStateParameterRetries, _DSEnhancedLoggingStateUserInfoKey, _DSHexErrorDomain,
+                          _DiagnosticLogHandleForCategory, _DiagnosticsSupportVersionNumber, _DiagnosticsSupportVersionString,
+                          __buttonHIDEventFilterCallback, _kDADefaultBufferSize, _kDADefaultStringEncoding, _kDALineBreak,
+                          _kDSArchiveErrorDomain, _kDSCallStatsEntitlement, _kDSCapabilitiesResultKey, _kDSConnectionIDResultkey,
+                          _kDSDockTypeResultKey, _kDSFirmwareRevisionResultKey, _kDSHardwareButtonEntitlement,
+                          _kDSHardwareRevisionResultKey, _kDSIODeviceApplePencil, _kDSIODeviceSmartBatteryCase,
+                          _kDSIODeviceSmartBatteryCase_2018, _kDSIODeviceSmartKeyboard10_5inch, _kDSIODeviceSmartKeyboard12_9inch,
+                          _kDSIODeviceSmartKeyboard9_7inch, _kDSMACAddressResultKey, _kDSModelNumberResultKey, _kDSNameResultKey,
+                          _kDSSerialNumberResultKey ]
+    objc-classes:       [ _DSArchivePath, _DSCallStatisticsAggregator, _DSDateFormatter, _DSEADevice, _DSEnhancedLoggingEvent,
+                          _DSEnhancedLoggingState, _DSEnhancedLoggingStateQueueEntry, _DSEnhancedLoggingStateSnapshot,
+                          _DSEnhancedLoggingStateWhitelistEntry, _DSEntitlementUtilities, _DSGeneralLogCollector, _DSGeneralLogFile,
+                          _DSHardwareButtonEventHandler, _DSHardwareButtonEventMonitor, _DSIOHIDDevice, _DSIOPSDevice, _DSLogLine,
+                          _DSMutableArchive, _DSRemoteViewController, _DSResponder, _DSShapeView, _DSTestAutomation, _DSTextFile,
+                          _DSThermalLogLine, _DSUsageLogLine ]
+...

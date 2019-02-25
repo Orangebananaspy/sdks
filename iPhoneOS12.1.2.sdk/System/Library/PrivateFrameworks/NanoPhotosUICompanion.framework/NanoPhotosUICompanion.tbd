@@ -1,0 +1,30 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 014B16B9-F7CF-340C-AB62-E7CCFE0B2620' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoPhotosUICompanion.framework/NanoPhotosUICompanion
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _NPTOGlobalPrefsDomain, _NPTOGlobalPrefsPhotosFaceMemoryHistoryListChangedNotificationName,
+                          _NPTOGlobalPrefsPhotosFaceMemoryHistoryListKey,
+                          _NPTOGlobalPrefsPhotosFaceMemoryKeyAssetChangedNotificationName,
+                          _NPTOGlobalPrefsPhotosFaceMemoryKeyAssetKey, _NPTOLocketChangeChangedIndexesKey,
+                          _NPTOLocketChangeDeletedIndexesKey, _NPTOLocketChangeInsertedIndexesKey, _NPTOLocketChangeNuclearKey,
+                          _NPTOLocketDidBeginChangesNotification, _NPTOLocketDidChangeNotification,
+                          _NPTOLocketDidEndChangesNotification, _NPTOLocketExpectedLibrarySizeKey,
+                          _NPTOLocketSyncDidChangeNotification, _NPTOLocketSyncInProgressKey, _NPTOPrefsDiskPressureMissingImageCount,
+                          _NPTOPrefsDiskPressureMissingPhotoCountChangedNotificationName,
+                          _NPTOPrefsDiskPressureMissingPhotoCountKey, _NPTOPrefsDomain, _NPTOPrefsIdentifierForSyncedAlbum,
+                          _NPTOPrefsSyncCount, _NPTOPrefsSyncedAlbum, _NPTOPrefsSyncedAlbumIdentifierChangedNotificationName,
+                          _NPTOPrefsSyncedAlbumIdentifierKey, _NPTOPrefsSyncedPhotosLimitChangedNotificationName,
+                          _NPTOPrefsSyncedPhotosLimitKey, _NanoPhotosUICompanionVersionNumber, _NanoPhotosUICompanionVersionString,
+                          __npto_faceBounds, __npto_rectCentroid, __npto_rotateFaces, _addFaceMetaDataIfNecessary, _getImageDimensions,
+                          _getImageOrientation, _getPresentationTransform, _hasFaceMetadata, _nanophotos_log_app, _nanophotos_log_bridge,
+                          _nanophotos_log_sync, _setMetadataValue ]
+    objc-classes:       [ _NPTOGlobalPreference, _NPTOImageView, _NPTOIrisView, _NPTOLocket, _NPTOLocketReader, _NPTONotificationObserver,
+                          _NPTOPhoto, _NPTOPreference, _NPTOSidecarPhoto, _NPTOVideoPlayerView, __NPTOPlayerView ]
+...

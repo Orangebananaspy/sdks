@@ -1,0 +1,63 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: B5D3FE1C-9AE2-3B6E-9EED-3AAD7C922F7A' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Widgets.framework/Widgets
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    allowable-clients:  [ SpringBoard, "SpringBoard-Tests", SpringBoardUI, WidgetsTests ]
+    symbols:            [ _NCBundleIDForPID, _WGApplicationIconForImage, _WGApplicationIdentifierForWidgetWithBundleIdentifier,
+                          _WGAvailableWidgetsUpdatedNotification, _WGCachedNSHomeDirectory, _WGCachesPathForSandboxPath,
+                          _WGContainingBundleCachePathForWidgetWithContainingBundleIdentifier,
+                          _WGContainingBundleIdentifierForWidgetWithBundleIdentifier,
+                          _WGContainingBundleProxyForWidgetWithBundleIdentifer, _WGEnsureDirectoryExistsAtPath,
+                          _WGIsBundleWithIdentifierFirstParty, _WGIsBundleWithIdentifierInternal,
+                          _WGIsWidgetWithBundleIdentifierBuiltOnOrAfterSystemVersion, _WGIsWidgetWithBundleIdentifierInternal,
+                          _WGIsWidgetWithBundleIdentifierWantsTop, _WGLogSubsystem, _WGLogWidgets, _WGMainScreenReferenceBounds,
+                          _WGNewWidgetsCountKey, _WGPersistedStateURLForWidgetWithBundleIdentifier,
+                          _WGPlugInBundleIdentifiersForContainingBundleIdentifier, _WGRectRoundForMainScreenScale,
+                          _WGRegisterWidgetsLogging, _WGRoundToMainScreenScale, _WGSafeCast, _WGShortStringFromLayoutMode,
+                          _WGStocksWidgetIdentifier, _WGStringForAppearState, _WGStringFromLayoutMode,
+                          _WGStringFromWidgetLifeCycleSequenceState, _WGTodayViewArchiveGetArchive,
+                          _WGTodayViewArchiveGetDisplayModeForIdentifier, _WGTodayViewArchiveGetKnownForIdentifier,
+                          _WGTodayViewArchiveGetOrderedIdentifiersInGroup, _WGTodayViewArchiveGetPenalizedForIdentifier,
+                          _WGTodayViewArchiveMigrateArchiveFromLegacy, _WGTodayViewArchiveRemoveFromOrderedIdentifiers,
+                          _WGTodayViewArchiveSave, _WGTodayViewArchiveSetDisplayModeForIdentifier,
+                          _WGTodayViewArchiveSetKnownForIdentifier, _WGTodayViewArchiveSetOrderedIdentifiersInGroup,
+                          _WGTodayViewArchiveSetPenalizedForIdentifier, _WGWeatherWidgetIdentifier,
+                          _WGWidgetAssociatedApplicationIdentifier, _WGWidgetCachePathForWidgetWithBundleIdentifier,
+                          _WGWidgetErrorDomain, _WGWidgetGroupViewControllerWidgetContentStateDidChangeNotification,
+                          _WGWidgetHostingViewControllerErrorDomain, _WGWidgetInfoIconDidInvalidateNotification,
+                          _WGWidgetLifeCycleErrorDomain, _WGWidgetListEditViewControllerDidAppearNotification,
+                          _WGWidgetListEditViewControllerDidDisappearNotification,
+                          _WGWidgetListEditViewControllerWillAppearNotification,
+                          _WGWidgetListEditViewControllerWillDisappearNotification,
+                          _WGWidgetListViewControllerWidgetContentStateDidChangeNotification,
+                          _WGWidgetPersistentStateResetHasContent, _WGWidgetRowHeightDidChangeNotification,
+                          _WGWidgetViewControllerAddRequestBundleIdentifierKey, _WGWidgetViewControllerAddRequestNotification,
+                          _WGWidgetViewControllerDidRemoveSnapshotNotification, _WGWidgetViewControllerRemovedSnapshotURLKey,
+                          _WGWidgetViewControllerRemovedSnapshotWidgetIdentifierKey, _WGWidgetWantsTop, _WGWidgetWantsVisibleFrame,
+                          _WGWidgetsFrameworkBundle, _WidgetsVersionNumber, _WidgetsVersionString, __WGDataSourceIsEqualToDataSource,
+                          __WGGraphicsQuality, __WGIsQueueSuspended, __WGIsSystemVersionSameOrAfterSystemVersion, __WGMainScreenScale,
+                          __WGResumeQueue, __WGSupportsASTC, __WGSupportsMetal, __WGSuspendQueue,
+                          __WGTodayViewArchiveRemoveFromOrderedIdentifiersInGroup, _kWGWidgetViewControllerHasContentKey,
+                          _kWGWidgetViewControllerLargestAvailableDisplayMode, _kWGWidgetViewControllerUserSpecifiedDisplayMode ]
+    objc-classes:       [ _WGCalendarWidgetInfo, _WGCheckView, _WGCircleCheckView, _WGCollapsingView, _WGDataSourceManager,
+                          _WGExplanatoryView, _WGMajorListViewController, _WGMappedImageCache, _WGNewWidgetsButton,
+                          _WGShortLookStyleButton, _WGWidgetAttributionView, _WGWidgetDataSource, _WGWidgetDataSourceManager,
+                          _WGWidgetDatum, _WGWidgetDiscoveryController, _WGWidgetEventTracker, _WGWidgetGroupViewController,
+                          _WGWidgetHostingViewController, _WGWidgetInfo, _WGWidgetLifeCycleSequence, _WGWidgetListEditViewController,
+                          _WGWidgetListEditViewTableHeaderView, _WGWidgetListEditViewTableViewCell, _WGWidgetListFooterView,
+                          _WGWidgetListItemViewController, _WGWidgetListViewController, _WGWidgetPersistentStateController,
+                          _WGWidgetPlatterView, _WGWidgetViewController, _WGWidgetVisibilityManager, __WGBrokenWidgetView,
+                          __WGCAPackageView, __WGConcreteDataSource, __WGLockedOutWidgetView, __WGWidgetRemoteViewController ]
+    objc-ivars:         [ _WGShortLookStyleButton._backgroundView, _WGShortLookStyleButton._dimension,
+                          _WGShortLookStyleButton._fontProvider, _WGShortLookStyleButton._titleLabel,
+                          _WGWidgetListViewController._cancelTouchesAssertionsByWidgetID,
+                          _WGWidgetListViewController._discoveryController, _WGWidgetListViewController._maxVisibleContentSize,
+                          _WGWidgetListViewController._stackView, _WGWidgetListViewController._widgetIDsToItemVCs ]
+...

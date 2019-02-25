@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 36AA8B33-4409-32D0-AE01-D0D618DFD6BC' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAIMAPNotes.framework/DADaemonIMAPNotes.bundle/DADaemonIMAPNotes
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    objc-classes:       [ _DAIMAPNotesAgent, _DAIMAPNotesDaemonAccount, _DAIMAPNotesFolder, _DAIMAPNotesFolderListConsumerQueueWrapper,
+                          _DAIMAPNotesFolderSyncRequest, _DAIMAPNotesUtils, _IMAPNotesLibrary, _IMAPNotesOutgoingMessage ]
+    objc-ivars:         [ _DAIMAPNotesFolderSyncRequest._noteContext, _IMAPNotesLibrary._account, _IMAPNotesLibrary._noteContext,
+                          _IMAPNotesLibrary._notesAccount ]
+...

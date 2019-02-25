@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: F865218B-4E61-3FA0-B6CB-188E1C76ABE9' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Swift/libswiftCoreFoundation.dylib
+current-version:       0
+compatibility-version: 1
+swift-version:         5
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _$S14CoreFoundation9_CFObjectMp, _$S14CoreFoundation9_CFObjectPAAE2eeoiySbx_xtFZ,
+                          _$S14CoreFoundation9_CFObjectPAAE4hash4intoys6HasherVz_tF,
+                          _$S14CoreFoundation9_CFObjectPAAE9hashValueSivg, __swift_FORCE_LOAD_$_swiftCoreFoundation ]
+...

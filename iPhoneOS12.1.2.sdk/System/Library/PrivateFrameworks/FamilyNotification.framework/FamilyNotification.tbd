@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: DD8733B6-E0C0-3D47-9AF5-8CEA53E2553E' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FamilyNotification.framework/FamilyNotification
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ __FALogSystem ]
+    objc-classes:       [ _FAFamilyNotification, _FAFamilyNotifier ]
+...

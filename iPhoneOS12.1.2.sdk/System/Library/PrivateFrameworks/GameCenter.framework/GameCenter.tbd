@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: F6AC08AD-9F4A-37F2-9856-509C4A535C93' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GameCenter.framework/GameCenter
+current-version:       563.125.1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    re-exports:         [ /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation,
+                          /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI,
+                          /System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit ]
+    symbols:            [ _GKGameCenterUmbrellaFrameworkStub, _kGameCenterGameCenterVersionNumber,
+                          _kGameCenterGameCenterVersionString ]
+...

@@ -1,0 +1,23 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: E8E91CE1-2068-3FEC-B4F5-E3E6A83BF753' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BackgroundTaskAgent.framework/BackgroundTaskAgent
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _BackgroundTaskAgentAddJob, _BackgroundTaskAgentCopyJob, _BackgroundTaskAgentInit,
+                          _BackgroundTaskAgentRemoveJob, _btaLock, _btaUnlock, _bta_logconsole_asl_handle, _bta_logfile_asl_handle,
+                          _gClientName, _initSem, _initialized, _kBackgroundTaskAgentAllowedDuringRoaming,
+                          _kBackgroundTaskAgentAllowedDuringVoiceCall, _kBackgroundTaskAgentCellularAllowed,
+                          _kBackgroundTaskAgentJobExpired, _kBackgroundTaskAgentJobStatus, _kBackgroundTaskAgentJobStatusBatteryLevel,
+                          _kBackgroundTaskAgentJobStatusNetwork, _kBackgroundTaskAgentJobStatusPowerPluggedin,
+                          _kBackgroundTaskAgentJobStatusScreenBlanked, _kBackgroundTaskAgentJobWindowAdjustTime,
+                          _kBackgroundTaskAgentJobWindowEndTime, _kBackgroundTaskAgentJobWindowStartTime,
+                          _kBackgroundTaskAgentNetworkRequired, _kBackgroundTaskAgentPowerOptLevel,
+                          _kBackgroundTaskAgentPowerPluggedinTime, _kBackgroundTaskAgentRequiredBatteryLevel,
+                          _kBackgroundTaskAgentScreenBlankedTime, _kBackgroundTaskAgentUserContext ]
+...

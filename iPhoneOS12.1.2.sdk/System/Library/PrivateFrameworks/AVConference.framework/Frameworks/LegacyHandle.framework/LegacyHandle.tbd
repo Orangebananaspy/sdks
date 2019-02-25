@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 5410C2C9-8A95-37E6-AB64-A8DF98C553DC' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/LegacyHandle.framework/LegacyHandle
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _CheckInHandleDebug, _CheckOutHandleDebug, _CloseAllHandles, _CreateHandle, _FindHandle, _GetNumHandles ]
+...

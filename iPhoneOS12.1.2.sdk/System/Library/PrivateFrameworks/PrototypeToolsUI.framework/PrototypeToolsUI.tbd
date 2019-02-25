@@ -1,0 +1,20 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 38604EB1-A083-301C-A696-C0BABE17C81F' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PrototypeToolsUI.framework/PrototypeToolsUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _PTUIClientInterface, _PTUIMachService, _PTUINumericKeypadIsNeeded, _PTUINumericKeypadSetNeededWithWindow,
+                          _PTUIServerInterface, _PrototypeToolsUIVersionNumber, _PrototypeToolsUIVersionString ]
+    objc-classes:       [ _PTUIButtonRowTableViewCell, _PTUIChoiceRowTableViewCell, _PTUIChoiceViewController,
+                          _PTUIDrillDownRowTableViewCell, _PTUIEditFloatRowTableViewCell, _PTUIEditRowTableViewCell,
+                          _PTUIEditStringRowTableViewCell, _PTUIModuleController, _PTUINumericKeypad,
+                          _PTUIPresentViewControllerRowAction, _PTUIPushViewControllerRowAction, _PTUIRowTableViewCell,
+                          _PTUISettingsController, _PTUISliderRowTableViewCell, _PTUISwitchRowTableViewCell, __KeypadButton,
+                          __KeypadDismissButton, __PTSAccessorySlider, __PTUIChoiceCell ]
+...

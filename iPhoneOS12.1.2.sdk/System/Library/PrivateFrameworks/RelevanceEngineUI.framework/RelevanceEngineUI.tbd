@@ -1,0 +1,28 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: D08AFF1A-6537-3945-8497-D1C8D1F66EDD' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RelevanceEngineUI.framework/RelevanceEngineUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _REApplicationTintColor, _REDecodeImage, _REEncodeImage, _REEncodedImageCapInsetsKey, _REEncodedImageDataKey,
+                          _REEncodedImageOrientationKey, _REEncodedImageResizingModeKey, _REEncodedImageScaleKey,
+                          _REEncodedImageSupressHairlineKey, _REEncodedImageTemplateKey, _REImageNamedFromBundle,
+                          _RELegibilityColorForContentColor, _REMetadataBundleIdentifierKey, _RESuggestedBodyImageSizeForStyle,
+                          _RESuggestedHeaderImageSizeForStyle, _REUILocalizedString, _REUINowPlayingPlaceholderAlbumArtwork,
+                          _REUISampleRelevanceProviderForPosition, _REUITrainingContextActionInteraction,
+                          _REUITrainingContextDwellInteraction, _REUITrainingContextTapInteraction, _RelevanceEngineUIVersionNumber,
+                          _RelevanceEngineUIVersionString ]
+    objc-classes:       [ _REImageImage, _REUIDonatedElementDemoProperties, _REUIDonatedElementProperties,
+                          _REUIElementDonatedActionAction, _REUIElementIntentAction, _REUIRelevanceEngineController,
+                          _REUIRelevanceEngineControllerUpdateOperation, _REUITrainingContext, _REUIUpNextDataSource,
+                          _REUpNextAccessoryView, _REUpNextBaseCell, _REUpNextCollectionView, _REUpNextCollectionViewFlowLayout,
+                          _REUpNextCollectionViewFlowLayoutAttributes, _REUpNextCollectionViewSingleItemFlowLayout,
+                          _REUpNextHeaderView, _REUpNextImageView, _REUpNextLargeTextCell, _REUpNextLargeWithDetailTextCell,
+                          _REUpNextMultilineCell, _REUpNextThumbnailCell, _TableCell, __REUIBundlePlaceholder,
+                          __REUIControllerTrainingContext ]
+...

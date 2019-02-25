@@ -1,0 +1,22 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: AFFE99BC-CEE0-386D-B7FF-88D3C0716FCD' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CardKit.framework/CardKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _CRKIsLargeDevice, _CRKIsRTL, _CardKitVersionNumber, _CardKitVersionString, __CRKIsRTLWithApp,
+                          __CRKSystemRootDirectory ]
+    objc-classes:       [ _CRKCardPresentation, _CRKCardPresentationConfiguration, _CRKCardSectionViewConfiguration,
+                          _CRKCardSectionViewController, _CRKCardViewController, _CRKComposedStackView, _CRKComposedView,
+                          _CRKContainerCardSectionView, _CRKIdentifiedProviderRegistry, _CRKKeyline, _CRKOverlayButton,
+                          __CRKBuiltInProvider, __CRKBundleIdentifiedCardSectionViewProvider, __CRKBundleManager,
+                          __CRKCardSectionViewControllerFactory, __CRKCardSectionViewControllerRegistry, __CRKCardSectionViewLoader,
+                          __CRKCardViewControllerTransitionAnimator, __CRKCardViewControllerTransitionCoordinator,
+                          __CRKDebugOverlayView, __CRKHitTestPassThroughView, __CRKImageLoader, __CRKProviderBundle,
+                          __CRKProviderBundleManager, __CRKSectionShuffleTransitionAnimator, __CRKSendMessageCardFactory ]
+...

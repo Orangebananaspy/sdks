@@ -1,0 +1,13 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 50E7B07A-5C97-377C-8F4A-ED23E1C936A7' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IconServices.framework/IconServices
+current-version:       377
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    objc-classes:       [ _ISIcon, _ISIconLayer, _ISIconObserver, _ISImageDescriptor ]
+...

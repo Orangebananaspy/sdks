@@ -1,0 +1,41 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 98EAB074-D971-3F25-8F24-773DB556B802' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    allowable-clients:  [ AXHearingSupport, BatteryWidget, ChargingViewService, ControlCenterUI, ControlCenterUIKit, HomeUI, LoginUI,
+                          MaterialKitTests, MediaControls, NotificationCenter, PlatterKit, PreBoard, RecentsAppPopover, Sharing, SpringBoard,
+                          "SpringBoard-Tests", SpringBoardUI, TVRemoteUI, UserNotificationsUIKit, UserNotificationsUIKitTests, Widgets ]
+    symbols:            [ _ColorMatrixIdentity, _MTCompareBlurInputQualities, _MTIsValidBlurInputQuality, _MTLogLuma, _MTLogMaterials,
+                          _MTLogSubsystem, _MTMainScreenScale, _MTMaterialSettingsForRecipe, _MTMeshTransformIdentityMeshForMesh,
+                          _MTOptimizedMeshTransformForZoom, _MTRegisterMaterialKitLogging, _MTStringFromMaterialOptions,
+                          _MTStringFromMaterialRecipe, _MTUpdateMaterialSettingsFromArchive, _MaterialKitVersionNumber,
+                          _MaterialKitVersionString, _NSStringFromMTLumaDodgePillBackgroundLuminance,
+                          _NSStringFromMTLumaDodgePillStyle ]
+    objc-classes:       [ _MTColorDodgeStyling, _MTCompoundVibrantStyling, _MTLumaDodgePillSettings, _MTLumaDodgePillStyleSettings,
+                          _MTLumaDodgePillView, _MTMaterialSettingsInterpolator, _MTMaterialView, _MTPillView, _MTPlusDStyling,
+                          _MTPreviewBackgroundMaterialSettings, _MTStaticColorPillView, _MTSystemMaterialSettings,
+                          _MTSystemModuleDarkPlatterMaterialSettings, _MTSystemModuleMaterialSettings,
+                          _MTSystemModuleSheerMaterialSettings, _MTSystemModuleSimpleMaterialSettings,
+                          _MTSystemModuleSimpleSheerMaterialSettings, _MTSystemPlatterMaterialSettings,
+                          _MTSystemWidgetPlatterMaterialSettings, _MTVibrantHighContrastStyling, _MTVibrantListTintDarkStyling,
+                          _MTVibrantModuleRuleOnLightStyling, _MTVibrantPrimaryDarkStyling, _MTVibrantPrimaryStyling,
+                          _MTVibrantRuleStyling, _MTVibrantSecondaryAlternateStyling, _MTVibrantSecondaryDarkHighContrastStyling,
+                          _MTVibrantSecondaryDarkStyling, _MTVibrantSecondaryStyling, _MTVibrantStyling, _MTVibrantStylingProvider,
+                          _MTVibrantWidgetPrimaryDarkStyling, _MTVibrantWidgetPrimaryHighlightDarkStyling,
+                          _MTVibrantWidgetPrimaryHighlightStyling, _MTVibrantWidgetPrimaryStyling,
+                          _MTVibrantWidgetQuaternaryDarkStyling, _MTVibrantWidgetQuaternaryStyling,
+                          _MTVibrantWidgetSecondaryDarkStyling, _MTVibrantWidgetSecondaryHighlightDarkStyling,
+                          _MTVibrantWidgetSecondaryHighlightStyling, _MTVibrantWidgetSecondaryStyling,
+                          _MTVibrantWidgetTertiaryDarkStyling, _MTVibrantWidgetTertiaryStyling, __MTBackdropView,
+                          __MTVibrantStylingModuleProvider, __MTVibrantStylingPlatterProvider, __MTVibrantStylingVibrancyEffect,
+                          __MTVibrantStylingWidgetPlatterProvider ]
+    objc-ivars:         [ _MTVibrantStyling._composedFilter, _MTVibrantStylingProvider._materialSettings,
+                          _MTVibrantStylingProvider._observers ]
+...

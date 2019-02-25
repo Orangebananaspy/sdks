@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 0B2BC8D8-1600-3FB4-B306-5D6C881738E4' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioServerApplication.framework/AudioServerApplication
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    objc-classes:       [ _ASAAudioDevice, _ASAAudioFormat, _ASABooleanControl, _ASABox, _ASAClockDevice, _ASAControl, _ASACoreAudio,
+                          _ASALevelControl, _ASAObject, _ASAPlaythrough, _ASAPlugin, _ASASelectorControl, _ASAStream ]
+...

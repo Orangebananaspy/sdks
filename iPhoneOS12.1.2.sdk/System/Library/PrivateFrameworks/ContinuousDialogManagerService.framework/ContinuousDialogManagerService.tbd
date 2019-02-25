@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: B8D902A6-05E3-3056-8AB0-69ACED0405CE' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ContinuousDialogManagerService.framework/ContinuousDialogManagerService
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _CDMAssetTypeEmbeddedNL, _CDMDefaultsDomain, _CDMIsReadyForLocale, _CDMLogContext, _CDMLogInitIfNeeded,
+                          _CDMLoggingCategory, _CDMLoggingSubsystem, _CDMSetupXPCClientErrorCodeXPCError, _CDMSetupXPCClientErrorDomain,
+                          _CDMXPCClientErrorCodeXPCError, _CDMXPCClientErrorDomain, _ContinuousDialogManagerServiceVersionNumber,
+                          _ContinuousDialogManagerServiceVersionString ]
+    objc-classes:       [ _CDMSetupXPCClient, _CDMXPCClient ]
+...

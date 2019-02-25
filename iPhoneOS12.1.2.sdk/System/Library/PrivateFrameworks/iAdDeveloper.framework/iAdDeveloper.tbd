@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: BB9CC70F-C3B5-3F14-8C07-431EB7EA828D' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/iAdDeveloper.framework/iAdDeveloper
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    objc-classes:       [ _ADAdServerManifestManager, _ADAdServerManifestRecord, _ADEmbeddedAdServer, _HTSHTTPMessage,
+                          _HTSHTTPMessageRequest, _HTSHTTPMessageResponse, _HTSHTTPServer, _HTSHTTPServerConnection ]
+...

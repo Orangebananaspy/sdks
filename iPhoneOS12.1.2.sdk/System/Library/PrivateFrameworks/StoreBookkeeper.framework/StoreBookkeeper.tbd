@@ -1,0 +1,29 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: AD0CC329-0E7D-376A-A52E-8C7DF7D78516' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _SBKStoreAccount, _SBKStoreAccountLastFailedSyncIdentifier, _SBKStoreAccountLastSyncedIdentifier,
+                          _SBKSyncAnchorVersionBase, _SBKSyncAnchorVersionMaximum,
+                          _SBKUniversalPlaybackPositionMediaItemPropertyAlbumTitle,
+                          _SBKUniversalPlaybackPositionMediaItemPropertyBookmarkTime,
+                          _SBKUniversalPlaybackPositionMediaItemPropertyEntityType,
+                          _SBKUniversalPlaybackPositionMediaItemPropertyHasBeenPlayed,
+                          _SBKUniversalPlaybackPositionMediaItemPropertyItemArtist,
+                          _SBKUniversalPlaybackPositionMediaItemPropertyMetadataTimestamp,
+                          _SBKUniversalPlaybackPositionMediaItemPropertyPlayCount,
+                          _SBKUniversalPlaybackPositionMediaItemPropertyPodcastGUID,
+                          _SBKUniversalPlaybackPositionMediaItemPropertyPodcastURL,
+                          _SBKUniversalPlaybackPositionMediaItemPropertyStoreID,
+                          _SBKUniversalPlaybackPositionMediaItemPropertySubscriptionStoreID,
+                          _SBKUniversalPlaybackPositionMediaItemPropertyTitle ]
+    objc-classes:       [ _SBKLoadDomainVersionRequestHandler, _SBKLogger, _SBKPreferences, _SBKPullValueTransaction,
+                          _SBKPushValueTransaction, _SBKStoreAuthenticationController, _SBKStoreURLBagContext, _SBKSyncTransaction,
+                          _SBKTransactionController, _SBKUniversalPlaybackPositionMetadata, _SBKUniversalPlaybackPositionStore ]
+...

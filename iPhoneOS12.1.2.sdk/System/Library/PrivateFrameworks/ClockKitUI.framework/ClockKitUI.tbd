@@ -1,0 +1,32 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: FE101BAF-5292-3E66-AF6F-9C0224DEC24D' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ClockKitUI.framework/ClockKitUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _CLKUIAssetCatalogImageNamed, _CLKUIAssetCatalogImageNamedForDevice, _CLKUIComputePow2SubRect,
+                          _CLKUIDecodeRGBfFromSRGB8, _CLKUIEncodeSRGB8FromRGBf, _CLKUIEncodeSRGBfFromRGBf, _CLKUIGLPerformWithContext,
+                          _CLKUIImageNamed, _CLKUIImageNamedForDevice, _CLKUIImageNamedFromAssetBundleForDevice,
+                          _CLKUIImageNamedFromBundle, _CLKUIImageNamedFromBundleForDevice, _CLKUILocalizedString,
+                          _CLKUIMetalIsSupported, _CLKUIOrderedImageSuffixes, _CLKUIOrderedImageSuffixesForDevice,
+                          _CLKUIOrderedImageSuffixesForSizeClass, _CLKUIShaderDummyGreenName, _CLKUIShaderDummyRedName,
+                          _CLKUIShaderFacetedName, _CLKUIShaderFsFacetName, _CLKUIShaderRadialName, _CLKUIShaderRosetteName,
+                          _ClockKitUIVersionNumber, _ClockKitUIVersionString, __CLKOrderedVersionImageSuffixesForDeviceVersion,
+                          __CLKUICheckGLError, __CLKUIImageNamedFromBundleForDeviceWithSuffixes,
+                          __CLKUIOrderedImageSizeSuffixesForSizeClass, __CLKUIRawImageGenerateMipmapsSRGB8,
+                          __CLKUIRawImageWriteToFileSRGB8, __CLKVersionImageSuffixesByVersion, __ImageWithAnnotatedNameInBundle,
+                          __SharedQuadVertexFunction, __SizeClassSuffixesByPrependingVersionSuffixes,
+                          _startAndEndOfDayForDateInTimeZone ]
+    objc-classes:       [ _CLKUIAlmanacTransitInfo, _CLKUIAtlas, _CLKUIAtlasBacking, _CLKUIChronoButton, _CLKUIEAGLLayer, _CLKUIGLAtlas,
+                          _CLKUIGLProgram, _CLKUIGLQuad2D, _CLKUIGLQuadRenderer, _CLKUIGLQuadView, _CLKUIGLResourceManager,
+                          _CLKUIMetalAtlas, _CLKUIMetalQuad2D, _CLKUIMetalQuadRenderer, _CLKUIMetalQuadView, _CLKUIMetalResourceManager,
+                          _CLKUIMmapFile, _CLKUIQuad, _CLKUIQuad2D, _CLKUIQuadView, _CLKUIQuadViewDisplayLink, _CLKUIResourceManager,
+                          _CLKUIResourceProvider, _CLKUIResourceProviderKey, _CLKUIShader, _CLKUITexture, _CLKUITimeLabel,
+                          _CLKUITimeLabelStyle, _CLKUIWheelsOfTimeButton, __CLKUIBasicTimeLabelManager, __CLKUIBlinkingTimeLabelManager ]
+    objc-ivars:         [ _CLKUIQuadViewDisplayLink._displayLink, _CLKUIQuadViewDisplayLink._quadView ]
+...

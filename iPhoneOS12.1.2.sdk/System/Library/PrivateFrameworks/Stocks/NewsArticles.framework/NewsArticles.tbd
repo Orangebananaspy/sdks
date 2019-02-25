@@ -1,0 +1,21 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: 05E2D1C5-6B20-3BE2-BD32-EC8A38AAA40C' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Stocks/NewsArticles.framework/NewsArticles
+current-version:       1
+compatibility-version: 1
+swift-version:         5
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    allowable-clients:  [ NewsArticles, NewsArticlesTests, NewsFeed, NewsFeedTests, Stocks, StocksAnalytics, StocksAnalyticsTests, StocksCore,
+                          StocksCoreTests, StocksTests, StocksToday, StocksUI, StocksUITests ]
+    symbols:            [ _NewsArticlesVersionNumber, _NewsArticlesVersionString ]
+    objc-classes:       [ _NAActivityViewController, _NAAnalyticsAssembly, _NAAssembly, _NAManagerAssembly, _NARendererAssembly,
+                          _NAReportConcernAssembly, _NAServiceAssembly, _NAStylerAssembly, _NAUtilityAssembly, _SUSharingAssembly,
+                          _TSArticleAssembly, _TSArticleViewerAssembly, _TSReportConcernDetailAssembly, _TSReportConcernModule,
+                          __TtC12NewsArticles19SharingActivityItem, __TtC12NewsArticles20ReportConcernCommand,
+                          __TtC12NewsArticles25ReportConcernDetailModule, __TtC12NewsArticles27ArticleViewerViewController ]
+...

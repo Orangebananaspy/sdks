@@ -1,0 +1,23 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64 ]
+uuids:                 [ 'arm64: DA35773B-2712-3B4D-81E7-097904E6D711' ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ arm64 ]
+    symbols:            [ _NACGFloatByLinearlyInterpolatingFloats, _NACGFloatCeilForScale, _NACGFloatEpsilon, _NACGFloatEqualToFloat,
+                          _NACGFloatGreaterThanFloat, _NACGFloatGreaterThanOrEqualToFloat, _NACGFloatIsOne, _NACGFloatIsZero,
+                          _NACGFloatLessThanFloat, _NACGFloatLessThanOrEqualToFloat, _NACGFloatPowerOf2Ceil, _NADegreesToRadians,
+                          _NARadiansFromCGAffineTransform, _NARadiansToDegrees, _NARectUnit, _NARectWithCGSize, _NAStringFromCGPoint,
+                          _NAStringFromCGRect, _NAStringFromCGSize, _NAUICurrentContentSizeCategoryIsLargerThanOrEqualToCategory,
+                          _NAUIEnumerateContentSizeCategoriesInIncreasingOrder, _NAUILayoutMetricsForUIEdgeInsetsNamed,
+                          _NAUILayoutSizeNoDimension, _NAUIShortDescriptionFromUIContentSizeCategory,
+                          _NSStringFromUIInterfaceOrientation, _NSStringFromUIInterfaceOrientationMask,
+                          _NetAppsUtilitiesUIVersionNumber, _NetAppsUtilitiesUIVersionString ]
+    objc-classes:       [ _NAUIContentSizeLayoutConstraint, _NAUIDeviceUtilities, _NAUILayoutConstraintSet, _NAUITextStyleDescriptor,
+                          _NAUIUsageStatistics, _NAUIWeakRef ]
+...
