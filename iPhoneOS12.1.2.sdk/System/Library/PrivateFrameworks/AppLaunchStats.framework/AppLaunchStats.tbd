@@ -1,13 +1,10 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: 91E8CA63-1B58-32CE-B119-07CF63914BC7' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
+  - archs:              [ armv7, armv7s, arm64 ]
     objc-classes:       [ _AppLaunchStats ]
 ...

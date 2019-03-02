@@ -1,17 +1,14 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: 98B311B9-65D5-3CAB-AF21-58AD81CA8DED' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ServiceManagement.framework/ServiceManagement
-current-version:       1336.220.5
+current-version:       1205.30.29
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
-    symbols:            [ _SMCopyAllJobDictionaries, _SMCopyEnabledLoginItems_4BTM, _SMJobCopyDictionary, _SMJobIsEnabled, _SMJobRemove,
-                          _SMJobSetEnabled, _SMJobSubmit, _SMLaunchdPlistSetUserAllowed_4BTM, _SMLoginItemSetUserAllowed_4BTM,
-                          __SMLoginItemSetEnabledWithURL, _kSMDomainLocalLaunchd, _kSMDomainSystemLaunchd, _kSMDomainUserLaunchd,
-                          _kSMErrorDomainFramework, _kSMErrorDomainIPC, _kSMErrorDomainLaunchd, _kSMInfoKeyAuthorizedClients,
-                          _kSMInfoKeyPrivilegedExecutables ]
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _SMCopyAllJobDictionaries, _SMCopyEnabledLoginItems_4BTM, _SMJobCopyDictionary, _SMJobIsEnabled,
+                          _SMJobRemove, _SMJobSetEnabled, _SMJobSubmit, _SMLaunchdPlistSetUserAllowed_4BTM,
+                          _SMLoginItemSetUserAllowed_4BTM, __SMLoginItemSetEnabledWithURL, _kSMDomainLocalLaunchd,
+                          _kSMDomainSystemLaunchd, _kSMDomainUserLaunchd, _kSMErrorDomainFramework, _kSMErrorDomainIPC,
+                          _kSMErrorDomainLaunchd, _kSMInfoKeyAuthorizedClients, _kSMInfoKeyPrivilegedExecutables ]
 ...

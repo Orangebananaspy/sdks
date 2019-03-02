@@ -1,14 +1,11 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: 0DD3E480-1626-33F3-9B2A-142EE787305C' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
+  - archs:              [ armv7, armv7s, arm64 ]
     symbols:            [ _GKAlertViewDidFinishAnimatingNotification, _GKAlertViewNewContentViewUserInfoKey,
                           _GKAlertViewOldContentViewUserInfoKey, _GKPeerPickerConnectionNearbyKey, _GKPeerPickerFrameworkBundle,
                           __localizedCaseInsensitivePeerCompare, _gGKPeerPickerControllerTrace, _tailTruncateStringToFit ]
@@ -16,8 +13,11 @@ exports:
                           _GKPeerPickerTableViewCell, _GKPeerPickerViewController ]
     objc-ivars:         [ _GKAlertView._clipView, _GKAlertView._contentView, _GKContentView._activityIndicator,
                           _GKContentView._cancelButton, _GKContentView._connectionButtons, _GKContentView._iconView,
-                          _GKContentView._messageLabel, _GKContentView._needsLayout, _GKContentView._otherButton, _GKContentView._table,
-                          _GKContentView._tableWellView, _GKContentView._titleLabel, _GKPeerPickerTableViewCell._topSeparator,
+                          _GKContentView._messageLabel, _GKContentView._needsLayout, _GKContentView._otherButton,
+                          _GKContentView._table, _GKContentView._tableWellView, _GKContentView._titleLabel,
+                          _GKPeerPickerController._picker, _GKPeerPickerControllerInternal._connectionTypesMask,
+                          _GKPeerPickerControllerInternal._delegate, _GKPeerPickerControllerInternal._pickerViewController,
+                          _GKPeerPickerTableViewCell._topSeparator, _GKPeerPickerViewController._alertCancelled,
                           _GKPeerPickerViewController._alertPresented, _GKPeerPickerViewController._animating,
                           _GKPeerPickerViewController._bluetoothStatus, _GKPeerPickerViewController._btView,
                           _GKPeerPickerViewController._connectTypeView, _GKPeerPickerViewController._connectionTypesMask,

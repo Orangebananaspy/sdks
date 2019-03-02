@@ -1,30 +1,26 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: 1693910D-068A-33CD-A187-DCDBA5E2EC69' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Fitness.framework/Fitness
 current-version:       0
 compatibility-version: 0
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
-    symbols:            [ _CURRENT_INTERVAL_WORKOUT_DEFINITION_VERSION, _FIAgeInYearsForDateOfBirth,
-                          _FIAgeInYearsForDateOfBirthWithCurrentDateAndCalendar, _FICMotionConditionForWheelchairUse,
-                          _FICanonicalQuantityUnitForIntervalType, _FIDailyGoalTypeFromString, _FIDefaultDayLength,
-                          _FIDistanceQuantityTypeIdentifierForActivityType, _FIFilterPauseResumeEvents, _FIFilterSamplesByType,
-                          _FIIntervalErrorDomain, _FIIntervalErrorWithDescription, _FIMonthlyChallengeAchievementNamePrefix,
-                          _FINanoLifestylePreferencesChangedNotificationKey, _FIQuantityTypeForActivityType,
-                          _FISampleQuantityInsideDateInterval, _FISetOutErrorIfNotNull, _FISortEventsByDate, _FISortSamplesByDate,
-                          _FIStandardDistanceQuantity, _FIStringFromDailyGoalType, _FIThresholdDateInsideSample,
-                          _FITypicalDayActivityModelDaysOfActivityHistory,
-                          _FITypicalDayActivityModelTodayActivityDidChangeNotification,
-                          _HPRFSessionTrackerAppSettingsIntervalWorkoutDefinitions,
-                          _HPRFSessionTrackerAppSettingsIntervalWorkoutDefinitionsVersion,
-                          _HPRFSessionTrackerAppSettingsIntervalWorkoutsDomain, _MINIMUM_INTERVAL_WORKOUT_DEFINITION_VERSION,
-                          _UnitForGoalType ]
-    objc-classes:       [ _FIActivitySettingsController, _FIIntervalDefinition, _FIIntervalQuantityTrigger, _FIIntervalSetDefinition,
-                          _FIIntervalWorkoutDefinition, _FIIntervalWorkoutDefinitionsManager, _FIMutableTimeSliceGroup,
-                          _FIQuantityInterval, _FIQuantityIntervalController, _FIQuantityTimeSlice, _FIReduction, _FISimpleHistogram,
-                          _FITrailingIntervalController, _FITrailingQuantityTimeSlice, _FITypicalDayActivityModel, _FIValidation ]
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _FIAgeInYearsForDateOfBirth, _FIAgeInYearsForDateOfBirthWithCurrentDateAndCalendar,
+                          _FICMotionConditionForWheelchairUse, _FIDefaultDayLength, _FIMonthlyChallengeAchievementNamePrefix,
+                          _FIMonthlyChallengeBadgeNameSuffixFromIdentifier, _FITypicalDayActivityModelDaysOfActivityHistory,
+                          _FITypicalDayActivityModelTodayActivityDidChangeNotification, _UnitForGoalType ]
+    objc-classes:       [ _FIActivitySettingsController, _FISimpleHistogram, _FITypicalDayActivityModel ]
+    objc-ivars:         [ _FIActivitySettingsController._biologicalSex, _FIActivitySettingsController._dateOfBirth,
+                          _FIActivitySettingsController._dirtyPropertiesMap, _FIActivitySettingsController._healthStore,
+                          _FIActivitySettingsController._height, _FIActivitySettingsController._updateHandler,
+                          _FIActivitySettingsController._weight, _FIActivitySettingsController._wheelchairUse,
+                          _FISimpleHistogram._bucketCount, _FISimpleHistogram._buckets,
+                          _FITypicalDayActivityModel._activitySummaryBarrierGroup,
+                          _FITypicalDayActivityModel._activitySummaryLoaded, _FITypicalDayActivityModel._delegate,
+                          _FITypicalDayActivityModel._interval, _FITypicalDayActivityModel._projectedOffWristDateToday,
+                          _FITypicalDayActivityModel._queue, _FITypicalDayActivityModel._queue_bucketDates,
+                          _FITypicalDayActivityModel._queue_currentActivitySummary,
+                          _FITypicalDayActivityModel._queue_energyHistogram, _FITypicalDayActivityModel._queue_exerciseHistogram,
+                          _FITypicalDayActivityModel._totalActiveDays ]
 ...

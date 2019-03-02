@@ -1,13 +1,12 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: C0941F25-D68D-3215-9ED6-C487B657DECA' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PowerlogDatabaseReader.framework/PowerlogDatabaseReader
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _PowerlogDatabaseReaderVersionNumber, _PowerlogDatabaseReaderVersionString ]
     objc-classes:       [ _PLDatabaseReader ]
+    objc-ivars:         [ _PLDatabaseReader._dbConnection ]
 ...

@@ -1,25 +1,22 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: B3F1BF70-83D4-3E10-91B4-7CCA8EFFF0C5' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
+  - archs:              [ armv7, armv7s, arm64 ]
     symbols:            [ _CFBCGetDiagnosticsSubmissionAllowedClassIdentifier,
                           _CFBCGetDiagnosticsSubmissionAllowedResponseAllowedPListKey,
-                          _CFBCGetDiagnosticsSubmissionAllowedResponseClassIdentifier, _CFBCGetNumberFormattedStringClassIdentifier,
-                          _CFBCGetNumberFormattedStringLocalePListKey, _CFBCGetNumberFormattedStringNumberPListKey,
-                          _CFBCGetNumberFormattedStringResponseClassIdentifier, _CFBCGetNumberFormattedStringResponseResultPListKey,
-                          _CFBCGetNumberFormattedStringStylePListKey, _CFBCGetNumberFormattedStringVariantPListKey, _CFBCGroupAcronym,
-                          _CFBCGroupIdentifier, _CFBCWriteDnuForSubmissionClassIdentifier,
-                          _CFBCWriteDnuForSubmissionFilePrefixPListKey, _CFBCWriteDnuForSubmissionSubmittedDataPListKey,
-                          _CFBSBatteryStatusBatteryChargingPListKey, _CFBSBatteryStatusBatteryPercentPListKey,
-                          _CFBSBatteryStatusClassIdentifier, _CFBSBatteryStatusCommandClassIdentifier,
-                          _CFBSBatteryStatusCommandCompletedBatteryStatusesPListKey,
+                          _CFBCGetDiagnosticsSubmissionAllowedResponseClassIdentifier,
+                          _CFBCGetNumberFormattedStringClassIdentifier, _CFBCGetNumberFormattedStringLocalePListKey,
+                          _CFBCGetNumberFormattedStringNumberPListKey, _CFBCGetNumberFormattedStringResponseClassIdentifier,
+                          _CFBCGetNumberFormattedStringResponseResultPListKey, _CFBCGetNumberFormattedStringStylePListKey,
+                          _CFBCGetNumberFormattedStringVariantPListKey, _CFBCGroupAcronym, _CFBCGroupIdentifier,
+                          _CFBCWriteDnuForSubmissionClassIdentifier, _CFBCWriteDnuForSubmissionFilePrefixPListKey,
+                          _CFBCWriteDnuForSubmissionSubmittedDataPListKey, _CFBSBatteryStatusBatteryChargingPListKey,
+                          _CFBSBatteryStatusBatteryPercentPListKey, _CFBSBatteryStatusClassIdentifier,
+                          _CFBSBatteryStatusCommandClassIdentifier, _CFBSBatteryStatusCommandCompletedBatteryStatusesPListKey,
                           _CFBSBatteryStatusCommandCompletedClassIdentifier, _CFBSBatteryStatusDeviceNamePListKey,
                           _CFBSBatteryStatusLowBatteryPListKey, _CFBSGroupAcronym, _CFBSGroupIdentifier,
                           _CFCBEnableNightShiftFailedErrorCode, _CFCBGetNightShiftModeClassIdentifier,
@@ -38,15 +35,17 @@ exports:
                           _CFCBSetNightShiftModeEnablePListKey, _CFCBSetNightShiftModeFailedErrorCode,
                           _CFCBSetNightShiftModeModePListKey, _CFCBSetNightShiftModeOptionPListKey,
                           _CFCBSetNightShiftModeSchedulePListKey, _CFCBSetNightShiftScheduleFailedErrorCode,
-                          _CFCBUnknownNightShiftModeErrorCode, _CFCBUnknownNightShiftOptionErrorCode, _CFCLError, _CFCLGroupAcronym,
-                          _CFCLGroupIdentifier, _CFCLReverseGeoCodeClassIdentifier, _CFCLReverseGeoCodeCompletedAddressPListKey,
-                          _CFCLReverseGeoCodeCompletedAreasOfInterestPListKey, _CFCLReverseGeoCodeCompletedClassIdentifier,
-                          _CFCLReverseGeoCodeCompletedCountryPListKey, _CFCLReverseGeoCodeCompletedLocalityPListKey,
-                          _CFCLReverseGeoCodeCompletedNamePListKey, _CFCLReverseGeoCodeCompletedPostalCodePListKey,
-                          _CFCLReverseGeoCodeCompletedRegionPListKey, _CFCLReverseGeoCodeLatitudePListKey,
-                          _CFCLReverseGeoCodeLongitudePListKey, _CFCNAutoCompleteAddressTypeAddressTypeEmailValue,
+                          _CFCBUnknownNightShiftModeErrorCode, _CFCBUnknownNightShiftOptionErrorCode, _CFCLError,
+                          _CFCLGroupAcronym, _CFCLGroupIdentifier, _CFCLReverseGeoCodeClassIdentifier,
+                          _CFCLReverseGeoCodeCompletedAddressPListKey, _CFCLReverseGeoCodeCompletedAreasOfInterestPListKey,
+                          _CFCLReverseGeoCodeCompletedClassIdentifier, _CFCLReverseGeoCodeCompletedCountryPListKey,
+                          _CFCLReverseGeoCodeCompletedLocalityPListKey, _CFCLReverseGeoCodeCompletedNamePListKey,
+                          _CFCLReverseGeoCodeCompletedPostalCodePListKey, _CFCLReverseGeoCodeCompletedRegionPListKey,
+                          _CFCLReverseGeoCodeLatitudePListKey, _CFCLReverseGeoCodeLongitudePListKey,
+                          _CFCNAutoCompleteAddressTypeAddressTypeEmailValue,
                           _CFCNAutoCompleteAddressTypeAddressTypeInstantMessageValue,
-                          _CFCNAutoCompleteAddressTypeAddressTypeNoneValue, _CFCNAutoCompleteAddressTypeAddressTypePhoneNumberValue,
+                          _CFCNAutoCompleteAddressTypeAddressTypeNoneValue,
+                          _CFCNAutoCompleteAddressTypeAddressTypePhoneNumberValue,
                           _CFCNAutoCompleteFetchContextBundleIdentifiersPListKey, _CFCNAutoCompleteFetchContextClassIdentifier,
                           _CFCNAutoCompleteFetchContextDatePListKey, _CFCNAutoCompleteFetchContextDomainIdentifierPListKey,
                           _CFCNAutoCompleteFetchContextLocationUUIDPListKey,
@@ -119,21 +118,29 @@ exports:
                           _CFVSGetVoiceAssetsRequestGenderPListKey, _CFVSGetVoiceAssetsRequestLanguagePListKey,
                           _CFVSGetVoiceAssetsRequestQualityPListKey, _CFVSGetVoiceAssetsResponseClassIdentifier,
                           _CFVSGetVoiceAssetsResponseVoiceAssetsPListKey, _CFVSGroupAcronym, _CFVSGroupIdentifier,
-                          _CFVSNotSupportedErrorCode, _CFVSQueryFailedErrorCode, _kCFClientScripterBundleID, _kCFMessageURLPrefix ]
+                          _CFVSNotSupportedErrorCode, _CFVSQueryFailedErrorCode, _kCFMessageURLPrefix ]
     objc-classes:       [ _CFBCGetDiagnosticsSubmissionAllowed, _CFBCGetDiagnosticsSubmissionAllowedResponse,
                           _CFBCGetNumberFormattedString, _CFBCGetNumberFormattedStringResponse, _CFBCWriteDnuForSubmission,
-                          _CFBSBatteryStatus, _CFBSBatteryStatusCommand, _CFBSBatteryStatusCommandCompleted, _CFCBGetNightShiftMode,
-                          _CFCBNightShiftSchedule, _CFCBNightShiftStatus, _CFCBNightShiftTransitionTime, _CFCBSetNightShiftMode,
-                          _CFCLReverseGeoCode, _CFCLReverseGeoCodeCompleted, _CFCNAutoCompleteFetchContext,
-                          _CFCNAutoCompleteFetchDelelegate, _CFCNAutoCompleteFetchRequest, _CFCNAutoCompleteFetchResponse,
-                          _CFCNAutoCompleteResult, _CFClient, _CFCommandProcessor, _CFCommandQueuer, _CFMGGetMobileGestaltBoolRequest,
-                          _CFMGGetMobileGestaltBoolResponse, _CFMGGetMobileGestaltStringRequest, _CFMGGetMobileGestaltStringResponse,
-                          _CFMMessagesQuery, _CFMMessagesQueryResponse, _CFMetrics, _CFPBJSONReader, _CFPBJSONUtils, _CFPBJSONWriter,
-                          _CFPBProperty, _CFSFAddToSafariReadingList, _CFSGSuggestContactMatchesWithTextSearch, _CFSGSuggestedContact,
+                          _CFBSBatteryStatus, _CFBSBatteryStatusCommand, _CFBSBatteryStatusCommandCompleted,
+                          _CFCBGetNightShiftMode, _CFCBNightShiftSchedule, _CFCBNightShiftStatus, _CFCBNightShiftTransitionTime,
+                          _CFCBSetNightShiftMode, _CFCLReverseGeoCode, _CFCLReverseGeoCodeCompleted,
+                          _CFCNAutoCompleteFetchContext, _CFCNAutoCompleteFetchDelelegate, _CFCNAutoCompleteFetchRequest,
+                          _CFCNAutoCompleteFetchResponse, _CFCNAutoCompleteResult, _CFClient, _CFCommandProcessor,
+                          _CFCommandQueuer, _CFMGGetMobileGestaltBoolRequest, _CFMGGetMobileGestaltBoolResponse,
+                          _CFMGGetMobileGestaltStringRequest, _CFMGGetMobileGestaltStringResponse, _CFMMessagesQuery,
+                          _CFMMessagesQueryResponse, _CFPBJSONReader, _CFPBJSONUtils, _CFPBJSONWriter, _CFPBProperty,
+                          _CFSFAddToSafariReadingList, _CFSGSuggestContactMatchesWithTextSearch, _CFSGSuggestedContact,
                           _CFSGSuggestedContacts, _CFServiceConnector, _CFServiceHelper, _CFVSGetVoiceAssetsRequest,
                           _CFVSGetVoiceAssetsResponse ]
-    objc-ivars:         [ _CFPBProperty._convertFromString, _CFPBProperty._convertToString, _CFPBProperty._count,
+    objc-ivars:         [ _CFCNAutoCompleteFetchDelelegate._fetchCancelable, _CFCNAutoCompleteFetchDelelegate._results,
+                          _CFCNAutoCompleteFetchDelelegate._serviceHelperCompletion,
+                          _CFCNAutoCompleteFetchDelelegate._watchDogTimer, _CFClient._commandQueuer, _CFClient._queue,
+                          _CFClient._serviceHelper, _CFCommandProcessor._commandQueuer, _CFCommandProcessor._serviceHelper,
+                          _CFCommandQueuer._commandQueue, _CFPBJSONReader._objNamesToPropMaps, _CFPBJSONReader._propertyCache,
+                          _CFPBProperty._convertFromString, _CFPBProperty._convertToString, _CFPBProperty._count,
                           _CFPBProperty._fromDictionaryReprFn, _CFPBProperty._getter, _CFPBProperty._has, _CFPBProperty._name,
-                          _CFPBProperty._setter, _CFPBProperty._structFields, _CFPBProperty._structName, _CFPBProperty._structSize,
-                          _CFPBProperty._subType, _CFPBProperty._toDictionaryReprFn, _CFPBProperty._type ]
+                          _CFPBProperty._objectType, _CFPBProperty._setter, _CFPBProperty._structFields,
+                          _CFPBProperty._structName, _CFPBProperty._structSize, _CFPBProperty._subObjectType,
+                          _CFPBProperty._subType, _CFPBProperty._toDictionaryReprFn, _CFPBProperty._type,
+                          _CFServiceHelper._isClientLiteHelper, _CFServiceHelper._serviceHelper ]
 ...

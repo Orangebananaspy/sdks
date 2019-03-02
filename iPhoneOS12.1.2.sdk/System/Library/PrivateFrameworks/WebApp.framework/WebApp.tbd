@@ -1,13 +1,16 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: 5684DDA1-D568-3F95-852E-92471575CA71' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WebApp.framework/WebApp
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
+  - archs:              [ armv7, armv7s, arm64 ]
     symbols:            [ _WebAppMainEntry ]
+    objc-classes:       [ _WebAppController, _WebAppControllerWK2, _WebAppViewController, _WebApplication ]
+    objc-ivars:         [ _WebAppController._loadingView, _WebAppController._orientation, _WebAppController._webClip,
+                          _WebAppController._window, _WebAppController.snapshotHideTimeHasExpired,
+                          _WebAppController.snapshotHideTimer, _WebAppControllerWK2._cancelViewServiceRequest,
+                          _WebAppControllerWK2._contentViewController, _WebAppViewController._setupRootViewColor,
+                          _WebAppViewController._statusBarStyle, _WebApplication._webApp ]
 ...

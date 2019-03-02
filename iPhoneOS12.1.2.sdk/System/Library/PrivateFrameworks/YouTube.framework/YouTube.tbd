@@ -1,14 +1,11 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: 2AB42DCA-AFBB-30C0-9179-1141D131CF0C' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/YouTube.framework/YouTube
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
+  - archs:              [ armv7, armv7s, arm64 ]
     symbols:            [ _XMLHTTPRequestAuthenticationFailureErrorCode, _XMLHTTPRequestErrorDomain,
                           _XMLHTTPRequestLoadingStatusDidChangeNotification, _XMLHTTPRequestServiceUnavailableErrorCode,
                           _XMLHTTPRequestUnknownErrorCode, _YTAcccountAuthenticatorErrorURLKey,
@@ -24,8 +21,12 @@ exports:
     objc-classes:       [ _XMLSAXHTTPRequest, _YTAccountAuthenticator, _YTAuthenticator, _YTAuthenticatorDeferredRequest,
                           _YTCategoriesRequest, _YTMutableURLRequest, _YTWebServiceConfig, _YTXMLHTTPRequest ]
     objc-ivars:         [ _XMLSAXHTTPRequest._connection, _XMLSAXHTTPRequest._invalidResponse, _XMLSAXHTTPRequest._rawData,
-                          _XMLSAXHTTPRequest._request, _XMLSAXHTTPRequest._saxHandler, _YTAuthenticator._accountAuthState,
+                          _XMLSAXHTTPRequest._request, _XMLSAXHTTPRequest._saxHandler, _YTAccountAuthenticator._account,
+                          _YTAccountAuthenticator._accountRefreshToken, _YTAccountAuthenticator._accountToken,
+                          _YTAccountAuthenticator._accountYouTubeName, _YTAuthenticator._accountAuthState,
                           _YTAuthenticator._deferredRequests, _YTAuthenticator._delegate,
                           _YTAuthenticatorDeferredRequest._accountAuthRequired, _YTAuthenticatorDeferredRequest._request,
-                          _YTCategoriesRequest._categories, _YTCategoriesRequest._delegate, _YTXMLHTTPRequest._deferredRequest ]
+                          _YTCategoriesRequest._categories, _YTCategoriesRequest._delegate,
+                          _YTCategoriesRequest._responseIndicatesAuthenticationFailure, _YTXMLHTTPRequest._deferredRequest,
+                          _YTXMLHTTPRequest._needsAccountAuth, _YTXMLHTTPRequest._needsHostHeader ]
 ...

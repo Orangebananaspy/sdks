@@ -1,20 +1,29 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: 4A0227B3-2732-32C3-9D7B-4C2CB45D42E4' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ControlCenterServices.framework/ControlCenterServices
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
-    allowable-clients:  [ ControlCenterServicesTests, ControlCenterSettings, ControlCenterUI, HearingAidUIServer, HomeKitDaemon,
-                          SpringBoard, "SpringBoard-Tests", TVRemoteConnectionService, com.apple.BarcodeSupport.Helper ]
-    symbols:            [ _CCSLogModuleSettings, _CCSLogRemoteService, _CCSModuleVisibilityPreferenceDescription,
-                          _CCSModuleVisibilityPreferenceFromNumber, _CCSRegisterControlCenterLogging, _CCSRemoteServiceName,
-                          _CCSRemoteServiceServerInterface, _CCSResolveModuleVisibility, _ControlCenterServicesVersionNumber,
-                          _ControlCenterServicesVersionString, _kVersionNumber ]
-    objc-classes:       [ _CCSControlCenterDefaults, _CCSControlCenterService, _CCSModuleMetadata, _CCSModuleRepository,
-                          _CCSModuleSettingsProvider, _CCSRemoteServiceConnection, _CCSRemoteServiceProvider, _CCSUsageMetrics ]
+  - archs:              [ armv7, armv7s, arm64 ]
+    allowed-clients:    [ ControlCenterUI, ControlCenterSettings, SpringBoard, HearingAidUIServer, ControlCenterServicesTests,
+                          Unit Tests ]
+    symbols:            [ _CCSLogModuleSettings, _CCSModuleVisibilityPreferenceDescription,
+                          _CCSModuleVisibilityPreferenceFromNumber, _CCSRegisterControlCenterLogging,
+                          _CCSResolveModuleVisibility, _ControlCenterServicesVersionNumber, _ControlCenterServicesVersionString,
+                          _kVersionNumber ]
+    objc-classes:       [ _CCSControlCenterDefaults, _CCSModuleMetadata, _CCSModuleRepository, _CCSModuleSettingsProvider,
+                          _CCSUsageMetrics ]
+    objc-ivars:         [ _CCSModuleMetadata._associatedBundleIdentifier, _CCSModuleMetadata._associatedBundleMinimumVersion,
+                          _CCSModuleMetadata._moduleBundleURL, _CCSModuleMetadata._moduleIdentifier,
+                          _CCSModuleMetadata._requiredDeviceCapabilities, _CCSModuleMetadata._supportedDeviceFamilies,
+                          _CCSModuleMetadata._visibilityPreference, _CCSModuleRepository._allModuleMetadataByIdentifier,
+                          _CCSModuleRepository._availableModuleIdentifiers, _CCSModuleRepository._directoryURLs,
+                          _CCSModuleRepository._ignoreWhitelist, _CCSModuleRepository._interestingBundleIdentifiers,
+                          _CCSModuleRepository._internalDefaultsObserver, _CCSModuleRepository._loadableModuleIdentifiers,
+                          _CCSModuleRepository._mobileGestaltNotificationToken, _CCSModuleRepository._observers,
+                          _CCSModuleRepository._whitelistedModuleIdentifiers,
+                          _CCSModuleSettingsProvider._configurationChangedSource, _CCSModuleSettingsProvider._observers,
+                          _CCSModuleSettingsProvider._orderedFixedModuleIdentifiers,
+                          _CCSModuleSettingsProvider._orderedUserEnabledModuleIdentifiers ]
 ...

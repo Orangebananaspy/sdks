@@ -1,13 +1,20 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: 9FB0DE04-9228-325A-A5D8-D592E91DCA3B' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FindMyDeviceUI.framework/FindMyDeviceUI
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
-    objc-classes:       [ _FMDUIFMIPiCloudSettingsViewController ]
+  - archs:              [ armv7, armv7s, arm64 ]
+    objc-classes:       [ _FMDUIFMIPSettingsCache, _FMDUIFMIPiCloudSettingsViewController ]
+    objc-ivars:         [ _FMDUIFMIPSettingsCache._fmipState, _FMDUIFMIPSettingsCache._fmipStateAvailable,
+                          _FMDUIFMIPSettingsCache._lowBatteryLocateEnabled,
+                          _FMDUIFMIPSettingsCache._lowBatteryLocateStateAvailable,
+                          _FMDUIFMIPiCloudSettingsViewController._account,
+                          _FMDUIFMIPiCloudSettingsViewController._activityInProgress,
+                          _FMDUIFMIPiCloudSettingsViewController._firstTimeSetup,
+                          _FMDUIFMIPiCloudSettingsViewController._fmipSpecifier, _FMDUIFMIPiCloudSettingsViewController._hud,
+                          _FMDUIFMIPiCloudSettingsViewController._ruiController,
+                          _FMDUIFMIPiCloudSettingsViewController._sendLastLocationSpecifier,
+                          _FMDUIFMIPiCloudSettingsViewController._togglingFMIPSwitch ]
 ...

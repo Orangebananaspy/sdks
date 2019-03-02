@@ -1,37 +1,72 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: CAC38846-FBDD-3686-9605-135E727F9713' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PersonalizationPortrait.framework/PersonalizationPortrait
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
-    symbols:            [ _PETPortraitFeatureId, _PPCollapseWhitespaceAndStrip, _PPGetSourceInternPool, _PPGetStringInternPool,
-                          _PPIsServerContext, _PPMallocZone, _PPNSZone, _PPStringIsWellFormed, _PersonalizationPortraitVersionNumber,
-                          _PersonalizationPortraitVersionString, _kLogSubsystem, _kPPLongTermDecayRate, _kPPMediumTermDecayRate,
-                          _kPPShortTermDecayRate, _pp_connections_log_handle, _pp_contacts_log_handle, _pp_default_log_handle,
-                          _pp_entities_log_handle, _pp_events_log_handle, _pp_private_log_handle, _pp_quicktype_log_handle,
-                          _pp_topics_log_handle, _pp_xpc_client_log_handle, _pp_xpc_server_log_handle ]
-    objc-classes:       [ _PPConfigClient, _PPConnectionsClient, _PPConnectionsCriteria, _PPConnectionsLocation, _PPConnectionsStore,
-                          _PPContactClient, _PPContactNameRecord, _PPContactNameRecordChangeResult, _PPContactNameRecordLoadingDelegate,
-                          _PPContactStore, _PPEnumTypes, _PPEventClient, _PPEventHighlight, _PPEventKitNotificationHandler,
-                          _PPEventNameRecord, _PPEventNameRecordLoadingDelegate, _PPEventStore, _PPLocationNamedEntities,
-                          _PPMutableNamedEntityRecord, _PPMutableTopicRecord, _PPNamedEntity, _PPNamedEntityQuery,
-                          _PPNamedEntityReadOnlyClient, _PPNamedEntityReadWriteClient, _PPNamedEntityRecord,
-                          _PPNamedEntityRecordLoadingDelegate, _PPNamedEntityStore, _PPNamedEntityWithRecord, _PPNotificationHandler,
-                          _PPNotificationManager, _PPPortrait, _PPPortraitStringDonationXPCListenerDelegate, _PPPortraitXPC,
-                          _PPQuickTypeBroker, _PPQuickTypeExplanationSet, _PPQuickTypeItem, _PPQuickTypeQuery, _PPScoredItem, _PPSource,
-                          _PPTopic, _PPTopicQuery, _PPTopicReadOnlyClient, _PPTopicReadWriteClient, _PPTopicRecord, _PPTopicStore,
-                          _PPXPCClientHelper, _PPXPCClientPipelinedBatchQueryContext, _PPXPCClientPipelinedBatchQueryManager,
-                          _PPXPCNamedEntityStore, _PPXPCTopicStore ]
-    objc-ivars:         [ _PPNamedEntityRecord._algorithm, _PPNamedEntityRecord._changeType, _PPNamedEntityRecord._decayRate,
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _PETPortraitFeatureId, _PPMBoolOptionFalse, _PPMBoolOptionTrue, _PPMBoolOptionUnknown,
+                          _PPMNamedEntityAlgorithmCoreNLP, _PPMNamedEntityAlgorithmCoreRoutine,
+                          _PPMNamedEntityAlgorithmDataDetectors, _PPMNamedEntityAlgorithmLookupHint,
+                          _PPMNamedEntityAlgorithmNSUALocation, _PPMNamedEntityAlgorithmTrustedLocation,
+                          _PPMNamedEntityAlgorithmUnknown, _PPMNamedEntityDonationSourceCoreRoutine,
+                          _PPMNamedEntityDonationSourceMail, _PPMNamedEntityDonationSourceMessages,
+                          _PPMNamedEntityDonationSourceNSUA, _PPMNamedEntityDonationSourceNews,
+                          _PPMNamedEntityDonationSourcePhotos, _PPMNamedEntityDonationSourceSafari,
+                          _PPMNamedEntityDonationSourceSiri, _PPMPortraitComponentNamedEntities, _PPMPortraitComponentTopics,
+                          _PPMPortraitDomainMappedTopics, _PPMPortraitDomainNamedEntities, _PPMPortraitDomainTopics,
+                          _PPMPortraitFeedbackTypeNegative, _PPMPortraitFeedbackTypeNeutral, _PPMPortraitFeedbackTypePositive,
+                          _PPMTopicDonationErrorReasonContext, _PPMTopicDonationErrorReasonDelete,
+                          _PPMTopicDonationErrorReasonDeleteBlacklist, _PPMTopicDonationErrorReasonDonation,
+                          _PPMTopicDonationErrorReasonHTML, _PPMTopicDonationErrorReasonZeroSafariHTML,
+                          _PPMTopicDonationErrorReasonZeroSafariReader, _PPMTopicDonationErrorReasonZeroTopic,
+                          _PPMTopicDonationSourceNews, _PPMTopicDonationSourceSafari, _PPMTopicDonationSourceSafariHTML,
+                          _PPMTopicDonationSourceSafariReader, _PPMTopicDonationSourceUnknown, _PPMTypeSafeBoolNo,
+                          _PPMTypeSafeBoolYes, _PersonalizationPortraitVersionNumber, _PersonalizationPortraitVersionString,
+                          _kPPDayInterval, _kPPHourInterval, _kPPLongTermDecayRate, _kPPMediumTermDecayRate,
+                          _kPPShortTermDecayRate, _kPPWeekInterval ]
+    objc-classes:       [ _PPAllocSupport, _PPAsset, _PPDeletionTracker, _PPLocationNamedEntities, _PPMFeedbackPortraitEngaged,
+                          _PPMFeedbackPortraitUsed, _PPMNamedEntitiesPerDonation, _PPMObjectsDeleted, _PPMTopicDonation,
+                          _PPMTopicDonationError, _PPMTopicItemDonation, _PPMTopicUniqueItems, _PPMTopicsScored,
+                          _PPMTopicsScoredForMapping, _PPMUniqueNamedEntitiesFound, _PPMutableNamedEntityRecord,
+                          _PPMutableTopicRecord, _PPNamedEntity, _PPNamedEntityRecord, _PPPortrait, _PPPortraitConfiguration,
+                          _PPPortraitDeletionTrackingXPCListenerDelegate, _PPPortraitKVOObserver, _PPPortraitNamedEntityQuery,
+                          _PPPortraitStringDonationXPCListenerDelegate, _PPPortraitTopicQuery, _PPPortraitXPC, _PPScoredItem,
+                          _PPSource, _PPTopic, _PPTopicRecord, _PPTopicTransform ]
+    objc-ivars:         [ _PPAllocSupport._allocator, _PPAllocSupport._cfAllocator, _PPDeletionTracker._allocSupport,
+                          _PPDeletionTracker._lock, _PPDeletionTracker._recentNamedEntityDeletions,
+                          _PPDeletionTracker._validAfterDate, _PPLocationNamedEntities._city, _PPLocationNamedEntities._country,
+                          _PPLocationNamedEntities._documentId, _PPLocationNamedEntities._locationName,
+                          _PPLocationNamedEntities._score, _PPLocationNamedEntities._stateOrProvince,
+                          _PPLocationNamedEntities._streetAddress, _PPLocationNamedEntities._unstructuredLocationString,
+                          _PPMFeedbackPortraitEngaged._tracker, _PPMFeedbackPortraitUsed._tracker,
+                          _PPMNamedEntitiesPerDonation._tracker, _PPMObjectsDeleted._tracker, _PPMTopicDonation._tracker,
+                          _PPMTopicDonationError._tracker, _PPMTopicItemDonation._tracker, _PPMTopicUniqueItems._tracker,
+                          _PPMTopicsScored._tracker, _PPMTopicsScoredForMapping._tracker, _PPMUniqueNamedEntitiesFound._tracker,
+                          _PPNamedEntity._bestLanguage, _PPNamedEntity._category, _PPNamedEntity._mostRelevantRecord,
+                          _PPNamedEntity._name, _PPNamedEntityRecord._algorithm, _PPNamedEntityRecord._decayRate,
                           _PPNamedEntityRecord._entity, _PPNamedEntityRecord._extractionAssetVersion,
-                          _PPNamedEntityRecord._extractionOsBuild, _PPNamedEntityRecord._initialScore, _PPNamedEntityRecord._source,
-                          _PPNamedEntityWithRecord._mostRelevantRecord, _PPTopicRecord._algorithm, _PPTopicRecord._decayRate,
-                          _PPTopicRecord._extractionAssetVersion, _PPTopicRecord._extractionOsBuild, _PPTopicRecord._initialScore,
-                          _PPTopicRecord._isLocal, _PPTopicRecord._source, _PPTopicRecord._topic,
-                          _PPXPCClientPipelinedBatchQueryContext._stop ]
+                          _PPNamedEntityRecord._extractionOsBuild, _PPNamedEntityRecord._initialScore,
+                          _PPNamedEntityRecord._source, _PPPortraitConfiguration._parameters,
+                          _PPPortraitDeletionTrackingXPCListenerDelegate._handler, _PPPortraitKVOObserver._handler,
+                          _PPPortraitKVOObserver._key, _PPPortraitNamedEntityQuery._decayRate,
+                          _PPPortraitNamedEntityQuery._deviceFilter, _PPPortraitNamedEntityQuery._excludingSourceBundleIds,
+                          _PPPortraitNamedEntityQuery._fromDate, _PPPortraitNamedEntityQuery._limit,
+                          _PPPortraitNamedEntityQuery._matchCategory, _PPPortraitNamedEntityQuery._matchingCategory,
+                          _PPPortraitNamedEntityQuery._matchingName, _PPPortraitNamedEntityQuery._matchingSourceBundleIds,
+                          _PPPortraitNamedEntityQuery._overrideDecayRate, _PPPortraitNamedEntityQuery._scoringDate,
+                          _PPPortraitNamedEntityQuery._toDate, _PPPortraitStringDonationXPCListenerDelegate._handler,
+                          _PPPortraitTopicQuery._decayRate, _PPPortraitTopicQuery._deviceFilter,
+                          _PPPortraitTopicQuery._excludingSourceBundleIds, _PPPortraitTopicQuery._fromDate,
+                          _PPPortraitTopicQuery._limit, _PPPortraitTopicQuery._matchingSourceBundleIds,
+                          _PPPortraitTopicQuery._matchingTopicId, _PPPortraitTopicQuery._overrideDecayRate,
+                          _PPPortraitTopicQuery._scoringDate, _PPPortraitTopicQuery._toDate, _PPScoredItem._item,
+                          _PPScoredItem._score, _PPSource._bundleId, _PPSource._date, _PPSource._documentId, _PPSource._groupId,
+                          _PPTopic._id, _PPTopicRecord._algorithm, _PPTopicRecord._decayRate,
+                          _PPTopicRecord._extractionAssetVersion, _PPTopicRecord._extractionOsBuild,
+                          _PPTopicRecord._initialScore, _PPTopicRecord._isLocal, _PPTopicRecord._source, _PPTopicRecord._topic,
+                          _PPTopicTransform._bias, _PPTopicTransform._data, _PPTopicTransform._header,
+                          _PPTopicTransform._matrixElts, _PPTopicTransform._matrixIdxes, _PPTopicTransform._payloads,
+                          _PPTopicTransform._qids ]
 ...

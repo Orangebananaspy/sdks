@@ -1,15 +1,24 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: 10C10D74-ABF7-366D-8B5B-7F78E0B7CED7' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SignpostNotification.framework/SignpostNotification
-current-version:       17
+current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
-    symbols:            [ _EnableSignpostNotificationGeneration, _SignpostGetNewNotificationConnection,
-                          _SignpostNotificationSendNotificationSubscriptionRequestOnConnection, _SignpostNotificationVersionNumber,
-                          _SignpostNotificationVersionString ]
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _EnableSignpostNotificationGeneration, _FillLogMessageUsingSignpostReportXPCDictionary,
+                          _SignpostEventReportXPCDictionaryForHook, _SignpostGetNewNotificationConnection,
+                          _SignpostNotificationSendNotificationSubscriptionRequestOnConnection,
+                          _SignpostNotificationVersionNumber, _SignpostNotificationVersionString,
+                          _kSignpostNotificationXPCDict_CategoryKey, _kSignpostNotificationXPCDict_ComposedMessageKey,
+                          _kSignpostNotificationXPCDict_MachContinuousTimeKey, _kSignpostNotificationXPCDict_ProcessIDKey,
+                          _kSignpostNotificationXPCDict_ProcessImagePathKey, _kSignpostNotificationXPCDict_ScopeKey,
+                          _kSignpostNotificationXPCDict_SignpostIDKey, _kSignpostNotificationXPCDict_SubsystemKey,
+                          _kSignpostNotificationXPCDict_ThreadIDKey, _kSignpostNotificationXPCDict_TotalFrameCountKey,
+                          _kSignpostNotificationXPCDict_TypeKey, _kSignpostReportXPCDict_BufferKey,
+                          _kSignpostReportXPCDict_CategoryKey, _kSignpostReportXPCDict_FormatKey,
+                          _kSignpostReportXPCDict_MachContinuousTimeKey, _kSignpostReportXPCDict_OpaqueFlagsKey,
+                          _kSignpostReportXPCDict_PrivDataKey, _kSignpostReportXPCDict_ScopeKey,
+                          _kSignpostReportXPCDict_SignpostIDKey, _kSignpostReportXPCDict_SubsystemKey,
+                          _kSignpostReportXPCDict_ThreadIDKey, _kSignpostReportXPCDict_TypeKey ]
 ...

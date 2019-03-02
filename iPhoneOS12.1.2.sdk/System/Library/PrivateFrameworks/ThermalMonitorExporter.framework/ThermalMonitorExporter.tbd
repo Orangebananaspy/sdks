@@ -1,14 +1,11 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64 ]
-uuids:                 [ 'arm64: DF0CCAD3-1BE1-35CF-83A0-B380162B221F' ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ThermalMonitorExporter.framework/ThermalMonitorExporter
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:              [ arm64 ]
+  - archs:              [ armv7, armv7s, arm64 ]
     symbols:            [ _ThermalMonitorExporterReadValue, _ThermalMonitorExporterVersionNumber,
                           _ThermalMonitorExporterVersionString ]
 ...
