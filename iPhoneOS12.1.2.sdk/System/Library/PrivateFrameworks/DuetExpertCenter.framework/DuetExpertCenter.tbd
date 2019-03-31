@@ -1,22 +1,19 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/DuetExpertCenter.framework/DuetExpertCenter
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ _DECNowPlayingConsumerAggregateDictionaryAbandonedKey,
-                          _DECNowPlayingConsumerAggregateDictionaryEngagedKey,
-                          _DECNowPlayingConsumerAggregateDictionaryPredictedItemsKey,
-                          _DECNowPlayingConsumerAggregateDictionaryShownKey, _DuetExpertCenterVersionNumber,
-                          _DuetExpertCenterVersionString, __DECAggregateDictionaryKey, __DECConsumerInterface,
-                          __DECDaemonDidLaunchNotificationKey, __DECExpertInterface, __DECItemExpertScores,
-                          __DECItemMetadataDateCreatedKey, __DECItemMetadataItemLifetimeKey,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _DuetExpertCenterVersionNumber, _DuetExpertCenterVersionString, __DECAggregateDictionaryKey,
+                          __DECConsumerInterface, __DECDaemonDidLaunchNotificationKey, __DECExpertInterface,
+                          __DECItemExpertScores, __DECItemMetadataDateCreatedKey, __DECItemMetadataItemLifetimeKey,
                           __DECItemMetadataOriginatingAppWhitelistedKey, __DECItemMetadataPredictionAgeKey,
                           __DECItemMetadataSourceKey, __DECItemMetadataTargetAppWhitelistedKey, __DECItemMetadataTriggerTypeKey,
-                          __DECMachServiceName, __DECNowPlayingRecommendationEnded, __DECNowPlayingRecommendationStarted,
-                          __DECPredictionReasonBluetoothDeviceName, __DECPredictionReasonDeviceName,
+                          __DECMachServiceName, __DECPredictionReasonBluetoothDeviceName, __DECPredictionReasonDeviceName,
                           __DECPredictionReasonLocationOfInterestType, __DECSchedulerQPLoggingIdentifier,
                           __DECSchedulerTrainingIdentifier, __DECServerErrorDomain, __DECServerErrorExpertIdentifierKey,
                           __DECServerInterface, __DECServerTimedOutCode, __DECUpdatePredictionNotificationCategory,
@@ -56,24 +53,20 @@ exports:
                           _kDECCriteriaTimeTomorrow, _kDECCriteriaTimeTuesday, _kDECCriteriaTimeWednesday,
                           _kDECCriteriaTypeEvent, _kDECCriteriaTypeKey, _kDECCriteriaTypeLocation, _kDECCriteriaTypeNames,
                           _kDECCriteriaTypePeople, _kDECCriteriaTypeUnknown, _kDECCriteriaUISemanticTagKey,
-                          _kDECNowPlayingConsumerExpirationTimeIntervalDefault,
-                          _kDECNowPlayingConsumerMinimumDurationForConversionTimeIntervalDefault,
-                          _kDECNowPlayingConsumerScreenLockNotification, _kDECUpdatePredictionsNotificationDefaultCacheTimeout,
-                          _onLockStateChange, _onNowPlayingChange, _overridesLock ]
+                          _kDECUpdatePredictionsNotificationDefaultCacheTimeout, _overridesLock ]
     objc-classes:       [ __DECABHelper, __DECAggregateKeys, __DECAggregateLogger, __DECAppItem, __DECAssets, __DECBackupHelper,
                           __DECCachedConsumer, __DECConcurrentLIFOQueue, __DECConsumer, __DECContextHelper, __DECDaemon,
                           __DECDailyQPLoggingScheduler, __DECDailyTrainingScheduler, __DECDataProtectionMonitor, __DECDeviceInfo,
                           __DECDeviceState, __DECDuetHelper, __DECEventItem, __DECExpert, __DECExpertManager, __DECFeedback,
                           __DECFeedbackBuilder, __DECFeedbackLoggerManager, __DECFeedbackProvider, __DECFilterManager,
                           __DECInternalConsumer, __DECInternalConsumerManager, __DECItem, __DECLaunchInfo, __DECLocationAppItem,
-                          __DECLocationItem, __DECNameItem, __DECNowPlayingConsumer, __DECNowPlayingFeedbackProvider, __DECPaths,
-                          __DECPersonItem, __DECPersonPropertyItem, __DECPrediction, __DECPredictionCache,
-                          __DECPredictionCacheResult, __DECPredictionExpiry, __DECPredictionItem, __DECPredictionSet,
-                          __DECPredictionStore, __DECPredictionStoreQueuedResult, __DECPredictionStoreReader, __DECQueryItem,
-                          __DECRankBuilder, __DECResult, __DECRules, __DECScheduler, __DECSearchFeedbackListener,
-                          __DECSearchResult, __DECServer, __DECServerResponder, __DECSpotlightItem, __DECSpotlightReceiver,
-                          __DECTypes, __DECUpdatePredictionsNotification, __DECUserAction, __DECXPCObjectFactory,
-                          __DKExpertConsumerCategory, __DKExpertFeedbackMetadataKey ]
+                          __DECLocationItem, __DECNameItem, __DECPaths, __DECPersonItem, __DECPersonPropertyItem,
+                          __DECPrediction, __DECPredictionCache, __DECPredictionCacheResult, __DECPredictionExpiry,
+                          __DECPredictionItem, __DECPredictionSet, __DECPredictionStore, __DECPredictionStoreQueuedResult,
+                          __DECPredictionStoreReader, __DECQueryItem, __DECRankBuilder, __DECResult, __DECRules, __DECScheduler,
+                          __DECSearchFeedbackListener, __DECSearchResult, __DECServer, __DECServerResponder, __DECSpotlightItem,
+                          __DECSpotlightReceiver, __DECTypes, __DECUpdatePredictionsNotification, __DECUserAction,
+                          __DECXPCObjectFactory, __DKExpertConsumerCategory, __DKExpertFeedbackMetadataKey ]
     objc-ivars:         [ __DECABHelper._abGroupContents, __DECABHelper._groupIdentifier, __DECAggregateLogger._batchScalars,
                           __DECAppItem._atxResponse, __DECAppItem._bundleIdentifier, __DECAppItem._reason, __DECAppItem._sources,
                           __DECBackupHelper._fm, __DECCachedConsumer._atxCachePath, __DECCachedConsumer._store,
@@ -113,20 +106,7 @@ exports:
                           __DECNameItem._firstName, __DECNameItem._jobTitle, __DECNameItem._lastName, __DECNameItem._middleName,
                           __DECNameItem._nickname, __DECNameItem._organizationName, __DECNameItem._phoneticFirstName,
                           __DECNameItem._phoneticLastName, __DECNameItem._phoneticMiddleName, __DECNameItem._relatedNames,
-                          __DECNameItem._score, __DECNameItem._source, __DECNameItem._streetNames,
-                          __DECNowPlayingConsumer._activity, __DECNowPlayingConsumer._feedbackProvider,
-                          __DECNowPlayingConsumer._mostRecentPredictionBundleId,
-                          __DECNowPlayingConsumer._mostRecentPredictionReason,
-                          __DECNowPlayingConsumer._providedEngagementFeedback, __DECNowPlayingConsumer._queue,
-                          __DECNowPlayingFeedbackProvider._bundleId, __DECNowPlayingFeedbackProvider._delegate,
-                          __DECNowPlayingFeedbackProvider._engagementTimeout,
-                          __DECNowPlayingFeedbackProvider._engagementTimerTimedOut,
-                          __DECNowPlayingFeedbackProvider._minimumPlayDuration,
-                          __DECNowPlayingFeedbackProvider._minimumPlayDurationTimer,
-                          __DECNowPlayingFeedbackProvider._monitoringForFeedback,
-                          __DECNowPlayingFeedbackProvider._mostRecentPredictionPlaybackTime,
-                          __DECNowPlayingFeedbackProvider._predictionEngagementTimer, __DECNowPlayingFeedbackProvider._queue,
-                          __DECNowPlayingFeedbackProvider._userEngaged, __DECPersonItem._contact,
+                          __DECNameItem._score, __DECNameItem._source, __DECNameItem._streetNames, __DECPersonItem._contact,
                           __DECPersonItem._contactIdentifier, __DECPersonItem._contactProperty,
                           __DECPersonPropertyItem._firstName, __DECPersonPropertyItem._imageData, __DECPersonPropertyItem._label,
                           __DECPersonPropertyItem._lastName, __DECPersonPropertyItem._localizedFullName,

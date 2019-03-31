@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/GenerationalStorage.framework/GenerationalStorage
-current-version:       285
+current-version:       285.101
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _GSAdditionCreationDisplayNameKey, _GSAdditionCreationInfoValidate, _GSAdditionCreationKeepFileIDKey,
                           _GSAdditionCreationNameKey, _GSAdditionCreationNameSpaceKey, _GSAdditionCreationOnDuplicateKey,
                           _GSAdditionCreationOptionsKey, _GSAdditionCreationPOSIXNameKey, _GSAdditionCreationUserInfoKey,
@@ -49,6 +51,7 @@ exports:
                           _GSTemporaryAddtionEnumerator._pos, _GSTemporaryAddtionEnumerator._storage,
                           _GSTemporaryAddtionEnumerator._withOptions, _GSTemporaryAddtionEnumerator._withoutOption,
                           _GSTemporaryStorage._documentURL, _GSTemporaryStorage._libraryURL, _GSTemporaryStorage._lockFd,
-                          _GSTemporaryStorage._stagingURL, __CopyfileCallbackCtx._doArchive, __CopyfileCallbackCtx._doUnarchive,
-                          __CopyfileCallbackCtx._generationSize, __CopyfileCallbackCtx._progress ]
+                          _GSTemporaryStorage._stagingURL, _GSTemporaryStorage._workQueue, __CopyfileCallbackCtx._doArchive,
+                          __CopyfileCallbackCtx._doUnarchive, __CopyfileCallbackCtx._generationSize,
+                          __CopyfileCallbackCtx._progress ]
 ...

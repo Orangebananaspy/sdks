@@ -1,16 +1,19 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/Widgets.framework/Widgets
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    allowed-clients:    [ SpringBoard, SpringBoardUI, WidgetsTests, Unit Tests ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:  [ SpringBoard, SpringBoardUI, WidgetsTests, 'SpringBoard-Tests' ]
     symbols:            [ _NCBundleIDForPID, _WGApplicationIconForImage, _WGApplicationIdentifierForWidgetWithBundleIdentifier,
                           _WGAvailableWidgetsUpdatedNotification, _WGCachedNSHomeDirectory, _WGCachesPathForSandboxPath,
                           _WGContainingBundleCachePathForWidgetWithContainingBundleIdentifier,
-                          _WGContainingBundleIdentifierForWidgetWithBundleIdentifier, _WGEnsureDirectoryExistsAtPath,
+                          _WGContainingBundleIdentifierForWidgetWithBundleIdentifier,
+                          _WGContainingBundleProxyForWidgetWithBundleIdentifer, _WGEnsureDirectoryExistsAtPath,
                           _WGIsBundleWithIdentifierFirstParty, _WGIsBundleWithIdentifierInternal,
                           _WGIsWidgetWithBundleIdentifierBuiltOnOrAfterSystemVersion, _WGIsWidgetWithBundleIdentifierInternal,
                           _WGIsWidgetWithBundleIdentifierWantsTop, _WGLogSubsystem, _WGLogWidgets, _WGMainScreenReferenceBounds,
@@ -44,19 +47,20 @@ exports:
                           _kWGWidgetViewControllerHasContentKey, _kWGWidgetViewControllerLargestAvailableDisplayMode,
                           _kWGWidgetViewControllerUserSpecifiedDisplayMode ]
     objc-classes:       [ _WGCalendarWidgetInfo, _WGCheckView, _WGCircleCheckView, _WGCollapsingView, _WGDataSourceManager,
-                          _WGMajorListViewController, _WGMappedImageCache, _WGNewWidgetsButton, _WGShortLookStyleButton,
-                          _WGWidgetAttributionView, _WGWidgetDataSource, _WGWidgetDataSourceManager, _WGWidgetDatum,
-                          _WGWidgetDiscoveryController, _WGWidgetEventTracker, _WGWidgetGroupViewController,
+                          _WGExplanatoryView, _WGMajorListViewController, _WGMappedImageCache, _WGNewWidgetsButton,
+                          _WGShortLookStyleButton, _WGWidgetAttributionView, _WGWidgetDataSource, _WGWidgetDataSourceManager,
+                          _WGWidgetDatum, _WGWidgetDiscoveryController, _WGWidgetEventTracker, _WGWidgetGroupViewController,
                           _WGWidgetHostingViewController, _WGWidgetInfo, _WGWidgetLifeCycleSequence,
                           _WGWidgetListEditViewController, _WGWidgetListEditViewTableHeaderView,
                           _WGWidgetListEditViewTableViewCell, _WGWidgetListFooterView, _WGWidgetListItemViewController,
                           _WGWidgetListViewController, _WGWidgetPersistentStateController, _WGWidgetPlatterView,
                           _WGWidgetViewController, _WGWidgetVisibilityManager, __WGBrokenWidgetView, __WGCAPackageView,
-                          __WGConcreteDataSource, __WGWidgetRemoteViewController ]
+                          __WGConcreteDataSource, __WGLockedOutWidgetView, __WGWidgetRemoteViewController ]
     objc-ivars:         [ _WGCalendarWidgetInfo._date, _WGCircleCheckView._checkView, _WGCircleCheckView._circleView,
                           _WGCollapsingView._activeSize, _WGCollapsingView._contentView, _WGCollapsingView._originalSize,
                           _WGCollapsingView._stackView, _WGDataSourceManager._didBegin,
                           _WGDataSourceManager._identifiersToWidgetChangeHandlers, _WGDataSourceManager._widgetDataSourceManager,
+                          _WGExplanatoryView._glyphView, _WGExplanatoryView._label, _WGExplanatoryView._tapGesture,
                           _WGMajorListViewController._collapsingView, _WGMajorListViewController._footerView,
                           _WGNewWidgetsButton._badgeNumber, _WGNewWidgetsButton._legibilitySettings,
                           _WGNewWidgetsButton._numberAttributedStringCache, _WGNewWidgetsButton._numberText,
@@ -111,6 +115,7 @@ exports:
                           _WGWidgetHostingViewController._host, _WGWidgetHostingViewController._ignoringParentAppearState,
                           _WGWidgetHostingViewController._implementsPerformUpdate,
                           _WGWidgetHostingViewController._lastUnanticipatedDisconnectionDate,
+                          _WGWidgetHostingViewController._lockedOut, _WGWidgetHostingViewController._lockedOutView,
                           _WGWidgetHostingViewController._maskedCorners,
                           _WGWidgetHostingViewController._openAppearanceTransactions,
                           _WGWidgetHostingViewController._proxyConnectionQueue,
@@ -165,8 +170,7 @@ exports:
                           _WGWidgetVisibilityManager._visibilityDefaultValueByIdentifier,
                           _WGWidgetVisibilityManager._visibilityOverridenIdentifiers,
                           _WGWidgetVisibilityManager._visibilityPreferenceByIdentifier,
-                          _WGWidgetVisibilityManager._widgetTagsByIdentifier, __WGBrokenWidgetView._label,
-                          __WGBrokenWidgetView._tapGesture, __WGCAPackageView._archiveURL,
+                          _WGWidgetVisibilityManager._widgetTagsByIdentifier, __WGCAPackageView._archiveURL,
                           __WGConcreteDataSource._identifiersToData, __WGConcreteDataSource._observers,
                           __WGWidgetRemoteViewController._managingHost, __WGWidgetRemoteViewController._managingHostQueue,
                           __WGWidgetRemoteViewController._valid ]

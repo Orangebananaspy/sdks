@@ -1,11 +1,12 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/AppleSRP.framework/AppleSRP
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _BigIntegerAdd, _BigIntegerAddInt, _BigIntegerBitLen, _BigIntegerCheckPrime, _BigIntegerCmp,
                           _BigIntegerCmpInt, _BigIntegerDivInt, _BigIntegerFree, _BigIntegerFromBytes, _BigIntegerFromInt,
                           _BigIntegerLShift, _BigIntegerMod, _BigIntegerModExp, _BigIntegerModInt, _BigIntegerModMul,
@@ -18,7 +19,8 @@ exports:
                           _SRP_initialize_library, _SRP_new, _SRP_respond, _SRP_set_auth_password, _SRP_set_auth_password_raw,
                           _SRP_set_authenticator, _SRP_set_client_param_verify_cb, _SRP_set_modulus_min_bits, _SRP_set_params,
                           _SRP_set_secret_bits_cb, _SRP_set_server_lookup, _SRP_set_user_raw, _SRP_set_username, _SRP_use_engine,
-                          _SRP_verify, _cstr_appendn, _cstr_clear_free, _cstr_free, _cstr_new, _cstr_set_length, _gettpnam,
-                          _t_closepw, _t_cstrfromb64, _t_getpwbyname, _t_makepwent, _t_newpw, _t_random, _t_sessionkey,
-                          _t_tob64cstr, _t_tohex ]
+                          _SRP_verify, _cstr_append, _cstr_append_str, _cstr_appendn, _cstr_clear_free, _cstr_copy, _cstr_create,
+                          _cstr_createn, _cstr_dup, _cstr_dup_alloc, _cstr_empty, _cstr_free, _cstr_new, _cstr_new_alloc,
+                          _cstr_set, _cstr_set_allocator, _cstr_set_length, _cstr_setn, _cstr_use, _t_cstrfromb64, _t_random,
+                          _t_sessionkey, _t_tob64cstr, _t_tohex ]
 ...

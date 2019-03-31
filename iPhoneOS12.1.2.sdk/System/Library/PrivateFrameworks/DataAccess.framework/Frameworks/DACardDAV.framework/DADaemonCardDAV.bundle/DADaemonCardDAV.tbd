@@ -1,13 +1,16 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DACardDAV.framework/DADaemonCardDAV.bundle/DADaemonCardDAV
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    objc-classes:       [ _CardDAVAgent, _CardDAVDaemonAccount, _CardDAVFacebookDaemonAccount, _CardDAVSyncInfo,
-                          _CardDAVVCardItem, _CardDAViCloudDaemonAccount, _CardDAViCloudGetAccountPropertiesTaskGroup ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:       [ _CardDAVActionsLogger, _CardDAVAgent, _CardDAVDaemonAccount, _CardDAVFacebookDaemonAccount,
+                          _CardDAVSyncInfo, _CardDAVVCardItem, _CardDAViCloudDaemonAccount,
+                          _CardDAViCloudGetAccountPropertiesTaskGroup ]
     objc-ivars:         [ _CardDAVAgent._bulkUploadHREFBlacklist, _CardDAVAgent._bulkUploadUUIDBlacklist,
                           _CardDAVAgent._containerPushKeys, _CardDAVAgent._currentlySyncingFolderURLs,
                           _CardDAVAgent._folderItemSyncRequestLock, _CardDAVAgent._folderURLToHeldAsideGroups,

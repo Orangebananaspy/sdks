@@ -1,17 +1,20 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/DiagnosticsKit.framework/DiagnosticsKit
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _DAIdentifierFront, _DAIdentifierRear, _DAIdentifierRearSynced, _DAIdentifierRearTelephoto,
                           _DATypeCamera, _DKErrorDomain, _DKErrorLocalizedDescriptionForCode, _DKTemporaryDirectoryURL,
-                          _DiagnosticsKitVersionNumber, _DiagnosticsKitVersionString, _kDKBundleIdentifierKey,
-                          _kDKComponentAttributesKey, _kDKComponentIdentityKey, _kDKDefaultBundleIdentifier,
-                          _kDKDiagnosticAttributeFreeSpaceRequiredKey, _kDKDiagnosticAttributeIdentifierKey,
-                          _kDKDiagnosticAttributeNameKey, _kDKDiagnosticAttributeRequiresUnlockKey, _kDKDiagnosticParametersKey,
+                          _DSHexErrorDomain, _DiagnosticsKitLogHandleForCategory, _DiagnosticsKitVersionNumber,
+                          _DiagnosticsKitVersionString, _kDKBundleIdentifierKey, _kDKComponentAttributesKey,
+                          _kDKComponentIdentityKey, _kDKDefaultBundleIdentifier, _kDKDiagnosticAttributeFreeSpaceRequiredKey,
+                          _kDKDiagnosticAttributeIdentifierKey, _kDKDiagnosticAttributeNameKey,
+                          _kDKDiagnosticAttributeRequiresUnlockKey, _kDKDiagnosticParametersKey,
                           _kDKDiagnosticParametersParametersKey, _kDKDiagnosticParametersPredicatesKey,
                           _kDKDiagnosticParametersSpecificationsKey, _kDKDiagnosticPredicatesKey,
                           _kDKDiagnosticSpecificationsKey, _kDKDiagnosticsRestrictedService, _kDKDiagnosticsRestrictedUIService,
@@ -19,8 +22,8 @@ exports:
                           _kDKReporterAttributeManifestKey, _kDKReporterAttributeManifestResourcesKey,
                           _kDKReporterAttributeManifestVersionKey, _kDKReporterAttributeNameKey, _kDKReportersService ]
     objc-classes:       [ _DACameraSensorAnomalyTargetView, _DACameraSensorAnomalyTest, _DACameraSensorAnomalyTestImageView,
-                          _DACameraSensorAnomalyTestViewController, _DATestViewController, _DATestViewOperation,
-                          _DKCanonicalVersion, _DKComponent, _DKComponentIdentity, _DKComponentPredicate,
+                          _DACameraSensorAnomalyTestViewController, _DAShapeView, _DATestAutomation, _DATestViewController,
+                          _DATestViewOperation, _DKCanonicalVersion, _DKComponent, _DKComponentIdentity, _DKComponentPredicate,
                           _DKDiagnosticAttributes, _DKDiagnosticContext, _DKDiagnosticContextMock, _DKDiagnosticController,
                           _DKDiagnosticControllerMock, _DKDiagnosticHostContext, _DKDiagnosticManager, _DKDiagnosticParameters,
                           _DKDiagnosticRegistry, _DKDiagnosticResult, _DKDiagnosticViewController,
@@ -64,7 +67,8 @@ exports:
                           _DACameraSensorAnomalyTestViewController._session,
                           _DACameraSensorAnomalyTestViewController._tapGesture,
                           _DACameraSensorAnomalyTestViewController._usePhotoButton,
-                          _DACameraSensorAnomalyTestViewController._viewfinderInstruction, _DATestViewController._allResults,
+                          _DACameraSensorAnomalyTestViewController._viewfinderInstruction,
+                          _DATestAutomation._testAutomationEnabled, _DATestViewController._allResults,
                           _DATestViewController._callObserver, _DATestViewController._currentTest,
                           _DATestViewController._dataObject, _DATestViewController._fullScreen,
                           _DATestViewController._homeButtonRecognizer, _DATestViewOperation._cancelled,

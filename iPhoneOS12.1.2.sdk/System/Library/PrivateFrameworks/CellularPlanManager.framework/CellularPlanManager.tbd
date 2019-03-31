@@ -1,43 +1,57 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
 current-version:       0
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ _CTCellularPlanConnectionPropertiesKey, _CTCellularPlanErrorDomain,
-                          _CTCellularPlanInfoDidChangeNotification, _CTCellularPlanItemIdentifierHomePlan,
-                          _CTCellularPlanItemIdentifierHomePlanWithRoaming, _CTCellularPlanLaunchOptionsCarrierPostData,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _CTCarrierInfoDidChangeNotification, _CTCellularPlanCarrierItemXpcWhitelistSet,
+                          _CTCellularPlanConnectionPropertiesKey, _CTCellularPlanDanglingListDidChangeNotification,
+                          _CTCellularPlanErrorDomain, _CTCellularPlanInfoDidChangeNotification,
+                          _CTCellularPlanItemIdentifierHomePlan, _CTCellularPlanItemIdentifierHomePlanWithRoaming,
+                          _CTCellularPlanLaunchOptionsAppNameKey, _CTCellularPlanLaunchOptionsCarrierPostData,
                           _CTCellularPlanLaunchOptionsCsnKey, _CTCellularPlanLaunchOptionsFlowTypeIsLegacyKey,
                           _CTCellularPlanLaunchOptionsFlowTypeIsRemotePlanKey, _CTCellularPlanLaunchOptionsFlowTypeIsSequoiaKey,
-                          _CTCellularPlanLaunchOptionsIccidKey, _CTCellularPlanLaunchOptionsParametersKey,
-                          _CTCellularPlanLaunchOptionsURLKey, _CTCellularPlanLaunchOptionsUseBootstrapRoamingInternetBypassKey,
-                          _CTCellularPlanProxyKey, _CTCellularPlanRemoteProvisioningDidBecomeAvailable,
-                          _CTCellularPlanRequestUrlsKey, _CTCellularPlanSocketIdentifier, _CTCellularPlanSocketTimeoutKey,
-                          _CTCellularPlanSubscriptionDidUpdateNotification, _CTCellularPlanSubscriptionKey,
+                          _CTCellularPlanLaunchOptionsFlowTypeIsSimSetupKey, _CTCellularPlanLaunchOptionsIccidKey,
+                          _CTCellularPlanLaunchOptionsParametersKey, _CTCellularPlanLaunchOptionsResponseTypeIsBuddyMLKey,
+                          _CTCellularPlanLaunchOptionsURLKey, _CTCellularPlanLocalInfoDidChangeNotification,
+                          _CTCellularPlanLocalInfoError, _CTCellularPlanProxyKey,
+                          _CTCellularPlanRemoteProvisioningDidBecomeAvailable, _CTCellularPlanRequestUrlsKey,
+                          _CTCellularPlanSocketIdentifier, _CTCellularPlanSocketTimeoutKey, _CTCellularPlanSubscriptionKey,
                           _CTCellularPlanXpcWhitelistSet, _kCTDaemonReadyNotification, _kCellularPlanDaemonService ]
     objc-classes:       [ _CTCellularPlan, _CTCellularPlanArrayValidator, _CTCellularPlanBoolValidator,
-                          _CTCellularPlanDataValidator, _CTCellularPlanDateParser, _CTCellularPlanDictionaryValidator,
-                          _CTCellularPlanError, _CTCellularPlanItem, _CTCellularPlanJsonResponseParser, _CTCellularPlanLogger,
-                          _CTCellularPlanManager, _CTCellularPlanNumberValidator, _CTCellularPlanProfile, _CTCellularPlanRequest,
-                          _CTCellularPlanResponseCodeParser, _CTCellularPlanStringValidator, _CTCellularPlanSubCacheValidator,
+                          _CTCellularPlanCarrierItem, _CTCellularPlanDataValidator, _CTCellularPlanDateParser,
+                          _CTCellularPlanDictionaryValidator, _CTCellularPlanError, _CTCellularPlanItem,
+                          _CTCellularPlanJsonResponseParser, _CTCellularPlanLogger, _CTCellularPlanManager,
+                          _CTCellularPlanManagerDelegate, _CTCellularPlanNumberValidator, _CTCellularPlanProfile,
+                          _CTCellularPlanRequest, _CTCellularPlanResponseCodeParser, _CTCellularPlanStringValidator,
                           _CTCellularPlanSubscription, _CTCellularPlanSubscriptionAccountStatusParser,
                           _CTCellularPlanSubscriptionDataUsage, _CTCellularPlanSubscriptionDataUsageParser,
                           _CTCellularPlanSubscriptionParser, _CTCellularPlanSubscriptionStatusParser,
-                          _CTCellularPlanSubscriptionTypeParser, _CellularPlanVinylTestXPCServer ]
+                          _CTCellularPlanSubscriptionTypeParser, _CTDanglingPlanItem, _CTUserLabel,
+                          _CellularPlanVinylTestXPCServer ]
     objc-ivars:         [ _CTCellularPlan._isHomePlan, _CTCellularPlan._phoneNumber, _CTCellularPlan._profile,
-                          _CTCellularPlan._subscription, _CTCellularPlan._subscriptionStatusOverride, _CTCellularPlanItem._iccid,
+                          _CTCellularPlan._requiresUserConsent, _CTCellularPlan._subscription,
+                          _CTCellularPlan._subscriptionStatusOverride, _CTCellularPlanCarrierItem._applePaySupported,
+                          _CTCellularPlanCarrierItem._name, _CTCellularPlanCarrierItem._planPurchaseEndpointType,
+                          _CTCellularPlanCarrierItem._warningText, _CTCellularPlanCarrierItem._websheetURL,
+                          _CTCellularPlanItem._companionSimLabelId, _CTCellularPlanItem._companionSlotUuid,
+                          _CTCellularPlanItem._iccid, _CTCellularPlanItem._isActiveDataPlan, _CTCellularPlanItem._isDefaultVoice,
                           _CTCellularPlanItem._isSelectable, _CTCellularPlanItem._isSelectedOverride,
-                          _CTCellularPlanItem._isSimStateValid, _CTCellularPlanItem._lockState, _CTCellularPlanItem._name,
-                          _CTCellularPlanItem._plan, _CTCellularPlanItem._shouldAppearDisabled,
-                          _CTCellularPlanItem._shouldAutoSelectWhenInRange, _CTCellularPlanItem._shouldDisplay,
-                          _CTCellularPlanItem._shouldDisplayType, _CTCellularPlanItem._type, _CTCellularPlanManager._connection,
-                          _CTCellularPlanManager._cookieData, _CTCellularPlanManager._lastSessionId,
-                          _CTCellularPlanManager._queue, _CTCellularPlanManager._subscriptionCompletions,
-                          _CTCellularPlanProfile._iccid, _CTCellularPlanProfile._isBootstrap,
-                          _CTCellularPlanProfile._isDeleteNotAllowed, _CTCellularPlanProfile._isDisableNotAllowed,
-                          _CTCellularPlanProfile._isSelected, _CTCellularPlanProfile._profileId,
+                          _CTCellularPlanItem._isSimStateValid, _CTCellularPlanItem._label, _CTCellularPlanItem._lockState,
+                          _CTCellularPlanItem._name, _CTCellularPlanItem._phoneNumber, _CTCellularPlanItem._plan,
+                          _CTCellularPlanItem._shouldAppearDisabled, _CTCellularPlanItem._shouldAutoSelectWhenInRange,
+                          _CTCellularPlanItem._shouldDisplay, _CTCellularPlanItem._shouldDisplayType, _CTCellularPlanItem._type,
+                          _CTCellularPlanItem._userLabel, _CTCellularPlanItem._uuid, _CTCellularPlanManager._connection,
+                          _CTCellularPlanManager._cookieData, _CTCellularPlanManager._delegate,
+                          _CTCellularPlanManager._lastSessionId, _CTCellularPlanManager._queue,
+                          _CTCellularPlanManager._subscriptionCompletions, _CTCellularPlanProfile._iccid,
+                          _CTCellularPlanProfile._isBootstrap, _CTCellularPlanProfile._isDeleteNotAllowed,
+                          _CTCellularPlanProfile._isDisableNotAllowed, _CTCellularPlanProfile._isSelected,
+                          _CTCellularPlanProfile._profileId, _CTCellularPlanProfile._requiresUserConsent,
                           _CTCellularPlanRequest._bootstrapSettings, _CTCellularPlanRequest._completionBlock,
                           _CTCellularPlanRequest._connection, _CTCellularPlanRequest._error,
                           _CTCellularPlanRequest._internetSettings, _CTCellularPlanRequest._queue,
@@ -52,6 +66,8 @@ exports:
                           _CTCellularPlanSubscription._planStatus, _CTCellularPlanSubscription._planType,
                           _CTCellularPlanSubscription._subscriptionResult, _CTCellularPlanSubscription._timestamp,
                           _CTCellularPlanSubscriptionDataUsage._dataCapacity, _CTCellularPlanSubscriptionDataUsage._dataCategory,
-                          _CTCellularPlanSubscriptionDataUsage._dataUsed, _CellularPlanVinylTestXPCServer.fDelegate,
+                          _CTCellularPlanSubscriptionDataUsage._dataUsed, _CTDanglingPlanItem._iccid,
+                          _CTDanglingPlanItem._phoneNumber, _CTDanglingPlanItem._simLabelID, _CTDanglingPlanItem._userLabel,
+                          _CTUserLabel._key, _CTUserLabel._label, _CellularPlanVinylTestXPCServer.fDelegate,
                           _CellularPlanVinylTestXPCServer.fXpcConnections, _CellularPlanVinylTestXPCServer.fXpcListener ]
 ...

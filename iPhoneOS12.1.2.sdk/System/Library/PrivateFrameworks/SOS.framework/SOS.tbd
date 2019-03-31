@@ -1,21 +1,23 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/SOS.framework/SOS
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _CTSUServerConnectionRef, _CTSUServerQueue, _SOSClientInterface, _SOSContactsChangedNotification,
                           _SOSContactsEntitlement, _SOSD_CONNECTION_REQUEST_NOTIFICATION_NAME, _SOSDefaultLog,
                           _SOSDismissSOSNotification, _SOSFriendsChangedNotification, _SOSInitiationStateChangedNotification,
                           _SOSInteractiveStateChangedNotification, _SOSLegacyContactsChangedNotification, _SOSLocationBundle,
                           _SOSMachService, _SOSManagerErrorDomain, _SOSMostRecentLocationSentChangedNotification,
-                          _SOSSendingLocationUpdateChangedNotification, _SOSSendingLocationUpdateValueKey, _SOSServerInterface,
-                          _SOSTriggerEntitlement, _SOSTriggerMechanismChangedNotification, _SOSTriggerMechanismKey,
-                          _SOSVersionNumber, _SOSVersionString ]
+                          _SOSNewtonStateChangedNotification, _SOSSendingLocationUpdateChangedNotification,
+                          _SOSSendingLocationUpdateValueKey, _SOSServerInterface, _SOSTriggerEntitlement,
+                          _SOSTriggerMechanismChangedNotification, _SOSTriggerMechanismKey, _SOSVersionNumber, _SOSVersionString ]
     objc-classes:       [ _NPHSOSPersistentTimerLocationManager, _SOSContact, _SOSContactsManager, _SOSEngine, _SOSEntitlement,
-                          _SOSLegacyContactsManager, _SOSManager, _SOSUtilities ]
+                          _SOSLegacyContactsManager, _SOSManager, _SOSNewtonManager, _SOSUtilities ]
     objc-ivars:         [ _NPHSOSPersistentTimerLocationManager._delegate,
                           _NPHSOSPersistentTimerLocationManager._forceEnableLocationAssertion,
                           _NPHSOSPersistentTimerLocationManager._initalRequestTimer,
@@ -33,10 +35,11 @@ exports:
                           _SOSContactsManager._medicalIDContactsInitialStateSemaphore,
                           _SOSContactsManager._medicalIDEmergencyContacts, _SOSContactsManager._medicalIDEmergencyContactsMutex,
                           _SOSEngine._clientConnections, _SOSEngine._contactsManager, _SOSEngine._friendsManager,
-                          _SOSEngine._lastLocationSent, _SOSEngine._sosPersistentTimerLocationManager,
-                          _SOSEngine._timeLastMessageSent, _SOSEngine._timeToStopSendingMessages,
-                          _SOSLegacyContactsManager._friendsManager, _SOSManager._connection,
-                          _SOSManager._connectionRequestNotificationToken, _SOSManager._initialStateSemaphore,
-                          _SOSManager._mostRecentSOSActivationReason, _SOSManager._observerToQueue,
-                          _SOSManager._sendingLocationUpdate, _SOSManager._sosInitiationState, _SOSManager._sosInteractiveState ]
+                          _SOSEngine._lastLocationSent, _SOSEngine._locationShifter, _SOSEngine._notifyContactsReason,
+                          _SOSEngine._sosPersistentTimerLocationManager, _SOSEngine._timeLastMessageSent,
+                          _SOSEngine._timeToStopSendingMessages, _SOSLegacyContactsManager._friendsManager,
+                          _SOSManager._connection, _SOSManager._connectionRequestNotificationToken,
+                          _SOSManager._initialStateSemaphore, _SOSManager._mostRecentSOSActivationReason,
+                          _SOSManager._observerToQueue, _SOSManager._sendingLocationUpdate, _SOSManager._sosInitiationState,
+                          _SOSManager._sosInteractiveState ]
 ...

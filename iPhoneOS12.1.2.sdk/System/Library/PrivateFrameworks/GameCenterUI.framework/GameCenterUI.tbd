@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _GKAuthenticateExtensionBundleIdentifier, _GKChallengeIssueExtensionBundleIdentifier,
                           _GKDashboardExtensionBundleIdentifier, _GKExtensionBundleIdentifierKey, _GKExtensionErrorDomain,
                           _GKExtensionItemAuthenticateModeKey, _GKExtensionItemChallengeInternalKey,
@@ -31,29 +33,27 @@ exports:
                           _GKViewServiceHostPIDKey, _GKViewServiceLocalPlayerKey, _GKViewServiceStatusBarHeightKey,
                           _IntegralPositionForBounds, _MAX_HUES, __GKIsClientAppUsingRTL, __GKIsRemoteUI,
                           __GKIsRemoteUIUsingPadIdiom ]
-    objc-classes:       [ _GKAbbreviatedNumberFormatter, _GKAchievementSharingInfo, _GKAchievementViewController,
-                          _GKAuthenticateExtensionHostContext, _GKAuthenticateHostViewController, _GKBackgroundTileImageView,
-                          _GKBadgedGameIconBrush, _GKBrush, _GKBrushList, _GKButton, _GKChallengeEventHandlerUIDelegate,
-                          _GKChallengeIssueExtensionHostContext, _GKChallengeIssueHostViewController, _GKCircleImageBrush,
-                          _GKColorPalette, _GKComposedImageBrush, _GKConditionBrush, _GKConstraintLeadingInfo,
-                          _GKConstraintUpdateController, _GKContiguousContainerView, _GKContiguousContainerWithLeadingView,
-                          _GKDashboardExtensionHostContext, _GKDashboardHostViewController, _GKDebugHighlightView,
-                          _GKExtensionHostContext, _GKFacebookLikeButton, _GKFocusableDarkColorPalette,
-                          _GKFriendRequestComposeViewController, _GKGameCenterViewController, _GKGameMessagesBrush,
-                          _GKGameSharingInfo, _GKGradient, _GKHostedAuthenticateViewController,
+    objc-classes:       [ _GKAchievementSharingInfo, _GKAchievementViewController, _GKAuthenticateExtensionHostContext,
+                          _GKAuthenticateHostViewController, _GKBackgroundTileImageView, _GKBadgedGameIconBrush, _GKBrush,
+                          _GKBrushList, _GKButton, _GKChallengeEventHandlerUIDelegate, _GKChallengeIssueExtensionHostContext,
+                          _GKChallengeIssueHostViewController, _GKCircleImageBrush, _GKColorPalette, _GKComposedImageBrush,
+                          _GKConditionBrush, _GKConstraintLeadingInfo, _GKConstraintUpdateController, _GKContiguousContainerView,
+                          _GKContiguousContainerWithLeadingView, _GKDashboardExtensionHostContext,
+                          _GKDashboardHostViewController, _GKDebugHighlightView, _GKExtensionHostContext,
+                          _GKFocusableDarkColorPalette, _GKFriendRequestComposeViewController, _GKGameCenterViewController,
+                          _GKGameMessagesBrush, _GKGameSharingInfo, _GKGradient, _GKHostedAuthenticateViewController,
                           _GKHostedChallengeIssueController, _GKHostedViewController, _GKImageBrush, _GKImageColorPalette,
                           _GKImageContext, _GKImageKey, _GKImageSource, _GKInGameColorPalette, _GKLabel,
                           _GKLeaderboardViewController, _GKLocalImageSource, _GKLoginAlertView, _GKMacGameIconBrush,
                           _GKMatchmakerExtensionHostContext, _GKMatchmakerHostViewController, _GKMatchmakerViewController,
                           _GKMultiCircleImageBrush, _GKNetworkImageSource, _GKNotificationBanner, _GKNotificationBannerView,
-                          _GKNotificationBannerViewController, _GKNotificationBannerWindow, _GKOpenGraphNode,
-                          _GKPlayerMultiPhotoView, _GKPlayerPhotoButton, _GKPlayerPhotoView, _GKRemoteViewController,
-                          _GKRoundButton, _GKScoreSharingInfo, _GKScreenConfigurationController, _GKTextField, _GKTextStyle,
-                          _GKTextStyleFocus, _GKTextStylePad, _GKTextStylePhone, _GKTextStylePhoneInBubbleDetail, _GKThemeBrush,
-                          _GKThreadsafeImageCache, _GKTurnBasedMatchmakerExtensionHostContext,
-                          _GKTurnBasedMatchmakerHostViewController, _GKTurnBasedMatchmakerViewController,
-                          _GKUIRemoteViewController, _GKUITheme, _GKViewServiceInterface, _GKiOSAppIconBrush,
-                          _GKiOSAppIconBrushShare, _SortHueEntry ]
+                          _GKNotificationBannerViewController, _GKNotificationBannerWindow, _GKPlayerMultiPhotoView,
+                          _GKPlayerPhotoButton, _GKPlayerPhotoView, _GKRemoteViewController, _GKRoundButton, _GKScoreSharingInfo,
+                          _GKScreenConfigurationController, _GKTextField, _GKTextStyle, _GKTextStyleFocus, _GKTextStylePad,
+                          _GKTextStylePhone, _GKTextStylePhoneInBubbleDetail, _GKThemeBrush, _GKThreadsafeImageCache,
+                          _GKTurnBasedMatchmakerExtensionHostContext, _GKTurnBasedMatchmakerHostViewController,
+                          _GKTurnBasedMatchmakerViewController, _GKUIRemoteViewController, _GKUITheme, _GKViewServiceInterface,
+                          _GKiOSAppIconBrush, _GKiOSAppIconBrushShare, _SortHueEntry ]
     objc-ivars:         [ _GKAchievementSharingInfo._achievement, _GKAchievementSharingInfo._badgeImage,
                           _GKAchievementSharingInfo._complete, _GKAchievementSharingInfo._game,
                           _GKAchievementSharingInfo._iconImage, _GKAchievementSharingInfo._player,
@@ -71,11 +71,6 @@ exports:
                           _GKDashboardHostViewController._dashboardAssetController, _GKDashboardHostViewController._delegateWeak,
                           _GKDebugHighlightView._caption, _GKDebugHighlightView._color, _GKDebugHighlightView._isOval,
                           _GKExtensionHostContext._game, _GKExtensionHostContext._remoteViewControllerWeak,
-                          _GKFacebookLikeButton._button, _GKFacebookLikeButton._containerSpacerLeft,
-                          _GKFacebookLikeButton._containerSpacerRight, _GKFacebookLikeButton._containerView,
-                          _GKFacebookLikeButton._labelView, _GKFacebookLikeButton._logoView,
-                          _GKFacebookLikeButton._openGraphNode, _GKFacebookLikeButton._replaceableConstraints,
-                          _GKFacebookLikeButton._spinner, _GKFacebookLikeButton._storeItem,
                           _GKFriendRequestComposeViewController._alertController,
                           _GKFriendRequestComposeViewController._composeViewDelegateWeak,
                           _GKFriendRequestComposeViewController._message, _GKFriendRequestComposeViewController._recipientCount,
@@ -131,16 +126,15 @@ exports:
                           _GKNotificationBannerViewController._bannerWidthConstraint,
                           _GKNotificationBannerViewController._bannerYPositionConstraint,
                           _GKNotificationBannerWindow._bannerSemaphore, _GKNotificationBannerWindow._currentBannerViewController,
-                          _GKOpenGraphNode._error, _GKOpenGraphNode._liked, _GKOpenGraphNode._numberOfFriendLikes,
-                          _GKOpenGraphNode._numberOfLikes, _GKOpenGraphNode._url, _GKPlayerMultiPhotoView._photoImages,
-                          _GKPlayerMultiPhotoView._players, _GKPlayerPhotoButton._player, _GKPlayerPhotoView._actualImage,
-                          _GKPlayerPhotoView._onAdaptiveBackground, _GKPlayerPhotoView._player, _GKPlayerPhotoView._selected,
-                          _GKRemoteViewController._blockToPerformAfterViewDidAppear, _GKRemoteViewController._didSetRemoteGame,
-                          _GKRemoteViewController._dirtyProperties, _GKRemoteViewController._game,
-                          _GKRemoteViewController._managingViewControllerWeak, _GKRemoteViewController._previousStatusBarColor,
-                          _GKRemoteViewController._viewDidAppear, _GKScoreSharingInfo._badgeImage, _GKScoreSharingInfo._complete,
-                          _GKScoreSharingInfo._game, _GKScoreSharingInfo._iconImage, _GKScoreSharingInfo._leaderboardCategory,
-                          _GKScoreSharingInfo._player, _GKScoreSharingInfo._score, _GKScreenConfigurationController._emitter,
+                          _GKPlayerMultiPhotoView._photoImages, _GKPlayerMultiPhotoView._players, _GKPlayerPhotoButton._player,
+                          _GKPlayerPhotoView._actualImage, _GKPlayerPhotoView._onAdaptiveBackground, _GKPlayerPhotoView._player,
+                          _GKPlayerPhotoView._selected, _GKRemoteViewController._blockToPerformAfterViewDidAppear,
+                          _GKRemoteViewController._didSetRemoteGame, _GKRemoteViewController._dirtyProperties,
+                          _GKRemoteViewController._game, _GKRemoteViewController._managingViewControllerWeak,
+                          _GKRemoteViewController._previousStatusBarColor, _GKRemoteViewController._viewDidAppear,
+                          _GKScoreSharingInfo._badgeImage, _GKScoreSharingInfo._complete, _GKScoreSharingInfo._game,
+                          _GKScoreSharingInfo._iconImage, _GKScoreSharingInfo._leaderboardCategory, _GKScoreSharingInfo._player,
+                          _GKScoreSharingInfo._score, _GKScreenConfigurationController._emitter,
                           _GKScreenConfigurationController._greatestScreenScale, _GKTextField._appliedStyle,
                           _GKTextField._baseStyle, _GKTextStyle._UIKitFontLeading, _GKTextStyle._UIKitFontTextStyleName,
                           _GKTextStyle._color, _GKTextStyle._fontName, _GKTextStyle._fontNameRebaseSelector,

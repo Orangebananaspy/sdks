@@ -1,13 +1,15 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/SearchToSharePredictionsInternals.framework/SearchToSharePredictionsInternals
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _SGQPBundleIdentifierMessages, _SearchToSharePredictionsInternalsVersionNumber,
-                          _SearchToSharePredictionsInternalsVersionString, _main, _sgqpFilter, _sgqpLogHandle, _sgqpMap,
+                          _SearchToSharePredictionsInternalsVersionString, _sgqpFilter, _sgqpLogHandle, _sgqpMap,
                           _sgqpMapAndFilter, _sgqpMapSelector ]
     objc-classes:       [ _SGQPAsset, _SGQPAssetManager, _SGQPDatabaseMigrations, _SGQPEmotivePhraseDefinition,
                           _SGQPEmotivePhrases, _SGQPLanguageContext, _SGQPLanguageDetection, _SGQPMLPredictor,

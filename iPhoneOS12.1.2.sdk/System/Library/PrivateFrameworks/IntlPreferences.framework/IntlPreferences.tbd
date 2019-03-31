@@ -1,22 +1,14 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/IntlPreferences.framework/IntlPreferences
-current-version:       227
+current-version:       227.15.8
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ _GetNSFriendlySeparator, _IPLoadUIKitFramework, _IPNameOrderFamilyNameFirstKey,
-                          _IPNameOrderGivenNameFirstKey, _IPNameOrderKey, _IPNameOrderUnsetKey, _IPPreferNicknamesDisabled,
-                          _IPPreferNicknamesEnabled, _IPPreferNicknamesKey, _IPShortNameEnabledKey,
-                          _IPShortNameFormatFamilyNameGivenInitialKey, _IPShortNameFormatFamilyOnlyKey,
-                          _IPShortNameFormatGivenNameFamilyInitialKey, _IPShortNameFormatGivenOnlyKey, _IPShortNameFormatKey,
-                          _IPShortNameFormatUnsetKey, _IPShortNamesDisabled, _IPShortNamesEnabled,
-                          _IPUIKeyboardCanonicalInputModeName, _IPUIKeyboardInputModeController,
-                          _IPUIKeyboardInputModeGetBaseLanguage, _IPUIKeyboardInputModeGetIdentifierWithKeyboardLayouts,
-                          _IPUIKeyboardInputModeGetLanguageWithRegion, _IPUIKeyboardInputModeGetNormalizedIdentifier,
-                          _IPUIKeyboardInputMode_Intl, _IPUIKeyboardPreferencesController, _IUIntlPreferencesVersionNumber,
-                          _IUIntlPreferencesVersionString, _IntlPreferencesValue, _IntlSetPreferencesValue,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _GetNSFriendlySeparator, _IntlPreferencesValue, _IntlSetPreferencesValue,
                           _NSPersonNameDefaultDisplayNameOrderKey, _NSPersonNameDefaultNamePreferencesDomain,
                           _NSPersonNameDefaultShortNameEnabledKey, _NSPersonNameDefaultShortNameFormatKey,
                           _NSPersonNameDefaultShouldPreferNicknamesKey, _NSPersonNamePreferencesDidChangeNotification ]

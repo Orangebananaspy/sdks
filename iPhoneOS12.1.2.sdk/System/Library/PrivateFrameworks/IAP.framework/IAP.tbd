@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/IAP.framework/IAP
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _Generate32BitConnectionID, _GetConnectionToIAP2Daemon, _GetConnectionToIAPDaemon,
                           _GetConnectionToIAPDaemonByCheckingConnectionID, _GetConnectionToIAPDaemonOwningPhysicalConnector,
                           _GetConnectionToIAPDaemonWithConnectionID, _GetConnectionToIAPTransportDaemon,
@@ -142,6 +144,8 @@ exports:
                           _kIAPNavigation_RouteGuidanceUpdate_RouteGuidanceManeuverCount_ParamID,
                           _kIAPNavigation_RouteGuidanceUpdate_RouteGuidanceManeuverCurrentList_ParamID,
                           _kIAPNavigation_RouteGuidanceUpdate_RouteGuidanceState_ParamID,
+                          _kIAPNavigation_RouteGuidanceUpdate_SourceName_ParamID,
+                          _kIAPNavigation_RouteGuidanceUpdate_SourceSupportsRouteGuidance_ParamID,
                           _kIAPNavigation_RouteGuidanceUpdate_TimeRemainingToDestination_ParamID, _kIAPServerDiedNotification,
                           _kIAPServerLaunchedNotification, _kIAPTransportAvailableNotification,
                           _kIAPTransportServerDiedNotification, _kIAPTransportServerLaunchedNotification,
@@ -273,5 +277,6 @@ exports:
                           _IAPNavigationAccessoryComponent._maxLength_DestinationRoadName,
                           _IAPNavigationAccessoryComponent._maxLength_ManeuverDescription,
                           _IAPNavigationAccessoryComponent._maxLength_PostManeuverRoadName,
-                          _IAPNavigationAccessoryComponent._name ]
+                          _IAPNavigationAccessoryComponent._name, _IAPNavigationAccessoryComponent._requestSourceName,
+                          _IAPNavigationAccessoryComponent._requestSourceSupportsRouteGuidance ]
 ...

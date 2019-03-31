@@ -1,24 +1,17 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/WeatherUI.framework/WeatherUI
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _AlternativeFontColorAlpha, _ClearGraphicQuality, _CreateWeatherLabel, _DayOfYear, _DegreesFromRadians,
                           _GraphicQuality, _HairlineThickness, _HourAngle, _RadiansFromDegrees, _RoundToPixel, _SunHeight,
                           _WAGrayColor, _WAPrecipitationColor, _WAShadowColor, _WATealColor, _WATextColor,
-                          _WAWeatherMathResetForTimeChange, _WatchSystemTealColor, _WeatherUIFrameworkBundle,
-                          _WeatherUIVersionNumber, _WeatherUIVersionString, _blizzardDay, _blowingSnowDay, _clearDay,
-                          _clearNight, _cloudyDay, _cloudyNight, _crossfadeDuration, _drizzleDay, _drizzleNight, _dustDay,
-                          _dustNight, _flurriesDay, _flurriesNight, _fogDay, _fogNight, _frigidDay, _hailDay, _hazeDay,
-                          _hazeNight, _heavyRainDay, _hotDay, _hurricaneDay, _hurricaneNight, _inclementDay, _inclementNight,
-                          _mostlyClearNight, _mostlyCloudyDay, _mostlyCloudyNight, _partlyCloudyDay, _partlyCloudyNight,
-                          _rainDay, _rainSleetDay, _rainSnowDay, _scatteredShowersDay, _scatteredSnowDay,
-                          _scatteredThunderstormDay, _showerDay, _sleetDay, _smokeDay, _smokeNight, _snowDay, _stormDay,
-                          _stormNight, _sunnyDay, _sunset, _thunderstormsNight, _timeStep, _tornadoDay, _tornadoNight,
-                          _tropicalStormDay, _windyDay, _winteryMixDayMini ]
+                          _WAWeatherMathResetForTimeChange, _WatchSystemTealColor, _WeatherUIFrameworkBundle ]
     objc-classes:       [ _WUIAsynchronousAssetLoader, _WUIDynamicWeatherBackground,
                           _WUIDynamicWeatherBackgroundInteractiveTransaction, _WUIGradientLayer, _WUIWeatherCondition,
                           _WUIWeatherConditionBackgroundView ]
@@ -27,9 +20,10 @@ exports:
                           _WUIAsynchronousAssetLoader._opportunityTimer, _WUIAsynchronousAssetLoader._queue,
                           _WUIAsynchronousAssetLoader._resourceCache, _WUIDynamicWeatherBackground._backgroundCache,
                           _WUIDynamicWeatherBackground._condition, _WUIDynamicWeatherBackground._currentBackground,
-                          _WUIDynamicWeatherBackground._gradientLayer, _WUIDynamicWeatherBackground._rootLayer,
-                          _WUIDynamicWeatherBackground._sunHeightOverride, _WUIDynamicWeatherBackground._transitionBackground,
-                          _WUIDynamicWeatherBackgroundInteractiveTransaction._layer,
+                          _WUIDynamicWeatherBackground._darkeningLayer, _WUIDynamicWeatherBackground._gradientLayer,
+                          _WUIDynamicWeatherBackground._rootLayer, _WUIDynamicWeatherBackground._sunHeightOverride,
+                          _WUIDynamicWeatherBackground._transitionBackground,
+                          _WUIDynamicWeatherBackgroundInteractiveTransaction._layers,
                           _WUIDynamicWeatherBackgroundInteractiveTransaction._progress,
                           _WUIDynamicWeatherBackgroundInteractiveTransaction._swipeDirection,
                           _WUIDynamicWeatherBackgroundInteractiveTransaction._toLayer, _WUIGradientLayer._allowsActions,
@@ -43,6 +37,7 @@ exports:
                           _WUIWeatherConditionBackgroundView._activeIndex, _WUIWeatherConditionBackgroundView._background,
                           _WUIWeatherConditionBackgroundView._cities, _WUIWeatherConditionBackgroundView._crossfadeEffectTimer,
                           _WUIWeatherConditionBackgroundView._crossfadeTransaction,
+                          _WUIWeatherConditionBackgroundView._hasViewAppeared,
                           _WUIWeatherConditionBackgroundView._hidesConditions,
                           _WUIWeatherConditionBackgroundView._introductionImageView,
                           _WUIWeatherConditionBackgroundView._leftCondition, _WUIWeatherConditionBackgroundView._rightCondition,

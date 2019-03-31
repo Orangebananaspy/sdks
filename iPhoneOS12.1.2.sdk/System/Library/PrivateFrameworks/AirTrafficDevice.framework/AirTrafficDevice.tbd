@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _ATAssetSessionTaskGroupingKey, _ATDeviceIDSServiceName, _ATDeviceServiceDomain, _ATDeviceServiceName,
                           _ATDeviceServiceType, _ATDeviceSettingDataClassesNeedingSyncKey, _ATDeviceSettingDataMigratedKey,
                           _ATDeviceSettingDataclassVersionKey, _ATDeviceSettingHostInfoKey,
@@ -33,9 +35,9 @@ exports:
                           _ATLegacyAssetLink, _ATLegacyDeviceSyncManager, _ATLegacyMessageLink, _ATLegacySyncSessionTask,
                           _ATLocalCloudAssetLink, _ATLocalCloudAssetRequest, _ATLockdownListener, _ATLockdownMessageLink,
                           _ATLockdownSocket, _ATMD5SignatureProvider, _ATMPStoreAssetLink, _ATMusicRedownloadOperation,
-                          _ATRestoreAssetLink, _ATRestoreManager, _ATStoreAssetLink, _ATStoreDownloadDialogResponseHandler,
-                          _ATStoreDownloadOperation, _ATStoreDownloadService, _ATStoreMediaAssetLink, _ATUserDefaults,
-                          _ATWakeupCall, _ATWorkspaceObserver, _ATXPCListener ]
+                          _ATPodcastEpisodeDownloadOperation, _ATRestoreAssetLink, _ATRestoreManager, _ATStoreAssetLink,
+                          _ATStoreDownloadDialogResponseHandler, _ATStoreDownloadOperation, _ATStoreDownloadService,
+                          _ATStoreMediaAssetLink, _ATUserDefaults, _ATWakeupCall, _ATWorkspaceObserver, _ATXPCListener ]
     objc-ivars:         [ _ATAssetManager._allAssets, _ATAssetManager._assetClients, _ATAssetManager._assets,
                           _ATAssetManager._assetsByDataclass, _ATAssetManager._assetsByStoreID, _ATAssetManager._completedAssets,
                           _ATAssetManager._completedStoreAssets, _ATAssetManager._legacyAssetClients, _ATAssetManager._observers,
@@ -72,9 +74,10 @@ exports:
                           _ATDeviceService._netServiceListener, _ATDeviceService._pairedSyncManager,
                           _ATDeviceService._proxyListener, _ATDeviceService._queue, _ATDeviceService._settings,
                           _ATDeviceService._statusObserverListener, _ATDeviceService._xpcListener,
-                          _ATDeviceService._xpcTransaction, _ATDeviceSettings._queue, _ATDeviceSettings._userDefaults,
-                          _ATDeviceSyncManager._activeSessionsForLinkIDAndDataClass, _ATDeviceSyncManager._queue,
-                          _ATDeviceSyncManager._settings, _ATDeviceSyncSessionAssetTask._addedTransportUpgradeException,
+                          _ATDeviceService._xpcTransaction, _ATDeviceSettings._bundleIdentifier, _ATDeviceSettings._queue,
+                          _ATDeviceSettings._userDefaults, _ATDeviceSyncManager._activeSessionsForLinkIDAndDataClass,
+                          _ATDeviceSyncManager._queue, _ATDeviceSyncManager._settings,
+                          _ATDeviceSyncSessionAssetTask._addedTransportUpgradeException,
                           _ATDeviceSyncSessionAssetTask._assetClient, _ATDeviceSyncSessionAssetTask._assetController,
                           _ATDeviceSyncSessionAssetTask._assetStreams, _ATDeviceSyncSessionAssetTask._assetToBytesMap,
                           _ATDeviceSyncSessionAssetTask._clientAssetsInProgress,
@@ -140,26 +143,32 @@ exports:
                           _ATMPStoreAssetLink._delegate, _ATMPStoreAssetLink._downloadManager, _ATMPStoreAssetLink._downloadsMap,
                           _ATMPStoreAssetLink._open, _ATMPStoreAssetLink._queue,
                           _ATMusicRedownloadOperation._assetDownloadRequest, _ATMusicRedownloadOperation._redownloadRequest,
+                          _ATPodcastEpisodeDownloadOperation._request, _ATPodcastEpisodeDownloadOperation._session,
                           _ATRestoreAssetLink._activeAssets, _ATRestoreAssetLink._allowedDataClasses,
                           _ATRestoreAssetLink._batchSize, _ATRestoreAssetLink._batchingIsSupported,
-                          _ATRestoreAssetLink._callbackQueue, _ATRestoreAssetLink._delegate, _ATRestoreAssetLink._mbManager,
-                          _ATRestoreAssetLink._open, _ATRestoreAssetLink._queue, _ATRestoreAssetLink._queuedAssets,
-                          _ATRestoreAssetLink._restoreDelegate, _ATRestoreAssetLink._restoreState,
-                          _ATRestoreAssetLink._singleAssetMode, _ATRestoreManager._applicationDataRestoreLink,
-                          _ATRestoreManager._cancelled, _ATRestoreManager._queue, _ATRestoreManager._restoreLink,
-                          _ATRestoreManager._restoreSession, _ATRestoreManager._settings, _ATRestoreManager._xpcTransaction,
-                          _ATStoreAssetLink._assetsByStoreID, _ATStoreAssetLink._callbackQueue, _ATStoreAssetLink._delegate,
-                          _ATStoreAssetLink._downloadManager, _ATStoreAssetLink._downloadsByAsset, _ATStoreAssetLink._open,
-                          _ATStoreAssetLink._queue, _ATStoreDownloadDialogResponseHandler._downloadAsset,
-                          _ATStoreDownloadOperation._asset, _ATStoreDownloadOperation._cancelAllRemaining,
-                          _ATStoreDownloadOperation._downloadFilePath, _ATStoreDownloadOperation._downloadState,
-                          _ATStoreDownloadService._accessQueue, _ATStoreDownloadService._callbackQueue,
-                          _ATStoreDownloadService._downloadOperations, _ATStoreDownloadService._downloadQueue,
-                          _ATStoreDownloadService._observers, _ATStoreMediaAssetLink._callbackQueue,
+                          _ATRestoreAssetLink._callbackQueue, _ATRestoreAssetLink._delegate, _ATRestoreAssetLink._isRestoring,
+                          _ATRestoreAssetLink._mbManager, _ATRestoreAssetLink._open, _ATRestoreAssetLink._queue,
+                          _ATRestoreAssetLink._queuedAssets, _ATRestoreAssetLink._restoreDelegate,
+                          _ATRestoreAssetLink._restoreState, _ATRestoreAssetLink._singleAssetMode,
+                          _ATRestoreManager._applicationDataRestoreLink, _ATRestoreManager._callbackQueue,
+                          _ATRestoreManager._cancelled, _ATRestoreManager._checkRestoreStatusQueue,
+                          _ATRestoreManager._iCloudRestoreActive, _ATRestoreManager._iTunesRestoreActive,
+                          _ATRestoreManager._queue, _ATRestoreManager._restoreLink, _ATRestoreManager._restoreSession,
+                          _ATRestoreManager._settings, _ATRestoreManager._xpcTransaction, _ATStoreAssetLink._assetsByStoreID,
+                          _ATStoreAssetLink._callbackQueue, _ATStoreAssetLink._delegate, _ATStoreAssetLink._downloadManager,
+                          _ATStoreAssetLink._downloadsByAsset, _ATStoreAssetLink._open, _ATStoreAssetLink._queue,
+                          _ATStoreDownloadDialogResponseHandler._downloadAsset, _ATStoreDownloadOperation._asset,
+                          _ATStoreDownloadOperation._cancelAllRemaining, _ATStoreDownloadOperation._downloadFilePath,
+                          _ATStoreDownloadOperation._downloadState, _ATStoreDownloadOperation._resumeData,
+                          _ATStoreDownloadOperation._storeMediaResponseItem, _ATStoreDownloadService._accessQueue,
+                          _ATStoreDownloadService._callbackQueue, _ATStoreDownloadService._downloadOperations,
+                          _ATStoreDownloadService._downloadQueue, _ATStoreDownloadService._observers,
+                          _ATStoreMediaAssetLink._callbackQueue, _ATStoreMediaAssetLink._cancelledAssets,
                           _ATStoreMediaAssetLink._delegate, _ATStoreMediaAssetLink._downloadService,
                           _ATStoreMediaAssetLink._enqueuedAssets, _ATStoreMediaAssetLink._open, _ATStoreMediaAssetLink._queue,
-                          _ATUserDefaults._defaults, _ATWakeupCall._browser, _ATWakeupCall._completion,
-                          _ATWakeupCall._hostLibraryIdentifiers, _ATWakeupCall._hostsToResolve,
+                          _ATStoreMediaAssetLink._resumableAssets, _ATStoreMediaAssetLink._resumeAssetDownloadsActivity,
+                          _ATStoreMediaAssetLink._resumeQueue, _ATUserDefaults._defaults, _ATWakeupCall._browser,
+                          _ATWakeupCall._completion, _ATWakeupCall._hostLibraryIdentifiers, _ATWakeupCall._hostsToResolve,
                           _ATWakeupCall._resolvedLibraryIdentifiers, _ATWakeupCall._resolvedLibraryServices,
                           _ATWakeupCall._resolving, _ATWakeupCall._resolvingHosts, _ATWakeupCall._searching,
                           _ATWakeupCall._wakeThread, _ATWorkspaceObserver._delegate, _ATXPCListener._connections,

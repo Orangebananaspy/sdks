@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/CrashReporterSupport.framework/CrashReporterSupport
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _AppAnalyticsEnabled, _AppleSupportContainerLocation, _BundleName, _CRCreateDirectoryStructure,
                           _CRDateString, _CRDisableCrashReporting, _CRDumpAllOldStructuredDataLogs, _CREnableCrashReporting,
                           _CRGetReporterKey, _CRIsAppleInternal, _CRLogStructuredData, _CRParseStackShotDictionary,
@@ -27,29 +29,29 @@ exports:
                           _WriteJetsamMemoryReport, _WriteStackshotReport, _WriteStackshotReportWithOptions,
                           _WriteStackshotReportWithOptions_async, _WriteStackshotReportWithPID,
                           _WriteStackshotReportWithPID_async, _WriteStackshotReport_async, _WriteStackshotReport_stdc,
-                          _WriteSystemMemoryResetReport, _WriteSystemMemoryResetReportWithPids, __CRASLClient, __CRASLDestructor,
-                          __CRCreatASLPthreadKey, __CRSetCrashExceptionPort, __CRStashCrashExceptionPortInfo,
-                          ___crashreporter_binary_image_hints__, __countKey, __createDirectoryIfNeeded, __fileName,
-                          __logLocation, __performOnFileBackingDomain, __preferencesForDomain, __savePreferencesForDomain,
-                          _cr_stashUpdate, _dlaggd_addScalarForKey, _dlaggd_pushDistrubtionForKey, _dlca_sendEvent,
-                          _generateFrameString, _initializeConversionDictionary, _kActive, _kBasePriority, _kBinaryImages,
-                          _kBuild, _kBusyBufferCount, _kCFProblemTypeBaseband, _kCFProblemTypeBasebandStats,
-                          _kCFProblemTypeFaceTime, _kCFProblemTypeGasGauge, _kCFProblemTypeJetsam, _kCFProblemTypeMACorrelation,
-                          _kCFProblemTypeMessages, _kCFProblemTypeResetCounter, _kCFProblemTypeStackshot, _kCFProblemTypeSyslog,
-                          _kCFProblemTypeWiFiStats, _kCRBinaryInfoArchitectureKey, _kCRBinaryInfoDisplayNameKey,
-                          _kCRBinaryInfoDwarfUUIDKey, _kCRBinaryInfoExecutablePathKey, _kCRBinaryInfoIdentifierKey,
-                          _kCRBinaryInfoShortVersionStringKey, _kCRBinaryInfoVersionKey, _kCRProblemReportAppNameKey,
-                          _kCRProblemReportAppVersionKey, _kCRProblemReportAppleInternalKey, _kCRProblemReportAutoSubmittedKey,
-                          _kCRProblemReportBundleIDKey, _kCRProblemReportCommentsKey, _kCRProblemReportCrashReporterKey,
-                          _kCRProblemReportDescriptionKey, _kCRProblemReportDisplayNameKey, _kCRProblemReportOSVersionKey,
-                          _kCRProblemReportPathKey, _kCRProblemReportProblemTypeKey, _kCRProblemReportSystemIDKey,
-                          _kCRProblemReportURLKey, _kCRProblemTypeConnectionFailure, _kCRProblemTypeCrash,
-                          _kCRProblemTypeExcResource, _kCRProblemTypeHang, _kCRProblemTypeHeartbeat, _kCRProblemTypePanic,
-                          _kCRProblemTypeSpin, _kCRProblemTypeStackshot, _kCompressions, _kCompressorSize, _kContinuation,
-                          _kCopyOnWriteFaults, _kCrashReporterKey, _kDate, _kDecompressions, _kDonatingPids, _kException,
-                          _kFileBacked, _kFree, _kFrontmost, _kFrontmostPids, _kFrozen, _kID, _kInactive, _kIncident,
-                          _kJetsamLevel, _kKernel, _kKernelFrames, _kMemoryPages, _kMemoryPressure, _kMemoryStatus, _kName,
-                          _kNotes, _kOSAIPSHeaderAppNameKey, _kOSAIPSHeaderIncidentIDKey, _kOSAIPSHeaderTimestampKey,
+                          _WriteSystemMemoryResetReport, _WriteSystemMemoryResetReportWithPids, __CRSetCrashExceptionPort,
+                          __CRStashCrashExceptionPortInfo, ___crashreporter_binary_image_hints__, __countKey,
+                          __createDirectoryIfNeeded, __fileName, __logLocation, __performOnFileBackingDomain,
+                          __preferencesForDomain, __savePreferencesForDomain, _cr_stashUpdate, _dlaggd_addScalarForKey,
+                          _dlaggd_pushDistrubtionForKey, _dlca_sendEvent, _generateFrameString, _initializeConversionDictionary,
+                          _kActive, _kBasePriority, _kBinaryImages, _kBuild, _kBusyBufferCount, _kCFProblemTypeBaseband,
+                          _kCFProblemTypeBasebandStats, _kCFProblemTypeFaceTime, _kCFProblemTypeGasGauge, _kCFProblemTypeJetsam,
+                          _kCFProblemTypeMACorrelation, _kCFProblemTypeMessages, _kCFProblemTypeResetCounter,
+                          _kCFProblemTypeStackshot, _kCFProblemTypeSyslog, _kCFProblemTypeWiFiStats,
+                          _kCRBinaryInfoArchitectureKey, _kCRBinaryInfoDisplayNameKey, _kCRBinaryInfoDwarfUUIDKey,
+                          _kCRBinaryInfoExecutablePathKey, _kCRBinaryInfoIdentifierKey, _kCRBinaryInfoShortVersionStringKey,
+                          _kCRBinaryInfoVersionKey, _kCRProblemReportAppNameKey, _kCRProblemReportAppVersionKey,
+                          _kCRProblemReportAppleInternalKey, _kCRProblemReportAutoSubmittedKey, _kCRProblemReportBundleIDKey,
+                          _kCRProblemReportCommentsKey, _kCRProblemReportCrashReporterKey, _kCRProblemReportDescriptionKey,
+                          _kCRProblemReportDisplayNameKey, _kCRProblemReportOSVersionKey, _kCRProblemReportPathKey,
+                          _kCRProblemReportProblemTypeKey, _kCRProblemReportSystemIDKey, _kCRProblemReportURLKey,
+                          _kCRProblemTypeConnectionFailure, _kCRProblemTypeCrash, _kCRProblemTypeExcResource,
+                          _kCRProblemTypeHang, _kCRProblemTypeHeartbeat, _kCRProblemTypePanic, _kCRProblemTypeSpin,
+                          _kCRProblemTypeStackshot, _kCompressions, _kCompressorSize, _kContinuation, _kCopyOnWriteFaults,
+                          _kCrashReporterKey, _kDate, _kDecompressions, _kDonatingPids, _kException, _kFileBacked, _kFree,
+                          _kFrontmost, _kFrontmostPids, _kFrozen, _kID, _kInactive, _kIncident, _kJetsamLevel, _kKernel,
+                          _kKernelFrames, _kMemoryPages, _kMemoryPressure, _kMemoryStatus, _kName, _kNotes,
+                          _kOSAIPSHeaderAppNameKey, _kOSAIPSHeaderIncidentIDKey, _kOSAIPSHeaderTimestampKey,
                           _kOSAProblemTypeAWDAnonymous, _kOSAProblemTypeAWDPrimary, _kOSAProblemTypeBtnReset,
                           _kOSAProblemTypeCoreAnalytics, _kOSAProblemTypeDifferentialPrivacy, _kOSAProblemTypeExcResource,
                           _kOSAProblemTypeGPUEvent, _kOSAProblemTypeJetsam, _kOSAProblemTypeLowBattery,
@@ -67,7 +69,7 @@ exports:
                           _kUserFrames, _kUserTimeInTask, _kUserTimeInThread, _kWaitEvent, _kWired, _logEventForAppleCare,
                           _logForAppleCare, _logLineForAppleCare, _parseGlobalBinaryImages, _parseMemoryData, _parseMemoryPages,
                           _parseMemoryPressure, _parseProcess, _parseProcessData, _parseThermalData, _parseThread,
-                          _rollAppleCareLogs, _safeLog, _setDiagnosticLogSubmission, _sortNumerically ]
+                          _rollAppleCareLogs, _setDiagnosticLogSubmission, _sortNumerically ]
     objc-classes:       [ _AppleErrorReport, _LogCounterObject, _OTATaskingAgentClient, _StructuredDataReport ]
     objc-ivars:         [ _AppleErrorReport._capture_time, _AppleErrorReport._incidentID, _AppleErrorReport._logType,
                           _AppleErrorReport._logWritingOptions, _AppleErrorReport._logfile, _AppleErrorReport._notes,

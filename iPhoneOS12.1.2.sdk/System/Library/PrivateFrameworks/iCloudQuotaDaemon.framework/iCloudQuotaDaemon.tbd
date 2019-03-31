@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/iCloudQuotaDaemon.framework/iCloudQuotaDaemon
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _ICQActionParameterServerLinkIdentifierKey, _ICQActionParameterURLKey,
                           _ICQActionParameterURLQueryParametersKey, _ICQCreateError, _ICQCreateErrorWithMessage,
                           _ICQDaemonBundleIdentifierKey, _ICQErrorDomain, _ICQLogDebugDataTaskComplete, _ICQLogDictKeys,
@@ -55,8 +57,7 @@ exports:
                           __ICQFollowupSpecification._altMessage, __ICQFollowupSpecification._altNoteMessage,
                           __ICQFollowupSpecification._forAccountGroup, __ICQFollowupSpecification._links,
                           __ICQFollowupSpecification._message, __ICQFollowupSpecification._noteActivateLink,
-                          __ICQFollowupSpecification._noteClearLink, __ICQFollowupSpecification._noteDismissLink,
-                          __ICQFollowupSpecification._noteMessage, __ICQFollowupSpecification._noteTitle,
-                          __ICQFollowupSpecification._serverDict, __ICQFollowupSpecification._title,
-                          __ICQFollowupSpecification._zeroAction ]
+                          __ICQFollowupSpecification._noteClearLink, __ICQFollowupSpecification._noteMessage,
+                          __ICQFollowupSpecification._noteTitle, __ICQFollowupSpecification._serverDict,
+                          __ICQFollowupSpecification._title, __ICQFollowupSpecification._zeroAction ]
 ...

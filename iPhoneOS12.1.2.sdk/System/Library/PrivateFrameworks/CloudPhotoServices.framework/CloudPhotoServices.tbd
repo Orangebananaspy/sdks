@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/CloudPhotoServices.framework/CloudPhotoServices
-current-version:       3252.9.110
+current-version:       3422.10.130
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _CPLIsWideGamutDisplay, _CloudPhotoServicesOptionBakeInOrientationKey,
                           _CloudPhotoServicesOptionColorOutputKey, _CloudPhotoServicesOptionExportPresetKey,
                           _CloudPhotoServicesOptionIsPassthroughConversionKey,
@@ -13,8 +15,10 @@ exports:
                           _CloudPhotoServicesOptionOriginatingSignatureKey, _CloudPhotoServicesOptionOutputFileTypeKey,
                           _CloudPhotoServicesOptionRenderOriginatingSignatureKey, _CloudPhotoServicesOptionTargetFileSizeKey,
                           _CloudPhotoServicesRetryCount, _CloudPhotoServicesRetryDelay, _CloudPhotoServicesVersionNumber,
-                          _CloudPhotoServicesVersionString, _PHMediaFormatConversionErrorDomain,
-                          _PHMediaFormatConversionUnknownFutureIdentifierPlaceholder ]
+                          _CloudPhotoServicesVersionString, _CloudPhotoServicesVideoConversionPowerEfficiencyKey,
+                          _CloudPhotoServicesVideoConversionPowerEfficiencyMinimumDurationKey,
+                          _CloudPhotoServicesVideoConversionPowerEfficiencyOverrideUserDefaultsKey,
+                          _PHMediaFormatConversionErrorDomain, _PHMediaFormatConversionUnknownFutureIdentifierPlaceholder ]
     objc-classes:       [ _CloudPhotoServices, _CloudPhotoServicesUtilities, _PHMediaFormatChainedConversionRequest,
                           _PHMediaFormatConversionCompositeRequest, _PHMediaFormatConversionContent,
                           _PHMediaFormatConversionDestination, _PHMediaFormatConversionImplementation_iOS,

@@ -1,12 +1,14 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/PipelineKit.framework/PipelineKit
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    allowed-clients:    [ PhotosGraph, MediaMiningKit ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:  [ PhotosGraph, MediaMiningKit ]
     symbols:            [ _PIErrorDomain, _PipelineKitVersionNumber, _PipelineKitVersionString,
                           _kPIReachabilityChangedNotification ]
     objc-classes:       [ _PICLGeocoderOperation, _PIEKEventStoreOperation, _PIError, _PIGroup, _PILogging,

@@ -1,13 +1,14 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/PowerlogAccounting.framework/PowerlogAccounting
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ ___PowerlogAccountingVersionNumber, ___PowerlogAccountingVersionString,
-                          _kPLAccountingRangeMinIntersectionOverlap ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _kPLAccountingRangeMinIntersectionOverlap ]
     objc-classes:       [ _PLAccountingCorrectionDependency, _PLAccountingCorrectionManager, _PLAccountingCorrectionOwner,
                           _PLAccountingDependency, _PLAccountingDistributionDependency,
                           _PLAccountingDistributionEventBackwardEntry, _PLAccountingDistributionEventEntry,

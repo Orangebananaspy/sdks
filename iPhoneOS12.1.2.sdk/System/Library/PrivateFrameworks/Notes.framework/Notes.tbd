@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/Notes.framework/Notes
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _DataWritingOptionForFileProtectionOption, _ICACAccountPropertyDidChooseToMigrate,
                           _ICACAccountPropertyDidFinishMigration, _ICACAccountPropertyDidMigrateOnMac,
                           _ICAccountUtilitiesPrimaryICloudAccountDidChooseToMigrateKey,
@@ -71,16 +73,15 @@ exports:
                           _ICBaseSearchIndexerDataSource._identifiersByObjectID, _ICBaseSearchIndexerDataSource._needsReindexing,
                           _ICBaseSearchIndexerDataSource._objectIDsBeingProcessed,
                           _ICBaseSearchIndexerDataSource._objectIDsByIdentifier,
-                          _ICBaseSearchIndexerDataSource._objectIDsToIgnore, _ICBaseSearchIndexerDataSource._objectIDsToProcess,
-                          _ICBaseSearchIndexerDataSource._observingChanges, _ICBaseSearchIndexerDataSource._processingQueue,
-                          _ICBaseSearchIndexerDataSource._reindexing, _ICExclusiveLock._cachePath, _ICExclusiveLock._fd,
+                          _ICBaseSearchIndexerDataSource._objectIDsToProcess, _ICBaseSearchIndexerDataSource._observingChanges,
+                          _ICBaseSearchIndexerDataSource._processingQueue, _ICExclusiveLock._cachePath, _ICExclusiveLock._fd,
                           _ICExclusiveLock._fullPath, _ICExclusiveLock._name,
                           _ICIndexItemsByIdentifiersOperation._identifiersToIndex, _ICIndexItemsOperation._dataSources,
                           _ICIndexItemsOperation._error, _ICIndexItemsOperation._maxBytesPerBatch,
                           _ICIndexItemsOperation._searchableIndex, _ICRankingQueryDescriptor._fieldName,
                           _ICRankingQueryDescriptor._type, _ICReachability._alwaysReturnLocalWiFiStatus,
                           _ICReachability._reachabilityRef, _ICSearchIndexer._changeProcessingDelayer,
-                          _ICSearchIndexer._dataSourcesByIdentifier, _ICSearchIndexer._indexingQueue,
+                          _ICSearchIndexer._dataSourcesByIdentifier, _ICSearchIndexer._disabled, _ICSearchIndexer._indexingQueue,
                           _ICSearchIndexer._maxBytesPerIndexingBatch, _ICSearchIndexer._observingChanges,
                           _ICSearchIndexer._operationQueue, _ICSearchIndexer._retryOnErrors, _ICSearchIndexer._retryTimers,
                           _ICSearchIndexer._searchableIndex, _ICSelectorDelayer._delay, _ICSelectorDelayer._forceMainThread,

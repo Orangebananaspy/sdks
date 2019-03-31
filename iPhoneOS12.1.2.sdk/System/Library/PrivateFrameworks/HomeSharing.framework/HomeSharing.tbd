@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _HSArtworkInfoKeyArtworkDictionary, _HSArtworkInfoKeyArtworkDictionaryFullToken,
                           _HSArtworkInfoKeyArtworkDictionaryFullURL, _HSArtworkInfoKeyArtworkDictionaryOvalToken,
                           _HSArtworkInfoKeyArtworkDictionaryOvalURL, _HSArtworkInfoKeyArtworkDictionaryTemplateJSON,
@@ -34,45 +36,32 @@ exports:
                           _HSCloudClientSetSagaAccountID, _HSCloudClientSetSagaDatabaseUserVersion,
                           _HSCloudClientSetSagaLastLibraryUpdateTime, _HSCloudClientSetSagaLastSubscribedContainersUpdateTime,
                           _HSCloudClientSetSagaOnDiskDatabaseRevision, _HSCloudClientSetStorefrontIdentifier,
-                          _HSCloudErrorDomain, _HSCloudLibraryUploadErrorDomain, _HSCloudUtilitiesIsSettableContainerProperty,
-                          _HSCloudUtilitiesIsSettableItemProperty, _HSDefaultsDidChangeNotificationName,
-                          _HSGetCloudDAAPClientPrefix, _HSGetKeychainValueForAccountWithService, _HSGroupIDDidChangeNotification,
-                          _HSGroupIDKey, _HSHomeSharingErrorDomain, _HSHomeSharingLibraryDidBecomeUnavailableNotification,
+                          _HSCloudErrorDomain, _HSCloudLibraryUploadErrorDomain, _HSDAAPUtilitiesCreateData,
+                          _HSDAAPUtilitiesCreateDataForContainer, _HSDAAPUtilitiesCreateDataForItemKindContainer,
+                          _HSDAAPUtilitiesWriteContainer, _HSDAAPUtilitiesWriteProperty, _HSDefaultsDidChangeNotificationName,
+                          _HSGetCloudDAAPClientPrefix, _HSGetKeychainValueForAccountWithService, _HSGetLogCategory,
+                          _HSGroupIDDidChangeNotification, _HSGroupIDKey, _HSHomeSharingErrorDomain,
+                          _HSHomeSharingLibraryDidBecomeUnavailableNotification,
                           _HSHomeSharingLibraryDidUpdateRevisionNumberNotification, _HSHomeSharingLibraryKey,
-                          _HSInitializeLogCategories, _HSLibraryCacheAllKnownCacheDirectories,
-                          _HSLibraryCacheDirectoryForApplication, _HSLibraryCacheDirectoryForIdentifier,
-                          _HSLibraryCacheRootDirectory, _HSLogCategoryAccounts, _HSLogCategoryAvailability,
-                          _HSLogCategoryBrowsing, _HSLogCategoryConnections, _HSLogCategoryConnections_Oversize,
-                          _HSLogCategoryLibrary, _HSLogCategoryXPC, _HSLogCategoryXPC_Oversize,
+                          _HSLibraryCacheAllKnownCacheDirectories, _HSLibraryCacheDirectoryForApplication,
+                          _HSLibraryCacheDirectoryForIdentifier, _HSLibraryCacheRootDirectory,
                           _HSResponseDataParserValueCopyValue, _HSResponseDataParserValueGetStringValue,
-                          _HSSetKeychainValueForAccountWithService, _HSWiFiManagerWiFiEnabledDidChangeNotification,
-                          _HSWiFiManagerWiFiEnabledUserInfoKey, __Z24HSDAAPBaseRequestElementjh,
-                          __Z25HSDAAPMakePropertyElementjN4DAAP9ValueTypeEP11objc_object,
-                          __Z27HSDAAPNSDataWithRootElementNSt3__110shared_ptrIN4DAAP7ElementEEE,
-                          __ZN18HSDAAPPropertyInfo22SharedItemPropertyInfoEv,
-                          __ZN18HSDAAPPropertyInfo24__sharedItemPropertyInfoE,
-                          __ZN18HSDAAPPropertyInfo27SharedContainerPropertyInfoEv,
-                          __ZN18HSDAAPPropertyInfo29__sharedContainerPropertyInfoE, __ZN18HSDAAPPropertyInfoC1Ev,
-                          __ZN18HSDAAPPropertyInfoC2Ev,
-                          __ZNK18HSDAAPPropertyInfo18hasInfoForPropertyENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE,
-                          __ZNK18HSDAAPPropertyInfo20valueTypeForPropertyENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE,
-                          __ZNK18HSDAAPPropertyInfo22elementCodeForPropertyENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE ]
-    objc-classes:       [ _CloudServerOptions, _HSAccountStore, _HSActivityRequest, _HSArtworkRequest,
-                          _HSAuthorizedDSIDsUpdateRequest, _HSAuthorizedDSIDsUpdateResponse, _HSAuthorizedDSIDsUpdatesRequest,
-                          _HSAuthorizedDSIDsUpdatesResponse, _HSBook, _HSBrowseRequest, _HSBrowseResponse, _HSBrowser,
-                          _HSCheckInRentalAssetRequest, _HSCheckOutRentalAssetRequest, _HSCloudAvailabilityController,
-                          _HSCloudClient, _HSCloudItemIDList, _HSConnection, _HSConnectionConfiguration, _HSContainersRequest,
-                          _HSContainersResponse, _HSDatabasesRequest, _HSDatabasesResponse, _HSFairPlayInfo,
+                          _HSSetKeychainValueForAccountWithService, _HSWiFiManagerWiFiAssociatedUserInfoKey,
+                          _HSWiFiManagerWiFiDidChangeNotification, _HSWiFiManagerWiFiEnabledUserInfoKey ]
+    objc-classes:       [ _HSAccountStore, _HSActivityRequest, _HSArtworkRequest, _HSAuthorizedDSIDsUpdateRequest,
+                          _HSAuthorizedDSIDsUpdateResponse, _HSAuthorizedDSIDsUpdatesRequest, _HSAuthorizedDSIDsUpdatesResponse,
+                          _HSBook, _HSBrowseRequest, _HSBrowseResponse, _HSBrowser, _HSCheckInRentalAssetRequest,
+                          _HSCheckOutRentalAssetRequest, _HSCloudAvailabilityController, _HSCloudClient, _HSCloudItemIDList,
+                          _HSConnection, _HSConnectionConfiguration, _HSContainersRequest, _HSContainersResponse,
+                          _HSDAAPPropertyInfo, _HSDatabasesRequest, _HSDatabasesResponse, _HSFairPlayInfo,
                           _HSFairPlaySetupRequest, _HSGetAuthorizedAccountsInfoRequest, _HSGetAuthorizedAccountsTokenRequest,
                           _HSGetAuthorizedAccountsTokenResponse, _HSHomeSharingLibrary, _HSHomeSharingVerifyRequest,
                           _HSIncrementRequest, _HSItemDataRequest, _HSItemsRequest, _HSItemsResponse, _HSLoginRequest,
                           _HSLoginResponse, _HSLogoutRequest, _HSNowPlayingArtworkRequest, _HSNowPlayingArtworkResponse,
                           _HSPlayStatusUpdateRequest, _HSPlayStatusUpdateResponse, _HSPlaybackControlRequest, _HSRequest,
                           _HSResponse, _HSResponseDataParser, _HSServerInfoRequest, _HSSetPropertyRequest,
-                          _HSSetRentalPlaybackStartDateRequest, _HSUpdateRequest, _HSUpdateResponse, _HSWiFiManager, __HSLog ]
-    objc-ivars:         [ _CloudServerOptions._prohibitArtworkPrefetch, _CloudServerOptions._prohibitLibraryUpload,
-                          _CloudServerOptions._supportsAutomaticEnablingiCloudMusicLibrary,
-                          _HSAccountStore._defaultsDidChangeToken, _HSAccountStore._groupIDRequest, _HSAccountStore._queue,
+                          _HSSetRentalPlaybackStartDateRequest, _HSUpdateRequest, _HSUpdateResponse, _HSWiFiManager ]
+    objc-ivars:         [ _HSAccountStore._defaultsDidChangeToken, _HSAccountStore._groupIDRequest, _HSAccountStore._queue,
                           _HSAuthorizedDSIDsUpdateResponse.authorizedDSIDs, _HSAuthorizedDSIDsUpdatesResponse.authorizedDSIDs,
                           _HSBook._artworkURL, _HSBook._author, _HSBook._datePurchased, _HSBook._genre,
                           _HSBook._purchaseHistoryID, _HSBook._redownloadParameters, _HSBook._storeID, _HSBook._title,
@@ -88,9 +77,10 @@ exports:
                           _HSCloudAvailabilityController._isAirplaneModeActive,
                           _HSCloudAvailabilityController._isAutoDownloadOnCellularAllowed,
                           _HSCloudAvailabilityController._isCellularDataActive,
+                          _HSCloudAvailabilityController._isCellularDataRestrictedForMusic,
                           _HSCloudAvailabilityController._isNetworkReachable, _HSCloudAvailabilityController._isShowingAllMusic,
                           _HSCloudAvailabilityController._isShowingAllVideo, _HSCloudAvailabilityController._isUpdateInProgress,
-                          _HSCloudAvailabilityController._isWiFiEnabled,
+                          _HSCloudAvailabilityController._isWiFiAssociated, _HSCloudAvailabilityController._isWiFiEnabled,
                           _HSCloudAvailabilityController._networkReachabilityObservationCount,
                           _HSCloudAvailabilityController._networkType,
                           _HSCloudAvailabilityController._preferencesChangedNotifyToken,
@@ -98,7 +88,9 @@ exports:
                           _HSCloudAvailabilityController._radiosPreferences, _HSCloudClient._active,
                           _HSCloudClient._configuration, _HSCloudClient._daemonConfiguration, _HSCloudClient._nsxpcConnection,
                           _HSCloudClient._preferredVideoQuality, _HSCloudClient._updateInProgressChangedHandler,
-                          _HSCloudItemIDList._idTypes, _HSCloudItemIDList._itemIDs, _HSConnection._activityTimerSource,
+                          _HSCloudClient._updateJaliscoInProgressChangedHandler,
+                          _HSCloudClient._updateSagaInProgressChangedHandler, _HSCloudItemIDList._idTypes,
+                          _HSCloudItemIDList._itemIDs, _HSConnection._activityTimerSource,
                           _HSConnection._basePlaylistContainerID, _HSConnection._baseURL, _HSConnection._connectionSession,
                           _HSConnection._connectionState, _HSConnection._connectionType, _HSConnection._databaseID,
                           _HSConnection._databaseRevision, _HSConnection._fairPlayInfo, _HSConnection._homeSharingGroupID,
@@ -107,8 +99,9 @@ exports:
                           _HSConnectionConfiguration._libraryBagKey, _HSConnectionConfiguration._purchaseClientIdentifier,
                           _HSConnectionConfiguration._requestReason, _HSConnectionConfiguration._userIdentity,
                           _HSConnectionConfiguration._userIdentityStore, _HSContainersRequest._shouldParseResponse,
-                          _HSContainersResponse._containers, _HSDatabasesResponse._databases, _HSFairPlayInfo._hwInfo,
-                          _HSFairPlayInfo._sapQueue, _HSFairPlayInfo._session, _HSGetAuthorizedAccountsTokenResponse.tokenData,
+                          _HSContainersResponse._containers, _HSDAAPPropertyInfo._codeMap, _HSDAAPPropertyInfo._valueTypeMap,
+                          _HSDatabasesResponse._databases, _HSFairPlayInfo._hwInfo, _HSFairPlayInfo._sapQueue,
+                          _HSFairPlayInfo._session, _HSGetAuthorizedAccountsTokenResponse.tokenData,
                           _HSHomeSharingLibrary.__hasPendingUpdateRequest, _HSHomeSharingLibrary._available,
                           _HSHomeSharingLibrary._baseURL, _HSHomeSharingLibrary._connection,
                           _HSHomeSharingLibrary._connectionAccessQueue, _HSHomeSharingLibrary._connectionType,
@@ -128,5 +121,6 @@ exports:
                           _HSRequest._arguments, _HSRequest._bodyData, _HSRequest._concurrent, _HSRequest._method,
                           _HSResponse._MIMEType, _HSResponse._error, _HSResponse._responseCode, _HSResponse._responseData,
                           _HSResponse._responseDataFileURL, _HSResponse._responseHeaderFields, _HSUpdateRequest._connectionType,
-                          _HSUpdateResponse._databaseRevision, _HSWiFiManager._wiFiEnabled, _HSWiFiManager._wifiPreferences ]
+                          _HSUpdateResponse._databaseRevision, _HSWiFiManager._accessQueue, _HSWiFiManager._wiFiAssociated,
+                          _HSWiFiManager._wiFiEnabled, _HSWiFiManager._wifiPreferences ]
 ...

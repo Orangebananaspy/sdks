@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/MobileInstallation.framework/MobileInstallation
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _MIFunctionNameErrorKey, _MIInstallerErrorDomain, _MILibMISErrorNumberKey, _MIPathArgumentErrorKey,
                           _MISourceFileLineErrorKey, _MobileInstallationCheckCapabilitiesMatch,
                           _MobileInstallationClearUninstalled, _MobileInstallationCopyAppMetadata,
@@ -14,29 +16,28 @@ exports:
                           _MobileInstallationCopyInstalledDeveloperAppsForLaunchServices, _MobileInstallationCopySafeHarbors,
                           _MobileInstallationCopySafeHarborsForContainerType,
                           _MobileInstallationEnumerateAllInstalledItemDictionaries, _MobileInstallationInstallForLaunchServices,
-                          _MobileInstallationInstallForLaunchServicesWithError, _MobileInstallationKillInstalld,
-                          _MobileInstallationLookupSystemAppState, _MobileInstallationLookupUninstalled,
-                          _MobileInstallationProcessRestoredContainer,
+                          _MobileInstallationInstallForLaunchServicesWithError, _MobileInstallationKillHelperService,
+                          _MobileInstallationKillInstalld, _MobileInstallationLookupSystemAppState,
+                          _MobileInstallationLookupUninstalled, _MobileInstallationProcessRestoredContainer,
                           _MobileInstallationProcessRestoredContainerWithIdentifierOfType, _MobileInstallationRegisterSafeHarbor,
                           _MobileInstallationRegisterSafeHarborForContainerType, _MobileInstallationRemoveSafeHarbor,
                           _MobileInstallationRemoveSafeHarborForContainerType, _MobileInstallationUninstallForLaunchServices,
-                          _MobileInstallationUninstallForLaunchServicesWithError,
-                          _MobileInstallationUpdateContainerDataProtectionForMigratorOnly,
-                          _MobileInstallationUpdatePlaceholderMetadata, _MobileInstallationUpdateSinfForLaunchServices,
-                          _MobileInstallationUpdateSystemAppState, _MobileInstallationUpdateiTunesMetadataForLaunchServices,
+                          _MobileInstallationUninstallForLaunchServicesWithError, _MobileInstallationUpdatePlaceholderMetadata,
+                          _MobileInstallationUpdateSinfForLaunchServices, _MobileInstallationUpdateSystemAppState,
+                          _MobileInstallationUpdateiTunesMetadataForLaunchServices,
                           _MobileInstallationWatchKitInstallerShouldSkipInstall,
                           _MobileInstallationWatchKitInstallerSnapshotWKApp, _kMICallbackPercentCompleteKey,
                           _kMIDemotionCompleteErrorOccurredKey, _kMIDemotionCompleteNotificationName,
                           _kMIInstallResultInstalledAppInfoArrayKey, _kMIUninstallParallelPlaceholderKey,
-                          _kMIUninstallResultRemovedAppInfoArrayKey, _kMIUpdateSystemAppDataContainerDataProtection,
-                          _kMIWatchKitSnapshotInfoDiskUsageBytes, _kMIWatchKitSnapshotOptionCreatePlaceholder,
-                          _kMIWatchKitSnapshotOptionMaxWKAppVersion ]
+                          _kMIUninstallResultRemovedAppInfoArrayKey, _kMIWatchKitSnapshotInfoDiskUsageBytes,
+                          _kMIWatchKitSnapshotOptionCreatePlaceholder, _kMIWatchKitSnapshotOptionMaxWKAppVersion ]
     objc-classes:       [ _AITransactionLog, _MIBundleMetadata, _MIFileManager, _MIInstallOptions, _MIInstallerClient,
                           _MIStoreMetadata, _MIStoreMetadataSubGenre ]
     objc-ivars:         [ _AITransactionLog._log, _MIBundleMetadata._installBuildVersion, _MIBundleMetadata._installDate,
                           _MIBundleMetadata._installType, _MIBundleMetadata._placeholderFailureReason,
                           _MIBundleMetadata._placeholderFailureUnderlyingError,
-                          _MIBundleMetadata._placeholderFailureUnderlyingErrorSource, _MIInstallOptions._allowLocalProvisioned,
+                          _MIBundleMetadata._placeholderFailureUnderlyingErrorSource,
+                          _MIBundleMetadata._watchKitAppExecutableHash, _MIInstallOptions._allowLocalProvisioned,
                           _MIInstallOptions._developerInstall, _MIInstallOptions._geoJSONData,
                           _MIInstallOptions._iTunesArtworkData, _MIInstallOptions._iTunesMetadata,
                           _MIInstallOptions._installForMigrator, _MIInstallOptions._installTargetType,
@@ -49,9 +50,10 @@ exports:
                           _MIInstallerClient._progressBlock, _MIInstallerClient._queue, _MIStoreMetadata._DSPersonID,
                           _MIStoreMetadata._altDSID, _MIStoreMetadata._appleID, _MIStoreMetadata._artistName,
                           _MIStoreMetadata._betaExternalVersionIdentifier, _MIStoreMetadata._bundleShortVersionString,
-                          _MIStoreMetadata._bundleVersion, _MIStoreMetadata._downloaderID, _MIStoreMetadata._familyID,
-                          _MIStoreMetadata._gameCenterEnabled, _MIStoreMetadata._gameCenterEverEnabled, _MIStoreMetadata._genre,
-                          _MIStoreMetadata._genreID, _MIStoreMetadata._hasMessagesExtension, _MIStoreMetadata._iAdAttribution,
+                          _MIStoreMetadata._bundleVersion, _MIStoreMetadata._deviceBasedVPP, _MIStoreMetadata._downloaderID,
+                          _MIStoreMetadata._familyID, _MIStoreMetadata._gameCenterEnabled,
+                          _MIStoreMetadata._gameCenterEverEnabled, _MIStoreMetadata._genre, _MIStoreMetadata._genreID,
+                          _MIStoreMetadata._hasMessagesExtension, _MIStoreMetadata._iAdAttribution,
                           _MIStoreMetadata._iAdConversionDate, _MIStoreMetadata._iAdImpressionDate,
                           _MIStoreMetadata._initialODRSize, _MIStoreMetadata._isAutoDownload, _MIStoreMetadata._itemID,
                           _MIStoreMetadata._itemName, _MIStoreMetadata._kind, _MIStoreMetadata._label,

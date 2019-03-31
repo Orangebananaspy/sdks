@@ -1,47 +1,51 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/PhotosFormats.framework/PhotosFormats
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _CAMUserPreferenceCaptureEncodingBehavior, _CAMUserPreferenceSlomoConfiguration,
-                          _CAMUserPreferenceVideoConfiguration, _PFAllPlatformsLivePhotoBundleTypeIdentifiers,
+                          _CAMUserPreferenceVideoConfiguration, _IPAMetadataLivePhotoMinimumClientVersion,
+                          _IPAMetadataOriginatingSignature, _IPAMetadataRenderOriginatingSignature,
+                          _IPAMetadataVariationIdentifier, _PFAllPlatformsLivePhotoBundleTypeIdentifiers,
                           _PFAssetAdjustmentsBaseVersionKey, _PFAssetAdjustmentsDataBlobKey,
                           _PFAssetAdjustmentsEditorBundleIDKey, _PFAssetAdjustmentsFormatIdentifierKey,
                           _PFAssetAdjustmentsFormatVersionKey, _PFAssetAdjustmentsRenderTypesKey,
-                          _PFCameraAdjustmentsSerializationCurrentVersion, _PFCameraAdjustmentsSerializationErrorDomain,
-                          _PFCameraAdjustmentsSerializationFilterArrayKey, _PFCameraAdjustmentsSerializationPortraitMetadataKey,
-                          _PFCameraAdjustmentsSerializationVersionKey, _PFCreateGIFFromVideoURL,
-                          _PFCurrentPlatformLivePhotoBundleTypeIdentifier, _PFFaceFractionIntercept, _PFFaceFractionSlope,
+                          _PFAssetAdjustmentsTimestampKey, _PFCameraAdjustmentsSerializationCurrentVersion,
+                          _PFCameraAdjustmentsSerializationErrorDomain, _PFCameraAdjustmentsSerializationFilterArrayKey,
+                          _PFCameraAdjustmentsSerializationPortraitMetadataKey, _PFCameraAdjustmentsSerializationVersionKey,
+                          _PFCreateGIFFromVideoURL, _PFCurrentPlatformLivePhotoBundleTypeIdentifier,
+                          _PFExportGIFRequestErrorDomain, _PFFaceFractionIntercept, _PFFaceFractionSlope,
                           _PFFigCopyImageDataWithProperties, _PFFigCopyImageFileWithProperties, _PFFigCreateCGImageFromImageData,
                           _PFFigCreateCVPixelBufferFromImageData, _PFFigJPEGDataFromImage, _PFFigTranscodeImageDataToJPEG,
                           _PFFigTranscodeImageFileToJPEG, _PFIsLivePhotoBundleTypeIdentifier,
-                          _PFMediaCapabilitiesOptionsSupportsTranscodeChoice, _PFMetadataLivePhotoMinimumClientVersion,
-                          _PFMetadataOriginatingSignature, _PFMetadataRenderOriginatingSignature, _PFMetadataVariationIdentifier,
-                          _PFReadImageDisplayTimeFromVideoFileAtPath, _PFReadMetadataFromVideoAVAsset,
-                          _PFReadMetadataFromVideoAtPath, _PFReadPairingIdentifierFromCGImageProperties,
-                          _PFReadPairingIdentifierFromImageAtPath, _PFReadPairingIdentifierFromVideoAtPath,
-                          _PFReadVideoDurationFromVideoFileAtPath, _PFRemovePairingIdentifierFromCGImageProperties,
-                          _PFSharedFigDecodeSession, _PFSharedFigDecodeSessionDiscardCachedBuffers,
-                          _PFVideoComplementFileExtension, _PFVideoComplementImagePathKey, _PFVideoComplementMetadataKey,
+                          _PFMediaCapabilitiesOptionsSupportsTranscodeChoice, _PFReadImageDisplayTimeFromVideoFileAtPath,
+                          _PFReadMetadataFromVideoAVAsset, _PFReadMetadataFromVideoAtPath,
+                          _PFReadPairingIdentifierFromCGImageProperties, _PFReadPairingIdentifierFromImageAtPath,
+                          _PFReadPairingIdentifierFromVideoAtPath, _PFReadVideoDurationFromVideoFileAtPath,
+                          _PFRemovePairingIdentifierFromCGImageProperties, _PFSharedFigDecodeSession,
+                          _PFSharedFigDecodeSessionDiscardCachedBuffers, _PFVideoComplementFileExtension,
+                          _PFVideoComplementImagePathKey, _PFVideoComplementMetadataKey,
                           _PFVideoComplementMetadataPairingIdentifierKey, _PFVideoComplementMetadataTimingInfoKey,
                           _PFVideoComplementMetadataVersionKey, _PFVideoComplementVideoPathKey, _PFVideoExportErrorDomain,
                           _PFVideoExportErrorStateKey,
                           _StolenFigCaptureMetadataUtilitiesCreateQuickTimeMovieStillImageTimeSampleBuffer,
                           __PLFigCreateImageFromImageData, _b, _kUTTypeLivePhotoBundle, _kUTTypeLivePhotoBundleExtension,
                           _kUTTypeLivePhotoBundlePrivate, _m ]
-    objc-classes:       [ _PFAVReaderWriter, _PFAssetAdjustmentFingerprintData, _PFAssetAdjustments, _PFCVML,
-                          _PFCameraAdjustmentsSerialization, _PFColorConverter, _PFImageMetadata, _PFMediaCapabilities,
-                          _PFMediaCapabilitiesQuery, _PFPhotoSharingOperation, _PFPhotosFaceUtilities,
+    objc-classes:       [ _PFAVReaderWriter, _PFAssetAdjustmentFingerprintData, _PFAssetAdjustments,
+                          _PFCameraAdjustmentsSerialization, _PFColorConverter, _PFExportGIFRequest, _PFImageMetadata,
+                          _PFMediaCapabilities, _PFMediaCapabilitiesQuery, _PFPhotoSharingOperation, _PFPhotosFaceUtilities,
                           _PFProportionalIntegralController, _PFRWSampleBufferChannel, _PFSharingRemaker,
                           _PFSharingRemakerOperation, _PFSharingRemakerOptions, _PFSharingUtilities,
                           _PFSinglePassVideoExportItem, _PFSinglePassVideoExportItemStatistics, _PFSlowMotionConfiguration,
                           _PFSlowMotionRampConfiguration, _PFSlowMotionTimeRangeMapper, _PFSlowMotionTimeRangeMapperScaledRegion,
                           _PFSlowMotionUtilities, _PFVideoAVObjectBuilder, _PFVideoAdjustments, _PFVideoComplement,
                           _PFVideoEncoding, _PFVideoExport, _PFVideoExportRangeCoordinator, _PFVideoExportRangeWaitingCaller,
-                          _PFVideoMetadata, _PFVideoSharingOperation ]
+                          _PFVideoMetadata, _PFVideoSharingOperation, _PFVision ]
     objc-ivars:         [ _PFAVReaderWriter._asset, _PFAVReaderWriter._completionBlock, _PFAVReaderWriter._delegate,
                           _PFAVReaderWriter._isolationQueue, _PFAVReaderWriter._metadataInput, _PFAVReaderWriter._outputURL,
                           _PFAVReaderWriter._progressBlock, _PFAVReaderWriter._serializationQueue,
@@ -56,8 +60,11 @@ exports:
                           _PFAssetAdjustmentFingerprintData._largeAdjustmentData,
                           _PFAssetAdjustmentFingerprintData._largeAdjustmentDataFingerprint,
                           _PFAssetAdjustmentFingerprintData._secondaryAdjustmentData,
-                          _PFAssetAdjustmentFingerprintData._simpleAdjustmentData, _PFAssetAdjustments._propertyListDictionary,
-                          _PFColorConverter._conversionContext, _PFColorConverter._readerWriter,
+                          _PFAssetAdjustmentFingerprintData._simpleAdjustmentData, _PFAssetAdjustments._adjustmentTimestamp,
+                          _PFAssetAdjustments._propertyListDictionary, _PFColorConverter._conversionContext,
+                          _PFColorConverter._readerWriter, _PFExportGIFRequest._ditherDepth,
+                          _PFExportGIFRequest._maximumFrameRate, _PFExportGIFRequest._maximumFrameSize,
+                          _PFExportGIFRequest._shouldDither, _PFExportGIFRequest._synchronous, _PFExportGIFRequest._videoURL,
                           _PFMediaCapabilities._capabilitiesInformation, _PFMediaCapabilitiesQuery._capabilitiesInformation,
                           _PFPhotoSharingOperation.__adjustments, _PFPhotoSharingOperation._customAccessibilityLabel,
                           _PFPhotoSharingOperation._externalIsolation, _PFPhotoSharingOperation._imageURL,
@@ -95,6 +102,7 @@ exports:
                           _PFSinglePassVideoExportItem._currentEncodingBitRate, _PFSinglePassVideoExportItem._destinationFileURL,
                           _PFSinglePassVideoExportItem._identifier, _PFSinglePassVideoExportItem._inputAsset,
                           _PFSinglePassVideoExportItem._inputReadingCompletionGroup,
+                          _PFSinglePassVideoExportItem._maximizePowerEfficiency,
                           _PFSinglePassVideoExportItem._minimumChunkLength,
                           _PFSinglePassVideoExportItem._needsCurrentEncodingBitRateUpdate,
                           _PFSinglePassVideoExportItem._outputFileLastEndOffset,

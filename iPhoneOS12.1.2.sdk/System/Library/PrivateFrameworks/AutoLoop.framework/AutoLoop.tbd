@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/AutoLoop.framework/AutoLoop
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _AUTOLOOP_LAR_KEY_ERROR, _AUTOLOOP_LAR_KEY_FRAMETRANSFORM_GAPBRIDGE,
                           _AUTOLOOP_LAR_KEY_FRAMETRANSFORM_HOMOGRAPHY, _AUTOLOOP_LAR_KEY_FRAMETRANSFORM_RAWTIME,
                           _AUTOLOOP_LAR_KEY_MIN_VERSION, _AUTOLOOP_LAR_KEY_NORMSTABILIZE, _AUTOLOOP_LAR_KEY_NORMSTAB_FRAMEDUR,
@@ -17,19 +19,21 @@ exports:
                           _alGatingResultsDestroy, _alGetFadeDuration, _alGetLoopPeriod, _alGetLoopStart, _alGetNumerOfFrames,
                           _alLoopRecipeDestroy, _alLoopRecipeFromDictionary, _alLoopRecipeToDict, _alRender,
                           _alStabilizeParamsDestroy, _alStabilizeParamsFromDictionary, _alStabilizeParamsToDict,
-                          _autoloopErrorCodeToString, _autoloopSettingsDestroy, _autoloopSettingsSetGating,
-                          _autoloopSettingsSetLongerBounce, _autoloopSettingsSetPointOfInterestAndTrim,
-                          _autoloopSettingsSetRecipeProviderCallback, _buildLoopRecipeDictFromLiveAnalysisDict,
-                          _createAutoLoopSettingsForAsset, _createBundleDefaultGatingClassifierURL, _createGIFFromVideo,
-                          _createGatingDetailString, _create_default_internal_autoloopSettings, _extractGatingDecision,
-                          _extractGatingResult, _getFlavor, _getGatingOptionFlagsForDiagnostics,
-                          _getGatingOptionFlagsForSuggestions, _getGatingResult, _getMinimumSafeInputDuration,
-                          _get_autoloopSettings_forAsset, _get_default_autoloopSettings, _inertiaCamMetalLibEnd,
-                          _inertiaCamMetalLibStart, _liveAnalysisResultCopyRecipe, _liveAnalysisResultDestroy,
-                          _liveAnalysisResultFromDictionary, _liveAnalysisResultToDictionary, _renderGIF, _renderStabilizedVideo,
-                          _runAutoLoopPipeline, _runAutoLoopRender, _runAutoLoopStabilize, _runLiveAnalysisPipeline,
-                          _runPingPongRender, _validateAutoLoopSettings, _validateInputVideoAndGetDuration,
-                          _validateLiveAnalysisDictionaryFormatAndVersion, _validateLiveAnalysisDictionaryVersion ]
+                          _autoloopErrorCodeToString, _autoloopSettingsDestroy, _autoloopSettingsSetDisableStabilizationGPU,
+                          _autoloopSettingsSetGating, _autoloopSettingsSetGatingFeaturesProviderCallback,
+                          _autoloopSettingsSetLongerBounce, _autoloopSettingsSetOptimizeForMemoryUse,
+                          _autoloopSettingsSetPointOfInterestAndTrim, _autoloopSettingsSetRecipeProviderCallback,
+                          _buildLoopRecipeDictFromLiveAnalysisDict, _createAutoLoopSettingsForAsset,
+                          _createBundleDefaultGatingClassifierURL, _createGIFFromVideo, _createGatingDetailString,
+                          _create_default_internal_autoloopSettings, _extractGatingDecision, _extractGatingResult, _getFlavor,
+                          _getGatingOptionFlagsForDiagnostics, _getGatingOptionFlagsForSuggestions, _getGatingResult,
+                          _getMinimumSafeInputDuration, _get_autoloopSettings_forAsset, _get_default_autoloopSettings,
+                          _inertiaCamMetalLibEnd, _inertiaCamMetalLibStart, _liveAnalysisResultCopyRecipe,
+                          _liveAnalysisResultDestroy, _liveAnalysisResultFromDictionary, _liveAnalysisResultToDictionary,
+                          _renderGIF, _renderStabilizedVideo, _runAutoLoopPipeline, _runAutoLoopRender, _runAutoLoopStabilize,
+                          _runLiveAnalysisPipeline, _runPingPongRender, _validateAutoLoopSettings,
+                          _validateInputVideoAndGetDuration, _validateLiveAnalysisDictionaryFormatAndVersion,
+                          _validateLiveAnalysisDictionaryVersion ]
     objc-classes:       [ _AutoLoopStabilizationAnalysis, _AutoLoopStabilizer, _CIHomographyResampler, _ExifMetadataExtractor,
                           _GIFBuilder, _ICHomographyWrapper, _ImageHomographyResampler, _ImageRefSaver,
                           _IrisVideoMetadataExtractor, _LoopAudioComposer, _LoopQuicktimeMetadata, _MetalFAST9BRIEF,
@@ -42,11 +46,12 @@ exports:
                           _AutoLoopStabilizationAnalysis._referenceFrameTime,
                           _AutoLoopStabilizationAnalysis._sequentialAnalysisHomographies,
                           _AutoLoopStabilizationAnalysis._wasPassThruAnalysis, _AutoLoopStabilizer._analysisResult,
-                          _AutoLoopStabilizer._didDrop, _AutoLoopStabilizer._firstFrameTimeAfterDrop,
-                          _AutoLoopStabilizer._lastFrameTimeAfterDrop, _AutoLoopStabilizer._lastStabilizationResult,
-                          _AutoLoopStabilizer._lastTripodQuality, _AutoLoopStabilizer._maxAllowedTrimTime,
-                          _AutoLoopStabilizer._minAllowedRemainingTripodCrop, _AutoLoopStabilizer._minimumFrameDuration,
-                          _AutoLoopStabilizer._naturalTimeScale, _AutoLoopStabilizer._presentationTimesOfFramesToSkip,
+                          _AutoLoopStabilizer._didDrop, _AutoLoopStabilizer._disableGPUStabilization,
+                          _AutoLoopStabilizer._firstFrameTimeAfterDrop, _AutoLoopStabilizer._lastFrameTimeAfterDrop,
+                          _AutoLoopStabilizer._lastStabilizationResult, _AutoLoopStabilizer._lastTripodQuality,
+                          _AutoLoopStabilizer._maxAllowedTrimTime, _AutoLoopStabilizer._minAllowedRemainingTripodCrop,
+                          _AutoLoopStabilizer._minimumFrameDuration, _AutoLoopStabilizer._naturalTimeScale,
+                          _AutoLoopStabilizer._optimizeProcessingForMemory, _AutoLoopStabilizer._presentationTimesOfFramesToSkip,
                           _AutoLoopStabilizer._skipFrameTimes, _AutoLoopStabilizer._statusUpdateBlock,
                           _AutoLoopStabilizer._trimLength, _AutoLoopStabilizer._trimStart, _AutoLoopStabilizer._useLimitedTime,
                           _AutoLoopStabilizer.alwaysAcceptedTripodCropRatio, _AutoLoopStabilizer.canceledAnalysis,

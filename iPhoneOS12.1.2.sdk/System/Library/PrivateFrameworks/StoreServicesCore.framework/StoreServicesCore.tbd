@@ -1,18 +1,16 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/StoreServicesCore.framework/StoreServicesCore
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _StoreServicesCoreVersionNumber, _StoreServicesCoreVersionString,
-                          __ZGVN13mediaplatform9SingletonIN17storeservicescore21ExternalSignalMonitorEE15_sharedInstanceE,
-                          __ZGVN13mediaplatform9SingletonIN17storeservicescore24CFUserNotificationCenterEE15_sharedInstanceE,
-                          __ZGVN13mediaplatform9SingletonIN17storeservicescore25AuthenticationCoordinatorEE15_sharedInstanceE,
-                          __ZN13mediaplatform9SingletonIN17storeservicescore21ExternalSignalMonitorEE15_sharedInstanceE,
-                          __ZN13mediaplatform9SingletonIN17storeservicescore24CFUserNotificationCenterEE15_sharedInstanceE,
-                          __ZN13mediaplatform9SingletonIN17storeservicescore25AuthenticationCoordinatorEE15_sharedInstanceE,
+                          __ZGVZN13mediaplatform9SingletonIN17storeservicescore21ExternalSignalMonitorEE14sharedInstanceEvE15_sharedInstance,
+                          __ZGVZN13mediaplatform9SingletonIN17storeservicescore24CFUserNotificationCenterEE14sharedInstanceEvE15_sharedInstance,
+                          __ZGVZN13mediaplatform9SingletonIN17storeservicescore25AuthenticationCoordinatorEE14sharedInstanceEvE15_sharedInstance,
                           __ZN17storeservicescore10DeviceGUID4guidEv,
                           __ZN17storeservicescore10DeviceGUID8instanceERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE,
                           __ZN17storeservicescore10DeviceGUID9_instanceE,
@@ -1227,9 +1225,6 @@ exports:
                           __ZNK17storeservicescore7Account6statusEv, __ZNK17storeservicescore7Account8lastNameEv,
                           __ZNK17storeservicescore7Account9firstNameEv, __ZNK17storeservicescore8FairPlay12hardwareInfoEv,
                           __ZNK17storeservicescore8FairPlay25contextIdentifierWithPathERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE,
-                          __ZNSt3__117__call_once_proxyINS_5tupleIJOZN13mediaplatform9SingletonIN17storeservicescore21ExternalSignalMonitorEE14sharedInstanceEvEUlvE_EEEEEvPv,
-                          __ZNSt3__117__call_once_proxyINS_5tupleIJOZN13mediaplatform9SingletonIN17storeservicescore24CFUserNotificationCenterEE14sharedInstanceEvEUlvE_EEEEEvPv,
-                          __ZNSt3__117__call_once_proxyINS_5tupleIJOZN13mediaplatform9SingletonIN17storeservicescore25AuthenticationCoordinatorEE14sharedInstanceEvEUlvE_EEEEEvPv,
                           __ZTIN17storeservicescore10URLRequestE, __ZTIN17storeservicescore13CookieStorageE,
                           __ZTIN17storeservicescore13ErrorCategoryE, __ZTIN17storeservicescore13KeyValueStoreE,
                           __ZTIN17storeservicescore13LogoutRequestE, __ZTIN17storeservicescore13LookupRequestE,
@@ -1329,7 +1324,7 @@ exports:
                           __ZTVN17storeservicescore31InvalidateURLBagsProtocolActionE,
                           __ZTVN17storeservicescore39CFUserNotificationPresentationInterfaceE,
                           __ZTVN17storeservicescore7RequestE,
-                          __ZZN13mediaplatform9SingletonIN17storeservicescore21ExternalSignalMonitorEE14sharedInstanceEvE4flag,
-                          __ZZN13mediaplatform9SingletonIN17storeservicescore24CFUserNotificationCenterEE14sharedInstanceEvE4flag,
-                          __ZZN13mediaplatform9SingletonIN17storeservicescore25AuthenticationCoordinatorEE14sharedInstanceEvE4flag ]
+                          __ZZN13mediaplatform9SingletonIN17storeservicescore21ExternalSignalMonitorEE14sharedInstanceEvE15_sharedInstance,
+                          __ZZN13mediaplatform9SingletonIN17storeservicescore24CFUserNotificationCenterEE14sharedInstanceEvE15_sharedInstance,
+                          __ZZN13mediaplatform9SingletonIN17storeservicescore25AuthenticationCoordinatorEE14sharedInstanceEvE15_sharedInstance ]
 ...

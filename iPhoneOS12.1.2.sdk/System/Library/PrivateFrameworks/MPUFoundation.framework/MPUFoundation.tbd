@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _MPUAVItemContentItemIdentifierCollectionDidChangeNotification, _MPUBalancedEdgeInsets,
                           _MPUBorderDrawingCacheDidInvalidateNotification, _MPUContentItemTypeFromMPMediaPlaybackItemContentType,
                           _MPUContentItemTypeIsContainerType, _MPUDataSourceDidInvalidateNotification,
@@ -16,8 +18,9 @@ exports:
                           _MPUFloatLessThanOrEqualToFloat, _MPUFloatRoundForScale,
                           _MPUFontDescriptorPreferredContentSizeCategoryDidChangeNotification,
                           _MPUFontLeadingAdjustmentGetDescription, _MPUFontTextStyleGetDescription, _MPUFontWeightGetDescription,
-                          _MPUHTMLEscapedLyricsML, _MPUHTMLParserErrorDomain, _MPUHTMLParserMultipleErrorsKey,
-                          _MPUHalfTintedTransportButtonReuseIdentifier, _MPUInsetsFromRectToRect,
+                          _MPUHTMLEscapedDescriptionML, _MPUHTMLEscapedLyricsML, _MPUHTMLParserErrorDomain,
+                          _MPUHTMLParserMultipleErrorsKey, _MPUHalfTintedTransportButtonReuseIdentifier,
+                          _MPUInsetsFromRectToRect,
                           _MPUJinglePlayActivityReportingControllerHasProperAccountStatusForAggregateTimePlayActivityEventReporting,
                           _MPUJinglePlayActivityReportingControllerHasSBEnabledAccountStatus,
                           _MPULayoutInterpolatorScaledValueFromTraitEnvironment, _MPULayoutLinearRelationEvaluate,
@@ -114,11 +117,12 @@ exports:
                           _MPUKeyValueObserver._observedObject, _MPUKeyValueObserver._queue,
                           _MPULayoutInterpolator._entriesContainers,
                           _MPULayoutInterpolator._hasEntryWithSpecificSecondaryReferenceMetric,
-                          _MPUMarqueeView._animationDirection, _MPUMarqueeView._contentGap, _MPUMarqueeView._contentSize,
-                          _MPUMarqueeView._contentView, _MPUMarqueeView._coordinatedMarqueeViews,
-                          _MPUMarqueeView._currentAnimationID, _MPUMarqueeView._delegate, _MPUMarqueeView._fadeEdgeInsets,
-                          _MPUMarqueeView._marqueeDelay, _MPUMarqueeView._marqueeEnabled, _MPUMarqueeView._marqueeScrollRate,
-                          _MPUMarqueeView._options, _MPUMarqueeView._primaryMarqueeView, _MPUMarqueeView._viewForContentSize,
+                          _MPUMarqueeView._animationDirection, _MPUMarqueeView._animationReferenceView,
+                          _MPUMarqueeView._contentGap, _MPUMarqueeView._contentSize, _MPUMarqueeView._contentView,
+                          _MPUMarqueeView._coordinatedMarqueeViews, _MPUMarqueeView._currentAnimationID,
+                          _MPUMarqueeView._delegate, _MPUMarqueeView._fadeEdgeInsets, _MPUMarqueeView._marqueeDelay,
+                          _MPUMarqueeView._marqueeEnabled, _MPUMarqueeView._marqueeScrollRate, _MPUMarqueeView._options,
+                          _MPUMarqueeView._primaryMarqueeView, _MPUMarqueeView._viewForContentSize,
                           _MPUMutableUserActivityContext._containerItems, _MPUNotificationObserver._notificationObservationToken,
                           _MPUNowPlayingIndicatorView._interLevelSpacing, _MPUNowPlayingIndicatorView._levelCornerRadius,
                           _MPUNowPlayingIndicatorView._levelGuttersColor, _MPUNowPlayingIndicatorView._levelViews,
@@ -179,7 +183,6 @@ exports:
                           _MPUUserActivityContainerItem._selectedMediaEntity,
                           _MPUUserActivityContainerItem._visualReferenceMediaEntity, _MPUUserActivityContext._containerItems,
                           _MPUUserActivityContext._originatorType, _MPUUserActivityContext._originatorVersion,
-                          _MPUViewControllerConfiguration._aggregateStatisticDisplayCountKey,
                           _MPUViewControllerConfiguration._cellConfigurationClass,
                           _MPUViewControllerConfiguration._configurationBlock,
                           _MPUViewControllerConfiguration._dataSourceConfiguration,

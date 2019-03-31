@@ -1,24 +1,26 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
-current-version:       604.5.6
+current-version:       606.3.4
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _RWIProtocolInspectorFrontendConnectedNotification,
-                          _RWIProtocolInspectorFrontendDisconnectedNotification,
-                          __ZN9Inspector15objcStringArrayEOKN3WTF6RefPtrINS_14InspectorArrayEEE,
-                          __ZN9Inspector20inspectorObjectArrayEP7NSArray, __ZN9Inspector20inspectorStringArrayEP7NSArray ]
+                          _RWIProtocolInspectorFrontendDisconnectedNotification, __ZN9Inspector17toJSONObjectArrayEP7NSArray,
+                          __ZN9Inspector17toJSONStringArrayEP7NSArray,
+                          __ZN9Inspector17toObjCStringArrayEOKN3WTF6RefPtrINS0_8JSONImpl5ArrayENS0_13DumbPtrTraitsIS3_EEEE ]
     objc-classes:       [ _RWIProtocolCSSComputedStyleProperty, _RWIProtocolCSSDomainEventDispatcher,
-                          _RWIProtocolCSSInheritedStyleEntry, _RWIProtocolCSSMedia, _RWIProtocolCSSNamedFlow,
-                          _RWIProtocolCSSProperty, _RWIProtocolCSSPropertyInfo, _RWIProtocolCSSPseudoIdMatches,
-                          _RWIProtocolCSSRegion, _RWIProtocolCSSRule, _RWIProtocolCSSRuleId, _RWIProtocolCSSRuleMatch,
-                          _RWIProtocolCSSSelector, _RWIProtocolCSSSelectorList, _RWIProtocolCSSShorthandEntry,
-                          _RWIProtocolCSSSourceRange, _RWIProtocolCSSStyle, _RWIProtocolCSSStyleAttribute,
-                          _RWIProtocolCSSStyleId, _RWIProtocolCSSStyleSheetBody, _RWIProtocolCSSStyleSheetHeader,
-                          _RWIProtocolConfiguration, _RWIProtocolConsoleCallFrame, _RWIProtocolConsoleDomainEventDispatcher,
-                          _RWIProtocolConsoleMessage, _RWIProtocolConsoleStackTrace, _RWIProtocolDOMAccessibilityProperties,
+                          _RWIProtocolCSSInheritedStyleEntry, _RWIProtocolCSSMedia, _RWIProtocolCSSProperty,
+                          _RWIProtocolCSSPropertyInfo, _RWIProtocolCSSPseudoIdMatches, _RWIProtocolCSSRule,
+                          _RWIProtocolCSSRuleId, _RWIProtocolCSSRuleMatch, _RWIProtocolCSSSelector, _RWIProtocolCSSSelectorList,
+                          _RWIProtocolCSSShorthandEntry, _RWIProtocolCSSSourceRange, _RWIProtocolCSSStyle,
+                          _RWIProtocolCSSStyleAttribute, _RWIProtocolCSSStyleId, _RWIProtocolCSSStyleSheetBody,
+                          _RWIProtocolCSSStyleSheetHeader, _RWIProtocolConfiguration, _RWIProtocolConsoleCallFrame,
+                          _RWIProtocolConsoleChannel, _RWIProtocolConsoleDomainEventDispatcher, _RWIProtocolConsoleMessage,
+                          _RWIProtocolConsoleStackTrace, _RWIProtocolDOMAccessibilityProperties,
                           _RWIProtocolDOMDomainEventDispatcher, _RWIProtocolDOMEventListener, _RWIProtocolDOMHighlightConfig,
                           _RWIProtocolDOMNode, _RWIProtocolDOMRGBAColor, _RWIProtocolDOMStorageDomainEventDispatcher,
                           _RWIProtocolDOMStorageStorageId, _RWIProtocolDebuggerAssertPauseReason,
@@ -52,7 +54,7 @@ exports:
                           _RWIProtocolDOMDomainEventDispatcher._controller,
                           _RWIProtocolDOMStorageDomainEventDispatcher._controller, _RWIProtocolInspector._configuration,
                           _RWIProtocolInspector._inspectorController, _RWIProtocolInspector._inspectorControllerClient,
-                          _RWIProtocolJSONObject._inspectorObject, _RWIProtocolNetworkDomainEventDispatcher._controller,
+                          _RWIProtocolJSONObject._object, _RWIProtocolNetworkDomainEventDispatcher._controller,
                           _RWIProtocolPageDomainEventDispatcher._controller, _RWIRelay._applicationConnections,
                           _RWIRelay._automaticInspectionDebuggers, _RWIRelay._automaticInspectionSessions,
                           _RWIRelay._clientConnections, _RWIRelay._delegate, _RWIRelay._driverInterfaces,
@@ -68,18 +70,17 @@ exports:
                           __RWIAutomaticInspectionSession._currentDebuggerIndex, __RWIAutomaticInspectionSession._debuggers,
                           __RWIAutomaticInspectionSession._identifier, __RWIAutomaticInspectionSession._pageId,
                           __RWIDriverInterfaceInfo._connection, __RWIDriverInterfaceInfo._identifier,
-                          __RWIDriverInterfaceInfo._isActive, __RWIDriverInterfaceInfo._name,
-                          __RWIRelayClientConnection._delegate, __RWIRelayClientConnection._didReportClose,
-                          __RWIRelayClientConnection._sleeping, __RWIRelayClientConnection._tag,
-                          __RWIRelayClientTCPConnection._connection, __RWIRelayConnectionToApplication._connection,
-                          __RWIRelayConnectionToApplication._delegate, __RWIRelayConnectionToApplication._tag,
-                          __RWITCPConnection._connection, __RWITCPConnection._connectionQueue, __RWITCPConnection._delegate,
-                          __RWITCPConnection._incomingData, __RWITCPConnection._inputSource,
-                          __RWITCPConnection._inputSourceCancelled, __RWITCPConnection._outputMessageQueue,
-                          __RWITCPConnection._outputSource, __RWITCPConnection._outputSourceCancelled,
-                          __RWITCPConnection._outputSourceSuspended, __RWITCPConnection._server, __RWITCPConnection._shutdown,
-                          __RWITCPConnection._socket, __RWITCPConnection._type, __RWITCPRelayMessage._payload,
-                          __RWITCPRelayMessage._writtenHeader, __RWITCPRelayMessage._writtenPayloadOffset,
-                          __RWITCPServer._connections, __RWITCPServer._delegate, __RWITCPServer._listenSocket,
-                          __RWITCPServer._serverQueue, __RWITCPServer._serverSource ]
+                          __RWIDriverInterfaceInfo._isActive, __RWIDriverInterfaceInfo._name, __RWIRelayClientConnection._closed,
+                          __RWIRelayClientConnection._delegate, __RWIRelayClientConnection._sleeping,
+                          __RWIRelayClientConnection._tag, __RWIRelayClientTCPConnection._connection,
+                          __RWIRelayConnectionToApplication._connection, __RWIRelayConnectionToApplication._delegate,
+                          __RWIRelayConnectionToApplication._tag, __RWITCPConnection._connection,
+                          __RWITCPConnection._connectionQueue, __RWITCPConnection._delegate, __RWITCPConnection._incomingData,
+                          __RWITCPConnection._inputSource, __RWITCPConnection._inputSourceCancelled,
+                          __RWITCPConnection._outputMessageQueue, __RWITCPConnection._outputSource,
+                          __RWITCPConnection._outputSourceCancelled, __RWITCPConnection._outputSourceSuspended,
+                          __RWITCPConnection._server, __RWITCPConnection._shutdown, __RWITCPConnection._socket,
+                          __RWITCPConnection._type, __RWITCPRelayMessage._payload, __RWITCPRelayMessage._writtenHeader,
+                          __RWITCPRelayMessage._writtenPayloadOffset, __RWITCPServer._connections, __RWITCPServer._delegate,
+                          __RWITCPServer._listenSocket, __RWITCPServer._serverQueue, __RWITCPServer._serverSource ]
 ...

@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
-current-version:       552.2.3
+current-version:       590
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _CALAbbrevDateFormat, _CALAbbrevDateWithoutYearFormat, _CALAbbrevDayOfWeekFormat,
                           _CALAbbrevDayOfWeekWithAbbrevDateFormat, _CALAbbrevDayOfWeekWithDayOfMonthFormat,
                           _CALAbbrevDayOfWeekWithFullDateFormat, _CALAbbrevDayOfWeekWithFullDateWithoutYearFormat,
@@ -90,12 +92,11 @@ exports:
                           _CalLocationPrediction, _CalLogASLWriter, _CalLogBasicTextFormatter, _CalLogConfiguration,
                           _CalLogEnvelope, _CalLogFileWriter, _CalLogFilter, _CalLogMaster, _CalLogNSLogWriter, _CalLogNode,
                           _CalLogUserNotificationWriter, _CalLogWriter, _CalLogXMLFormatter, _CalMeCard, _CalNWideQueue,
-                          _CalOSLogWriter, _CalPersistentLRUCache, _CalPersistentLRUCacheItem, _CalPreferences, _CalRoute,
-                          _CalSignalSensor, _CalSpotlightPendingSearch, _CalSpotlightQueryController, _CalSpotlightQueryResult,
-                          _CalStopwatch, _CalSuggestionsProvider, _CalTimeIntervalLocalization, _CalWellKnownPaths,
-                          _CaliCalendarPRODID, _EKCalendarDate, _EKFoundInAppsEventTracker, _EKMutableCalendarDate,
-                          _EKProtocolObject_Shared, _EKStats, _EKStatsOperation, _EKSuggestionsServiceLogger, _EKTTLEventTracker,
-                          _EKTimeZone ]
+                          _CalOSLogWriter, _CalPreferences, _CalRoute, _CalSignalSensor, _CalSpotlightPendingSearch,
+                          _CalSpotlightQueryController, _CalSpotlightQueryResult, _CalStopwatch, _CalStructuredDataArchiver,
+                          _CalSuggestionsProvider, _CalTimeIntervalLocalization, _CalWellKnownPaths, _CaliCalendarPRODID,
+                          _EKCalendarDate, _EKFoundInAppsEventTracker, _EKMutableCalendarDate, _EKProtocolObject_Shared,
+                          _EKStats, _EKStatsOperation, _EKSuggestionsServiceLogger, _EKTTLEventTracker, _EKTimeZone ]
     objc-ivars:         [ _CalAccumulatingQueue._block, _CalAccumulatingQueue._context, _CalAccumulatingQueue._delay,
                           _CalAccumulatingQueue._executionPending, _CalAccumulatingQueue._queue, _CalAccumulatingQueue._tags,
                           _CalCancellableSearch._cancellationBlock, _CalContactsProvider._reputationStore,
@@ -140,17 +141,9 @@ exports:
                           _CalLogXMLFormatter._shouldPrettyPrint, _CalLogXMLFormatter._useTinyElementNames,
                           _CalMeCard._displayName, _CalMeCard._emailAddresses, _CalMeCard._likenessString, _CalMeCard._uniqueID,
                           _CalMeCard._version, _CalNWideQueue._queue, _CalNWideQueue._semaphore, _CalOSLogWriter.CalOSLogClient,
-                          _CalPersistentLRUCache._cacheItemsByKey, _CalPersistentLRUCache._capacity,
-                          _CalPersistentLRUCache._expirationDate, _CalPersistentLRUCache._expirationInterval,
-                          _CalPersistentLRUCache._expirationSource, _CalPersistentLRUCache._fileSensor,
-                          _CalPersistentLRUCache._firstCacheItem, _CalPersistentLRUCache._lastCacheItem,
-                          _CalPersistentLRUCache._numItems, _CalPersistentLRUCache._path, _CalPersistentLRUCache._queue,
-                          _CalPersistentLRUCache._saveQueue, _CalPersistentLRUCache._systemClockObserver,
-                          _CalPersistentLRUCacheItem._key, _CalPersistentLRUCacheItem._nextItem,
-                          _CalPersistentLRUCacheItem._previousItem, _CalPersistentLRUCacheItem._value, _CalPreferences._domain,
-                          _CalPreferences._registeredNotificationsToReflect, _CalRoute._duration, _CalRoute._end,
-                          _CalRoute._route, _CalRoute._start, _CalSignalSensor._fireBlock, _CalSignalSensor._signal,
-                          _CalSignalSensor._signalSource, _CalSpotlightPendingSearch._clientBundleID,
+                          _CalPreferences._domain, _CalPreferences._registeredNotificationsToReflect, _CalRoute._duration,
+                          _CalRoute._end, _CalRoute._route, _CalRoute._start, _CalSignalSensor._fireBlock,
+                          _CalSignalSensor._signal, _CalSignalSensor._signalSource, _CalSpotlightPendingSearch._clientBundleID,
                           _CalSpotlightPendingSearch._completionHandler, _CalSpotlightPendingSearch._query,
                           _CalSpotlightPendingSearch._searchableItemIdentifiers, _CalSpotlightPendingSearch._searchableItems,
                           _CalSpotlightQueryResult._identifier, _CalSpotlightQueryResult._naturalLanguageSuggestedEvent,

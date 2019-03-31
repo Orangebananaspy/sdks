@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _CFBCGetDiagnosticsSubmissionAllowedClassIdentifier,
                           _CFBCGetDiagnosticsSubmissionAllowedResponseAllowedPListKey,
                           _CFBCGetDiagnosticsSubmissionAllowedResponseClassIdentifier,
@@ -118,7 +120,8 @@ exports:
                           _CFVSGetVoiceAssetsRequestGenderPListKey, _CFVSGetVoiceAssetsRequestLanguagePListKey,
                           _CFVSGetVoiceAssetsRequestQualityPListKey, _CFVSGetVoiceAssetsResponseClassIdentifier,
                           _CFVSGetVoiceAssetsResponseVoiceAssetsPListKey, _CFVSGroupAcronym, _CFVSGroupIdentifier,
-                          _CFVSNotSupportedErrorCode, _CFVSQueryFailedErrorCode, _kCFMessageURLPrefix ]
+                          _CFVSNotSupportedErrorCode, _CFVSQueryFailedErrorCode, _kCFClientScripterBundleID,
+                          _kCFMessageURLPrefix ]
     objc-classes:       [ _CFBCGetDiagnosticsSubmissionAllowed, _CFBCGetDiagnosticsSubmissionAllowedResponse,
                           _CFBCGetNumberFormattedString, _CFBCGetNumberFormattedStringResponse, _CFBCWriteDnuForSubmission,
                           _CFBSBatteryStatus, _CFBSBatteryStatusCommand, _CFBSBatteryStatusCommandCompleted,
@@ -128,7 +131,7 @@ exports:
                           _CFCNAutoCompleteFetchResponse, _CFCNAutoCompleteResult, _CFClient, _CFCommandProcessor,
                           _CFCommandQueuer, _CFMGGetMobileGestaltBoolRequest, _CFMGGetMobileGestaltBoolResponse,
                           _CFMGGetMobileGestaltStringRequest, _CFMGGetMobileGestaltStringResponse, _CFMMessagesQuery,
-                          _CFMMessagesQueryResponse, _CFPBJSONReader, _CFPBJSONUtils, _CFPBJSONWriter, _CFPBProperty,
+                          _CFMMessagesQueryResponse, _CFMetrics, _CFPBJSONReader, _CFPBJSONUtils, _CFPBJSONWriter, _CFPBProperty,
                           _CFSFAddToSafariReadingList, _CFSGSuggestContactMatchesWithTextSearch, _CFSGSuggestedContact,
                           _CFSGSuggestedContacts, _CFServiceConnector, _CFServiceHelper, _CFVSGetVoiceAssetsRequest,
                           _CFVSGetVoiceAssetsResponse ]

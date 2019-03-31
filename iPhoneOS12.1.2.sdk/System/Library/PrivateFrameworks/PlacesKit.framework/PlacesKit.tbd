@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/PlacesKit.framework/PlacesKit
-current-version:       3252.11.160
+current-version:       3422.9.220
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _PXMapStoreDefaultCapacityPerNode, _PXMapStoreMinimumRectWidth, _PXMapStoreStoreItemsInLeafNodesOnly,
                           _PXQuadTreeNodeCanBeSubdivided, _PXQuadTreeNodeExtendCapacity, _PXQuadTreeNodeFindItemsInRect,
                           _PXQuadTreeNodeFree, _PXQuadTreeNodeHasCapacity, _PXQuadTreeNodeInsertItem, _PXQuadTreeNodeMake,
@@ -144,18 +146,19 @@ exports:
                           _PXPlacesSnapshotFactory._cachedFilePath, _PXPlacesSnapshotFactory._cachedSnapshotImage,
                           _PXPlacesSnapshotFactory._cachedSnapshotImageIdentifier, _PXPlacesSnapshotFactory._concurentQueue,
                           _PXPlacesSnapshotFactory._countCacheInvalidated, _PXPlacesSnapshotFactory._delegate,
-                          _PXPlacesSnapshotFactory._isRegisteredForPhotoLibraryChanges,
+                          _PXPlacesSnapshotFactory._isRegisteredForPhotoLibraryChanges, _PXPlacesSnapshotFactory._localSearches,
                           _PXPlacesSnapshotFactory._placeholderImage, _PXPlacesSnapshotFactory._placesAssetsFetchResult,
                           _PXPlacesSnapshotFactory._placesCollection, _PXPlacesSnapshotFactory._requestedCompletionBlocks,
                           _PXPlacesSnapshotFactory._serialQueue, _PXPlacesSnapshotFactory._snapshottedAsset,
                           _PXPlacesSnapshotOptions._cacheDirectoryPath, _PXPlacesSnapshotOptions._extendedTraitCollection,
                           _PXPlacesSnapshotOptions._geotaggableInformationDelegate, _PXPlacesSnapshotOptions._queue,
-                          _PXPlacesSnapshotOptions._shouldSkipSyncCachedImage, _PXPlacesSnapshotOptions._snapshotMapType,
-                          _PXPlacesSnapshotOptions._viewSize, _PXPlacesSnapshotOptions._visibleDistance,
-                          _PXPlacesStore._capacityPerNode, _PXPlacesStore._delegate, _PXPlacesStore._itemChangeSemaphore,
-                          _PXPlacesStore._itemsToAdd, _PXPlacesStore._itemsToAddArray, _PXPlacesStore._itemsToRemove,
-                          _PXPlacesStore._numberOfItems, _PXPlacesStore._rect, _PXPlacesStore._rootNode, _PXPlacesStore._rwlock,
-                          _PXPlacesStore._updateCount, _PXPlacesTestDataGenerator._dataPoints, _PXPlacesTestDataGenerator._from,
+                          _PXPlacesSnapshotOptions._shouldSkipPlaceholder, _PXPlacesSnapshotOptions._showsPointLabels,
+                          _PXPlacesSnapshotOptions._snapshotMapType, _PXPlacesSnapshotOptions._viewSize,
+                          _PXPlacesSnapshotOptions._visibleDistance, _PXPlacesStore._capacityPerNode, _PXPlacesStore._delegate,
+                          _PXPlacesStore._itemChangeSemaphore, _PXPlacesStore._itemsToAdd, _PXPlacesStore._itemsToAddArray,
+                          _PXPlacesStore._itemsToRemove, _PXPlacesStore._numberOfItems, _PXPlacesStore._rect,
+                          _PXPlacesStore._rootNode, _PXPlacesStore._rwlock, _PXPlacesStore._updateCount,
+                          _PXPlacesTestDataGenerator._dataPoints, _PXPlacesTestDataGenerator._from,
                           _PXPlacesTestDataGenerator._generationQueue, _PXPlacesTestDataGenerator._latOffsets,
                           _PXPlacesTestDataGenerator._longOffsets, _PXPlacesTestDataGenerator._max,
                           _PXPlacesTestDataGenerator._to, _PXPlacesTestDataPoint._coordinate, _PXPlacesTestDataPoint._image,

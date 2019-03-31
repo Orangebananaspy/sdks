@@ -1,18 +1,20 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _ASCodewordFrequency, _ASCommandStringForCode, _ASDeviceInfo, _ASDeviceWipeThreshold,
                           _ASFilterCodeForNumPastDays, _ASFolderArrayForDAFolderArray, _ASFolderHasUpdate,
                           _ASHTTPConnectionErrorDomain, _ASInboxChangedNotification, _ASInboxSyncingRequest,
                           _ASMinimumPasswordLength, _ASNumPastDaysToSyncForFilterCode, _ASParameterStringForTag,
                           _ASPasswordComplexity, _ASPasswordLockTimeout, _ASPasswordLockTimeoutEnabled, _ASPolicyEnabled,
                           _ASPolicyMCFeaturesKey, _ASPolicyPerAccountEASPoliciesKey, _ASPolicyType, _ASRequireRemoteWipeAbility,
-                          _ASUnarchiveObjectOfClass, _ASWAPXMLPolicyType, _ASWBXMLPolicyType, _AllowBluetooth, _AllowBrowser,
+                          _ASUnarchiveDate, _ASWAPXMLPolicyType, _ASWBXMLPolicyType, _AllowBluetooth, _AllowBrowser,
                           _AllowCamera, _AllowConsumerEmail, _AllowDesktopSync, _AllowHTMLEmail, _AllowInternetSharing,
                           _AllowIrDA, _AllowPOPIMAPEmail, _AllowRemoteDesktop, _AllowSMIMEEncryptionAlgorithmNegotiation,
                           _AllowSMIMESoftCerts, _AllowSimpleDevicePassword, _AllowStorageCard, _AllowTextMessaging,
@@ -32,8 +34,10 @@ exports:
                           _RequireStorageCardEncryption, _TranslatePolicyWBXMLDCCPT, _UNCAccessEnabled,
                           _UnapprovedInROMAppliationList, _WBXMLProvisioningXMLPolicyType, __EASTaskLogPublic,
                           __UserASFolderTypeForDataclass, __getParmForTag, _asDeviceID, _bestProtocolVersionFromVersions,
-                          _getAttributeAsNSString, _handleCodePageSwitch, _kASEncryptionIdentityPersistentReference,
-                          _kASLastKnownProtocolVersion, _kASSigningIdentityPersistentReference, _kASSyncDefaultFoldersOnly,
+                          _getAttributeAsNSString, _handleCodePageSwitch, _kASAccountEmailAddresses,
+                          _kASAccountMailNumberOfPastDaysToSync, _kASCustomSignature, _kASEncryptionIdentityPersistentReference,
+                          _kASLastKnownProtocolVersion, _kASSavedFolderPathsThatClientsCareAbout,
+                          _kASSigningIdentityPersistentReference, _kASSupportsGeneratingBulletins, _kASSyncDefaultFoldersOnly,
                           _kAutodiscoverHost, _kAutodiscoverPort, _kAutodiscoverShouldUseSSL, _kAutodiscoverUsername,
                           _logEmptyRequestToExchangeTrafficLog, _logPlainTextDataToExchangeTrafficLog,
                           _logWBXMLDataToExchangeTrafficLog, _managedConfigurationPoliciesFromEASWBXMLPolicies,

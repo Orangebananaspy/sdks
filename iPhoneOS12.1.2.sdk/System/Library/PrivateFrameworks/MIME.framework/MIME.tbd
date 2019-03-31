@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/MIME.framework/MIME
-current-version:       3445.5.101
+current-version:       3445.102.4
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _HEADER_DICT_KEY_LABEL, _HEADER_DICT_KEY_ORDERED_KEYS, _HEADER_DICT_KEY_VALUE_LIST,
                           _HEADER_DICT_KEY_VALUE_STRING, _H_APPLEDOUBLE, _H_APPLEFILE, _H_ATTACHMENTS, _H_AUTO_SUBMITTED,
                           _H_CONTENT_BASE, _H_CONTENT_DESCRIPTION, _H_CONTENT_DISPOSITION, _H_CONTENT_ID, _H_CONTENT_LANGUAGE,
@@ -55,14 +57,14 @@ exports:
                           _MFPartialNetworkDataConsumer, _MFPlaceholderFileWrapper, _MFPriorityDesignator,
                           _MFProgressFilterDataConsumer, _MFPromise, _MFQueue, _MFQuotedPrintableDecoder,
                           _MFQuotedPrintableEncoder, _MFRangedDataFilter, _MFRecursiveLock, _MFScheduler, _MFURLUtils,
-                          _MFUUDecoder, _MFWeakProxy, _MFWeakReferenceHolder, _MFWeakSet, __MFBlockObservable, __MFBlockObserver,
-                          __MFBoundedQueueStrategy, __MFCombineLatestObservable, __MFCombineLatestObservableSubscription,
-                          __MFConcatenatingObservable, __MFConnectableObservable, __MFDefaultQueueingStrategy,
-                          __MFDistinctUntilChangedObservable, __MFEmailSetEmail, __MFEmailSetEnumerator, __MFGeneratorObservable,
-                          __MFIdealTimerObservable, __MFImmediateScheduler, __MFKeyValueObserverHandler,
-                          __MFLazyCacheConditionLock, __MFLazyFuture, __MFMainThreadScheduler, __MFManualObservable,
-                          __MFMergingObservable, __MFOperationQueueScheduler, __MFPriorityQueueStrategy, __MFQueueScheduler,
-                          __MFReplayObservable, __MFSamplingObservable ]
+                          _MFUUDecoder, _MFWeakProxy, _MFWeakReferenceHolder, _MFWeakSet, _MFZeroCopyDataConsumer,
+                          __MFBlockObservable, __MFBlockObserver, __MFBoundedQueueStrategy, __MFCombineLatestObservable,
+                          __MFCombineLatestObservableSubscription, __MFConcatenatingObservable, __MFConnectableObservable,
+                          __MFDefaultQueueingStrategy, __MFDistinctUntilChangedObservable, __MFEmailSetEmail,
+                          __MFEmailSetEnumerator, __MFGeneratorObservable, __MFIdealTimerObservable, __MFImmediateScheduler,
+                          __MFKeyValueObserverHandler, __MFLazyCacheConditionLock, __MFLazyFuture, __MFMainThreadScheduler,
+                          __MFManualObservable, __MFMergingObservable, __MFOperationQueueScheduler, __MFPriorityQueueStrategy,
+                          __MFQueueScheduler, __MFReplayObservable, __MFSamplingObservable ]
     objc-ivars:         [ _MFArrayDiff._addedIndexes, _MFArrayDiff._commonIndexes, _MFArrayDiff._removedIndexes,
                           _MFBase64Decoder._bound, _MFBase64Decoder._decodedBits, _MFBase64Decoder._equalCount,
                           _MFBase64Decoder._leftovers, _MFBase64Decoder._table, _MFBase64Decoder._validBytes,
@@ -95,8 +97,9 @@ exports:
                           _MFMessageStore._uniqueStrings, _MFMessageStoreObjectCache._cache,
                           _MFMessageStoreObjectCache._capacity, _MFMessageStoreObjectCache._comparator,
                           _MFMessageStoreObjectCache._keyGenerator, _MFMessageStoreObjectCache._lock,
-                          _MFMessageTextAttachment._cache, _MFMimeBody._numAlternatives, _MFMimeBody._preferredAlternative,
-                          _MFMimeBody._topLevelPart, _MFMimeCharset._canBeUsedForOutgoingMessages, _MFMimeCharset._charsetName,
+                          _MFMessageTextAttachment._cache, _MFMimeBody._encryptedDescendantState, _MFMimeBody._numAlternatives,
+                          _MFMimeBody._preferredAlternative, _MFMimeBody._topLevelPart,
+                          _MFMimeCharset._canBeUsedForOutgoingMessages, _MFMimeCharset._charsetName,
                           _MFMimeCharset._coversLargeUnicodeSubset, _MFMimeCharset._encoding, _MFMimeCharset._primaryLanguage,
                           _MFMimeCharset._useBase64InHeaders, _MFMimePart._body, _MFMimePart._bodyParameters,
                           _MFMimePart._contentTransferEncoding, _MFMimePart._decodedData, _MFMimePart._fullData,
@@ -123,28 +126,29 @@ exports:
                           _MFUUDecoder._length, _MFUUDecoder._lineComplete, _MFUUDecoder._passthrough, _MFUUDecoder._readBytes,
                           _MFUUDecoder._validLength, _MFWeakProxy._hash, _MFWeakProxy._objectClass, _MFWeakProxy._weakRef,
                           _MFWeakReferenceHolder._reference, _MFWeakSet._gen, _MFWeakSet._lock, _MFWeakSet._objects,
-                          __MFBlockObservable._block, __MFBlockObserver._completionBlock, __MFBlockObserver._failureBlock,
-                          __MFBlockObserver._resultBlock, __MFBoundedQueueStrategy._capacity,
-                          __MFBoundedQueueStrategy._overflowHandler, __MFCombineLatestObservable._observables,
-                          __MFCombineLatestObservableSubscription._activeIndexes, __MFCombineLatestObservableSubscription._lock,
-                          __MFCombineLatestObservableSubscription._observables, __MFCombineLatestObservableSubscription._results,
+                          _MFZeroCopyDataConsumer._dataHolder, _MFZeroCopyDataConsumer._done, __MFBlockObservable._block,
+                          __MFBlockObserver._completionBlock, __MFBlockObserver._failureBlock, __MFBlockObserver._resultBlock,
+                          __MFBoundedQueueStrategy._capacity, __MFBoundedQueueStrategy._overflowHandler,
+                          __MFCombineLatestObservable._observables, __MFCombineLatestObservableSubscription._activeIndexes,
+                          __MFCombineLatestObservableSubscription._lock, __MFCombineLatestObservableSubscription._observables,
+                          __MFCombineLatestObservableSubscription._results,
                           __MFCombineLatestObservableSubscription._silentIndexes,
                           __MFCombineLatestObservableSubscription._tokens, __MFConnectableObservable._cancelable,
-                          __MFConnectableObservable._connected, __MFConnectableObservable._lock,
-                          __MFConnectableObservable._observable, __MFConnectableObservable._observersToCancelable,
-                          __MFDistinctUntilChangedObservable._lastObservedResult, __MFDistinctUntilChangedObservable._lock,
-                          __MFDistinctUntilChangedObservable._observable, __MFEmailSetEmail._comment,
-                          __MFEmailSetEmail._encodedAddress, __MFEmailSetEmail._hash, __MFEmailSetEnumerator._set,
-                          __MFEmailSetEnumerator._state, __MFGeneratorObservable._cancelable, __MFGeneratorObservable._condition,
-                          __MFGeneratorObservable._delayForState, __MFGeneratorObservable._nextStateForState,
-                          __MFGeneratorObservable._resultFromState, __MFGeneratorObservable._scheduler,
-                          __MFGeneratorObservable._state, __MFIdealTimerObservable._input, __MFIdealTimerObservable._interval,
-                          __MFIdealTimerObservable._scheduler, __MFKeyValueObserverHandler._block,
-                          __MFKeyValueObserverHandler._keyPath, __MFKeyValueObserverHandler._object,
-                          __MFKeyValueObserverHandler._observing, __MFLazyCacheConditionLock._waiterCount, __MFLazyFuture._block,
-                          __MFLazyFuture._promise, __MFLazyFuture._scheduler, __MFLazyFuture._stateLock,
-                          __MFManualObservable._lock, __MFManualObservable._observers, __MFManualObservable._promise,
-                          __MFOperationQueueScheduler._queue, __MFPriorityQueueStrategy._comparator, __MFQueueScheduler._queue,
-                          __MFReplayObservable._lock, __MFReplayObservable._observable, __MFReplayObservable._queue,
-                          __MFSamplingObservable._observable, __MFSamplingObservable._sampler ]
+                          __MFConnectableObservable._lock, __MFConnectableObservable._observable,
+                          __MFConnectableObservable._subject, __MFDistinctUntilChangedObservable._lastObservedResult,
+                          __MFDistinctUntilChangedObservable._lock, __MFDistinctUntilChangedObservable._observable,
+                          __MFEmailSetEmail._comment, __MFEmailSetEmail._encodedAddress, __MFEmailSetEmail._hash,
+                          __MFEmailSetEnumerator._set, __MFEmailSetEnumerator._state, __MFGeneratorObservable._cancelable,
+                          __MFGeneratorObservable._condition, __MFGeneratorObservable._delayForState,
+                          __MFGeneratorObservable._nextStateForState, __MFGeneratorObservable._resultFromState,
+                          __MFGeneratorObservable._scheduler, __MFGeneratorObservable._state, __MFIdealTimerObservable._input,
+                          __MFIdealTimerObservable._interval, __MFIdealTimerObservable._scheduler,
+                          __MFKeyValueObserverHandler._block, __MFKeyValueObserverHandler._keyPath,
+                          __MFKeyValueObserverHandler._object, __MFKeyValueObserverHandler._observing,
+                          __MFLazyCacheConditionLock._waiterCount, __MFLazyFuture._block, __MFLazyFuture._promise,
+                          __MFLazyFuture._scheduler, __MFLazyFuture._stateLock, __MFManualObservable._lock,
+                          __MFManualObservable._observers, __MFManualObservable._promise, __MFOperationQueueScheduler._queue,
+                          __MFPriorityQueueStrategy._comparator, __MFQueueScheduler._queue, __MFReplayObservable._error,
+                          __MFReplayObservable._isStopped, __MFReplayObservable._lock, __MFReplayObservable._observers,
+                          __MFReplayObservable._queue, __MFSamplingObservable._observable, __MFSamplingObservable._sampler ]
 ...

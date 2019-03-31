@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _BABookmarkCopyURL, _BABookmarkSetURL, _BAChangeChangedItemOrderWithinParent, _BAChangeCopyChangedItem,
                           _BAChangeCopyServerId, _BAChangeCopySourceServerIdForMove, _BAChangeGetChangeType,
                           _BAChangeGetIsBookmarkChange, _BAChangeGetIsFolderChange, _BAChangeIsMove,
@@ -37,15 +39,16 @@ exports:
                           _CKBADatabaseCopyServerIdInFolderAfterServerId, _CKBADatabaseCopyServerIdInFolderBeforeServerId,
                           _CKBADatabaseCopyServerIdsInFolderWithServerId, _CKBADatabaseCreateBookmark, _CKBADatabaseCreateFolder,
                           _CKBADatabaseEndMergingChanges, _CKBADatabaseGetLocalCloudKitMigrationState,
-                          _CKBADatabasePerformDeduplication, _CKBADatabaseSetAccountHash,
-                          _CKBADatabaseSetChildrenOrderForFolderWithServerId, _CKBADatabaseSetLocalCloudKitMigrationState,
-                          _CKBAFolderCopyKnownKeys, _CKBAFolderGetFolderType, _CKBAItemCopyAttributes, _CKBAItemCopyValueForKey,
-                          _CKBAItemGetIsInFolderWithServerSyncId, _CKBAItemGetItemType, _CKBAItemIsEqualToItem,
-                          _CKBAItemSetModifiedAttributes, _CKBAReadingListItemCopyKnownKeys, _CKBAResetDeviceIdentifier,
-                          _DidDownloadBookmarkIconsNotification, _ReadingListDictionaryKey, _WebBookmarkIDFromNSString,
-                          _WebBookmarkWebFilterSettingsDidChange, _WebBookmarksBookmarksBarFolderTitle,
-                          _WebBookmarksBookmarksMenuFolderTitle, _WebBookmarksChangedFolderIDKey,
-                          _WebBookmarksDatabaseResetReasonKey, _WebBookmarksDataclassDidChangeNotification,
+                          _CKBADatabasePerformDeduplication, _CKBADatabasePerformMaintenanceAfterVersion,
+                          _CKBADatabaseSetAccountHash, _CKBADatabaseSetChildrenOrderForFolderWithServerId,
+                          _CKBADatabaseSetLocalCloudKitMigrationState, _CKBAFolderCopyKnownKeys, _CKBAFolderGetFolderType,
+                          _CKBAItemCopyAttributes, _CKBAItemCopyValueForKey, _CKBAItemGetIsInFolderWithServerSyncId,
+                          _CKBAItemGetItemType, _CKBAItemIsEqualToItem, _CKBAItemSetModifiedAttributes,
+                          _CKBAReadingListItemCopyKnownKeys, _CKBAResetDeviceIdentifier, _DidDownloadBookmarkIconsNotification,
+                          _ReadingListDictionaryKey, _WebBookmarkIDFromNSString, _WebBookmarkWebFilterSettingsDidChange,
+                          _WebBookmarksBookmarksBarFolderTitle, _WebBookmarksBookmarksMenuFolderTitle,
+                          _WebBookmarksChangedFolderIDKey, _WebBookmarksDatabaseResetReasonKey,
+                          _WebBookmarksDataclassDidChangeNotification,
                           _WebBookmarksDetectedLocalMigrationStateTransitionNotification, _WebBookmarksDidReloadNotification,
                           _WebBookmarksDidVacuumDatabaseDistributedNotification,
                           _WebBookmarksFolderContentsDidChangeNotification, _WebBookmarksFromMigrationStateKey,
@@ -62,7 +65,6 @@ exports:
                           _kSafariFetcherRegisterForReadingListFetcherUpdatesMessageName,
                           _kSafariFetcherStartReadingListFetcherMessageName,
                           _kSafariFetcherUnregisterForReadingListFetcherUpdatesMessageName,
-                          _kSafariGetCurrentlySelectedSearchEngineMessage, _kSafariSearchEngineShortNameDictionaryKey,
                           _kWebBookmarksAddToReadingListMessageName, _kWebBookmarksAddressKey,
                           _kWebBookmarksClearAllCloudTabDevicesMessageName, _kWebBookmarksClearAllSafariHistoryMessageName,
                           _kWebBookmarksClearCloudTabsForCurrentDeviceMessageName,
@@ -70,15 +72,15 @@ exports:
                           _kWebBookmarksDeleteAllSafariWebSecurityOriginsMessageName,
                           _kWebBookmarksDeleteSafariPersistentURLCacheStorageMessageName,
                           _kWebBookmarksDeleteSafariWebSecurityOriginMessageName, _kWebBookmarksDidToggleCloudTabsMessageName,
-                          _kWebBookmarksDidTogglePrivateBrowsingMessageName, _kWebBookmarksEnabledKey,
-                          _kWebBookmarksGetSafariDataUsageSummaryMessageName, _kWebBookmarksGetSafariWebDataUsageMessageName,
-                          _kWebBookmarksItemsKey, _kWebBookmarksPreviewTextKey, _kWebBookmarksProgressKey,
-                          _kWebBookmarksTerminateAfterUpdatingKey, _kWebBookmarksTitleKey, _kWebBookmarksUUIDKey,
-                          _kWebBookmarksdServiceName, _kWebDataUsageSizeKey, _kWebsiteDataAllRecordsKey, _kWebsiteDataRecordKey,
-                          _webBookmarksExtraAttributeSelectedFavoritesFolderKey, _webBookmarksMessageReceivedAcknowledgementKey,
-                          _webBookmarksMetaDataDeviceUUIDKey, _webBookmarksMetaDataDidChangeNotification,
+                          _kWebBookmarksEnabledKey, _kWebBookmarksGetSafariDataUsageSummaryMessageName,
+                          _kWebBookmarksGetSafariWebDataUsageMessageName, _kWebBookmarksItemsKey, _kWebBookmarksPreviewTextKey,
+                          _kWebBookmarksProgressKey, _kWebBookmarksTerminateAfterUpdatingKey, _kWebBookmarksTitleKey,
+                          _kWebBookmarksUUIDKey, _kWebBookmarksdServiceName, _kWebDataUsageSizeKey, _kWebsiteDataAllRecordsKey,
+                          _kWebsiteDataRecordKey, _webBookmarksExtraAttributeSelectedFavoritesFolderKey,
+                          _webBookmarksMessageReceivedAcknowledgementKey, _webBookmarksMetaDataDeviceUUIDKey,
+                          _webBookmarksMetaDataDidChangeNotification, _webBookmarksPasswordIconsCleanupMessageName,
                           _webBookmarksScheduleBookmarksDatabaseMaintenanceTask,
-                          _webBookmarksScheduleBookmarksDatabaseMigrationTask, _webBookmarksScheduleReadingListIconMigration ]
+                          _webBookmarksScheduleBookmarksDatabaseMigrationTask ]
     objc-classes:       [ _BABookmarkItem, _BAChangeRecord, _CloudTabServices, _SafariFetcherServerProxy,
                           _WBBookmarksDatabaseHealthInformation, _WBDatabaseLockAcquisitor, _WBDuplicateBookmarkGroup,
                           _WBFeatureManager, _WBReadingList, _WBReadingListPrivate, _WBSettingsTask, _WBSettingsTaskHandler,
@@ -125,8 +127,8 @@ exports:
                           _WebBookmarkCollection._lastObservedLocalMigrationState, _WebBookmarkCollection._locale,
                           _WebBookmarkCollection._mergeMode, _WebBookmarkCollection._readonly,
                           _WebBookmarkCollection._rootBookmark, _WebBookmarkCollection._safariFetcherServerProxy,
-                          _WebBookmarkCollection._skipExternalNotifications, _WebBookmarkCollection._wordTokenizer,
-                          _WebBookmarkCollectionSyncFlags._lockSyncHoldRequestorPointers,
+                          _WebBookmarkCollection._setupFinished, _WebBookmarkCollection._skipExternalNotifications,
+                          _WebBookmarkCollection._wordTokenizer, _WebBookmarkCollectionSyncFlags._lockSyncHoldRequestorPointers,
                           _WebBookmarkCollectionSyncFlags._postSyncNotificationWhenUnlocking,
                           _WebBookmarkCollectionSyncFlags._syncAllowed, _WebBookmarkCollectionSyncFlags._syncLockFileDescriptor,
                           _WebBookmarkCollectionSyncFlags._syncNotificationType,

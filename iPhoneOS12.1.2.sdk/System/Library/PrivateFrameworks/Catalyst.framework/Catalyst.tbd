@@ -1,24 +1,26 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
-current-version:       1
+current-version:       5.5
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ _CATAssertIsNotQueue, _CATAssertIsQueue, _CATErrorDomain, _CATErrorWithCodeAndUserInfo,
-                          _CATErrorWithDomainCodeAndUserInfo, _CATFormattedStringForKey, _CATGetCatalystQueue, _CATLocalizedKey,
-                          _CATSetCatalystQueue, _CATUnlocalizedKey, _CatalystVersionNumber, _CatalystVersionString,
-                          __CATTaskSessionOperationRemoteUUID ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _CATAssertIsNotQueue, _CATAssertIsQueue, _CATCatalystVersionNumber, _CATCatalystVersionString,
+                          _CATErrorDomain, _CATErrorWithCodeAndUserInfo, _CATErrorWithDomainCodeAndUserInfo,
+                          _CATFormattedStringForKey, _CATGetCatalystQueue, _CATLocalizedKey, _CATSetCatalystQueue,
+                          _CATUnlocalizedKey, __CATTaskSessionOperationRemoteUUID ]
     objc-classes:       [ _CATAddress, _CATArbitrator, _CATBatchRemoteTaskOperation, _CATBlockOperationObserver,
-                          _CATCollectionController, _CATEndPoint, _CATEvent, _CATHTTPMessageParser, _CATLocalizationHelper,
-                          _CATMessage, _CATMutableTaskProgress, _CATNetworkReachability, _CATNotificationMessage, _CATOperation,
+                          _CATCollectionController, _CATEndPoint, _CATHTTPMessageParser, _CATLocalizationHelper, _CATMessage,
+                          _CATMutableTaskProgress, _CATNetworkReachability, _CATNotificationMessage, _CATOperation,
                           _CATOperationQueue, _CATProperty, _CATRemoteConnection, _CATRemoteConnectionSocketOptions,
                           _CATRemoteConnectionTrustDecision, _CATRemoteTaskOperation, _CATRemoteTransport,
                           _CATSerialOperationQueue, _CATSessionMessage, _CATSessionMessageDidInvalidate,
                           _CATSessionMessageInvalidate, _CATSessionMessageResume, _CATSessionMessageResumed, _CATSocket,
-                          _CATState, _CATStateMachine, _CATTaskBlockServer, _CATTaskClient, _CATTaskMessage,
-                          _CATTaskMessageCancel, _CATTaskMessageError, _CATTaskMessageFetchProgress,
+                          _CATState, _CATStateMachine, _CATStateMachineEvent, _CATTaskBlockServer, _CATTaskClient,
+                          _CATTaskMessage, _CATTaskMessageCancel, _CATTaskMessageError, _CATTaskMessageFetchProgress,
                           _CATTaskMessageIncrementalProgress, _CATTaskMessageProgressUpdate, _CATTaskMessageStart,
                           _CATTaskOperation, _CATTaskProgress, _CATTaskRequest, _CATTaskResultObject, _CATTaskServer,
                           _CATTaskSession, _CATTransition, _CATTransport, _CATXPCTransport, __CATArbitratorRegistrationEntry,
@@ -41,10 +43,9 @@ exports:
                           _CATCollectionController.mPendingArrangedObjects, _CATCollectionController.mPendingDeletedObjects,
                           _CATCollectionController.mPendingInsertedObjects, _CATCollectionController.mRearrangeTimer,
                           _CATCollectionController.mTarget, _CATCollectionController.mTransformer, _CATEndPoint._address,
-                          _CATEndPoint._data, _CATEndPoint._port, _CATEvent._context, _CATEvent._trigger,
-                          _CATHTTPMessageParser._delegate, _CATHTTPMessageParser.mCurrentBytesReceived,
-                          _CATHTTPMessageParser.mCurrentHeaderFields, _CATHTTPMessageParser.mCurrentMessage,
-                          _CATLocalizationHelper._bundle, _CATLocalizationHelper.mLock,
+                          _CATEndPoint._data, _CATEndPoint._port, _CATHTTPMessageParser._delegate,
+                          _CATHTTPMessageParser.mCurrentBytesReceived, _CATHTTPMessageParser.mCurrentHeaderFields,
+                          _CATHTTPMessageParser.mCurrentMessage, _CATLocalizationHelper._bundle, _CATLocalizationHelper.mLock,
                           _CATLocalizationHelper.mStringByKeyByTableName, _CATMessage._messageUUID,
                           _CATNetworkReachability._address, _CATNetworkReachability._delegate, _CATNetworkReachability._flags,
                           _CATNetworkReachability.mReachabilityRef, _CATNotificationMessage._name,
@@ -83,7 +84,8 @@ exports:
                           _CATState._enterAction, _CATState._exitAction, _CATState._name, _CATState.mTranstionByTriggeringEvent,
                           _CATStateMachine._currentState, _CATStateMachine._initialState, _CATStateMachine._logLevel,
                           _CATStateMachine._name, _CATStateMachine._target, _CATStateMachine.mCalloutReason,
-                          _CATStateMachine.mStateByName, _CATTaskBlockServer._clientSessions, _CATTaskBlockServer._didInvalidate,
+                          _CATStateMachine.mStateByName, _CATStateMachineEvent._context, _CATStateMachineEvent._trigger,
+                          _CATTaskBlockServer._clientSessions, _CATTaskBlockServer._didInvalidate,
                           _CATTaskBlockServer._sessionDidConnect, _CATTaskBlockServer._sessionDidDisconnect,
                           _CATTaskBlockServer._sessionDidInterruptWithError, _CATTaskBlockServer._sessionDidInvalidate,
                           _CATTaskBlockServer._sessionDidReceiveNotification,
@@ -127,12 +129,13 @@ exports:
                           __CATArbitratorWaitToken.mState, __CATArbitratorWaitToken.mTokenByKey, __CATBlockTaskOperation.mBlock,
                           __CATObserverManager.mIsObserving, __CATObserverManager.mObservers, __CATObserverManager.mOperation,
                           __CATObserverManager.mProgressSource, __CATObserverManager.mQueue, __CATObserverManager.mState,
-                          __CATOperationTargetSelectorObserver._delegateQueue, __CATOperationTargetSelectorObserver._events,
-                          __CATOperationTargetSelectorObserver._selector, __CATOperationTargetSelectorObserver._target,
-                          __CATOperationTargetSelectorObserver._userInfo, __CATProxyWaitToken._isExclusive,
-                          __CATProxyWaitToken._resourceProxy, __CATProxyWaitToken.mFinished, __CATProxyWaitToken.mGroup,
-                          __CATRemoteConnectionSendDataContext._bytesWritten, __CATRemoteConnectionSendDataContext._data,
-                          __CATRemoteConnectionSendDataContext._userInfo, __CATRemoteConnectionSendDataContext.mEncodedData,
+                          __CATObserverManager.mStrongOperation, __CATOperationTargetSelectorObserver._delegateQueue,
+                          __CATOperationTargetSelectorObserver._events, __CATOperationTargetSelectorObserver._selector,
+                          __CATOperationTargetSelectorObserver._target, __CATOperationTargetSelectorObserver._userInfo,
+                          __CATProxyWaitToken._isExclusive, __CATProxyWaitToken._resourceProxy, __CATProxyWaitToken.mFinished,
+                          __CATProxyWaitToken.mGroup, __CATRemoteConnectionSendDataContext._bytesWritten,
+                          __CATRemoteConnectionSendDataContext._data, __CATRemoteConnectionSendDataContext._userInfo,
+                          __CATRemoteConnectionSendDataContext.mEncodedData,
                           __CATRemoteConnectionSendDataWithStreamContext._bufferSize,
                           __CATRemoteConnectionSendDataWithStreamContext._bytesWritten,
                           __CATRemoteConnectionSendDataWithStreamContext._dataLength,

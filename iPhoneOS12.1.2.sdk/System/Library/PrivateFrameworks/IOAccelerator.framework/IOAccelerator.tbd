@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/IOAccelerator.framework/IOAccelerator
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _IOAccelCLContextCreate, _IOAccelCLContextFinish, _IOAccelCLContextFinishFenceEvent,
                           _IOAccelCLContextFinishResourceSysMem, _IOAccelCLContextFlushResourceSysMem,
                           _IOAccelCLContextGetConnect, _IOAccelCLContextGetDataBufferClassCount,
@@ -27,9 +29,10 @@ exports:
                           _IOAccelContextSetDataBufferClassUsedBytes, _IOAccelContextSetExecutableName,
                           _IOAccelContextSubmitDataBuffers, _IOAccelContextSubmitDataBuffersExt,
                           _IOAccelContextSubmitDataBuffersExt2, _IOAccelContextTestResourceSysMem, _IOAccelDeviceCreate,
-                          _IOAccelDeviceGetConfig, _IOAccelDeviceGetConfig64, _IOAccelDeviceGetConnect,
-                          _IOAccelDeviceGetCurrentTraceFilter, _IOAccelDeviceGetGlobalTraceObjectID, _IOAccelDeviceGetName,
-                          _IOAccelDeviceGetNextGlobalTraceID, _IOAccelDeviceGetSharedMemorySize, _IOAccelDeviceGetTypeID,
+                          _IOAccelDeviceCreateWithAPIProperty, _IOAccelDeviceGetConfig, _IOAccelDeviceGetConfig64,
+                          _IOAccelDeviceGetConnect, _IOAccelDeviceGetCurrentTraceFilter, _IOAccelDeviceGetGlobalTraceObjectID,
+                          _IOAccelDeviceGetMaxResourceSize, _IOAccelDeviceGetName, _IOAccelDeviceGetNextGlobalTraceID,
+                          _IOAccelDeviceGetResidentSize, _IOAccelDeviceGetSharedMemorySize, _IOAccelDeviceGetTypeID,
                           _IOAccelDeviceRelease, _IOAccelDeviceTestEvent, _IOAccelDeviceTestEventFast, _IOAccelDeviceTraceEvent,
                           _IOAccelDeviceTraceObjectLabel, _IOAccelGLContextCreate, _IOAccelGLContextFinish,
                           _IOAccelGLContextFinishFenceEvent, _IOAccelGLContextFinishResourceSysMem,
@@ -40,9 +43,9 @@ exports:
                           _IOAccelGLContextSetDataBufferClassUsedBytes, _IOAccelGLContextSetExecutableName,
                           _IOAccelGLContextSubmitDataBuffers, _IOAccelGLContextSubmitDataBuffersExt,
                           _IOAccelGLContextSubmitDataBuffersExt2, _IOAccelGLContextTestResourceSysMem,
-                          _IOAccelKillClient_LeakingContext, _IOAccelMemoryInfoDeregisterAPICollectionBlock,
-                          _IOAccelMemoryInfoRegisterAPICollectionBlock, _IOAccelResourceCheckSysMem,
-                          _IOAccelResourceClientSharedRetain, _IOAccelResourceCreate,
+                          _IOAccelKillClient_LeakingContext, _IOAccelLogContextLeak,
+                          _IOAccelMemoryInfoDeregisterAPICollectionBlock, _IOAccelMemoryInfoRegisterAPICollectionBlock,
+                          _IOAccelResourceCheckSysMem, _IOAccelResourceClientSharedRetain, _IOAccelResourceCreate,
                           _IOAccelResourceCreateAllocationIdentifierSet, _IOAccelResourceCreateDataBuffer,
                           _IOAccelResourceFinishEvent, _IOAccelResourceFinishSysMem, _IOAccelResourceGetClientShared,
                           _IOAccelResourceGetClientSharedPrivate, _IOAccelResourceGetDataBytes, _IOAccelResourceGetDataSize,
@@ -50,18 +53,20 @@ exports:
                           _IOAccelResourceGetPrivate, _IOAccelResourceGetResidentDataSize, _IOAccelResourceGetTypeID,
                           _IOAccelResourceListAddResource, _IOAccelResourceListAddResourceNoThreshold,
                           _IOAccelResourceListDestroy, _IOAccelResourceListInit, _IOAccelResourceListMerge,
-                          _IOAccelResourceListReset, _IOAccelResourceListShowResources, _IOAccelResourcePageoff,
-                          _IOAccelResourceRelease, _IOAccelResourceSetPurgeable, _IOAccelResourceTestEvent,
-                          _IOAccelSharedAllocateFenceMemory, _IOAccelSharedCreate, _IOAccelSharedCreateDeviceShmem,
-                          _IOAccelSharedDestroyDeviceShmem, _IOAccelSharedGetConnect, _IOAccelSharedGetGlobalTraceObjectID,
-                          _IOAccelSharedGetTypeID, _IOAccelSharedRelease, _IOAccelSharedSetWaitForGPUCallback,
-                          _IOAccelVideoContextCreate, _IOAccelVideoContextFinish, _IOAccelVideoContextFinishFenceEvent,
-                          _IOAccelVideoContextFinishResourceSysMem, _IOAccelVideoContextFlushResourceSysMem,
-                          _IOAccelVideoContextGetConnect, _IOAccelVideoContextGetDataBufferClassCount,
-                          _IOAccelVideoContextGetDataBufferResource, _IOAccelVideoContextGetFenceBuffer,
-                          _IOAccelVideoContextGetSidebandBuffer, _IOAccelVideoContextReclaimResources,
-                          _IOAccelVideoContextRelease, _IOAccelVideoContextRequestDataBuffer,
-                          _IOAccelVideoContextSetDataBufferClassUsedBytes, _IOAccelVideoContextSetExecutableName,
-                          _IOAccelVideoContextSubmitDataBuffers, _IOAccelVideoContextTestResourceSysMem, ___globalCommPage,
-                          ___ktrace_enabled, _ioAccelContextBlockFenceCallback, _kIOAccelContextCount ]
+                          _IOAccelResourceListMergeLists, _IOAccelResourceListReset, _IOAccelResourceListShowResources,
+                          _IOAccelResourcePageoff, _IOAccelResourceRelease, _IOAccelResourceSetPurgeable,
+                          _IOAccelResourceTestEvent, _IOAccelSharedAllocateFenceMemory, _IOAccelSharedCreate,
+                          _IOAccelSharedCreateDeviceShmem, _IOAccelSharedDestroyDeviceShmem, _IOAccelSharedGetConnect,
+                          _IOAccelSharedGetGlobalTraceObjectID, _IOAccelSharedGetTypeID, _IOAccelSharedRelease,
+                          _IOAccelSharedSetWaitForGPUCallback, _IOAccelVideoContextCreate, _IOAccelVideoContextFinish,
+                          _IOAccelVideoContextFinishFenceEvent, _IOAccelVideoContextFinishResourceSysMem,
+                          _IOAccelVideoContextFlushResourceSysMem, _IOAccelVideoContextGetConnect,
+                          _IOAccelVideoContextGetDataBufferClassCount, _IOAccelVideoContextGetDataBufferResource,
+                          _IOAccelVideoContextGetFenceBuffer, _IOAccelVideoContextGetSidebandBuffer,
+                          _IOAccelVideoContextReclaimResources, _IOAccelVideoContextRelease,
+                          _IOAccelVideoContextRequestDataBuffer, _IOAccelVideoContextSetDataBufferClassUsedBytes,
+                          _IOAccelVideoContextSetExecutableName, _IOAccelVideoContextSubmitDataBuffers,
+                          _IOAccelVideoContextTestResourceSysMem, ___globalCommPage ]
+    objc-classes:       [ _IOAccelMTLEvent ]
+    objc-ivars:         [ _IOAccelMTLEvent._eventName, _IOAccelMTLEvent._globalTraceObjectID, _IOAccelMTLEvent._sharedRef ]
 ...

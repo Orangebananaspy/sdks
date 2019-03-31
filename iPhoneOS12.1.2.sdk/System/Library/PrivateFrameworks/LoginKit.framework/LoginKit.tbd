@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/LoginKit.framework/LoginKit
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _LKCourseDescriptionKey, _LKCourseEnrolledStudentIdentifiersKey, _LKCourseGroupNameKey,
                           _LKCourseGroupsKey, _LKCourseIDKey, _LKCourseIDsKey, _LKCourseInstructorIdentifiersKey,
                           _LKCourseNameKey, _LKCoursesKey, _LKErrorDomain, _LKErrorPasscodeBackOffInterval, _LKLogParsing,
@@ -30,7 +32,7 @@ exports:
                           _LKUser._contact, _LKUser._identifier, _LKUser._isAttemptedPhoneticTranscription,
                           _LKUser._isPhoneticInfoProvidedInConfiguration, _LKUser._largeImageURL, _LKUser._lastOnlineAuth,
                           _LKUser._localLargeImageURL, _LKUser._localMediumImageURL, _LKUser._mediumImageURL,
-                          _LKUser._namingSimilarityInfoByClassID, _LKUser._needFederatedAuthFlow, _LKUser._passwordType,
-                          _LKUser._phoneticFamilyName, _LKUser._phoneticGivenName, _LKUser._retryCount,
-                          _LKUser._tokenizedPhoneticDisplayName, _LKUsers._students ]
+                          _LKUser._namingSimilarityInfoByClassID, _LKUser._passwordType, _LKUser._phoneticFamilyName,
+                          _LKUser._phoneticGivenName, _LKUser._retryCount, _LKUser._tokenizedPhoneticDisplayName,
+                          _LKUsers._students ]
 ...

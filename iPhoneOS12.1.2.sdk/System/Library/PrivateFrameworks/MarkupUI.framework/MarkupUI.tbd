@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/MarkupUI.framework/MarkupUI
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _MUAnimationIconImage, _MUAnimationMaskRect, _MUAnimationSourceRect, _MUAnimationTargetRect,
                           _MUDisplayAsFullScreen, _MUEncryptPrivateMetadata, _MUFileDisplayName ]
     objc-classes:       [ _MUCGPDFAnnotationAdaptor, _MUCGPDFCircleAnnotationAdaptor, _MUCGPDFFormWrapper,
@@ -29,12 +31,12 @@ exports:
                           _MUImageContentViewController._sourceContent, _MUImageContentViewController._sourceImagePixelSize,
                           _MUImageContentViewController._tentativePlaceholderImage,
                           _MUImageContentViewController._usePlaceholderAsDisplayImageIfPossible,
-                          _MUImageContentViewController._wasZoomToFit, _MUPDFContentViewController._constraintsAreHorizontal,
-                          _MUPDFContentViewController._didSetup, _MUPDFContentViewController._edgeInsets,
-                          _MUPDFContentViewController._forcesPDFViewTopAlignment, _MUPDFContentViewController._inkStyle,
-                          _MUPDFContentViewController._navigationModeHorizontal, _MUPDFContentViewController._pageLabelView,
-                          _MUPDFContentViewController._pdfDocument, _MUPDFContentViewController._pdfView,
-                          _MUPDFContentViewController._showsThumbnailView,
+                          _MUImageContentViewController._wasZoomToFit, _MUPDFContentViewController._cachedThumnailViewInsets,
+                          _MUPDFContentViewController._constraintsAreHorizontal, _MUPDFContentViewController._didSetup,
+                          _MUPDFContentViewController._edgeInsets, _MUPDFContentViewController._forcesPDFViewTopAlignment,
+                          _MUPDFContentViewController._inkStyle, _MUPDFContentViewController._navigationModeHorizontal,
+                          _MUPDFContentViewController._pageLabelView, _MUPDFContentViewController._pdfDocument,
+                          _MUPDFContentViewController._pdfView, _MUPDFContentViewController._showsThumbnailView,
                           _MUPDFContentViewController._sourceContentReplacedAnnotationMaps,
                           _MUPDFContentViewController._thumbnailView, _MUPDFContentViewController._thumbnailViewHolder,
                           _MUPDFContentViewController._thumbnailViewHolderConstraints,

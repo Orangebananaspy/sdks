@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _FMAlertCategoryNone, _FMEmptyResult, _FMErrorDomain, _FMFutureCallbackStack, __FMBlockDescriptor,
                           __FMDictionaryOfMetrics, __FMFutureDidPerformCallback, __FMFutureWillPerformCallback,
                           __FMPopScopedDescriptor, __FMPushScopedDescriptor, __FMScopedDescriptor, _kFMDataArchiverErrorDomain,
@@ -24,13 +26,13 @@ exports:
                           _FMConcurrentMutableArray._lock, _FMConcurrentMutableArray._underlyingArray,
                           _FMConcurrentMutableDictionary._lock, _FMConcurrentMutableDictionary._underlyingDictionary,
                           _FMDataArchiver._backedUp, _FMDataArchiver._createDirectories, _FMDataArchiver._dataProtectionClass,
-                          _FMDataArchiver._fileURL, _FMFuture._accessQueue, _FMFuture._completionBlocks, _FMFuture._descriptor,
-                          _FMFuture._finished, _FMFuture._resultError, _FMFuture._resultValue, _FMInternalFileContainer._url,
-                          _FMPair._first, _FMPair._second, _FMPromise._future, _FMQueue._buffer, _FMQueue._strategy,
-                          _FMReadWriteLock._lock, _FMReadWriteLock._lockName, _FMSharedFileContainer._url, _FMSynchronizer._info,
-                          _FMSynchronizer._sem, _FMSynchronizer._timeout, _FMSynchronizer._timeoutOccurred,
-                          _FMValueThrottler._observerBlocks, _FMValueThrottler._throttleInterval,
-                          _FMValueThrottler._updateScheduler, _FMValueThrottler._value,
+                          _FMDataArchiver._fileURL, _FMDataArchiver._unitTestData, _FMFuture._accessQueue,
+                          _FMFuture._completionBlocks, _FMFuture._descriptor, _FMFuture._finished, _FMFuture._resultError,
+                          _FMFuture._resultValue, _FMInternalFileContainer._url, _FMPair._first, _FMPair._second,
+                          _FMPromise._future, _FMQueue._buffer, _FMQueue._strategy, _FMReadWriteLock._lock,
+                          _FMReadWriteLock._lockName, _FMSharedFileContainer._url, _FMSynchronizer._info, _FMSynchronizer._sem,
+                          _FMSynchronizer._timeout, _FMSynchronizer._timeoutOccurred, _FMValueThrottler._observerBlocks,
+                          _FMValueThrottler._throttleInterval, _FMValueThrottler._updateScheduler, _FMValueThrottler._value,
                           _FMValueThrottler._valueUpdateCancelationToken, __FMBoundedQueueingStrategy._capacity,
                           __FMBoundedQueueingStrategy._overflowHandler, __FMKeyValueObserverProxy._isObserving,
                           __FMKeyValueObserverProxy._keyPath, __FMKeyValueObserverProxy._observedObject,

@@ -1,15 +1,18 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    allowed-clients:    [ SpringBoard, ControlCenterUITests, Unit Tests, ControlCenterHostApp, ConnectivityModule ]
-    symbols:            [ _CCUILayoutPointZero, _CCUILayoutPointsEqual, _CCUILayoutRectEqual, _CCUILayoutRectUnknown,
-                          _CCUILayoutRectZero, _CCUILayoutSizeEqual, _CCUILayoutSizeUnknown, _CCUILayoutSizeZero,
-                          _CCUIMakeLayoutSizeFromDictionary, _ControlCenterUIVersionNumber, _ControlCenterUIVersionString,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:  [ SpringBoard, ControlCenterUITests, 'SpringBoard-Tests', ControlCenterHostApp, ConnectivityModule ]
+    symbols:            [ _CCUILayoutEdgeInsetsForInterfaceOrientation, _CCUILayoutPointZero, _CCUILayoutPointsEqual,
+                          _CCUILayoutRectEqual, _CCUILayoutRectUnknown, _CCUILayoutRectZero, _CCUILayoutSizeEqual,
+                          _CCUILayoutSizeUnknown, _CCUILayoutSizeZero, _CCUIMakeLayoutSizeFromDictionary,
+                          _CCUIStatusBarBaselineHeight, _ControlCenterUIVersionNumber, _ControlCenterUIVersionString,
                           _kCCUILayoutPointObjCType, _kCCUILayoutRectObjCType, _kCCUILayoutSizeObjCType ]
     objc-classes:       [ _CCUIAnimation, _CCUIAnimationBatch, _CCUIAnimationCustomTimingFunctionParameters,
                           _CCUIAnimationRunner, _CCUIC2AnimationParameters, _CCUICABasicAnimationFactory,
@@ -61,6 +64,7 @@ exports:
                           _CCUIContentModuleContainerViewController._expandedContentEdgeInsets,
                           _CCUIContentModuleContainerViewController._highlightWrapperView,
                           _CCUIContentModuleContainerViewController._maskView,
+                          _CCUIContentModuleContainerViewController._materialGroupName,
                           _CCUIContentModuleContainerViewController._moduleIdentifier,
                           _CCUIContentModuleContainerViewController._previewInteraction,
                           _CCUIContentModuleContainerViewController._tapRecognizer,
@@ -145,10 +149,13 @@ exports:
                           _CCUIOverlayTransitionState._nonZeroPresentationProgress,
                           _CCUIOverlayTransitionState._presentationProgress, _CCUIOverlayTransitionState._progress,
                           _CCUIOverlayTransitionState._snappedPresentationProgress, _CCUIOverlayTransitionState._type,
-                          _CCUIStatusBar._compactEdgeInsets, _CCUIStatusBar._compactTrailingStatusBar, _CCUIStatusBar._delegate,
-                          _CCUIStatusBar._expandedEdgeInsets, _CCUIStatusBar._extendedLeadingStatusBar,
-                          _CCUIStatusBar._extendedTrailingStatusBar, _CCUIStatusBar._leadingState, _CCUIStatusBar._trailingState,
-                          _CCUIStatusBarStyleSnapshot._activeStyleRequest, _CCUIStatusBarStyleSnapshot._hidden,
+                          _CCUIStatusBar._compactEdgeInsets, _CCUIStatusBar._compactScaleTransform,
+                          _CCUIStatusBar._compactTrailingStatusBar, _CCUIStatusBar._delegate, _CCUIStatusBar._expandedEdgeInsets,
+                          _CCUIStatusBar._expandedStatusBar, _CCUIStatusBar._leadingState, _CCUIStatusBar._maxCompactScaleFactor,
+                          _CCUIStatusBar._trailingMarginDelta, _CCUIStatusBar._trailingState,
+                          _CCUIStatusBar._verticalAlignmentDelta, _CCUIStatusBarStyleSnapshot._avoidanceFrame,
+                          _CCUIStatusBarStyleSnapshot._hidden, _CCUIStatusBarStyleSnapshot._leadingStyleRequest,
+                          _CCUIStatusBarStyleSnapshot._statusBarInsets, _CCUIStatusBarStyleSnapshot._trailingStyleRequest,
                           _CCUIStatusLabel._edgeInsets, _CCUIStatusLabel._verticalAlignment,
                           _CCUIStatusLabelViewController._currentStatusLabelIndex, _CCUIStatusLabelViewController._delegate,
                           _CCUIStatusLabelViewController._presentationState, _CCUIStatusLabelViewController._presentationTimer,

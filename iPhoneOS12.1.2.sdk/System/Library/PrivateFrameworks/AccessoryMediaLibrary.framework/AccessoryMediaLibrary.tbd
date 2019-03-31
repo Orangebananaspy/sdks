@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/AccessoryMediaLibrary.framework/AccessoryMediaLibrary
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _ACCMediaLibraryFullUpdateKey, _ACCMediaLibraryNameKey, _ACCMediaLibraryPlaylistItemAlbumArtist,
                           _ACCMediaLibraryPlaylistItemAlbumTitle, _ACCMediaLibraryPlaylistItemArtist,
                           _ACCMediaLibraryPlaylistItemComposer, _ACCMediaLibraryPlaylistItemGenre,
@@ -41,32 +43,33 @@ exports:
                           _ACCMediaLibraryAccessory._pendingPlaylistContentUpdates, _ACCMediaLibraryAccessory._pendingUpdates,
                           _ACCMediaLibraryAccessory._provider, _ACCMediaLibraryAccessory._waitingConfirm,
                           _ACCMediaLibraryAccessory._windowPerLibrary, _ACCMediaLibraryInfo._info,
-                          _ACCMediaLibraryInfo._libraryUID, _ACCMediaLibraryInfo._state, _ACCMediaLibraryProvider._accessories,
-                          _ACCMediaLibraryProvider._delegate, _ACCMediaLibraryProvider._delegateQ,
-                          _ACCMediaLibraryProvider._lastUpdateType, _ACCMediaLibraryProvider._libraries,
-                          _ACCMediaLibraryProvider._processingQueue, _ACCMediaLibraryProvider._providerUID,
-                          _ACCMediaLibraryProvider._remoteObject, _ACCMediaLibraryProvider._serverConnection,
-                          _ACCMediaLibraryUpdateItem._albumArtist, _ACCMediaLibraryUpdateItem._albumArtistPersistentID,
-                          _ACCMediaLibraryUpdateItem._albumDiscCount, _ACCMediaLibraryUpdateItem._albumDiscNumber,
-                          _ACCMediaLibraryUpdateItem._albumPersistentID, _ACCMediaLibraryUpdateItem._albumTitle,
-                          _ACCMediaLibraryUpdateItem._albumTrackCount, _ACCMediaLibraryUpdateItem._albumTrackNumber,
-                          _ACCMediaLibraryUpdateItem._artist, _ACCMediaLibraryUpdateItem._artistPersistentID,
-                          _ACCMediaLibraryUpdateItem._chapterCount, _ACCMediaLibraryUpdateItem._composer,
-                          _ACCMediaLibraryUpdateItem._composerPersistentID, _ACCMediaLibraryUpdateItem._duration,
-                          _ACCMediaLibraryUpdateItem._genre, _ACCMediaLibraryUpdateItem._genrePersistentID,
-                          _ACCMediaLibraryUpdateItem._local, _ACCMediaLibraryUpdateItem._mediaLibraryUID,
-                          _ACCMediaLibraryUpdateItem._partOfCompilation, _ACCMediaLibraryUpdateItem._persistentID,
-                          _ACCMediaLibraryUpdateItem._rating, _ACCMediaLibraryUpdateItem._revision,
-                          _ACCMediaLibraryUpdateItem._title, _ACCMediaLibraryUpdateItem._type,
-                          _ACCMediaLibraryUpdateItem._validMask, _ACCMediaLibraryUpdateLibraryInfo._mediaLibraryUID,
-                          _ACCMediaLibraryUpdateLibraryInfo._name, _ACCMediaLibraryUpdateLibraryInfo._type,
-                          _ACCMediaLibraryUpdatePlaylist._content, _ACCMediaLibraryUpdatePlaylist._contentStyle,
-                          _ACCMediaLibraryUpdatePlaylist._folder, _ACCMediaLibraryUpdatePlaylist._geniusMix,
-                          _ACCMediaLibraryUpdatePlaylist._mediaLibraryUID, _ACCMediaLibraryUpdatePlaylist._name,
-                          _ACCMediaLibraryUpdatePlaylist._parentPersistentID, _ACCMediaLibraryUpdatePlaylist._persistentID,
-                          _ACCMediaLibraryUpdatePlaylist._radioStation, _ACCMediaLibraryUpdatePlaylist._radioStationOrdering,
-                          _ACCMediaLibraryUpdatePlaylist._revision, _ACCMediaLibraryUpdatePlaylist._smartPlaylist,
-                          _ACCMediaLibraryUpdatePlaylist._validMask, _ACCMediaLibraryUpdatePlaylistContent._contentList,
+                          _ACCMediaLibraryInfo._libraryUID, _ACCMediaLibraryInfo._state, _ACCMediaLibraryInfo._stateInit,
+                          _ACCMediaLibraryProvider._accessories, _ACCMediaLibraryProvider._delegate,
+                          _ACCMediaLibraryProvider._delegateQ, _ACCMediaLibraryProvider._lastUpdateType,
+                          _ACCMediaLibraryProvider._libraries, _ACCMediaLibraryProvider._processingQueue,
+                          _ACCMediaLibraryProvider._providerUID, _ACCMediaLibraryProvider._remoteObject,
+                          _ACCMediaLibraryProvider._serverConnection, _ACCMediaLibraryUpdateItem._albumArtist,
+                          _ACCMediaLibraryUpdateItem._albumArtistPersistentID, _ACCMediaLibraryUpdateItem._albumDiscCount,
+                          _ACCMediaLibraryUpdateItem._albumDiscNumber, _ACCMediaLibraryUpdateItem._albumPersistentID,
+                          _ACCMediaLibraryUpdateItem._albumTitle, _ACCMediaLibraryUpdateItem._albumTrackCount,
+                          _ACCMediaLibraryUpdateItem._albumTrackNumber, _ACCMediaLibraryUpdateItem._artist,
+                          _ACCMediaLibraryUpdateItem._artistPersistentID, _ACCMediaLibraryUpdateItem._chapterCount,
+                          _ACCMediaLibraryUpdateItem._composer, _ACCMediaLibraryUpdateItem._composerPersistentID,
+                          _ACCMediaLibraryUpdateItem._duration, _ACCMediaLibraryUpdateItem._genre,
+                          _ACCMediaLibraryUpdateItem._genrePersistentID, _ACCMediaLibraryUpdateItem._local,
+                          _ACCMediaLibraryUpdateItem._mediaLibraryUID, _ACCMediaLibraryUpdateItem._partOfCompilation,
+                          _ACCMediaLibraryUpdateItem._persistentID, _ACCMediaLibraryUpdateItem._rating,
+                          _ACCMediaLibraryUpdateItem._revision, _ACCMediaLibraryUpdateItem._title,
+                          _ACCMediaLibraryUpdateItem._type, _ACCMediaLibraryUpdateItem._validMask,
+                          _ACCMediaLibraryUpdateLibraryInfo._mediaLibraryUID, _ACCMediaLibraryUpdateLibraryInfo._name,
+                          _ACCMediaLibraryUpdateLibraryInfo._type, _ACCMediaLibraryUpdatePlaylist._content,
+                          _ACCMediaLibraryUpdatePlaylist._contentStyle, _ACCMediaLibraryUpdatePlaylist._folder,
+                          _ACCMediaLibraryUpdatePlaylist._geniusMix, _ACCMediaLibraryUpdatePlaylist._mediaLibraryUID,
+                          _ACCMediaLibraryUpdatePlaylist._name, _ACCMediaLibraryUpdatePlaylist._parentPersistentID,
+                          _ACCMediaLibraryUpdatePlaylist._persistentID, _ACCMediaLibraryUpdatePlaylist._radioStation,
+                          _ACCMediaLibraryUpdatePlaylist._radioStationOrdering, _ACCMediaLibraryUpdatePlaylist._revision,
+                          _ACCMediaLibraryUpdatePlaylist._smartPlaylist, _ACCMediaLibraryUpdatePlaylist._validMask,
+                          _ACCMediaLibraryUpdatePlaylistContent._contentList,
                           _ACCMediaLibraryUpdatePlaylistContent._contentStyle,
                           _ACCMediaLibraryUpdatePlaylistContent._mediaLibraryUID,
                           _ACCMediaLibraryUpdatePlaylistContent._persistentID, _ACCMediaLibraryUpdatePlaylistContent._revision,

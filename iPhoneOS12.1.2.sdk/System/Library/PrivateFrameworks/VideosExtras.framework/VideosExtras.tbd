@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
 current-version:       0
 compatibility-version: 0
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _VideosExtrasAVItemDidLoadNotification, _VideosExtrasAVItemKeyFetchDuration,
                           _VideosExtrasAVItemKeyItem, _VideosExtrasAVItemStorefrontIDKey,
                           _VideosExtrasAVItemWillLoadNotification, _VideosExtrasCarouselZoomingImageTransitionIdentifier,
@@ -15,14 +17,13 @@ exports:
                           _VideosExtrasImageBrowserZoomingImageTransitionIdentifier, _VideosExtrasIsNowPlayingEnabled,
                           _VideosExtrasListTableViewCellIdentifier, _VideosExtrasListTableViewHeaderIdentifier,
                           _VideosExtrasListTableViewHeaderLayoutIdentifier, _VideosExtrasLockupDetailTextCellIdentifier,
-                          _VideosExtrasLogInitialize, _VideosExtrasLoggingInitialized,
-                          _VideosExtrasMainTemplateBarHeightChangeNotification, _VideosExtrasMainTemplateMenuItemTypeAttribute,
+                          _VideosExtrasLoggingToOSLogging, _VideosExtrasMainTemplateBarHeightChangeNotification,
+                          _VideosExtrasMainTemplateMenuItemTypeAttribute,
                           _VideosExtrasMainTemplateMenuItemTypeAttributeVideoValue, _VideosExtrasMenuBarItemIdentifier,
                           _VideosExtrasReusableHeaderIdentifier, _VideosExtrasStackCollectionCellIdentifier,
                           _VideosExtrasStackCollectionHeaderIdentifier, _VideosPlaybackSettingsChanged,
                           _VideosPlaybackSettingsGoodCellular, _VideosPlaybackSettingsGoodWifi,
-                          __MPUEnumerateItemsOfCollectionView, _kVideosConsoleLevelDefaultsKey, _kVideosDefaultsDomainKey,
-                          _kVideosIsPrimaryCategoryKey, _kVideosLogFileLevelDefaultsKey ]
+                          __MPUEnumerateItemsOfCollectionView ]
     objc-classes:       [ _VideosExtrasAVItem, _VideosExtrasActivityIndicator,
                           _VideosExtrasActivityIndicatorElementViewController, _VideosExtrasArtworkDataSource,
                           _VideosExtrasArtworkLayoutTriggeringView, _VideosExtrasBackgroundViewController,

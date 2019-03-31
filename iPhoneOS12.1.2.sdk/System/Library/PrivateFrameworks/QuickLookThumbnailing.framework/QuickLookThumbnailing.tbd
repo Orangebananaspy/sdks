@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/QuickLookThumbnailing.framework/QuickLookThumbnailing
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _QLCheckAccessForURL, _QLTCreateCGContextWithSize, _QLTInitLogging, _QLThumbnailErrorDomain,
                           _QLThumbnailMetadataContentRectKey, _QLThumbnailMetadataFileNamesDictionaryKey,
                           _QLThumbnailMetadataFileVersionKey, _QLThumbnailMetadataFlavorKey, _QLThumbnailMetadataQLPropertiesKey,
@@ -23,11 +25,13 @@ exports:
                           _QLCacheVersionedFileIdentifier._version, _QLTBitmapFormat._bitmapInfo,
                           _QLTBitmapFormat._bitsPerComponent, _QLTBitmapFormat._bitsPerPixel, _QLTBitmapFormat._bytesPerRow,
                           _QLTBitmapFormat._colorSpace, _QLTBitmapFormat._height, _QLTBitmapFormat._width,
-                          _QLTFileThumbnailRequest._url, _QLTThumbnailOperation._beginDate, _QLTThumbnailOperation._error,
-                          _QLTThumbnailOperation._executing, _QLTThumbnailOperation._finished, _QLTThumbnailOperation._image,
+                          _QLTFileThumbnailRequest._genericSandboxWrapper, _QLTFileThumbnailRequest._quicklookSandboxWrapper,
+                          _QLTThumbnailOperation._beginDate, _QLTThumbnailOperation._error, _QLTThumbnailOperation._executing,
+                          _QLTThumbnailOperation._finished, _QLTThumbnailOperation._image,
                           _QLTThumbnailOperation._needsAdditionalTime, _QLTThumbnailOperation._request,
-                          _QLTThumbnailRequest._cancelled, _QLTThumbnailRequest._fileIdentifier, _QLTThumbnailRequest._iconMode,
-                          _QLTThumbnailRequest._minimumSize, _QLTThumbnailRequest._scale, _QLTThumbnailRequest._size,
+                          _QLTThumbnailRequest._badgeType, _QLTThumbnailRequest._cancelled, _QLTThumbnailRequest._fileIdentifier,
+                          _QLTThumbnailRequest._iconMode, _QLTThumbnailRequest._minimumSize, _QLTThumbnailRequest._scale,
+                          _QLTThumbnailRequest._sequenceNumber, _QLTThumbnailRequest._size,
                           _QLTUbiquitousFileThumbnailRequest._item, _QLThumbnailAddition._addition,
                           _QLThumbnailAddition._additionURL, _QLThumbnailAddition._additionURLSandboxToken,
                           _QLThumbnailAddition._metadata, _QLThumbnailAddition._thumbnailDataDictionary,
@@ -36,8 +40,10 @@ exports:
                           _QLThumbnailAdditionEntry._lastSeenURL, _QLThumbnailAdditionEntry._size,
                           _QLThumbnailAdditionEntry._vol_uuid, _QLThumbnailCachedAddition._addition,
                           _QLThumbnailCachedAddition._fileID, _QLThumbnailGenerationQueue._queue,
-                          _QLThumbnailGenerationQueue._queuedURLs, _QLThumbnailItem._contentType, _QLThumbnailItem._data,
-                          _QLThumbnailItem._fileExtensionHandle, _QLThumbnailItem._fileExtensionToken, _QLThumbnailItem._url,
+                          _QLThumbnailGenerationQueue._queuedURLs, _QLThumbnailItem._computedContentType,
+                          _QLThumbnailItem._contentType, _QLThumbnailItem._data, _QLThumbnailItem._dataContentType,
+                          _QLThumbnailItem._downloadStatus, _QLThumbnailItem._fileExtensionHandle,
+                          _QLThumbnailItem._fileExtensionToken, _QLThumbnailItem._url, _QLThumbnailItem._urlWrapperForExtension,
                           _QLThumbnailServiceProxy._connection, _QLThumbnailServiceProxy._indexProxy,
                           _QLThumbnailServiceProxy._proxy, _QLThumbnailStoreRetrievalOperation._addition,
                           _QLThumbnailStoreRetrievalOperation._allowsThumbnailGeneration,

@@ -1,21 +1,23 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/StreamingZip.framework/StreamingZip
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _SZArchiverConvertZipArchiveToStreamable, _SZArchiverCopyStatsDescriptions, _SZArchiverCopyStatsKeys,
                           _SZArchiverCreateStreamableZip, _SZArchiverExtractFile, _SZExtractorActualHashValueErrorKey,
-                          _SZExtractorErrorDomain, _SZExtractorFileOffsetErrorKey, _SZExtractorFunctionNameErrorKey,
-                          _SZExtractorHashChunkIndexErrorKey, _SZExtractorHashTypeMD2, _SZExtractorHashTypeMD4,
-                          _SZExtractorHashTypeMD5, _SZExtractorHashTypeSHA1, _SZExtractorHashTypeSHA224,
+                          _SZExtractorCompressionLibErrorKey, _SZExtractorErrorDomain, _SZExtractorFileOffsetErrorKey,
+                          _SZExtractorFunctionNameErrorKey, _SZExtractorHashChunkIndexErrorKey, _SZExtractorHashTypeMD2,
+                          _SZExtractorHashTypeMD4, _SZExtractorHashTypeMD5, _SZExtractorHashTypeSHA1, _SZExtractorHashTypeSHA224,
                           _SZExtractorHashTypeSHA256, _SZExtractorHashTypeSHA384, _SZExtractorHashTypeSHA512,
                           _SZExtractorOptionsDenyInvalidSymlinks, _SZExtractorOptionsHashType,
                           _SZExtractorOptionsHashedChunkSize, _SZExtractorOptionsHashesArray, _SZExtractorSourceFileLineErrorKey,
-                          _SZExtractorZlibErrorKey, __SZLog, _gSZDefaultLogLevel, _gSZLogPrefix, _gSZLogToSyslog,
-                          _kSZArchiverCompressionMethodDEFLATE, _kSZArchiverCompressionMethodLZFSE,
+                          _SZExtractorZlibErrorKey, _SZGetLoggingHandle, __SZLog, _gSZDefaultLogLevel, _gSZLogPrefix,
+                          _gSZLogToSyslog, _kSZArchiverCompressionMethodDEFLATE, _kSZArchiverCompressionMethodLZFSE,
                           _kSZArchiverCompressionMethodLZMA, _kSZArchiverCompressionOptionForceUncompressed,
                           _kSZArchiverCompressionOptionPreserveCompression, _kSZArchiverCompressionOptionTryRecompress,
                           _kSZArchiverHashTypeMD2, _kSZArchiverHashTypeMD4, _kSZArchiverHashTypeMD5, _kSZArchiverHashTypeSHA1,

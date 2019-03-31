@@ -1,17 +1,20 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/BiometricKit.framework/BiometricKit
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ _AppendCommentToPGM, _BKErrorDomain, _ComponentSetInit, _ComponentSetRelease, _ComponentSetUpdate,
-                          _ConvertTransToNodeArea, _ConvertVectorForGUI, _FindRectangleForComponent, _GenerateEnrollProgressInfo,
-                          _GenerateMatchTemplateTopology, _GenerateTemplateTopology, _GenerateTemplateTopologyInfo,
-                          _LoadRawImageAsPGM, _RIESAdd, _RIESClear, _RIESDelete, _RIESInit, _RIESLoad, _RIESSave, _RIESUpdate,
-                          _SaveRawImageAsPGM, ___osLog, ___osLogTrace, _absoluteToMiliseconds, _absoluteToNanoseconds,
-                          _dictionaryGetBool, _dictionaryGetDouble, _dictionaryGetInteger, _getSensorPatchVersion,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _AppendCommentToPGM, _BKErrorDomain, _BKLogCode, _BKLogEvent, _ComponentSetInit, _ComponentSetRelease,
+                          _ComponentSetUpdate, _ConvertTransToNodeArea, _ConvertVectorForGUI, _FindRectangleForComponent,
+                          _GenerateEnrollProgressInfo, _GenerateMatchTemplateTopology, _GenerateTemplateTopology,
+                          _GenerateTemplateTopologyInfo, _LoadRawImageAsPGM, _RIESAdd, _RIESClear, _RIESDelete, _RIESInit,
+                          _RIESLoad, _RIESSave, _RIESUpdate, _SaveRawImageAsPGM, __BKLogEventOrCode, ___faceDetectFeedback,
+                          ___osLog, ___osLogTrace, _absoluteToMiliseconds, _absoluteToNanoseconds, _dictionaryGetBool,
+                          _dictionaryGetDouble, _dictionaryGetInteger, _getSensorPatchVersion, _isEphemeralMultiUser,
                           _isFaceIDPlatform, _isTouchIDPlatform, _kBiometricKitEnrollProgressDetailExtendedComponentID,
                           _kBiometricKitEnrollProgressDetailMergedInComponents, _kBiometricKitEnrollProgressDetailNewComponentID,
                           _kBiometricKitEnrollProgressDetailNewNodeCoordinates, _kBiometricKitEnrollProgressDetailNewNodeID,
@@ -28,11 +31,12 @@ exports:
     objc-classes:       [ _BKDevice, _BKDeviceDescriptor, _BKDeviceManager, _BKDevicePearl, _BKDeviceTouchID, _BKEnrollOperation,
                           _BKEnrollPearlOperation, _BKEnrollPearlProgressInfo, _BKEnrollTouchIDOperation, _BKErrorHelper,
                           _BKExtendEnrollTouchIDOperation, _BKFaceDetectOperation, _BKFaceDetectStateInfo,
-                          _BKFingerDetectOperation, _BKIdentity, _BKMatchOperation, _BKMatchPearlOperation, _BKMatchResultInfo,
-                          _BKMatchTouchIDOperation, _BKOperation, _BKPresenceDetectOperation, _BKSystemProtectedConfiguration,
-                          _BKUserProtectedConfiguration, _BiometricKit, _BiometricKitEnrollProgressCoordinates,
-                          _BiometricKitEnrollProgressInfo, _BiometricKitEnrollProgressMergedComponent, _BiometricKitIdentity,
-                          _BiometricKitMatchInfo, _BiometricKitStatistics, _BiometricKitTemplateInfo, _BiometricKitXPCClient,
+                          _BKFingerDetectOperation, _BKIdentity, _BKMatchOperation, _BKMatchPearlOperation,
+                          _BKMatchPearlResultInfo, _BKMatchResultInfo, _BKMatchTouchIDOperation, _BKOperation,
+                          _BKPresenceDetectOperation, _BKSystemProtectedConfiguration, _BKUserProtectedConfiguration,
+                          _BiometricKit, _BiometricKitEnrollProgressCoordinates, _BiometricKitEnrollProgressInfo,
+                          _BiometricKitEnrollProgressMergedComponent, _BiometricKitIdentity, _BiometricKitMatchInfo,
+                          _BiometricKitStatistics, _BiometricKitTemplateInfo, _BiometricKitXPCClient,
                           _BiometricKitXPCClientConnection ]
     objc-ivars:         [ _BKDevice._descriptor, _BKDevice._xpcClient, _BKDeviceDescriptor._type, _BKDevicePearl._delegate,
                           _BKDevicePearl._queue, _BKEnrollOperation._credentialSet, _BKEnrollOperation._userID,
@@ -43,17 +47,19 @@ exports:
                           _BKFaceDetectOperation._highPriority, _BKFaceDetectOperation._mode, _BKFaceDetectOperation._timeout,
                           _BKFaceDetectStateInfo._faceDetected, _BKFaceDetectStateInfo._flare,
                           _BKFaceDetectStateInfo._multipleFaces, _BKFaceDetectStateInfo._occlusion,
-                          _BKFaceDetectStateInfo._partiallyOutOfView, _BKFaceDetectStateInfo._pitch,
-                          _BKFaceDetectStateInfo._roll, _BKFaceDetectStateInfo._tooCloseToCamera,
+                          _BKFaceDetectStateInfo._orientation, _BKFaceDetectStateInfo._partiallyOutOfView,
+                          _BKFaceDetectStateInfo._pitch, _BKFaceDetectStateInfo._roll, _BKFaceDetectStateInfo._tooCloseToCamera,
                           _BKFaceDetectStateInfo._tooFarFromCamera, _BKFaceDetectStateInfo._yaw, _BKIdentity._creationTime,
                           _BKIdentity._name, _BKIdentity._type, _BKIdentity._userID, _BKIdentity._uuid,
                           _BKMatchOperation._captureOnly, _BKMatchOperation._credentialSet, _BKMatchOperation._priority,
                           _BKMatchOperation._purpose, _BKMatchOperation._stopOnSuccess, _BKMatchOperation._useCase,
-                          _BKMatchOperation._userID, _BKMatchPearlOperation._longTimeout, _BKMatchResultInfo._credentialAdded,
-                          _BKMatchResultInfo._identity, _BKMatchResultInfo._lockoutState, _BKMatchResultInfo._unlocked,
-                          _BKOperation._cancelPending, _BKOperation._delegate, _BKOperation._device, _BKOperation._queue,
-                          _BKOperation._startPending, _BKOperation._state, _BKOperation._xpcClient,
-                          _BKPresenceDetectOperation._priority, _BKSystemProtectedConfiguration._biometryEnabled,
+                          _BKMatchOperation._userID, _BKMatchPearlOperation._longTimeout,
+                          _BKMatchPearlOperation._shouldAutoRetry, _BKMatchPearlResultInfo._feedback,
+                          _BKMatchResultInfo._credentialAdded, _BKMatchResultInfo._identity, _BKMatchResultInfo._lockoutState,
+                          _BKMatchResultInfo._unlocked, _BKOperation._cancelPending, _BKOperation._delegate,
+                          _BKOperation._device, _BKOperation._queue, _BKOperation._startPending, _BKOperation._state,
+                          _BKOperation._xpcClient, _BKPresenceDetectOperation._priority,
+                          _BKSystemProtectedConfiguration._biometryEnabled,
                           _BKSystemProtectedConfiguration._identificationEnabled, _BKSystemProtectedConfiguration._loginEnabled,
                           _BKSystemProtectedConfiguration._unlockEnabled,
                           _BKSystemProtectedConfiguration._unlockTokenMaxLifetime,

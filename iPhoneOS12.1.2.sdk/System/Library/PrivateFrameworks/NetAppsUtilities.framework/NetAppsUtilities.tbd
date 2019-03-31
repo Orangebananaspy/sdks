@@ -1,15 +1,15 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _NACancelableCancel, _NAEmptyResult, _NAEqualObjects, _NAErrorDomain, _NAFutureCallbackStack,
-                          _NAStringFromBOOL, _NetAppsUtilitiesVersionNumber, _NetAppsUtilitiesVersionString, __NABlockDescriptor,
-                          __NADictionaryOfMetrics, __NAFutureDidPerformCallback, __NAFutureWillPerformCallback,
-                          __NAPopScopedDescriptor, __NAPushScopedDescriptor, __NAScopedDescriptor,
+                          _NAStringFromBOOL, __NADictionaryOfMetrics, __NAPopScopedDescriptor, __NAPushScopedDescriptor,
                           _kNAIdentityBuilderDefaultComparisonBlock, _kNAIdentityBuilderDefaultDoubleComparisionBlock,
                           _kNAIdentityBuilderDefaultFloatComparisionBlock, _kNAIdentityBuilderDefaultHashBlock,
                           _kNAIdentityBuilderDefaultNSNumberComparisonBlock, _kNAIdentityBuilderPointerComparisonBlock,
@@ -29,7 +29,7 @@ exports:
                           _NADescriptionBuilder._description, _NADescriptionBuilder._object, _NADescriptionBuilder._proem,
                           _NADescriptionBuilder._useDebugDescription, _NAFilterEnumerator._enumerator,
                           _NAFilterEnumerator._filter, _NAFlatMapEnumerator._enumerator, _NAFlatMapEnumerator._map,
-                          _NAFuture._accessQueue, _NAFuture._completionBlocks, _NAFuture._descriptor, _NAFuture._finished,
+                          _NAFuture._completionBlocks, _NAFuture._descriptor, _NAFuture._finished, _NAFuture._lock,
                           _NAFuture._resultError, _NAFuture._resultValue, _NAIdentity._characteristics,
                           _NAIdentityBuilder._builtIdentity, _NAIdentityBuilder._characteristics,
                           _NAIdentityCharacteristic._comparisonBlock, _NAIdentityCharacteristic._hashBlock,

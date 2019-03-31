@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/PASampling.framework/PASampling
-current-version:       183.1
+current-version:       217
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _CopyDonatingUniqueIds, _CopyMountStatusData, _CountedStateForSampleThread,
                           _CreateDsymSymbolOwnerForUUID, _CreatePAImageInfoArrayFromDyldImageInfos,
                           _CreateSymbolOwnerForUUIDAtPath, _CreateSymbolicatorForLiveProcess, _DescriptionForKCDataType,
@@ -44,7 +46,7 @@ exports:
                           _TaskDisplayName, _TracePointString, _UNKNOWN_STRING, __AvoidSuspendingPid, __CheckAppleInternal,
                           __CopyStringForTime, __CreateSanitizedCopy, __IsTimerCoalesced, __IsTimerLimited, __IsTimerNormal,
                           __PALogTimestamp, __PAPrintToMutableData, __PASerializableIndexForPointer,
-                          __PASerializableInstanceForIndex, __addInstanceToDeserializationDictionaryWithClassKey,
+                          __PASerializableInstanceForIndex, __TimerTier, __addInstanceToDeserializationDictionaryWithClassKey,
                           __addPointerToIndexDictionaryForClass, __copy_commerce_info_strings, __getIndexRangeForTimestamps,
                           __indexToInstanceDictionaryFromDeserializationDictionary, __is_alive,
                           __newDataBufferFromPointerToIndexDictionary, __newMutableCollectionFromIndexList,
@@ -54,7 +56,8 @@ exports:
                           _formattedSignedBytes, _kPABinaryLocatorBuildNumberKey, _kPABinaryLocatorDatabaseDirectory,
                           _kPABinaryLocatorDatabaseLocation, _kPAErrorIndex, _kPANullIndex, _kPAWSUpdateNoSuchIndex,
                           _levelFormattedString, _nameForProcInfo, _newProcessStructures, _pa_tailspin_parse_stackshot_chunk,
-                          _pagesToBytes, _pagesToBytesDefault, _printHeaderSpacingToStream, _uuidForBytes, _uuidForString ]
+                          _pagesToBytes, _pagesToBytesDefault, _printHeaderSpacingToStream, _uuidForBytes, _uuidForString,
+                          _uuid_string ]
     objc-classes:       [ _PAAggregatedDispatchQueue, _PAAggregatedExecutable, _PAAggregatedInstruction,
                           _PAAggregatedKernelInstruction, _PAAggregatedMainThread, _PAAggregatedProcessInstance,
                           _PAAggregatedTask, _PAAggregatedThread, _PAAggregatedThreadAndDispatchQueue, _PABinaryLocator,
@@ -79,7 +82,8 @@ exports:
                           _PAAggregatedInstruction._binaryUuid, _PAAggregatedInstruction._children,
                           _PAAggregatedInstruction._offsetInBinary, _PAAggregatedProcessInstance._combinedStacks,
                           _PAAggregatedProcessInstance._concurrentDispatchQueueIds, _PAAggregatedProcessInstance._countSuspended,
-                          _PAAggregatedProcessInstance._countTerminated, _PAAggregatedProcessInstance._cpuTimeNsCached,
+                          _PAAggregatedProcessInstance._countTerminated, _PAAggregatedProcessInstance._cpuCyclesCached,
+                          _PAAggregatedProcessInstance._cpuInstructionsCached, _PAAggregatedProcessInstance._cpuTimeNsCached,
                           _PAAggregatedProcessInstance._firstTimestampIndex, _PAAggregatedProcessInstance._mainThreadId,
                           _PAAggregatedProcessInstance._mostRecentTimeSamplingOnlyMainThread,
                           _PAAggregatedProcessInstance._previousThreadsWereUnchanged,
@@ -89,6 +93,8 @@ exports:
                           _PAAggregatedTask._aggregator, _PAAggregatedTask._binaryImages,
                           _PAAggregatedThreadAndDispatchQueue._aggregatedTask,
                           _PAAggregatedThreadAndDispatchQueue._contiguousStacks,
+                          _PAAggregatedThreadAndDispatchQueue._cpuCyclesCached,
+                          _PAAggregatedThreadAndDispatchQueue._cpuInstructionsCached,
                           _PAAggregatedThreadAndDispatchQueue._cpuTimeNsCached,
                           _PAAggregatedThreadAndDispatchQueue._dispatchQueueId,
                           _PAAggregatedThreadAndDispatchQueue._maxBasePriority, _PAAggregatedThreadAndDispatchQueue._maxPriority,
@@ -96,7 +102,8 @@ exports:
                           _PAAggregatedThreadAndDispatchQueue._threadId, _PABinaryLocator._buildNumber, _PABinaryLocator._dirty,
                           _PABinaryLocator._enabled, _PABinaryLocator._mappings, _PACSRefWrapper._csRef,
                           _PACSSymbolOwnerWrapper._path, _PACSSymbolOwnerWrapper._usedDsymForUUID,
-                          _PAContiguousStack._firstTimestampIndex, _PAContiguousStack._previousCpuTimeNs,
+                          _PAContiguousStack._firstTimestampIndex, _PAContiguousStack._previousCpuCycles,
+                          _PAContiguousStack._previousCpuInstructions, _PAContiguousStack._previousCpuTimeNs,
                           _PAContiguousStack._threads, _PACountedFrame._count, _PACountedSampleFrame._sampleFrame,
                           _PACountedSampleTreeFrame._children, _PACountedSampleTreeFrame._state,
                           _PACountedSampleTreeFrame._waitInfoString, _PAFanSpeed._fanSpeed, _PAFanSpeed._machTimestamp,
@@ -158,8 +165,13 @@ exports:
                           _PASampleTaskDataPrivateData._faults, _PASampleTaskDataPrivateData._latency_qos,
                           _PASampleTaskDataPrivateData._pageins, _PASampleTaskDataPrivateData._ss_flags,
                           _PASampleTaskDataPrivateData._suspend_count, _PASampleTaskDataPrivateData._task_size_bytes,
-                          _PASampleThreadData.currentScheduledPriority, _PASampleThreadData.dispatchQueueId,
-                          _PASampleThreadData.ioTier, _PASampleThreadData.isDarwinBG, _PASampleThreadData.isGlobalForcedIdle,
+                          _PASampleTaskDataPrivateData._terminatedThreadsCycles,
+                          _PASampleTaskDataPrivateData._terminatedThreadsInstructions,
+                          _PASampleTaskDataPrivateData._terminatedThreadsSystemTimeInNs,
+                          _PASampleTaskDataPrivateData._terminatedThreadsUserTimeInNs,
+                          _PASampleThreadData.currentScheduledPriority, _PASampleThreadData.cycles,
+                          _PASampleThreadData.dispatchQueueId, _PASampleThreadData.instructions, _PASampleThreadData.ioTier,
+                          _PASampleThreadData.isDarwinBG, _PASampleThreadData.isGlobalForcedIdle,
                           _PASampleThreadData.isIOPassive, _PASampleThreadData.isIdleWorkQueue, _PASampleThreadData.isRunning,
                           _PASampleThreadData.isSuspended, _PASampleThreadData.leafKernelFrame,
                           _PASampleThreadData.leafUserFrame, _PASampleThreadData.name, _PASampleThreadData.schedulerFlags,
@@ -226,7 +238,7 @@ exports:
                           _PASampleTimeSeriesDataStore._targetProcessCommerceAppID,
                           _PASampleTimeSeriesDataStore._targetProcessCommerceExternalID,
                           _PASampleTimeSeriesDataStore._targetProcessId, _PASampleTimeSeriesDataStore._targetTask,
-                          _PASampleTimeSeriesDataStore._targetThreadId,
+                          _PASampleTimeSeriesDataStore._targetThreadId, _PASampleTimeSeriesDataStore._threadPolicyVersion,
                           _PASampleTimeSeriesDataStore._timeInsensitiveTaskDataDict,
                           _PASampleTimeSeriesDataStore._timeSensitiveSampleDataArray,
                           _PASampleTimeSeriesDataStore._timeWhenTransitionedToSamplingAllProcesses,

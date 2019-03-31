@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _CAMShutterButtonSpecMake, _CMKAggregateDictionaryAddValueForScalarKey,
                           _CMKAggregateDictionaryAvalancheLengthBackKey, _CMKAggregateDictionaryBucketNumberForAvalancheLength,
                           _CMKAggregateDictionaryBucketNumberForCameraVideoDuration,
@@ -495,7 +497,7 @@ exports:
                           _CMKZoomSlider.__visibilityTimer, _CMKZoomSlider._delegate, _CMKZoomSlider._maximumAutozooming,
                           _CMKZoomSlider._minimumAutozooming, _DeferredCMKCameraRollSpec._isPad,
                           _DeferredCMKCameraRollSpec._loader, _DeferredCMKCameraRollSpec._spec,
-                          _DeferredFrameworkLoader._frameworkHandle, _DeferredFrameworkLoader._frameworkLoadedToken,
+                          _DeferredFrameworkLoader._frameworkHandle, _DeferredFrameworkLoader._frameworkLoaded,
                           _DeferredFrameworkLoader._path, _DeferredPUCameraApplicationViewController._deferredLoader,
                           _DeferredPUCameraApplicationViewController._spec, _PLCameraIrisAnimationView.irisAnimationDelegate,
                           _PLCameraIrisAnimationView.irisAnimationDidStopSelector,

@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/WelcomeKitCore.framework/WelcomeKitCore
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _WLErrorDomain, _WelcomeKitCoreVersionNumber, _WelcomeKitCoreVersionString,
                           ___deviceClientStopNetworkCallback, ___startNetworkCallback ]
     objc-classes:       [ _WLAppMigrator, _WLAuthenticationCredentials, _WLAuthenticationUtilities, _WLBookmarksMigrator,
@@ -57,15 +59,16 @@ exports:
                           _WLSocketHandler._dataCache, _WLSocketHandler._dataCacheReadSource, _WLSocketHandler._dataCacheSema,
                           _WLSocketHandler._readQueue, _WLSourceDeviceAccount._identifier, _WLSourceDeviceAccount._sqlID,
                           _WLSourceDeviceMigrationMetadata._attemptCount, _WLSourceDeviceMigrationMetadata._communicationDate,
-                          _WLSourceDeviceMigrationMetadata._crashCount, _WLSourceDeviceMigrationMetadata._deviceOSVersion,
-                          _WLSourceDeviceMigrationMetadata._deviceType, _WLSourceDeviceMigrationMetadata._state,
-                          _WLSourceDeviceRecordSummary._account, _WLSourceDeviceRecordSummary._dataFilePath,
-                          _WLSourceDeviceRecordSummary._downloadSegmentCount, _WLSourceDeviceRecordSummary._identifier,
-                          _WLSourceDeviceRecordSummary._itemSize, _WLSourceDeviceRecordSummary._metadata,
-                          _WLSourceDeviceRecordSummary._modifiedDate, _WLSourceDeviceRecordSummary._relativePath,
-                          _WLSourceDeviceRecordSummary._sqlID, _WLSourceDeviceRecordSummary._storeDataAsFile,
-                          _WLStatistics._contentType, _WLStatistics._downloadByteCount, _WLStatistics._downloadEndDate,
-                          _WLStatistics._downloadStartDate, _WLStatistics._importEndBytesFree, _WLStatistics._importEndDate,
+                          _WLSourceDeviceMigrationMetadata._crashCount, _WLSourceDeviceMigrationMetadata._deviceModel,
+                          _WLSourceDeviceMigrationMetadata._deviceOSVersion, _WLSourceDeviceMigrationMetadata._deviceType,
+                          _WLSourceDeviceMigrationMetadata._state, _WLSourceDeviceRecordSummary._account,
+                          _WLSourceDeviceRecordSummary._dataFilePath, _WLSourceDeviceRecordSummary._downloadSegmentCount,
+                          _WLSourceDeviceRecordSummary._identifier, _WLSourceDeviceRecordSummary._itemSize,
+                          _WLSourceDeviceRecordSummary._metadata, _WLSourceDeviceRecordSummary._modifiedDate,
+                          _WLSourceDeviceRecordSummary._relativePath, _WLSourceDeviceRecordSummary._sqlID,
+                          _WLSourceDeviceRecordSummary._storeDataAsFile, _WLStatistics._contentType,
+                          _WLStatistics._downloadByteCount, _WLStatistics._downloadEndDate, _WLStatistics._downloadStartDate,
+                          _WLStatistics._importEndBytesFree, _WLStatistics._importEndDate,
                           _WLStatistics._importFailedRecordCount, _WLStatistics._importRecordCount,
                           _WLStatistics._importStartBytesFree, _WLStatistics._importStartDate, _WLURLSessionController._auth,
                           _WLURLSessionController._delegateOperationQueue, _WLURLSessionController._urlSession,

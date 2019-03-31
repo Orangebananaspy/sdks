@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _NSStringFromXBApplicationSnapshotOnDiskFormat, _SplashBoardSubsystem, _SplashBoardVersionNumber,
                           _SplashBoardVersionString, _XBApplicationLaunchCompatibilityInfoPersistenceKey,
                           _XBApplicationLaunchImageServiceName, _XBApplicationSnapshotContentTypeDescription,
@@ -21,15 +23,16 @@ exports:
                           _XBInterfaceOrientationStringPortrait, _XBInterfaceOrientationStringPortraitUpsideDown,
                           _XBInterfaceOrientationsAreOrthogonal, _XBInvalidContextId, _XBIsSymbolicLinkAtPath,
                           _XBLaunchImageProviderMessageKeyCompatibilityInfo, _XBLaunchImageProviderMessageKeyContextID,
-                          _XBLaunchImageProviderMessageKeyLaunchRequest, _XBLaunchImageProviderMessageKeyMessageType,
-                          _XBLaunchInterfaceTypeName, _XBLaunchStoryboardClientBundleIdentifierKey,
-                          _XBLaunchStoryboardDefinitionsKey, _XBLaunchStoryboardErrorDomain, _XBLaunchStoryboardFileKey,
-                          _XBLaunchStoryboardIdentifierKey, _XBLaunchStoryboardNameKey, _XBLaunchStoryboardsKey, _XBLogCommon,
-                          _XBLogSnapshot, _XBModificationDateForPath, _XBNextClockwiseInterfaceOrientation,
-                          _XBOppositeInterfaceOrientation, _XBRecentLocalePreferenceKey, _XBRecentScreenSizePreferenceKey,
-                          _XBRotationDegreesForImageOrientation, _XBRotationDegreesForInterfaceOrientationRotation,
-                          _XBSnapshotPathForBundleIdentifierWithSandboxPath, _XBSnapshotPathForNonSandboxedSystemApplications,
-                          _XBStatusBarStateDescription, _XBStatusBarStateMaskDescription, _XBStatusBarStateMaskForStatusBarState,
+                          _XBLaunchImageProviderMessageKeyError, _XBLaunchImageProviderMessageKeyLaunchRequest,
+                          _XBLaunchImageProviderMessageKeyMessageType, _XBLaunchInterfaceTypeName,
+                          _XBLaunchStoryboardClientBundleIdentifierKey, _XBLaunchStoryboardDefinitionsKey,
+                          _XBLaunchStoryboardErrorDomain, _XBLaunchStoryboardFileKey, _XBLaunchStoryboardIdentifierKey,
+                          _XBLaunchStoryboardNameKey, _XBLaunchStoryboardsKey, _XBLogCommon, _XBLogSnapshot,
+                          _XBModificationDateForPath, _XBNextClockwiseInterfaceOrientation, _XBOppositeInterfaceOrientation,
+                          _XBRecentLocalePreferenceKey, _XBRecentScreenSizePreferenceKey, _XBRotationDegreesForImageOrientation,
+                          _XBRotationDegreesForInterfaceOrientationRotation, _XBSnapshotPathForBundleIdentifierWithSandboxPath,
+                          _XBSnapshotPathForNonSandboxedSystemApplications, _XBStatusBarStateDescription,
+                          _XBStatusBarStateMaskDescription, _XBStatusBarStateMaskForStatusBarState,
                           _XBStatusBarStateMaskMatchesSettings, _XBStatusBarStateMatchesSettings,
                           _XBStringForInterfaceOrientation, _XBURLToLaunchStoryboardAssociationsKey,
                           __IOSurfacePropertyDictionaryForSize, __XBPreparedLaunchInterfaceForCapture ]
@@ -38,8 +41,8 @@ exports:
                           _XBApplicationSnapshotGroup, _XBApplicationSnapshotImage, _XBApplicationSnapshotManifest,
                           _XBApplicationSnapshotManifestImpl, _XBApplicationSnapshotPredicate,
                           _XBApplicationSnapshotSortDescriptor, _XBDisplaySnapshot, _XBDisplaySnapshotLayer, _XBLaunchImage,
-                          _XBLaunchImageDataProvider, _XBLaunchImageProvider, _XBLaunchImageProviderClient, _XBLaunchInterface,
-                          _XBLaunchStateRequest, _XBMutableStatusBarSettings, _XBSnapshotContainerIdentity,
+                          _XBLaunchImageDataProvider, _XBLaunchImageError, _XBLaunchImageProvider, _XBLaunchImageProviderClient,
+                          _XBLaunchInterface, _XBLaunchStateRequest, _XBMutableStatusBarSettings, _XBSnapshotContainerIdentity,
                           _XBSnapshotDataProviderContext, _XBSnapshotManifestIdentity, _XBStatusBarSettings ]
     objc-ivars:         [ _XBApplicationController._mainDisplayConfiguration,
                           _XBApplicationDataStore._cacheableBundleIdentifiers,
@@ -58,11 +61,12 @@ exports:
                           _XBApplicationSnapshot._extendedData, _XBApplicationSnapshot._fileFormat,
                           _XBApplicationSnapshot._fileLocation, _XBApplicationSnapshot._filename,
                           _XBApplicationSnapshot._fullScreen, _XBApplicationSnapshot._generationContext,
-                          _XBApplicationSnapshot._groupID, _XBApplicationSnapshot._identifier,
-                          _XBApplicationSnapshot._imageAccessCount, _XBApplicationSnapshot._imageGenerator,
-                          _XBApplicationSnapshot._imageOpaque, _XBApplicationSnapshot._imageOrientation,
-                          _XBApplicationSnapshot._imageScale, _XBApplicationSnapshot._imageTransform,
-                          _XBApplicationSnapshot._interfaceOrientation, _XBApplicationSnapshot._invalidated,
+                          _XBApplicationSnapshot._groupID, _XBApplicationSnapshot._hasProtectedContent,
+                          _XBApplicationSnapshot._identifier, _XBApplicationSnapshot._imageAccessCount,
+                          _XBApplicationSnapshot._imageGenerator, _XBApplicationSnapshot._imageOpaque,
+                          _XBApplicationSnapshot._imageOrientation, _XBApplicationSnapshot._imageScale,
+                          _XBApplicationSnapshot._imageTransform, _XBApplicationSnapshot._interfaceOrientation,
+                          _XBApplicationSnapshot._invalidated, _XBApplicationSnapshot._keepImageAccessForPreHeat,
                           _XBApplicationSnapshot._keepImageAccessUntilExpiration, _XBApplicationSnapshot._lastUsedDate,
                           _XBApplicationSnapshot._launchInterfaceIdentifier, _XBApplicationSnapshot._logIdentifier,
                           _XBApplicationSnapshot._name, _XBApplicationSnapshot._path, _XBApplicationSnapshot._referenceSize,
@@ -76,7 +80,7 @@ exports:
                           _XBApplicationSnapshotGenerationContext._timeout, _XBApplicationSnapshotGroup._containerIdentity,
                           _XBApplicationSnapshotGroup._identifier, _XBApplicationSnapshotGroup._snapshots,
                           _XBApplicationSnapshotImage._interfaceOrientation, _XBApplicationSnapshotImage._snapshot,
-                          _XBApplicationSnapshotManifest._manifestImpl,
+                          _XBApplicationSnapshotManifest._delegate, _XBApplicationSnapshotManifest._manifestImpl,
                           _XBApplicationSnapshotManifestImpl._archiveSchedulingQueue_dirty,
                           _XBApplicationSnapshotManifestImpl._archiveSchedulingQueue_scheduled,
                           _XBApplicationSnapshotManifestImpl._archiveSchedulingQueue_synchronizeCompletions,
@@ -90,21 +94,24 @@ exports:
                           _XBApplicationSnapshotManifestImpl._snapshotGroupsByID,
                           _XBApplicationSnapshotPredicate._clientSettings, _XBApplicationSnapshotSortDescriptor._ascending,
                           _XBApplicationSnapshotSortDescriptor._comparator, _XBApplicationSnapshotSortDescriptor._key,
-                          _XBDisplaySnapshot._displayConfiguration, _XBDisplaySnapshot._image, _XBDisplaySnapshot._imageRef,
-                          _XBDisplaySnapshot._layers, _XBDisplaySnapshot._opaque, _XBDisplaySnapshot._scale,
-                          _XBDisplaySnapshot._snapshotSize, _XBDisplaySnapshot._surfaceRef,
+                          _XBDisplaySnapshot._allowsProtectedContent, _XBDisplaySnapshot._displayConfiguration,
+                          _XBDisplaySnapshot._image, _XBDisplaySnapshot._imageRef, _XBDisplaySnapshot._layers,
+                          _XBDisplaySnapshot._nonProtectedSurfaceRef, _XBDisplaySnapshot._opaque,
+                          _XBDisplaySnapshot._protectedSurfaceRef, _XBDisplaySnapshot._scale, _XBDisplaySnapshot._snapshotSize,
                           _XBDisplaySnapshotLayer._baseTransform, _XBDisplaySnapshotLayer._contextID,
                           _XBLaunchImageDataProvider._cachedImage, _XBLaunchImageDataProvider._context,
-                          _XBLaunchImageDataProvider._snapshot, _XBLaunchImageProvider._workQueue,
-                          _XBLaunchImageProviderClient._appInfo, _XBLaunchInterface._default, _XBLaunchInterface._identifier,
-                          _XBLaunchInterface._name, _XBLaunchInterface._type, _XBLaunchInterface._urlSchemes,
-                          _XBLaunchStateRequest._displayConfiguration, _XBLaunchStateRequest._groupID,
-                          _XBLaunchStateRequest._interfaceOrientation, _XBLaunchStateRequest._launchInterfaceIdentifier,
-                          _XBLaunchStateRequest._naturalSize, _XBLaunchStateRequest._referenceSize,
-                          _XBLaunchStateRequest._statusBarState, _XBLaunchStateRequest._urlSchemeName,
-                          _XBSnapshotContainerIdentity._bundleContainerPath, _XBSnapshotContainerIdentity._bundleIdentifier,
-                          _XBSnapshotContainerIdentity._bundlePath, _XBSnapshotContainerIdentity._dataContainerPath,
-                          _XBSnapshotContainerIdentity._snapshotContainerPath, _XBSnapshotDataProviderContext._opaque,
-                          _XBSnapshotDataProviderContext._scale, _XBSnapshotManifestIdentity._bundleIdentifier,
-                          _XBSnapshotManifestIdentity._store, _XBStatusBarSettings._settings ]
+                          _XBLaunchImageDataProvider._snapshot, _XBLaunchImageError._fatal, _XBLaunchImageProvider._accessQueue,
+                          _XBLaunchImageProvider._blacklistedBundleIdentifiers, _XBLaunchImageProvider._stateCaptureAssertion,
+                          _XBLaunchImageProvider._workQueue, _XBLaunchImageProviderClient._appInfo, _XBLaunchInterface._default,
+                          _XBLaunchInterface._identifier, _XBLaunchInterface._name, _XBLaunchInterface._type,
+                          _XBLaunchInterface._urlSchemes, _XBLaunchStateRequest._displayConfiguration,
+                          _XBLaunchStateRequest._groupID, _XBLaunchStateRequest._interfaceOrientation,
+                          _XBLaunchStateRequest._launchInterfaceIdentifier, _XBLaunchStateRequest._naturalSize,
+                          _XBLaunchStateRequest._referenceSize, _XBLaunchStateRequest._statusBarState,
+                          _XBLaunchStateRequest._urlSchemeName, _XBSnapshotContainerIdentity._bundleContainerPath,
+                          _XBSnapshotContainerIdentity._bundleIdentifier, _XBSnapshotContainerIdentity._bundlePath,
+                          _XBSnapshotContainerIdentity._dataContainerPath, _XBSnapshotContainerIdentity._snapshotContainerPath,
+                          _XBSnapshotDataProviderContext._opaque, _XBSnapshotDataProviderContext._scale,
+                          _XBSnapshotManifestIdentity._bundleIdentifier, _XBSnapshotManifestIdentity._store,
+                          _XBStatusBarSettings._settings ]
 ...

@@ -1,11 +1,12 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/IOMobileFramebuffer.framework/IOMobileFramebuffer
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _IOMobileFrameBufferEnableDebugTracing, _IOMobileFrameBufferEnableVBLTraces,
                           _IOMobileFrameBufferGetDebugTraces, _IOMobileFrameBufferGetMirroringCapability,
                           _IOMobileFrameBufferPrintDebugTraces, _IOMobileFrameBufferSetLogLevel,
@@ -46,22 +47,23 @@ exports:
                           _IOMobileFramebufferSetCanvasSize, _IOMobileFramebufferSetColorRemapMode,
                           _IOMobileFramebufferSetContrast, _IOMobileFramebufferSetDebugFlags,
                           _IOMobileFramebufferSetDigitalOutMode, _IOMobileFramebufferSetDisplayDevice,
-                          _IOMobileFramebufferSetDisplaySize, _IOMobileFramebufferSetFlags, _IOMobileFramebufferSetGammaTable,
+                          _IOMobileFramebufferSetDroppable, _IOMobileFramebufferSetFlags, _IOMobileFramebufferSetGammaTable,
                           _IOMobileFramebufferSetIdleBuffer, _IOMobileFramebufferSetLine21Data, _IOMobileFramebufferSetMatrix,
                           _IOMobileFramebufferSetMirrorContentRegion, _IOMobileFramebufferSetParameter,
                           _IOMobileFramebufferSetRenderingAngle, _IOMobileFramebufferSetTVOutMode,
                           _IOMobileFramebufferSetTVOutSignalType, _IOMobileFramebufferSetUnderrunColor,
                           _IOMobileFramebufferSetVideoDACGain, _IOMobileFramebufferSetWSSInfo,
                           _IOMobileFramebufferSetWhiteOnBlackMode, _IOMobileFramebufferSupportedFrameInfo,
-                          _IOMobileFramebufferSwapActiveRegion, _IOMobileFramebufferSwapBegin, _IOMobileFramebufferSwapCancel,
-                          _IOMobileFramebufferSwapDirtyRegion, _IOMobileFramebufferSwapEnd,
-                          _IOMobileFramebufferSwapSetBackgroundColor, _IOMobileFramebufferSwapSetColorMatrix,
-                          _IOMobileFramebufferSwapSetContributingImageSources, _IOMobileFramebufferSwapSetGammaTable,
-                          _IOMobileFramebufferSwapSetLayer, _IOMobileFramebufferSwapSetTimestamp,
-                          _IOMobileFramebufferSwapSetTimestamps, _IOMobileFramebufferSwapSetUISubRegion,
-                          _IOMobileFramebufferSwapSetVideoDestEdgeAlpha, _IOMobileFramebufferSwapSignal,
-                          _IOMobileFramebufferSwapSubtitleRegion, _IOMobileFramebufferSwapUIEdgeBlendMode,
-                          _IOMobileFramebufferSwapWait, _IOMobileFramebufferSwapWaitWithTimeout,
-                          _IOMobileFramebufferSwapWorkaroundSettings, _IOMobileFramebufferUnscheduleFromDispatchQueue,
-                          _IOMobileFramebufferWaitSurface, _kIOMFB_TotalSwaps, _kIOMFB_TotalVBLs, _main ]
+                          _IOMobileFramebufferSurfaceIsReplaceable, _IOMobileFramebufferSwapActiveRegion,
+                          _IOMobileFramebufferSwapBegin, _IOMobileFramebufferSwapCancel, _IOMobileFramebufferSwapDirtyRegion,
+                          _IOMobileFramebufferSwapEnd, _IOMobileFramebufferSwapSetBackgroundColor,
+                          _IOMobileFramebufferSwapSetColorMatrix, _IOMobileFramebufferSwapSetGammaTable,
+                          _IOMobileFramebufferSwapSetLayer, _IOMobileFramebufferSwapSetParams,
+                          _IOMobileFramebufferSwapSetTimestamp, _IOMobileFramebufferSwapSetTimestamps,
+                          _IOMobileFramebufferSwapSetUISubRegion, _IOMobileFramebufferSwapSetVideoDestEdgeAlpha,
+                          _IOMobileFramebufferSwapSignal, _IOMobileFramebufferSwapSubtitleRegion,
+                          _IOMobileFramebufferSwapUIEdgeBlendMode, _IOMobileFramebufferSwapWait,
+                          _IOMobileFramebufferSwapWaitWithTimeout, _IOMobileFramebufferSwapWorkaroundSettings,
+                          _IOMobileFramebufferUnscheduleFromDispatchQueue, _IOMobileFramebufferWaitSurface, _kIOMFB_TotalSwaps,
+                          _kIOMFB_TotalVBLs, _main ]
 ...

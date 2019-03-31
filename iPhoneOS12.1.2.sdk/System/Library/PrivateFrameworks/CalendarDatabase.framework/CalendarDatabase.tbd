@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/CalendarDatabase.framework/CalendarDatabase
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _CDBCommonEntityFunctionalityHandlerPropertyMethods, _CDBEntityDestroy,
                           _CDBGetCommonEntityFunctionalityHandler, _CDBLogHandle, _CDBLogInitIfNeeded,
                           _CDBPreferences_Notification_LastConfirmedSplashScreenVersionViewed,
@@ -234,7 +236,8 @@ exports:
                           _CalDatabaseCopyEventWithPublicID, _CalDatabaseCopyEventWithSummaryAndStartDateInCalendar,
                           _CalDatabaseCopyEventWithSummaryAndStartDateInStore, _CalDatabaseCopyEventWithUID,
                           _CalDatabaseCopyEventWithUUID, _CalDatabaseCopyEventWithUniqueIdentifierInCalendar,
-                          _CalDatabaseCopyEventWithUniqueIdentifierInStore, _CalDatabaseCopyExceptionDateWithUID,
+                          _CalDatabaseCopyEventWithUniqueIdentifierInStore, _CalDatabaseCopyExceptionDateChangesInCalendar,
+                          _CalDatabaseCopyExceptionDateWithUID,
                           _CalDatabaseCopyExternalModificationTagsForEventsWithExternalIDsInStore,
                           _CalDatabaseCopyFirstNaturalLanguageSuggestedEventMatchingSummary,
                           _CalDatabaseCopyInviteReplyNotificationChangesInCalendar,
@@ -402,6 +405,7 @@ exports:
                           _CalEventOccurrenceCacheCopyAllDaysAndOccurrenceCounts, _CalEventOccurrenceCacheCopyBoundsForTimeZone,
                           _CalEventOccurrenceCacheCopyEventOccurrencesAfterDate,
                           _CalEventOccurrenceCacheCopyEventOccurrencesInDateRange,
+                          _CalEventOccurrenceCacheCopyEventOccurrencesInDateRangeWithLimit,
                           _CalEventOccurrenceCacheCopyEventOccurrencesWithIDsAfterDate,
                           _CalEventOccurrenceCacheCopyOccurrencesOnDay, _CalEventOccurrenceCacheCopyTimeZone,
                           _CalEventOccurrenceCacheDoEventsHaveOccurrencesAfterDate, _CalEventOccurrenceCacheGetCacheRange,

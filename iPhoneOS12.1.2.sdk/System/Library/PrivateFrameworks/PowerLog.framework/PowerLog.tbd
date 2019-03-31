@@ -1,17 +1,21 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/PowerLog.framework/PowerLog
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ _PLABCUIQuery, _PLBatchDropMessages, _PLBatteryGaugeGetSnapshot, _PLBatteryGaugePauseTracing,
-                          _PLBatteryGaugePauseTracingForBundleId, _PLBatteryGaugePauseTracingForPid,
-                          _PLBatteryGaugePauseTracingForProcessName, _PLBatteryGaugeResumeTracing,
-                          _PLBatteryGaugeResumeTracingForBundleId, _PLBatteryGaugeResumeTracingForPid,
-                          _PLBatteryGaugeResumeTracingForProcessName, _PLBatteryGaugeStartTracing,
-                          _PLBatteryGaugeStartTracingForBundleId, _PLBatteryGaugeStartTracingForPid,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _PLABCUIQuery, _PLADClientAddValueForScalarKey, _PLADClientBatchKeys,
+                          _PLADClientPushValueForDistributionKey, _PLADClientSetValueForScalarKey, _PLADMonotonicTimeGetCurrent,
+                          _PLADPushTimeIntervalForDistributionKeySinceStartTime, _PLBatchDropMessages,
+                          _PLBatteryGaugeGetSnapshot, _PLBatteryGaugePauseTracing, _PLBatteryGaugePauseTracingForBundleId,
+                          _PLBatteryGaugePauseTracingForPid, _PLBatteryGaugePauseTracingForProcessName,
+                          _PLBatteryGaugeResumeTracing, _PLBatteryGaugeResumeTracingForBundleId,
+                          _PLBatteryGaugeResumeTracingForPid, _PLBatteryGaugeResumeTracingForProcessName,
+                          _PLBatteryGaugeStartTracing, _PLBatteryGaugeStartTracingForBundleId, _PLBatteryGaugeStartTracingForPid,
                           _PLBatteryGaugeStartTracingForProcessName, _PLBatteryGaugeStopTracing,
                           _PLBatteryGaugeStopTracingForBundleId, _PLBatteryGaugeStopTracingForPid,
                           _PLBatteryGaugeStopTracingForProcessName, _PLBatteryGaugeVersion,
@@ -23,14 +27,18 @@ exports:
                           _PLBatteryLifeMonitorReportDiscretionaryBudgetForDuet, _PLBatteryLifeMonitorReportEnergyCoreDuet,
                           _PLBatteryLifeMonitorReportEnergyDuet, _PLBatteryLifeMonitorStopAllDuetEvents, _PLBatteryUsageUIQuery,
                           _PLBuildEnergyBucket, _PLBuildEnergyBucketTillNow, _PLBuildUsageSnapshot, _PLCopyPowerlog,
-                          _PLCopyPowerlogHybrid, _PLFDefaultsValueForKey, _PLForceBatching, _PLLogEvent, _PLLogRegisteredEvent,
-                          _PLLogTimeSensitiveRegisteredEvent, _PLMovePowerlogsToCR, _PLQuery, _PLQueryRegistered,
-                          _PLShouldLogEvent, _PLShouldLogRegisteredEvent, _PLSysdiagnoseCopyPowerlog, _PLTalkToPowerlogHelper,
-                          ___PowerLogVersionNumber, ___PowerLogVersionString, _containerPath, _dateFormatter, _getContainerPath,
+                          _PLCopyPowerlogHybrid, _PLFDefaultsValueForKey, _PLForceBatching, _PLLogEvent,
+                          _PLLogRegisteredAggregateEvent, _PLLogRegisteredEvent, _PLLogTimeSensitiveRegisteredEvent,
+                          _PLMovePowerlogsToCR, _PLQuery, _PLQueryRegistered, _PLShouldLogEvent, _PLShouldLogRegisteredEvent,
+                          _PLSysdiagnoseCopyPowerlog, _PLTalkToPowerlogHelper, _containerPath, _dateFormatter, _getContainerPath,
                           _queryPowerlog, _shortUUIDString ]
-    objc-classes:       [ _PLClientLogger, _PLCoreDuetEvent, _PLCoreDuetEventInterval, _PLDuetActivitySchedulerUsageSnapshot,
-                          _PLEnergyBucket, _PLModelingUtilities, _PLUsageSnapshot ]
-    objc-ivars:         [ _PLClientLogger._adaptivePermissionWorkQueue, _PLClientLogger._batchDropMessages,
+    objc-classes:       [ _PLClientLogAggregator, _PLClientLogger, _PLCoreDuetEvent, _PLCoreDuetEventInterval,
+                          _PLDuetActivitySchedulerUsageSnapshot, _PLEnergyBucket, _PLModelingUtilities, _PLNetworkEnergyModel,
+                          _PLUsageSnapshot ]
+    objc-ivars:         [ _PLClientLogAggregator._aggregatesCache, _PLClientLogAggregator._executionQueue,
+                          _PLClientLogAggregator._flushTimer, _PLClientLogAggregator._logHandle,
+                          _PLClientLogAggregator._numAggregates, _PLClientLogAggregator._numAggregations,
+                          _PLClientLogger._adaptivePermissionWorkQueue, _PLClientLogger._batchDropMessages,
                           _PLClientLogger._batchFlushQueue, _PLClientLogger._batchedDropMessageCount,
                           _PLClientLogger._batchedTaskCache, _PLClientLogger._batchedTimerInFlight,
                           _PLClientLogger._batchingClientWhitelist, _PLClientLogger._clientDebug, _PLClientLogger._forceBatching,
@@ -46,5 +54,10 @@ exports:
                           _PLDuetActivitySchedulerUsageSnapshot._numberOfBytesUploadedCell,
                           _PLDuetActivitySchedulerUsageSnapshot._numberOfBytesUploadedWiFi,
                           _PLDuetActivitySchedulerUsageSnapshot._startDate, _PLDuetActivitySchedulerUsageSnapshot._stopDate,
-                          _PLEnergyBucket._level, _PLUsageSnapshot._cpuUsage, _PLUsageSnapshot._timestamp ]
+                          _PLEnergyBucket._level, _PLNetworkEnergyModel._linkCost, _PLNetworkEnergyModel._linkDuration,
+                          _PLNetworkEnergyModel._linkLevel1Parameters, _PLNetworkEnergyModel._linkType,
+                          _PLNetworkEnergyModel._overallBytes, _PLNetworkEnergyModel._overallDuration,
+                          _PLNetworkEnergyModel._powerlevel1Duration, _PLNetworkEnergyModel._powerlevel2Duration,
+                          _PLNetworkEnergyModel._powerlevel3Duration, _PLNetworkEnergyModel._taskUUID,
+                          _PLNetworkEnergyModel._updateCount, _PLUsageSnapshot._cpuUsage, _PLUsageSnapshot._timestamp ]
 ...

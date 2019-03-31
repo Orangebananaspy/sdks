@@ -1,12 +1,14 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ _PCForceDemoMaxKeepAliveIntervalKey, _PCForceMinKeepAliveIntervalKey,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _PCForceDemoMaxKeepAliveIntervalKey, _PCForceMinKeepAliveIntervalKey, _PCIntervalCacheAddressFamilyKey,
                           _PCIntervalCacheChangedNotification, _PCIntervalCacheDateKey, _PCIntervalCacheKeepAliveIntervalKey,
                           _PCPersistentConnectionBundleIdentifier, _PCPreferencesDidChangeNotification,
                           _PCSettingsGetClassPollInterval, _PCSettingsGetClassPushEnabled,
@@ -16,12 +18,15 @@ exports:
                           _PCSettingsSetClassPushEnabled, _PCSettingsSetDefaultStyle,
                           _PCSettingsSetForceManualWhenRoamingForMCCAccount, _PCSettingsSetGlobalMCCForceManualWhenRoaming,
                           _PCSettingsSetStyle, _PCTimerFireEarlyToCoalesceKey, _PCWiFiInterfaceNameKey, __PCSettingsGetStyle ]
-    objc-classes:       [ _PCCancelAllProcessWakesOperation, _PCConnectionManager, _PCDelegateInfo, _PCDispatchTimer,
-                          _PCDistributedLock, _PCInterfaceMonitor, _PCInterfaceUsabilityMonitor, _PCLog, _PCLogging,
-                          _PCMultiStageGrowthAlgorithm, _PCNonCellularUsabilityMonitor, _PCPersistentIdentifiers,
+    objc-classes:       [ _PCCancelAllProcessWakesOperation, _PCCarrierBundleHelper, _PCConnectionManager, _PCDelegateInfo,
+                          _PCDispatchTimer, _PCDistributedLock, _PCInterfaceMonitor, _PCInterfaceUsabilityMonitor, _PCLog,
+                          _PCLogging, _PCMultiStageGrowthAlgorithm, _PCNonCellularUsabilityMonitor, _PCPersistentIdentifiers,
                           _PCPersistentInterfaceManager, _PCPersistentTimer, _PCScheduleSystemWakeOperation, _PCSimpleTimer,
                           _PCSystemWakeManager, _PCWWANUsabilityMonitor ]
-    objc-ivars:         [ _PCConnectionManager._alwaysWantsInterfaceChangeCallbacks, _PCConnectionManager._connectionClass,
+    objc-ivars:         [ _PCCarrierBundleHelper._bundle, _PCCarrierBundleHelper._ctClient,
+                          _PCCarrierBundleHelper._currentDataContext, _PCCarrierBundleHelper._delegates,
+                          _PCCarrierBundleHelper._queue, _PCConnectionManager._alwaysWantsInterfaceChangeCallbacks,
+                          _PCConnectionManager._connectionClass, _PCConnectionManager._currentAddressFamily,
                           _PCConnectionManager._currentGrowthStage, _PCConnectionManager._defaultPollingInterval,
                           _PCConnectionManager._delayTimer, _PCConnectionManager._delegate, _PCConnectionManager._delegateQueue,
                           _PCConnectionManager._delegateRunLoop, _PCConnectionManager._deviceUnderGoodCondition,
@@ -48,19 +53,18 @@ exports:
                           _PCConnectionManager._pushIsConnectedToken, _PCConnectionManager._reconnectIteration,
                           _PCConnectionManager._reconnectWakeTimer, _PCConnectionManager._reconnectWithKeepAliveDelay,
                           _PCConnectionManager._serviceIdentifier, _PCConnectionManager._timerGuidance,
-                          _PCConnectionManager._timerGuidanceToken, _PCConnectionManager._weakConnectionManager,
-                          _PCConnectionManager._wifiGrowthAlgorithm, _PCConnectionManager._wwanGrowthAlgorithm,
-                          _PCDelegateInfo._queue, _PCDispatchTimer._fireDate, _PCDispatchTimer._fireTime,
-                          _PCDispatchTimer._isValid, _PCDispatchTimer._queue, _PCDispatchTimer._selector,
-                          _PCDispatchTimer._target, _PCDispatchTimer._timerSource, _PCDistributedLock._fd,
-                          _PCDistributedLock._path, _PCInterfaceMonitor._delegateMap, _PCInterfaceMonitor._internal,
-                          _PCInterfaceUsabilityMonitor._delegateQueue, _PCInterfaceUsabilityMonitor._delegateReference,
-                          _PCInterfaceUsabilityMonitor._dynamicStore, _PCInterfaceUsabilityMonitor._interfaceIdentifier,
-                          _PCInterfaceUsabilityMonitor._interfaceName, _PCInterfaceUsabilityMonitor._isInternetReachable,
-                          _PCInterfaceUsabilityMonitor._ivarQueue, _PCInterfaceUsabilityMonitor._linkQuality,
-                          _PCInterfaceUsabilityMonitor._linkQualitySource, _PCInterfaceUsabilityMonitor._lqKey,
-                          _PCInterfaceUsabilityMonitor._offTransitions, _PCInterfaceUsabilityMonitor._reachability,
-                          _PCInterfaceUsabilityMonitor._thresholdOffTransitionCount,
+                          _PCConnectionManager._timerGuidanceToken, _PCConnectionManager._wifiGrowthAlgorithm,
+                          _PCConnectionManager._wwanGrowthAlgorithm, _PCDelegateInfo._queue, _PCDispatchTimer._fireDate,
+                          _PCDispatchTimer._fireTime, _PCDispatchTimer._isValid, _PCDispatchTimer._queue,
+                          _PCDispatchTimer._selector, _PCDispatchTimer._target, _PCDispatchTimer._timerSource,
+                          _PCDistributedLock._fd, _PCDistributedLock._path, _PCInterfaceMonitor._delegateMap,
+                          _PCInterfaceMonitor._internal, _PCInterfaceUsabilityMonitor._delegateQueue,
+                          _PCInterfaceUsabilityMonitor._delegateReference, _PCInterfaceUsabilityMonitor._dynamicStore,
+                          _PCInterfaceUsabilityMonitor._interfaceIdentifier, _PCInterfaceUsabilityMonitor._interfaceName,
+                          _PCInterfaceUsabilityMonitor._isInternetReachable, _PCInterfaceUsabilityMonitor._ivarQueue,
+                          _PCInterfaceUsabilityMonitor._linkQuality, _PCInterfaceUsabilityMonitor._linkQualitySource,
+                          _PCInterfaceUsabilityMonitor._lqKey, _PCInterfaceUsabilityMonitor._offTransitions,
+                          _PCInterfaceUsabilityMonitor._reachability, _PCInterfaceUsabilityMonitor._thresholdOffTransitionCount,
                           _PCInterfaceUsabilityMonitor._trackUsability, _PCInterfaceUsabilityMonitor._trackedTimeInterval,
                           _PCMultiStageGrowthAlgorithm._algorithmName, _PCMultiStageGrowthAlgorithm._countOfGrowthActions,
                           _PCMultiStageGrowthAlgorithm._currentKeepAliveInterval, _PCMultiStageGrowthAlgorithm._growthStage,
@@ -86,8 +90,10 @@ exports:
                           _PCPersistentInterfaceManager._WWANContextIdentifier, _PCPersistentInterfaceManager._WWANInterfaceName,
                           _PCPersistentInterfaceManager._WiFiAutoAssociationDelegates,
                           _PCPersistentInterfaceManager._WiFiAutoAssociationDisableTimer,
-                          _PCPersistentInterfaceManager._ctIsWWANInHomeCountry,
-                          _PCPersistentInterfaceManager._ctServerConnection, _PCPersistentInterfaceManager._delegatesAndQueues,
+                          _PCPersistentInterfaceManager._ctClient, _PCPersistentInterfaceManager._ctIsWWANInHomeCountry,
+                          _PCPersistentInterfaceManager._ctServerConnection,
+                          _PCPersistentInterfaceManager._currentDataSimContext,
+                          _PCPersistentInterfaceManager._delegatesAndQueues,
                           _PCPersistentInterfaceManager._hasWWANStatusIndicator,
                           _PCPersistentInterfaceManager._inCallWWANOverrideTimer,
                           _PCPersistentInterfaceManager._interfaceAssertion, _PCPersistentInterfaceManager._isInCall,
@@ -118,13 +124,14 @@ exports:
                           _PCSimpleTimer._significantTimeChangeToken, _PCSimpleTimer._sleepIsImminent, _PCSimpleTimer._startTime,
                           _PCSimpleTimer._target, _PCSimpleTimer._timeChangeSource, _PCSimpleTimer._timerMode,
                           _PCSimpleTimer._timerRunLoop, _PCSimpleTimer._triggerOnGMTChange, _PCSimpleTimer._userInfo,
-                          _PCSimpleTimer._userVisible, _PCWWANUsabilityMonitor._ctServerQueue,
-                          _PCWWANUsabilityMonitor._currentRAT, _PCWWANUsabilityMonitor._delegateQueue,
-                          _PCWWANUsabilityMonitor._delegateReference, _PCWWANUsabilityMonitor._interfaceMonitor,
-                          _PCWWANUsabilityMonitor._interfaceName, _PCWWANUsabilityMonitor._isInCall,
-                          _PCWWANUsabilityMonitor._isInHighPowerState, _PCWWANUsabilityMonitor._ivarQueue,
-                          _PCWWANUsabilityMonitor._monitorDelegateQueue, _PCWWANUsabilityMonitor._powerlogCDRXToken,
-                          _PCWWANUsabilityMonitor._telephonyServer, _PCWWANUsabilityMonitor._thresholdOffTransitionCount,
+                          _PCSimpleTimer._userVisible, _PCWWANUsabilityMonitor._ctClient,
+                          _PCWWANUsabilityMonitor._ctServerConnection, _PCWWANUsabilityMonitor._ctServerQueue,
+                          _PCWWANUsabilityMonitor._currentDataSimContext, _PCWWANUsabilityMonitor._currentRAT,
+                          _PCWWANUsabilityMonitor._delegateQueue, _PCWWANUsabilityMonitor._delegateReference,
+                          _PCWWANUsabilityMonitor._interfaceMonitor, _PCWWANUsabilityMonitor._interfaceName,
+                          _PCWWANUsabilityMonitor._isInCall, _PCWWANUsabilityMonitor._isInHighPowerState,
+                          _PCWWANUsabilityMonitor._ivarQueue, _PCWWANUsabilityMonitor._monitorDelegateQueue,
+                          _PCWWANUsabilityMonitor._powerlogCDRXToken, _PCWWANUsabilityMonitor._thresholdOffTransitionCount,
                           _PCWWANUsabilityMonitor._trackUsability, _PCWWANUsabilityMonitor._trackedTimeInterval,
                           _PCWWANUsabilityMonitor._wwanContextID ]
 ...

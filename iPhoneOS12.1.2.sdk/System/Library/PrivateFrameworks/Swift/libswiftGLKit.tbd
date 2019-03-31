@@ -1,14 +1,17 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/Swift/libswiftGLKit.dylib
-current-version:       900.2.49
+current-version:       0
 compatibility-version: 1
+swift-version:         5
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ __T05GLKit22_indexHomogeneousValueq_SPyxG_Sitr0_lF, __T0SC11_GLKMatrix2V5GLKitE9subscriptSfSicfg,
-                          __T0SC11_GLKMatrix3V5GLKitE9subscriptSfSicfg, __T0SC11_GLKMatrix4V5GLKitE9subscriptSfSicfg,
-                          __T0SC11_GLKVector2V5GLKitE9subscriptSfSicfg, __T0SC11_GLKVector3V5GLKitE9subscriptSfSicfg,
-                          __T0SC11_GLKVector4V5GLKitE9subscriptSfSicfg, __T0SC14_GLKQuaternionV5GLKitE9subscriptSfSicfg,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ '_$S5GLKit22_indexHomogeneousValueyq_SPyxG_Sitr0_lF', '_$SSo11_GLKMatrix2V5GLKitEySfSicig',
+                          '_$SSo11_GLKMatrix3V5GLKitEySfSicig', '_$SSo11_GLKMatrix4V5GLKitEySfSicig',
+                          '_$SSo11_GLKVector2V5GLKitEySfSicig', '_$SSo11_GLKVector3V5GLKitEySfSicig',
+                          '_$SSo11_GLKVector4V5GLKitEySfSicig', '_$SSo14_GLKQuaternionV5GLKitEySfSicig',
                           '__swift_FORCE_LOAD_$_swiftGLKit' ]
 ...

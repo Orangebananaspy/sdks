@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/CoreSDB.framework/CoreSDB
 current-version:       800
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _CSDBCheckResultWithStatement, _CSDBConfigLookaside, _CSDBCreateDirectoriesToPath,
                           _CSDBCreateDirectoriesToPathWithOwnership, _CSDBCreateThreadedRecordStore,
                           _CSDBCreateThreadedRecordStoreWithQOSClass, _CSDBCreateUTF8StringFromCFString, _CSDBDataMethods,
@@ -83,7 +85,7 @@ exports:
                           _CSDBSqliteDatabaseSetSetupHandler, _CSDBSqliteDatabaseSetShouldMigrateInExternalProcess,
                           _CSDBSqliteDatabaseSetValueForProperty, _CSDBSqliteDatabaseSetVersion,
                           _CSDBSqliteDatabaseStatementForReading, _CSDBSqliteDatabaseStatementForWriting,
-                          _CSDBSqliteDatabaseVacuum, _CSDBSqliteDeleteDatabase, _CSDBSqliteErrMsg,
+                          _CSDBSqliteDatabaseVacuum, _CSDBSqliteDeleteDatabase, _CSDBSqliteErrMsg, _CSDBSqlitePreparedStatement,
                           _CSDBSqliteSetDefaultPageCacheSize, _CSDBSqliteSetupLoggingForDatabaseHandle,
                           _CSDBSqliteStatementApplyValuesFromRecord, _CSDBSqliteStatementApplyValuesFromRecordWithNullValue,
                           _CSDBSqliteStatementBindValuesForColumns, _CSDBSqliteStatementCopyAllRowsStringsForColumnsAtIndices,
@@ -95,5 +97,6 @@ exports:
                           _CSDBSqliteUtilitiesGetSchemaVersionAtPathWithProtection, _CSDBStringMethods,
                           _CSDBThreadedRecordStoreEnsureDatabaseSetup, _CSDBThreadedRecordStoreEnsureDatabaseSetupWithProtection,
                           _CSDBThreadedRecordStoreGetSequenceNumber, _CSDBThreadedRecordStoreOwnsCurrentThread,
-                          _CSDBThreadedRecordStoreRegisterClass, _CSDBThreadedRecordStoreTeardownDatabase ]
+                          _CSDBThreadedRecordStoreRegisterClass, _CSDBThreadedRecordStoreTeardownDatabase,
+                          _kCSDBRecordErrorDomain, _kCSDBRecordSQLiteErrorDomain ]
 ...

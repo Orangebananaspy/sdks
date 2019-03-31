@@ -1,16 +1,18 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/AdID.framework/AdID
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ _AdIDVersionNumber, _AdIDVersionString ]
-    objc-classes:       [ _ADAdTrackingSchedulingManager, _ADClientDPIDManager, _ADIDManagerService, _ADJingleOptOutRequest,
-                          _ADJingleRequest, _ADJingleRequestManager, _ADJingleSegmentRequest, _ADLATStatusManager,
-                          _ADOptInStatusService, _ADSegmentDataManager ]
-    objc-ivars:         [ _ADAdTrackingSchedulingManager._cloudKitNotifyToken,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _ADSimulatedCrashKillCode_InternalInconsistency, _AdIDVersionNumber, _AdIDVersionString ]
+    objc-classes:       [ _ADAMSBagManager, _ADAdTrackingSchedulingManager, _ADClientDPIDManager, _ADIDManagerService,
+                          _ADJingleOptOutRequest, _ADJingleRequest, _ADJingleRequestManager, _ADJingleSegmentRequest,
+                          _ADLATStatusManager, _ADOptInStatusService, _ADSegmentDataManager ]
+    objc-ivars:         [ _ADAdTrackingSchedulingManager._accountChangedNotifyToken,
                           _ADAdTrackingSchedulingManager._isConfigRequestInFlight,
                           _ADAdTrackingSchedulingManager._pushConnection, _ADAdTrackingSchedulingManager._storeFrontNotifyToken,
                           _ADClientDPIDManager._DPID, _ADClientDPIDManager._backupFlowQueue,
@@ -23,9 +25,10 @@ exports:
                           _ADIDManagerService._reconcileArray, _ADJingleRequest._DSID, _ADJingleRequest._bagKey,
                           _ADJingleRequest._completionHandler, _ADJingleRequest._error, _ADJingleRequest._requestBody,
                           _ADJingleRequest._requestHeaders, _ADJingleRequest._responseBody, _ADJingleRequest._responseHeaders,
-                          _ADJingleRequest._token, _ADJingleRequestManager._jingleRequestInProgress,
-                          _ADJingleRequestManager._pendingJingleRequests, _ADLATStatusManager._pendingJingleRequestToken,
-                          _ADLATStatusManager._sendingLATToAdPlatforms, _ADLATStatusManager._sendingLATToJingle,
-                          _ADOptInStatusService._listener, _ADOptInStatusService._requestInFlight,
-                          _ADSegmentDataManager._pendingJingleRequestToken, _ADSegmentDataManager._segmentUpdateInProgress ]
+                          _ADJingleRequest._statusCode, _ADJingleRequest._token,
+                          _ADJingleRequestManager._jingleRequestInProgress, _ADJingleRequestManager._pendingJingleRequests,
+                          _ADLATStatusManager._pendingJingleRequestToken, _ADLATStatusManager._sendingLATToAdPlatforms,
+                          _ADLATStatusManager._sendingLATToJingle, _ADOptInStatusService._listener,
+                          _ADOptInStatusService._requestInFlight, _ADSegmentDataManager._pendingJingleRequestToken,
+                          _ADSegmentDataManager._segmentUpdateInProgress ]
 ...

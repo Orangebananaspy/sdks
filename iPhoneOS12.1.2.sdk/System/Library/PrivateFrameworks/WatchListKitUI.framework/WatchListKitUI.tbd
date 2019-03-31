@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _WLKNotificationsOnAction, _WLKUIAccessOptionsAccountKey, _WLKUIAccessOptionsBodyKey,
                           _WLKUIAccessOptionsFooterKey, _WLKUIAccessOptionsShouldDenyOnCancelKey,
                           _WLKUIAccessOptionsSuppressWelcomeVideoAddOnOptIn, _WLKUIAccessOptionsTitleKey,
@@ -51,9 +53,9 @@ exports:
                           _WLKUIMediaPlayerImageLoader, _WLKUINetworkInterface, _WLKUINotificationCenter,
                           _WLKUIOnboardingController, _WLKUIOnboardingInterface, _WLKUIOrderedItemsMap,
                           _WLKUIProductSportsGridRow, _WLKUIProductSportsGridView, _WLKUIQueryDataSource, _WLKUIScorecardView,
-                          _WLKUISettingsInterface, _WLKUISharingInterface, _WLKUISpinnerView, _WLKUISportsCellView,
-                          _WLKUISportsCollectionViewCell, _WLKUISportsOverlayView, _WLKUITVMLUtilities,
-                          _WLKUITextViewElementRenderer, _WLKUIUIStackView, _WLKUIViewFactory,
+                          _WLKUISettingsInterface, _WLKUISharingInterface, _WLKUISharingInterfaceActivityViewController,
+                          _WLKUISpinnerView, _WLKUISportsCellView, _WLKUISportsCollectionViewCell, _WLKUISportsOverlayView,
+                          _WLKUITVMLUtilities, _WLKUITextViewElementRenderer, _WLKUIUIStackView, _WLKUIViewFactory,
                           __SBIconProgressFractionTransition, __SBIconProgressLoadingNoneStateTransition,
                           __SBIconProgressNoneWaitingStateTransition, __SBIconProgressPausedTransition,
                           __SBIconProgressTransition, __SBIconProgressWaitingLoadingStateTransition,
@@ -75,15 +77,15 @@ exports:
                           _WLKUIAccessView_iOS._bodyScroll, _WLKUIAccessView_iOS._bottomStack,
                           _WLKUIAccessView_iOS._carouselView, _WLKUIAccessView_iOS._didLayout,
                           _WLKUIAccessView_iOS._disallowButton, _WLKUIAccessView_iOS._logoStack,
-                          _WLKUIAccessView_iOS._nackButton, _WLKUIAccessView_iOS._privacyButton,
-                          _WLKUIAccessView_iOS._privacyLabel, _WLKUIAccessView_iOS._scrollStack,
+                          _WLKUIAccessView_iOS._nackButton, _WLKUIAccessView_iOS._privacyLabel,
+                          _WLKUIAccessView_iOS._privacyView, _WLKUIAccessView_iOS._scrollStack,
                           _WLKUIAccessView_iOS._seeAllButton, _WLKUIAccessView_iOS._titleLabel,
                           _WLKUIAccessView_iOS._titlePlacementGuide, _WLKUIAccessView_tvOS._allowButton,
                           _WLKUIAccessView_tvOS._apps, _WLKUIAccessView_tvOS._bodyLabel, _WLKUIAccessView_tvOS._buttonStack,
                           _WLKUIAccessView_tvOS._carouselView, _WLKUIAccessView_tvOS._contentGuide,
                           _WLKUIAccessView_tvOS._contentStack, _WLKUIAccessView_tvOS._didLayout,
                           _WLKUIAccessView_tvOS._disallowButton, _WLKUIAccessView_tvOS._logoStack,
-                          _WLKUIAccessView_tvOS._nackButton, _WLKUIAccessView_tvOS._privacyButton,
+                          _WLKUIAccessView_tvOS._nackButton, _WLKUIAccessView_tvOS._privacyView,
                           _WLKUIAccessView_tvOS._seeAllButton, _WLKUIAccessView_tvOS._titleLabel,
                           _WLKUIAccountChannels._accountStore, _WLKUIAppCell._didLayout, _WLKUIAppCell._image,
                           _WLKUIAppCell._imageView, _WLKUIAppCell._title, _WLKUIAppCell._titleLabel,
@@ -100,8 +102,7 @@ exports:
                           _WLKUIAppInstallerViewController._secondaryLinkTitle, _WLKUIAppInstallerViewController._updateBody,
                           _WLKUIAppInstallerViewController._updateTitle, _WLKUIAppLibraryInterface._installerViewController,
                           _WLKUIAppsGridViewController._apps, _WLKUIAppsGridViewController._collectionView,
-                          _WLKUIAppsGridViewController._labelFont, _WLKUIAppsGridViewController._layout,
-                          _WLKUIAppsGridViewController._navBar, _WLKUIAppsGridViewController._titleLabel,
+                          _WLKUIAppsGridViewController._layout, _WLKUIAppsGridViewController._titleLabel,
                           _WLKUIBuyButtonLockup._button, _WLKUIBuyButtonLockup._buttonHeightConstraint,
                           _WLKUIBuyButtonLockup._hasIAP, _WLKUIBuyButtonLockup._iAPLabel, _WLKUIBuyButtonLockup._lastOrientation,
                           _WLKUILoadingViewController._cancelLoading, _WLKUILoadingViewController._loading,
@@ -129,18 +130,24 @@ exports:
                           _WLKUIProductSportsGridView._columnColor, _WLKUIProductSportsGridView._dividerView,
                           _WLKUIProductSportsGridView._gridFont, _WLKUIProductSportsGridView._sportsLabels,
                           _WLKUIProductSportsGridView._sportsRows, _WLKUIProductSportsGridView._sportsScores,
-                          _WLKUIQueryDataSource._sourceType, _WLKUIScorecardView._darkMaterialImage,
-                          _WLKUIScorecardView._delegate,
+                          _WLKUIQueryDataSource._sourceType, _WLKUIScorecardView._columnWidths,
+                          _WLKUIScorecardView._darkMaterialImage, _WLKUIScorecardView._delegate,
                           _WLKUIScorecardView._delegateRespondsToBackgroundBlendModeForElementInRowAtIndex,
                           _WLKUIScorecardView._delegateRespondsToBackgroundImageForScorecardViewMaterial,
                           _WLKUIScorecardView._didCalculatedSize, _WLKUIScorecardView._interitemSpacing,
-                          _WLKUIScorecardView._rowElementWidths, _WLKUIScorecardView._rowSpacing,
+                          _WLKUIScorecardView._rowElementSizes, _WLKUIScorecardView._rowSpacing,
                           _WLKUIScorecardView._scorecardSize, _WLKUISharingInterface._activityViewController,
-                          _WLKUISharingInterface._isPresented, _WLKUISpinnerView._didLayout, _WLKUISpinnerView._effectView,
-                          _WLKUISpinnerView._spinner, _WLKUISportsCellView._appImageElement, _WLKUISportsCellView._appImageView,
-                          _WLKUISportsCellView._cellSize, _WLKUISportsCellView._imageElement, _WLKUISportsCellView._imageView,
-                          _WLKUISportsCellView._overlayView, _WLKUISportsCellView._shouldLayoutImageFirst,
-                          _WLKUISportsCellView._textRenderers, _WLKUISportsCollectionViewCell._sportsCellView,
+                          _WLKUISharingInterface._isPresented, _WLKUISharingInterfaceActivityViewController._imageProxy,
+                          _WLKUISharingInterfaceActivityViewController._itemImageURL,
+                          _WLKUISharingInterfaceActivityViewController._itemSubtitle,
+                          _WLKUISharingInterfaceActivityViewController._itemTitle,
+                          _WLKUISharingInterfaceActivityViewController._pendingMessageMetadataProvider,
+                          _WLKUISharingInterfaceActivityViewController._sharingURL, _WLKUISpinnerView._didLayout,
+                          _WLKUISpinnerView._effectView, _WLKUISpinnerView._spinner, _WLKUISportsCellView._appImageElement,
+                          _WLKUISportsCellView._appImageView, _WLKUISportsCellView._cellSize, _WLKUISportsCellView._imageElement,
+                          _WLKUISportsCellView._imageView, _WLKUISportsCellView._overlayView,
+                          _WLKUISportsCellView._shouldLayoutImageFirst, _WLKUISportsCellView._textRenderers,
+                          _WLKUISportsCollectionViewCell._sportsCellView,
                           _WLKUISportsOverlayView._backgroundImageForMaterialRendering, _WLKUISportsOverlayView._logo,
                           _WLKUISportsOverlayView._logoElement, _WLKUISportsOverlayView._overlayElement,
                           _WLKUISportsOverlayView._scorecardData, _WLKUISportsOverlayView._scorecardElement,
@@ -159,7 +166,7 @@ exports:
                           __WLKUIAccessViewController._bundleIDs, __WLKUIAccessViewController._completionHandler,
                           __WLKUIAccessViewController._hasCalledCompletion, __WLKUIAccessViewController._hasOptedIn,
                           __WLKUIAccessViewController._loadingView, __WLKUIAccessViewController._options,
-                          __WLKUIAccessViewController._shouldDenyOnCancel,
+                          __WLKUIAccessViewController._privacyController, __WLKUIAccessViewController._shouldDenyOnCancel,
                           __WLKUIAccessViewController._suppressWelcomeVideoAddOnOptIn,
                           __WLKUIAppInstallConfirmationView._actionButton, __WLKUIAppInstallConfirmationView._ageRating,
                           __WLKUIAppInstallConfirmationView._appIcon, __WLKUIAppInstallConfirmationView._appName,
@@ -203,5 +210,6 @@ exports:
                           __WLKUIMediaPlayerImageLoaderOperationSet._dataSource, __WLKUITextBadge._attributedTitle,
                           __WLKUITextBadge._backgroundImage, __WLKUITextBadge._badgeInsets, __WLKUITextBadge._badgeStyle,
                           __WLKUITextBadge._cornerRadius, __WLKUITextBadge._fontSize, __WLKUITextBadge._strokeSize,
-                          __WLKUITextBadge._textBlendMode, __WLKUITextBadge._tintColor, __WLKUITextBadge._title ]
+                          __WLKUITextBadge._textAlignmentStyle, __WLKUITextBadge._textBlendMode, __WLKUITextBadge._tintColor,
+                          __WLKUITextBadge._title ]
 ...

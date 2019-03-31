@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DADaemonSupport.framework/DADaemonSupport
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _DADAgentsStoppedNotification, _DADRequestClientStatusDumpNotification, ___RootDomainConnect,
                           __devicePowerChanged, _gDADHighAvailabilityQueue, _gDADOperationQueue, _handleSignal ]
     objc-classes:       [ _DAAgent, _DACoreDAVAgent, _DADAccessManager, _DADAgentManager, _DADClient, _DADClientAccountTimers,
@@ -18,13 +20,13 @@ exports:
                           _DAAgent._networkReachableBlock, _DAAgent._syncWhenReachable, _DACoreDAVAgent._optionsProbe,
                           _DACoreDAVAgent._optionsTimeoutTimer, _DADAccessManager._clients, _DADAccessManager._mainConnection,
                           _DADAgentManager._CTCellularUsagePolicyNotificationQ, _DADAgentManager._activeAgents,
-                          _DADAgentManager._agentsAwaitingShutdown, _DADAgentManager._ctServerConnection,
-                          _DADAgentManager._disableMonitoringRequests, _DADAgentManager._pendingAccountSetupCount,
-                          _DADAgentManager._pmNotifier, _DADAgentManager._pmPort, _DADAgentManager._pmRunLoopSource,
-                          _DADAgentManager._startAgentsWhenSystemReadyBlock, _DADAgentManager._subCalHandlers,
-                          _DADAgentManager._watchedIDs, _DADClient._accountTimers, _DADClient._actionDelegatesById,
-                          _DADClient._busyIDs, _DADClient._clientBundleID, _DADClient._clientName, _DADClient._clientUniqueID,
-                          _DADClient._conn, _DADClient._numOutstandingAgentDisables,
+                          _DADAgentManager._activeAgentsQueue, _DADAgentManager._ctServerConnection,
+                          _DADAgentManager._disableMonitoringAgentsTokens, _DADAgentManager._nextDisableMonitoringAgentsToken,
+                          _DADAgentManager._pendingAccountSetupCount, _DADAgentManager._pmNotifier, _DADAgentManager._pmPort,
+                          _DADAgentManager._pmRunLoopSource, _DADAgentManager._startAgentsWhenSystemReadyBlock,
+                          _DADAgentManager._subCalHandlers, _DADAgentManager._watchedIDs, _DADClient._accountTimers,
+                          _DADClient._actionDelegatesById, _DADClient._agentMonitoringTokens, _DADClient._busyIDs,
+                          _DADClient._clientBundleID, _DADClient._clientName, _DADClient._clientUniqueID, _DADClient._conn,
                           _DADClient._numOutstandingBlockingClientCalls, _DADClient._numOutstandingRefreshPriorityClientCalls,
                           _DADClient._persistent, _DADClient._updatedIDs, _DADClient._watchedIDs,
                           _DADClientAccountTimers._deferredAllFolderContentsSource,

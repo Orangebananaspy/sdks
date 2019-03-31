@@ -1,16 +1,17 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/PowerlogFullOperators.framework/PowerlogFullOperators
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _AWD_ACTION, _ArmUtilityThreshold, _BBAggregatedARMUtil, _BBArmUtilBucket, _BBArmUtilCount,
                           _BBPAPExclusion, _BBPIsContinuous, _BBPerepherialMax, _BBPowerArmUtil, _BBPowerName, _BBPowerToolCause,
                           _BBPowerToolDuration, _BBPowerToolPointCause, _BBPowerToolPointHelper, _BBPowerToolTimeStamp,
-                          _BBPowerValue, _EVENT_CODE, _MagicDeltaThreshold, _RAT_NAME, _STATE,
-                          ___PowerlogFullOperatorsVersionNumber, ___PowerlogFullOperatorsVersionString, _badQuality, _band2p4Ghz,
+                          _BBPowerValue, _EVENT_CODE, _MagicDeltaThreshold, _RAT_NAME, _STATE, _badQuality, _band2p4Ghz,
                           _band5p02Ghz, _band5p04Ghz, _band5p08Ghz, _causeBackground, _causeMarginalCoverage, _causeOOS,
                           _causeRachFail, _causeStruckInDCH, _causeTcXO, _causeUnknown, _goodQuality, _kPAWDAggregateApMetrics,
                           _kPAWDAggregateAudioMetrics, _kPAWDAggregateBBLinkQuality, _kPAWDAggregateBBLqmCounterMetrics,

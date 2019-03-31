@@ -1,20 +1,24 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _AAUIBeginUsingAddressBookSingleton, _AAUIClientInfoActionCancel, _AAUIClientInfoActionKey,
                           _AAUICopyCompositeName, _AAUICustomStylingCellDetailLabelColorKey,
                           _AAUIDeviceLocatorStateDidChangeNotification, _AAUIDeviceToDeviceEncryptionHelperErrorDomain,
                           _AAUIEndUsingAddressBookSingleton, _AAUIFamilyDetailsCacheDidChangeNotification, _AAUIForceInlineKey,
-                          _AAUIProfileCellDetailFontSizeKey, _AAUIProfileCellDetailTextColorKey, _AAUIProfileCellIsEvilMemberKey,
-                          _AAUIProfileCellPrimaryFontSizeKey, _AAUIProfilePictureStoreDidChangeNotification, _AAUIRefresUrl,
-                          _AAUISignInErrorDomain, _AAUIiCloudGraphBarBackgroundColor, _AAUIiCloudGraphQuotaAvailableKey,
-                          _AAUIiCloudGraphQuotaTotalKey, _AAUIiCloudGraphUsageKey, _AAUIiCloudGraphUsedBytesKey,
-                          _AAUIiCloudLoadingRequest ]
+                          _AAUILoadingManagedStorageKey, _AAUIProfileCellDetailFontSizeKey, _AAUIProfileCellDetailTextColorKey,
+                          _AAUIProfileCellIsEvilMemberKey, _AAUIProfileCellPrimaryFontSizeKey,
+                          _AAUIProfilePictureStoreDidChangeNotification, _AAUIRefresUrl, _AAUISignInErrorDomain,
+                          _AAUIiCloudGraphBarBackgroundColor, _AAUIiCloudGraphQuotaAvailableKey, _AAUIiCloudGraphQuotaTotalKey,
+                          _AAUIiCloudGraphUsageKey, _AAUIiCloudGraphUsedBytesKey, _AAUIiCloudLoadingRequest,
+                          _AAUIiCloudQuotaFailedToLoad, __AAUILogSystem, __AAUISignpostCreate, __AAUISignpostGetNanoseconds,
+                          __AAUISignpostLogSystem ]
     objc-classes:       [ _AAUIAccountCreationRemoteUI, _AAUIAccountManager, _AAUIAccountRepairRemoteUI, _AAUIAlertView,
                           _AAUIArrowControlsView, _AAUIAuthKitAuthenticatonHook, _AAUIAuthKitRecoveryHook,
                           _AAUIBleachedNavigationController, _AAUIBuddyView, _AAUIButton, _AAUICDPHelper,
@@ -42,8 +46,7 @@ exports:
                           _AAUIAccountCreationRemoteUI._objectModels, _AAUIAccountCreationRemoteUI._over13,
                           _AAUIAccountCreationRemoteUI._parentNavController, _AAUIAccountCreationRemoteUI._tcConfirmationAlert,
                           _AAUIAccountCreationRemoteUI._verifier, _AAUIAccountManager._accountStore,
-                          _AAUIAccountManager._accountStoreDidChangeObserver, _AAUIAccountManager._accounts,
-                          _AAUIAccountManager._delegate, _AAUIAccountRepairRemoteUI._account,
+                          _AAUIAccountManager._accounts, _AAUIAccountManager._delegate, _AAUIAccountRepairRemoteUI._account,
                           _AAUIAccountRepairRemoteUI._accountRepairUIViewController, _AAUIAccountRepairRemoteUI._accountStore,
                           _AAUIAccountRepairRemoteUI._agreeURL, _AAUIAccountRepairRemoteUI._cookieHeadersForRepairRequest,
                           _AAUIAccountRepairRemoteUI._delegate, _AAUIAccountRepairRemoteUI._isModal,
@@ -81,10 +84,9 @@ exports:
                           _AAUIDataclassPickerViewController._expandedConstraints,
                           _AAUIDataclassPickerViewController._tableFooterView,
                           _AAUIDataclassPickerViewController._tableHeaderView, _AAUIDataclassPickerViewController._tableView,
-                          _AAUIDeviceLocatorService._completionArray, _AAUIDeviceLocatorService._hasAttemptedToFetchState,
-                          _AAUIDeviceLocatorService._lastKnownState, _AAUIDeviceLocatorService._stateUpdateQueue,
-                          _AAUIDeviceLocatorService._wantsToEnable, _AAUIDeviceToDeviceEncryptionHelper._authController,
-                          _AAUIDeviceToDeviceEncryptionHelper._delegate,
+                          _AAUIDeviceLocatorService._hasAttemptedToFetchState, _AAUIDeviceLocatorService._lastKnownState,
+                          _AAUIDeviceLocatorService._stateUpdateQueue, _AAUIDeviceLocatorService._wantsToEnable,
+                          _AAUIDeviceToDeviceEncryptionHelper._authController, _AAUIDeviceToDeviceEncryptionHelper._delegate,
                           _AAUIDeviceToDeviceEncryptionHelper._presentingViewController,
                           _AAUIDeviceToDeviceEncryptionHook._altDSID, _AAUIDeviceToDeviceEncryptionHook._context,
                           _AAUIDeviceToDeviceEncryptionHook.delegate, _AAUIFamilySetupPrompter._delegate,
@@ -143,19 +145,19 @@ exports:
                           _AAUISignInViewController._akServiceType, _AAUISignInViewController._allowsAccountCreation,
                           _AAUISignInViewController._compactConstraints, _AAUISignInViewController._delegate,
                           _AAUISignInViewController._expandedConstraints, _AAUISignInViewController._passwordCell,
-                          _AAUISignInViewController._shouldAnticipatePiggybacking, _AAUISignInViewController._showServiceIcons,
-                          _AAUISignInViewController._tableFooterView, _AAUISignInViewController._tableHeaderView,
-                          _AAUISignInViewController._tableView, _AAUISignInViewController._usernameCell,
-                          _AAUISignOutController._account, _AAUISignOutController._accountStore,
-                          _AAUISignOutController._dataclassOptions, _AAUISpinnerViewController._label,
-                          _AAUISpinnerViewController._spinnerView, _AAUISwitchTableViewCell._control,
-                          _AAUISwitchTableViewCell._delegate, _AAUITwoFactorCodeHook._delegate,
-                          _AAUIUpdateMyPhotoRequest._account, _AAUIUpdateMyPhotoRequest._cropRect,
-                          _AAUIUpdateMyPhotoRequest._photo, _AAUIiCloudCustomUIView._lockedColor,
-                          _AAUIiCloudMediaUsageInfo._bytesUsed, _AAUIiCloudMediaUsageInfo._displayLabel,
-                          _AAUIiCloudMediaUsageInfo._mediaType, _AAUIiCloudMediaUsageInfo._representativeColor,
-                          __AAUIDataclassOptionCache._dataclassOptions, __AAUIDataclassOptionCache._filteredDataclasses,
-                          __AAUIDataclassTableViewCell._dataclass, __AAUIRawImageAndCropRectCacheEntry._expirationDate,
-                          __AAUIRawImageAndCropRectCacheEntry._rawCropRect, __AAUIRawImageAndCropRectCacheEntry._rawImage,
-                          __AAUIRawImageAndCropRectCacheEntry._serverCacheTag ]
+                          _AAUISignInViewController._passwordHandler, _AAUISignInViewController._shouldAnticipatePiggybacking,
+                          _AAUISignInViewController._showServiceIcons, _AAUISignInViewController._tableFooterView,
+                          _AAUISignInViewController._tableHeaderView, _AAUISignInViewController._tableView,
+                          _AAUISignInViewController._usernameCell, _AAUISignOutController._account,
+                          _AAUISignOutController._accountStore, _AAUISignOutController._dataclassOptions,
+                          _AAUISpinnerViewController._label, _AAUISpinnerViewController._spinnerView,
+                          _AAUISwitchTableViewCell._control, _AAUISwitchTableViewCell._delegate,
+                          _AAUITwoFactorCodeHook._delegate, _AAUIUpdateMyPhotoRequest._account,
+                          _AAUIUpdateMyPhotoRequest._cropRect, _AAUIUpdateMyPhotoRequest._photo,
+                          _AAUIiCloudCustomUIView._lockedColor, _AAUIiCloudMediaUsageInfo._bytesUsed,
+                          _AAUIiCloudMediaUsageInfo._displayLabel, _AAUIiCloudMediaUsageInfo._mediaType,
+                          _AAUIiCloudMediaUsageInfo._representativeColor, __AAUIDataclassOptionCache._dataclassOptions,
+                          __AAUIDataclassOptionCache._filteredDataclasses, __AAUIDataclassTableViewCell._dataclass,
+                          __AAUIRawImageAndCropRectCacheEntry._expirationDate, __AAUIRawImageAndCropRectCacheEntry._rawCropRect,
+                          __AAUIRawImageAndCropRectCacheEntry._rawImage, __AAUIRawImageAndCropRectCacheEntry._serverCacheTag ]
 ...

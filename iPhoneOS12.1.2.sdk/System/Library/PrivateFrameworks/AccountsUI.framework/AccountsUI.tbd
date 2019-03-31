@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _ACUIAccountCollectionSpecifiersKey, _ACUIAccountCollectionTitleKey, _ACUIAccountIdentifierKey,
                           _ACUIAccountKey, _ACUIAccountPropertyDisplayUsername, _ACUIAccountSetupDidFinish,
                           _ACUIAccountSimpleDisplayNameKey, _ACUIAlreadyShowedEnableAndDeleteKey,
@@ -49,7 +51,6 @@ exports:
                           _ACUIDataclassConfigurationViewController._dataclassSpecifiers,
                           _ACUIDataclassConfigurationViewController._deleteButtonSpecifier,
                           _ACUIDataclassConfigurationViewController._didShowDataclassActionPickerDuringRemoval,
-                          _ACUIDataclassConfigurationViewController._dirtyDataclassCells,
                           _ACUIDataclassConfigurationViewController._firstTimeSetup,
                           _ACUIDataclassConfigurationViewController._forceMailSetup,
                           _ACUIDataclassConfigurationViewController._isMailSetupForced,
@@ -59,9 +60,11 @@ exports:
                           _ACUIDataclassConfigurationViewController._shouldEnableAccountSummaryCell,
                           _ACUIDataclassConfigurationViewController._shouldEnableDeleteAccountButton,
                           _ACUIDataclassConfigurationViewController._shouldShowDeleteAccountButton,
-                          _ACUIIdentityPickerViewController._allowEditing, _ACUIIdentityPickerViewController._delegate,
-                          _ACUIIdentityPickerViewController._emailAddresses, _ACUIIdentityPickerViewController._identities,
-                          _ACUIIdentityPickerViewController._property, _ACUILinkButton._acui_titleString,
+                          _ACUIIdentityPickerViewController._allowIdentitySelectionForDisabledSwitch,
+                          _ACUIIdentityPickerViewController._delegate, _ACUIIdentityPickerViewController._emailAddresses,
+                          _ACUIIdentityPickerViewController._identities, _ACUIIdentityPickerViewController._property,
+                          _ACUIIdentityPickerViewController._userInteractiveIdentityList,
+                          _ACUIIdentityPickerViewController._userInteractiveSwitch, _ACUILinkButton._acui_titleString,
                           _ACUILinkButtonFooterView._desiredTextAlignment, _ACUILinkButtonFooterView._linkButton,
                           _ACUISettingsPluginManager._parentViewController, _ACUISettingsPluginManager._pluginCache,
                           _ACUISetupViewController._didAttemptDataclassSetup, _ACUISetupViewController._shouldForceMailSetup,
@@ -71,6 +74,5 @@ exports:
                           _ACUIViewController._accountOperationsHelper, _ACUIViewController._accountStore,
                           _ACUIViewController._activityInProgress, _ACUIViewController._addedToTaskList,
                           _ACUIViewController._cancelButton, _ACUIViewController._confirmationViewCompletion,
-                          _ACUIViewController._doneButton, _ACUIViewController._hud, _ACUIViewController._idleJiggleTimer,
-                          _ACUIViewController._powerAssertion, _ACUIViewController._validationInProgress ]
+                          _ACUIViewController._doneButton, _ACUIViewController._hud, _ACUIViewController._validationInProgress ]
 ...

@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DACalDAV.framework/DACalDAV
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _CalDAVPrincipalResultType_Group, _CalDAVPrincipalResultType_Person,
                           _CalDAVPrincipalResultType_Resource, _CalDAVPrincipalResultType_Room,
                           _CalDAVPrincipalResultType_Unknown, _II_ALL_DAY_KEY, _II_ATTACHMENT_KEY, _II_ATTENDEES_KEY,
@@ -55,21 +57,22 @@ exports:
                           _kCALSTR_trigger_prop, _kCALSTR_trigrel_param, _kCALSTR_tzid_param, _kCALSTR_tzid_prop,
                           _kCALSTR_tzname_prop, _kCALSTR_tzoffsetfrom_prop, _kCALSTR_tzoffsetto_prop, _kCALSTR_tzurl_prop,
                           _kCALSTR_uid_prop, _kCALSTR_until_param, _kCALSTR_url_prop, _kCALSTR_valuetype_param,
-                          _kCALSTR_version_prop, _kCALSTR_weekstart_param, _kCALSTR_x_prop, _kCalDAVCalendarConstraints,
-                          _kCalDAVCalendarConstraintsNoComments, _kCalDAVCalendarConstraintsNoSchedule,
-                          _kCalDAVCalendarConstraintsNoScheduleNoComments, _kCalDAVChangeAlarm, _kCalDAVChangeAttachment,
-                          _kCalDAVChangeAttendee, _kCalDAVChangeEvent, _kCalDAVChangeOrganizer, _kCalDAVChangeRecurrence,
-                          _kCalDAVChangeTask, _kCalDAVHostKey, _kCalDAVMainPrincipalUID,
-                          _kCalDAVMobileAccountCollectionSetNameKey, _kCalDAVMobileAccountIsWritableKey,
-                          _kCalDAVMobileAccountOverriddenPort, _kCalDAVMobileAccountOverriddenScheme,
-                          _kCalDAVMobileAccountOverriddenServer, _kCalDAVMobileAccountSearchPropertySetKey,
-                          _kCalDAVMobileAccountSearchPropertySetKey_CoreDAV, _kCalDAVMobileAccountServerVersionKey,
-                          _kCalDAVMobileAccountWasUpgradedFromLegacy, _kCalDAVPortKey, _kCalDAVPrincipalsKey, _kCalDAVSchemeKey,
-                          _kCalDAVSubscribedCalendarsKey, _kCalEventPropertyChangeID, _kCalEventPropertyChangeRowid,
-                          _kCalEventPropertyEntityType, _kCalEventPropertyEventRef, _kCalEventPropertyExternalID,
-                          _kCalEventPropertyOldCalendarID, _kCalEventPropertySignificantAttributeChange,
-                          _kCalEventPropertyUniqueIdentifier, _kFutureLimitedCalDAVCalendarConstraints,
-                          _kFutureLimitedCalDAVCalendarConstraintsNoComments, _kFutureLimitedCalDAVCalendarConstraintsNoSchedule,
+                          _kCALSTR_version_prop, _kCALSTR_weekstart_param, _kCALSTR_x_prop, _kCalDAVAccountVersionKey,
+                          _kCalDAVCalendarConstraints, _kCalDAVCalendarConstraintsNoComments,
+                          _kCalDAVCalendarConstraintsNoSchedule, _kCalDAVCalendarConstraintsNoScheduleNoComments,
+                          _kCalDAVChangeAlarm, _kCalDAVChangeAttachment, _kCalDAVChangeAttendee, _kCalDAVChangeEvent,
+                          _kCalDAVChangeOrganizer, _kCalDAVChangeRecurrence, _kCalDAVChangeTask, _kCalDAVHostKey,
+                          _kCalDAVMainPrincipalUID, _kCalDAVMobileAccountCollectionSetNameKey,
+                          _kCalDAVMobileAccountIsWritableKey, _kCalDAVMobileAccountOverriddenPort,
+                          _kCalDAVMobileAccountOverriddenScheme, _kCalDAVMobileAccountOverriddenServer,
+                          _kCalDAVMobileAccountSearchPropertySetKey, _kCalDAVMobileAccountSearchPropertySetKey_CoreDAV,
+                          _kCalDAVMobileAccountServerVersionKey, _kCalDAVMobileAccountWasUpgradedFromLegacy, _kCalDAVPortKey,
+                          _kCalDAVPrincipalsKey, _kCalDAVSchemeKey, _kCalDAVSubscribedCalendarsKey, _kCalEventPropertyChangeID,
+                          _kCalEventPropertyChangeRowid, _kCalEventPropertyEntityType, _kCalEventPropertyEventRef,
+                          _kCalEventPropertyExternalID, _kCalEventPropertyOldCalendarID,
+                          _kCalEventPropertySignificantAttributeChange, _kCalEventPropertyUniqueIdentifier,
+                          _kFutureLimitedCalDAVCalendarConstraints, _kFutureLimitedCalDAVCalendarConstraintsNoComments,
+                          _kFutureLimitedCalDAVCalendarConstraintsNoSchedule,
                           _kFutureLimitedCalDAVCalendarConstraintsNoScheduleNoComments,
                           _kICSSTR_alternate_time_proposal_end_date_sub_param, _kICSSTR_alternate_time_proposal_param,
                           _kICSSTR_alternate_time_proposal_start_date_sub_param,

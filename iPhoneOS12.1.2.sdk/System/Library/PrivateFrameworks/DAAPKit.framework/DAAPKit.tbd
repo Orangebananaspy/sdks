@@ -1,12 +1,16 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/DAAPKit.framework/DAAPKit
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ __ZN4DAAP11MakeElementINSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEENS1_10shared_ptrINS_7ElementEEEjT_,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _DKDAAPParserErrorDomain, _DKDAAPWriterErrorDomain, _DKParseUtilitiesCopyStringFromBytes,
+                          _NSStringFromDAAPCode, _NSStringFromDAAPValueType,
+                          __ZN4DAAP11MakeElementINSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEENS1_10shared_ptrINS_7ElementEEEjT_,
                           __ZN4DAAP11MakeElementIPKcEENSt3__110shared_ptrINS_7ElementEEEjT_,
                           __ZN4DAAP14DocumentWriter13writeElementsENSt3__16vectorINS1_10shared_ptrINS_7ElementEEENS1_9allocatorIS5_EEEE,
                           __ZN4DAAP14DocumentWriter5writeENSt3__110shared_ptrINS_8DocumentEEE,
@@ -49,4 +53,10 @@ exports:
                           __ZNK4DAAP8Document12elementCountEv, __ZNK4DAAP8Document14elementAtIndexEm,
                           __ZNK4DAAP8Document8elementsEv, __ZTIN4DAAP22DocumentParserDelegateE,
                           __ZTSN4DAAP22DocumentParserDelegateE, __ZTVN4DAAP22DocumentParserDelegateE ]
+    objc-classes:       [ _DKDAAPParser, _DKDAAPParserContainer, _DKDAAPWriter, _DKDAAPWriterContainer ]
+    objc-ivars:         [ _DKDAAPParser._canceled, _DKDAAPParser._containerStack, _DKDAAPParser._delegate,
+                          _DKDAAPParser._inputStream, _DKDAAPParser._state, _DKDAAPParserContainer._code,
+                          _DKDAAPParserContainer._length, _DKDAAPParserContainer._remaining, _DKDAAPWriter._containerStack,
+                          _DKDAAPWriter._error, _DKDAAPWriter._outputStream, _DKDAAPWriter._state,
+                          _DKDAAPWriterContainer._childData, _DKDAAPWriterContainer._code ]
 ...

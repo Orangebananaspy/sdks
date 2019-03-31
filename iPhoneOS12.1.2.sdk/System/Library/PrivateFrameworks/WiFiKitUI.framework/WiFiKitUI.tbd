@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/WiFiKitUI.framework/WiFiKitUI
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _OSLogForWFLogLevel, _WFCapabilityIsChinaDevice, _WFCurrentLogLevel, _WFDescriptionFromIdentity,
                           _WFLogForCategory, _WFManagedConfigurationUIClassFromString, _WFScanRecordAlphaSortCompartor,
                           _WFScanRecordDefaultSortCompartor, _WFSecurityTypeRequiresPassword, _WFSecurityTypeRequiresUsername,
@@ -19,7 +21,8 @@ exports:
                           _kWFKnownNetworkDetailScoreCellIdentifier, _kWFKnownNetworkDetailsCellIdentifier,
                           _kWFKnownNetworkDetailsGeoTagMapPinIdentifier, _kWFManageCellIdentifier,
                           _kWFNetworkPriorityChangesKeys, _kWFPriorityCellIdentifier, _kWFProxyChangesKey,
-                          _kWFRecommendationCellIdentifier, _kWFSegmentedCellIdentifier, _kWFTextFieldCellIdentifier ]
+                          _kWFRecommendationCellIdentifier, _kWFScreenHeight_hugePhone, _kWFScreenHeight_superHugePhone,
+                          _kWFSegmentedCellIdentifier, _kWFTextFieldCellIdentifier ]
     objc-classes:       [ _WFAirportViewController, _WFAssociationStateView, _WFBuddyNetworkListCell, _WFBuddyViewController,
                           _WFCarPlayAlertController, _WFChooseNetworkHeaderViewController, _WFDNSConfigViewController,
                           _WFDiagnosticsViewController, _WFErrorAlertController, _WFHealthIssue, _WFHotspotAlertController,
@@ -49,8 +52,7 @@ exports:
                           _WFBuddyViewController._alternateSetupTitle, _WFBuddyViewController._buddyDelegate,
                           _WFBuddyViewController._buddyIPadContainerView, _WFBuddyViewController._currentNetwork,
                           _WFBuddyViewController._currentNetworkScaledRSSI, _WFBuddyViewController._currentNetworkState,
-                          _WFBuddyViewController._deviceCapability, _WFBuddyViewController._enableWAPISwitch,
-                          _WFBuddyViewController._footerView, _WFBuddyViewController._headerView,
+                          _WFBuddyViewController._deviceCapability, _WFBuddyViewController._headerView,
                           _WFBuddyViewController._listDelegate, _WFBuddyViewController._sections,
                           _WFBuddyViewController._showAdditionalSetupInfo, _WFBuddyViewController._showNetworkSettings,
                           _WFBuddyViewController._sortedNetworks, _WFBuddyViewController._supportsCellularActivation,
@@ -137,26 +139,28 @@ exports:
                           _WFOtherNetworkViewController._WAPIIdentity, _WFOtherNetworkViewController._WAPIRootCertificate,
                           _WFOtherNetworkViewController._WAPIRootCertificates, _WFOtherNetworkViewController._backgroundColor,
                           _WFOtherNetworkViewController._delegate, _WFOtherNetworkViewController._details,
-                          _WFOtherNetworkViewController._firstResponder, _WFOtherNetworkViewController._joinable,
-                          _WFOtherNetworkViewController._joining, _WFOtherNetworkViewController._mostRecentFirstResponder,
-                          _WFOtherNetworkViewController._nameCell, _WFOtherNetworkViewController._networkName,
-                          _WFOtherNetworkViewController._password, _WFOtherNetworkViewController._passwordCell,
-                          _WFOtherNetworkViewController._passwordRequired, _WFOtherNetworkViewController._profileMode,
-                          _WFOtherNetworkViewController._sections, _WFOtherNetworkViewController._securityMode,
-                          _WFOtherNetworkViewController._securityRows, _WFOtherNetworkViewController._style,
+                          _WFOtherNetworkViewController._firstResponder, _WFOtherNetworkViewController._firstResponderCell,
+                          _WFOtherNetworkViewController._joinable, _WFOtherNetworkViewController._joining,
+                          _WFOtherNetworkViewController._mostRecentFirstResponder, _WFOtherNetworkViewController._nameCell,
+                          _WFOtherNetworkViewController._networkName, _WFOtherNetworkViewController._password,
+                          _WFOtherNetworkViewController._passwordCell, _WFOtherNetworkViewController._passwordRequired,
+                          _WFOtherNetworkViewController._profileMode, _WFOtherNetworkViewController._sections,
+                          _WFOtherNetworkViewController._securityMode, _WFOtherNetworkViewController._securityRows,
+                          _WFOtherNetworkViewController._sharedPassword, _WFOtherNetworkViewController._style,
                           _WFOtherNetworkViewController._supportsWiFiPasswordSharing, _WFOtherNetworkViewController._username,
                           _WFOtherNetworkViewController._usernameCell, _WFPasswordAlertController._completionHandler,
                           _WFPasswordAlertController._joinAction, _WFPasswordAlertController._joinable,
-                          _WFPasswordAlertController._password, _WFPasswordAlertController._supportsWiFiPasswordSharing,
-                          _WFPasswordAlertController._textHandler, _WFPasswordAlertController._visibilityHandler,
-                          _WFPromptAlertController._completionHandler, _WFProxyConfigViewController._authSwitch,
-                          _WFProxyConfigViewController._modifiedConfig, _WFProxyConfigViewController._originalConfig,
-                          _WFProxyConfigViewController._passwordCell, _WFProxyConfigViewController._portCell,
-                          _WFProxyConfigViewController._saveHandler, _WFProxyConfigViewController._serverCell,
-                          _WFProxyConfigViewController._urlCell, _WFProxyConfigViewController._userCell,
-                          _WFRecommendationCell._descriptionLabel, _WFRecommendationCell._titleLabel, _WFSegmentedCell._handler,
-                          _WFSegmentedCell._segmentedControl, _WFTextFieldCell._editable, _WFTextFieldCell._hideLabel,
-                          _WFTextFieldCell._label, _WFTextFieldCell._labelWidthConstraint, _WFTextFieldCell._returnKeyHandler,
+                          _WFPasswordAlertController._password, _WFPasswordAlertController._sharedPassword,
+                          _WFPasswordAlertController._supportsWiFiPasswordSharing, _WFPasswordAlertController._textHandler,
+                          _WFPasswordAlertController._visibilityHandler, _WFPromptAlertController._completionHandler,
+                          _WFProxyConfigViewController._authSwitch, _WFProxyConfigViewController._modifiedConfig,
+                          _WFProxyConfigViewController._originalConfig, _WFProxyConfigViewController._passwordCell,
+                          _WFProxyConfigViewController._portCell, _WFProxyConfigViewController._saveHandler,
+                          _WFProxyConfigViewController._serverCell, _WFProxyConfigViewController._urlCell,
+                          _WFProxyConfigViewController._userCell, _WFRecommendationCell._descriptionLabel,
+                          _WFRecommendationCell._titleLabel, _WFSegmentedCell._handler, _WFSegmentedCell._segmentedControl,
+                          _WFTextFieldCell._editable, _WFTextFieldCell._hideLabel, _WFTextFieldCell._label,
+                          _WFTextFieldCell._labelWidthConstraint, _WFTextFieldCell._returnKeyHandler,
                           _WFTextFieldCell._stackView, _WFTextFieldCell._stackViewBottomConstraint,
                           _WFTextFieldCell._stackViewLeadingConstraint, _WFTextFieldCell._stackViewTopConstraint,
                           _WFTextFieldCell._textChangeHandler, _WFTextFieldCell._textField,

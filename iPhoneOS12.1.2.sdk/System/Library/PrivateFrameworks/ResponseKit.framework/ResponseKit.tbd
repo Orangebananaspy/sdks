@@ -1,23 +1,33 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
-current-version:       109
+current-version:       109.15.14
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ _NSSubtractRange, _RKAssetsConstantClasses, _RKAttributedTokenBirthdayType,
-                          _RKAttributedTokenChineseNewYearType, _RKAttributedTokenCongratulationType,
-                          _RKAttributedTokenMomentType, _RKAttributedTokenMoneyType, _RKAttributedTokenMoneyValuesQualifier,
-                          _RKAttributedTokenNewYearType, _RKAttributedTokenSubTypeKey, _RKAttributedTokenThinkingOfYouType,
-                          _RKAttributedTokenTypeKey, _RKLinguisticCategoryFromPreferenceKey,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _NSSubtractRange, _RKAggdScalarPrefixKey, _RKAggdStatisticsActionSelected,
+                          _RKAggdStatisticsActionSuggested, _RKAggdStatisticsActionTriggered, _RKAssetsConstantClasses,
+                          _RKAttributedTokenBirthdayType, _RKAttributedTokenChineseNewYearType,
+                          _RKAttributedTokenCongratulationType, _RKAttributedTokenMomentType, _RKAttributedTokenMoneyType,
+                          _RKAttributedTokenMoneyValuesQualifier, _RKAttributedTokenNewYearType,
+                          _RKAttributedTokenPhotosharingKeywordRangesKey, _RKAttributedTokenPhotosharingKeywordsKey,
+                          _RKAttributedTokenPhotosharingMessageKey, _RKAttributedTokenPhotosharingType,
+                          _RKAttributedTokenSubTypeKey, _RKAttributedTokenThinkingOfYouType, _RKAttributedTokenTypeKey,
+                          _RKLinguisticCategoryForFSMType, _RKLinguisticCategoryFromPreferenceKey,
+                          _RKLinguisticCategoryStatementExpressEmotionString, _RKLinguisticCategoryStatementSpecialEventString,
                           _RKLinguisticCategoryToPreferenceKey, _RKLinguisticTagDataDetected, _RKMaxHistoryForConversationTurns,
                           _RKMessageResponseDontOverrideLanguageID, _RKPersistentPersonalizerTrainingThreshhold,
-                          _RKResponseKitVersionNumber, _RKResponseKitVersionString,
+                          _RKResponseCandidateIsSelectedKey, _RKResponseCandidateRankKey, _RKResponseCategoryKey,
+                          _RKResponseInputMethodKey, _RKResponseKitVersionNumber, _RKResponseKitVersionString,
+                          _RKResponseMessageKey, _RKResponseRankedCandidateListKey, _RKResponseRecipientKey,
+                          _RKResponseSourceKey, _RKResponseStringKey,
                           __Users_alkeshpatel_trunk_ResponseKit_Assets_Asset_Generator_RKAssetsConstantClasses,
                           __chineseTokenizer, __kMRLModelFileLocationKey, __localeEquivalenceClass, __localeGrammarBundlePath,
-                          __localeLangModel, _emoticonCategoryDict, _happyEmojiSet, _kAllowedPunctuations, _kEMDash,
-                          _kEmojiPlaceholder, _kLMMaxTriggerLen, _kMaxCharRepetitionAllowed,
+                          __localeLangModel, __localeMessageIntentRecognizer, _emoticonCategoryDict, _happyEmojiSet,
+                          _kAllowedPunctuations, _kEMDash, _kEmojiPlaceholder, _kLMMaxTriggerLen, _kMaxCharRepetitionAllowed,
                           _kMaxCharToConsiderForEmoticonDetection, _kMaxSequenceLength, _kMinCharToConsiderForEmoticonDetection,
                           _multiWordOrLength, _obj0, _obj1007, _obj1011, _obj1033, _obj104, _obj1063, _obj1081, _obj1083,
                           _obj1086, _obj1089, _obj1092, _obj1098, _obj1101, _obj1108, _obj1113, _obj1117, _obj1119, _obj1124,
@@ -89,12 +99,12 @@ exports:
                           _obj80, _obj811, _obj815, _obj818, _obj833, _obj837, _obj852, _obj865, _obj874, _obj88, _obj893,
                           _obj899, _obj917, _obj919, _obj937, _obj962, _obj97, _obj971, _obj986, _sSubclasses, _sadEmojiSet,
                           _specialCharMapping ]
-    objc-classes:       [ _RKAssets, _RKBundleDataProvider, _RKClassification, _RKConversation, _RKConversationTurn,
-                          _RKCurrencyAmount, _RKEventIdentification, _RKEventIdentifier, _RKLexicalEntity,
-                          _RKLinguisticDataProvider, _RKMessage, _RKMessageClassifier, _RKMessageResponseManager,
-                          _RKMontrealModel, _RKNLEventToken, _RKNLEventTokenizer, _RKPaymentIdentifier,
-                          _RKPersistentPersonalizer, _RKProactiveGrammar, _RKResponse, _RKResponseCollection,
-                          _RKSentenceClassifier, _RKSentenceClassifier_ar_AE, _RKSentenceClassifier_ca_ES,
+    objc-classes:       [ _RKAggdStatistics, _RKAssets, _RKBundleDataProvider, _RKClassification, _RKConversation,
+                          _RKConversationTurn, _RKCurrencyAmount, _RKEventIdentification, _RKEventIdentifier, _RKLexicalEntity,
+                          _RKLinguisticDataProvider, _RKMessage, _RKMessageClassifier, _RKMessageIntentRecognizer,
+                          _RKMessageResponseManager, _RKMontrealModel, _RKNLEventToken, _RKNLEventTokenizer,
+                          _RKPaymentIdentifier, _RKPersistentPersonalizer, _RKProactiveGrammar, _RKResponse,
+                          _RKResponseCollection, _RKSentenceClassifier, _RKSentenceClassifier_ar_AE, _RKSentenceClassifier_ca_ES,
                           _RKSentenceClassifier_cs_CZ, _RKSentenceClassifier_da_DK, _RKSentenceClassifier_de_DE,
                           _RKSentenceClassifier_el_GR, _RKSentenceClassifier_en_US, _RKSentenceClassifier_es_ES,
                           _RKSentenceClassifier_fi_FI, _RKSentenceClassifier_fr_BE, _RKSentenceClassifier_fr_FR,
@@ -107,7 +117,8 @@ exports:
                           _RKSentenceClassifier_th_TH, _RKSentenceClassifier_tr_TR, _RKSentenceClassifier_uk_UA,
                           _RKSentenceClassifier_vi_VN, _RKSentenceClassifier_zh_Hans_CN, _RKSentenceClassifier_zh_Hant_CN,
                           _RKText, _RKTextAnnotation, _RKUtilities, __RKResponse ]
-    objc-ivars:         [ _RKBundleDataProvider._bundle, _RKBundleDataProvider._displayStringsByPlatformByLanguage,
+    objc-ivars:         [ _RKBundleDataProvider._assetPlistURL, _RKBundleDataProvider._assets, _RKBundleDataProvider._bundle,
+                          _RKBundleDataProvider._displayStringsByPlatformByLanguage,
                           _RKBundleDataProvider._localizationsByLanguageID, _RKBundleDataProvider._polarityMapsByLanguageID,
                           _RKClassification._customResponses, _RKClassification._gender, _RKClassification._language,
                           _RKClassification._matchedRanges, _RKClassification._sensitive, _RKClassification._sentenceEntities,
@@ -128,16 +139,16 @@ exports:
                           _RKPersistentPersonalizer._languageID, _RKPersistentPersonalizer._languageLocale,
                           _RKPersistentPersonalizer._lastDynamicDataCreationCheckDate,
                           _RKPersistentPersonalizer._lastObservedDynamicDataCreationDate, _RKPersistentPersonalizer._model,
-                          _RKPersistentPersonalizer._synonyms, _RKResponse._attributes, _RKResponse._string,
-                          _RKResponseCollection._displayStringsProvider, _RKResponseCollection._dynamicDataURL,
-                          _RKResponseCollection._personalizersByLanguageID, _RKResponseCollection._responseCatalog,
-                          _RKSentenceClassifier._RKLinguisticTagDataDetected, _RKSentenceClassifier._alternatives,
-                          _RKSentenceClassifier._appreciations, _RKSentenceClassifier._choiceDelimiters,
-                          _RKSentenceClassifier._dataDetected, _RKSentenceClassifier._interrogatives,
-                          _RKSentenceClassifier._inversions, _RKSentenceClassifier._languageIdentifier,
-                          _RKSentenceClassifier._lemmaAvailabilityByLanguage, _RKSentenceClassifier._matchedRanges,
-                          _RKSentenceClassifier._partofSpeechAvailabilityByLanguage, _RKSentenceClassifier._sentenceEntities,
-                          _RKSentenceClassifier._sentenceHasAlternativeConjunction,
+                          _RKPersistentPersonalizer._synonyms, _RKResponse._attributes, _RKResponse._category,
+                          _RKResponse._string, _RKResponseCollection._displayStringsProvider,
+                          _RKResponseCollection._dynamicDataURL, _RKResponseCollection._personalizersByLanguageID,
+                          _RKResponseCollection._responseCatalog, _RKSentenceClassifier._RKLinguisticTagDataDetected,
+                          _RKSentenceClassifier._alternatives, _RKSentenceClassifier._appreciations,
+                          _RKSentenceClassifier._choiceDelimiters, _RKSentenceClassifier._dataDetected,
+                          _RKSentenceClassifier._interrogatives, _RKSentenceClassifier._inversions,
+                          _RKSentenceClassifier._languageIdentifier, _RKSentenceClassifier._lemmaAvailabilityByLanguage,
+                          _RKSentenceClassifier._matchedRanges, _RKSentenceClassifier._partofSpeechAvailabilityByLanguage,
+                          _RKSentenceClassifier._sentenceEntities, _RKSentenceClassifier._sentenceHasAlternativeConjunction,
                           _RKSentenceClassifier._sentenceHasQuestionTerminator, _RKSentenceClassifier._sentenceIsAllSymbols,
                           _RKSentenceClassifier._sentenceIsTerminated, _RKSentenceClassifier._sentenceString,
                           _RKSentenceClassifier._sentenceStringOriginal, _RKSentenceClassifier._sentenceTag,

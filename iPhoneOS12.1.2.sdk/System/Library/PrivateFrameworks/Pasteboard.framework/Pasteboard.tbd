@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/Pasteboard.framework/Pasteboard
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _PBAllowedMetadataClasses, _PBBestMatchConformingToType, _PBBestMatchConformingToTypes,
                           _PBBestMatchToConformingType, _PBBestMatchToConformingTypes,
                           _PBCannotCoerceObjectOfClassToObjectOfClassError, _PBCannotConnectToServerError,
@@ -30,7 +32,8 @@ exports:
                           _PBPasteboardPersistenceName, _PBPasteboardPreferencesDomain, _PBPreferencesBoolValue,
                           _PBPreferredRepresentationFromNS, _PBSHA1HashOfString, _PBSchemaFileContentsWithVersion,
                           _PBSchemaFilename, _PBSchemaVersionKey, _PBStorageRootURL, _PBTempFilePrefix, _PBTemporaryFileName,
-                          _PBTypeNotFoundError, _PBURLFromURLArchive ]
+                          _PBTypeNotFoundError, _PBURLFromURLArchive, __PBDefaultMaxGeneralPasteboardAge, __PBLog,
+                          __PBStatLogPasteAge ]
     objc-classes:       [ _PBCallbackSerialization, _PBCoercionRegistry, _PBDataTransferMonitor, _PBDataTransferRequest, _PBItem,
                           _PBItemCollection, _PBItemCollectionServicer, _PBItemRepresentation, _PBKeyedUnarchiver,
                           _PBObjectToObjectCoercion, _PBObjectToRepresentationCoercion, _PBRepresentationToObjectCoercion,

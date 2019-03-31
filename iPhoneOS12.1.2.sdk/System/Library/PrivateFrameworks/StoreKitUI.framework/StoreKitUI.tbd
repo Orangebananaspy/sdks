@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _SKUIAVFoundationFramework, _SKUIAccountsFramework, _SKUIAccountsUIFramework,
                           _SKUIActivityIndicatorReuseIdentifier, _SKUIActivityTypeAddToWishlist, _SKUIActivityTypeGift,
                           _SKUIAllowsLandscapePhone, _SKUIAnimatorDOMFeatureName, _SKUIAppDocumentDidSendMessageNotification,
@@ -951,6 +953,7 @@ exports:
                           _SKUIComposeReviewView._textContentView, _SKUIComposeReviewViewController._edit,
                           _SKUIComposeReviewViewController._formViewController, _SKUIComposeReviewViewController._nickname,
                           _SKUIComposeReviewViewController._nicknameOKAction,
+                          _SKUIComposeReviewViewController._nicknameShouldResetOnError,
                           _SKUIComposeReviewViewController._placeholderViewController,
                           _SKUIComposeReviewViewController._templateViewElement, _SKUIComposeTextField._configuration,
                           _SKUIComposeTextField._currentTextLength, _SKUIComposeTextField._delegate,
@@ -1264,10 +1267,10 @@ exports:
                           _SKUIFocusedTouchGestureRecognizer._touchAllowance, _SKUIFullscreenRedeemCameraView._delegate,
                           _SKUIFullscreenRedeemCameraView._enabled, _SKUIFullscreenRedeemCameraView._keyboardRect,
                           _SKUIFullscreenRedeemCameraView._overlay, _SKUIFullscreenRedeemCameraView._redeemerView,
-                          _SKUIFullscreenRedeemCameraView._textField, _SKUIGalleryPageComponent._childComponents,
-                          _SKUIGalleryPageComponent._cycleInterval, _SKUIGalleryPageComponent._hidesPageIndicator,
-                          _SKUIGalleryPaneViewController._component, _SKUIGalleryPaneViewController._galleryIndex,
-                          _SKUIGallerySwooshCollectionViewCell._contentChildView,
+                          _SKUIFullscreenRedeemCameraView._textField, _SKUIFullscreenRedeemCameraView._textFieldSafeAreaBackdrop,
+                          _SKUIGalleryPageComponent._childComponents, _SKUIGalleryPageComponent._cycleInterval,
+                          _SKUIGalleryPageComponent._hidesPageIndicator, _SKUIGalleryPaneViewController._component,
+                          _SKUIGalleryPaneViewController._galleryIndex, _SKUIGallerySwooshCollectionViewCell._contentChildView,
                           _SKUIGallerySwooshCollectionViewCell._titleColor, _SKUIGallerySwooshCollectionViewCell._titleLabel,
                           _SKUIGallerySwooshPageSection._componentArtworkRequests,
                           _SKUIGallerySwooshPageSection._swooshViewController, _SKUIGallerySwooshViewController._collectionView,
@@ -2515,9 +2518,10 @@ exports:
                           _SKUIRedeemStepViewController._configuration, _SKUIRedeemStepViewController._operationQueue,
                           _SKUIRedeemStepViewController._redeemStepDelegate, _SKUIRedeemTemplateViewElement._initialCode,
                           _SKUIRedeemTextField._backdropBackground, _SKUIRedeemTextField._backdropView,
-                          _SKUIRedeemTextField._bottomBorderView, _SKUIRedeemTextField._topBorderView,
-                          _SKUIRedeemViewController._attempsAutomaticRedeem, _SKUIRedeemViewController._cameraDelegate,
-                          _SKUIRedeemViewController._cameraRedeemEnabled, _SKUIRedeemViewController._cancelButtonItem,
+                          _SKUIRedeemTextField._bottomBorderView, _SKUIRedeemTextField._suppressBorder,
+                          _SKUIRedeemTextField._topBorderView, _SKUIRedeemViewController._attempsAutomaticRedeem,
+                          _SKUIRedeemViewController._cameraDelegate, _SKUIRedeemViewController._cameraRedeemEnabled,
+                          _SKUIRedeemViewController._cameraRedeemVisible, _SKUIRedeemViewController._cancelButtonItem,
                           _SKUIRedeemViewController._category, _SKUIRedeemViewController._clientContext,
                           _SKUIRedeemViewController._initialBarStyle, _SKUIRedeemViewController._initialCode,
                           _SKUIRedeemViewController._inputViewController, _SKUIRedeemViewController._operationQueue,

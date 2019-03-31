@@ -1,11 +1,13 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
     symbols:            [ _TPCreateImageWithDrawing, _TPDefaultLog, _TPDialerSoundControllerDidEndSoundsNotification,
                           _TPDialerSoundControllerWillBeginSoundsNotification,
                           _TPFavoritesControllerFavoritesEntriesDidChangeNotification, _TPFrameworkBundleIdentifier,
@@ -16,29 +18,37 @@ exports:
                           _TPStatusBarManagerStringChangedNotification, _TPStringForNumberPadCharacter, _TelephonyUIBundle,
                           _kCarrierDomain, _kTPSuperBottomBarImageNameAudio, _kTPSuperBottomBarImageNameCamera,
                           _kTPSuperBottomBarImageNameMute, _kVMShouldHideVoicemailUI ]
-    objc-classes:       [ _TPActionButton, _TPAlert, _TPAlertAction, _TPAlertViewHelper, _TPBottomBar, _TPBottomDoubleButtonBar,
-                          _TPBottomSingleButtonBar, _TPButton, _TPDialPromptAlert, _TPDialerNumberPad, _TPDialerSoundController,
-                          _TPFavoritesCollectionViewFlowLayout, _TPFavoritesController, _TPFavoritesEntryCell,
-                          _TPFavoritesViewController, _TPFileStorageManager, _TPInCallUILauncher, _TPLCDBar, _TPLCDSubImageView,
-                          _TPLCDTextView, _TPLCDTextViewScrollingView, _TPLCDView, _TPNumberPad, _TPNumberPadButton,
-                          _TPNumberPadDarkStyleButton, _TPNumberPadKey, _TPNumberPadLightStyleButton, _TPPasscodeView,
-                          _TPPhonePad, _TPPortraitOnlyNavigationController, _TPRevealingRingView, _TPRingView,
-                          _TPSetPINKeyPadButton, _TPSetPINKeyPadNumberPad, _TPSetPINViewController, _TPSimpleNumberPad,
-                          _TPSimpleNumberPadButton, _TPSlidingButton, _TPStatusBarManager, _TPSuperBottomBar,
+    objc-classes:       [ _TPActionButton, _TPAlert, _TPAlertAction, _TPAlertViewHelper, _TPBadgeView, _TPBottomBar,
+                          _TPBottomDoubleButtonBar, _TPBottomSingleButtonBar, _TPButton, _TPDialPromptAlert, _TPDialerNumberPad,
+                          _TPDialerSoundController, _TPFavoritesCollectionViewFlowLayout, _TPFavoritesController,
+                          _TPFavoritesEntryCell, _TPFavoritesViewController, _TPFileStorageManager, _TPInCallUILauncher,
+                          _TPLCDBar, _TPLCDSubImageView, _TPLCDTextView, _TPLCDTextViewScrollingView, _TPLCDView, _TPNumberPad,
+                          _TPNumberPadButton, _TPNumberPadDarkStyleButton, _TPNumberPadKey, _TPNumberPadLightStyleButton,
+                          _TPPasscodeView, _TPPhonePad, _TPPillView, _TPPortraitOnlyNavigationController, _TPRevealingRingView,
+                          _TPRingView, _TPSetPINKeyPadButton, _TPSetPINKeyPadNumberPad, _TPSetPINViewController,
+                          _TPSimpleNumberPad, _TPSimpleNumberPadButton, _TPSlidingButton, _TPStatusBarManager, _TPSuperBottomBar,
                           _TPSuperBottomBarButton, _TPTableViewCell, _TPView, __TPTemplatedColoredImageView ]
     objc-ivars:         [ _TPAlert._completion, _TPAlert._userNotification, _TPAlertAction._handler,
-                          _TPAlertViewHelper._alertView, _TPAlertViewHelper._completionHandler, _TPBottomBar._orientation,
+                          _TPAlertViewHelper._alertView, _TPAlertViewHelper._completionHandler, _TPBadgeView._layerCornerRadius,
+                          _TPBadgeView._sizeCategory, _TPBadgeView._theme, _TPBadgeView._title, _TPBadgeView._titleLabel,
+                          _TPBadgeView._titleLabelFirstBaselineAnchorLayoutConstraint,
+                          _TPBadgeView._titleLabelFirstBaselineAnchorLayoutConstraintConstant, _TPBadgeView._titleLabelFontSize,
+                          _TPBadgeView._titleLabelLastBaselineAnchorLayoutConstraint,
+                          _TPBadgeView._titleLabelLastBaselineAnchorLayoutConstraintConstant,
+                          _TPBadgeView._titleLabelLeadingAnchorLayoutConstraint,
+                          _TPBadgeView._titleLabelLeadingAnchorLayoutConstraintConstant,
+                          _TPBadgeView._titleLabelTrailingAnchorLayoutConstraint,
+                          _TPBadgeView._titleLabelTrailingAnchorLayoutConstraintConstant, _TPBottomBar._orientation,
                           _TPBottomBar._style, _TPBottomDoubleButtonBar._button2, _TPBottomSingleButtonBar._button,
                           _TPBottomSingleButtonBar._delegate, _TPButton._backdropView, _TPButton._blursBackground,
                           _TPButton._color, _TPButton._roundsCorners, _TPButton._usesOverlayBlendingForContents,
-                          _TPDialPromptAlert._dialAction, _TPDialPromptAlert._dialRequest, _TPDialerNumberPad._delegate,
-                          _TPDialerNumberPad._playsSounds, _TPDialerNumberPad._soundController,
+                          _TPDialPromptAlert._buttonTitle, _TPDialPromptAlert._dialAction, _TPDialPromptAlert._handles,
+                          _TPDialerNumberPad._delegate, _TPDialerNumberPad._playsSounds, _TPDialerNumberPad._soundController,
                           _TPDialerSoundController._incompleteSoundCount, _TPDialerSoundController._inflightSounds,
                           _TPDialerSoundController._soundsActivated, _TPFavoritesController._callProviderManager,
                           _TPFavoritesController._completionDispatchQueue, _TPFavoritesController._contactCache,
                           _TPFavoritesController._contactStore, _TPFavoritesController._favoritesEntries,
-                          _TPFavoritesController._favoritesReadManager, _TPFavoritesController._favoritesWriteManager,
-                          _TPFavoritesController._favoritesWriteManagerDispatchQueue, _TPFavoritesController._prefetchCount,
+                          _TPFavoritesController._favoritesManager, _TPFavoritesController._prefetchCount,
                           _TPFavoritesController._serialDispatchQueue, _TPFavoritesController._transportNameCache,
                           _TPFavoritesEntryCell._actionType, _TPFavoritesEntryCell._avatarContentView,
                           _TPFavoritesEntryCell._avatarContentViewHeightLayoutConstraint,
@@ -74,7 +84,11 @@ exports:
                           _TPPhonePad._highlightKey, _TPPhonePad._incompleteSounds, _TPPhonePad._inflightSounds,
                           _TPPhonePad._keyToButtonMap, _TPPhonePad._leftWidth, _TPPhonePad._midHeight, _TPPhonePad._midWidth,
                           _TPPhonePad._playsSounds, _TPPhonePad._rightWidth, _TPPhonePad._soundsActivated,
-                          _TPPhonePad._topHeight, _TPRevealingRingView._alphaInsideRing, _TPRevealingRingView._alphaOutsideRing,
+                          _TPPhonePad._topHeight, _TPPillView._badgeView, _TPPillView._delegate, _TPPillView._gestureRecognizer,
+                          _TPPillView._stackView, _TPPillView._stackViewBottomAnchorLayoutConstraint,
+                          _TPPillView._stackViewLeftAnchorLayoutConstraint, _TPPillView._stackViewRightAnchorLayoutConstraint,
+                          _TPPillView._stackViewTopAnchorLayoutConstraint, _TPPillView._textLabel, _TPPillView._theme,
+                          _TPRevealingRingView._alphaInsideRing, _TPRevealingRingView._alphaOutsideRing,
                           _TPRevealingRingView._colorInsideRing, _TPRevealingRingView._colorInsidegamRing,
                           _TPRevealingRingView._colorOutsideRing, _TPRevealingRingView._cornerRadius,
                           _TPRevealingRingView._defaultRingStrokeWidth, _TPRevealingRingView._innerView,

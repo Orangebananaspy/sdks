@@ -1,12 +1,14 @@
----
-archs:                 [ armv7, armv7s, arm64 ]
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
 install-name:          /System/Library/PrivateFrameworks/CryptoTokenKit.framework/CryptoTokenKit
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:              [ armv7, armv7s, arm64 ]
-    symbols:            [ _TKACLOperationReadData, _TKDistributedNotificationGroup, _TKDistributedNotificationNameNewToken,
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _TKDistributedNotificationGroup, _TKDistributedNotificationNameNewToken,
                           _TKDistributedNotificationNameUnsupportedToken, _TKEntitlementSlotType, _TKErrorDomain,
                           _TKNotifyNameFirstSlot, _TKProtocolSlotClientName, _TKProtocolSlotRegistryName,
                           _TKProtocolWatcherClientName, _TKRegisterOptionRemoveObjects, _TKSlotTypeSmartCard,
@@ -16,27 +18,12 @@ exports:
                           _TKSmartCardSlotSecurePINChangeSupportedKey, _TKSmartCardSlotSecurePINVerificationSupportedKey,
                           _TKSmartCardSlotShareStateKey, _TKSmartCardSlotStateKey, _TKTokenAttributeSlotEndpointKey,
                           _TKTokenClassDriverApplicationIDKey, _TKTokenClassDriverClassIDKey, _TKTokenClassDriverClassNameKey,
-                          _TKTokenControl, _TKTokenCopyCryptoResult, _TKTokenCopyFilteredItems, _TKTokenCopyIdentities,
-                          _TKTokenCopyItems, _TKTokenCopyObjectAccessControl, _TKTokenCopyObjectCreationAccessControl,
-                          _TKTokenCopyObjectData, _TKTokenCopyObjectOperationAlgorithms, _TKTokenCopyOperationResult,
-                          _TKTokenCopyPublicKeyData, _TKTokenCopyResultOfCryptoOperation, _TKTokenCreate,
-                          _TKTokenCreateOrUpdateObject, _TKTokenDeleteObject, _TKTokenEvaluateAccessControl, _TKTokenGetTypeID,
-                          _TKTokenTypeKey, _TKTransportSlotName, _cfStringToCString, _deserializeError, _kAKSKeyACMHandle,
-                          _kAKSKeyAccessGroups, _kAKSKeyAcl, _kAKSKeyAclConstraintAccessGroups, _kAKSKeyAclConstraintBio,
-                          _kAKSKeyAclConstraintKofN, _kAKSKeyAclConstraintOpBool, _kAKSKeyAclConstraintPolicy,
-                          _kAKSKeyAclConstraintUserPasscode, _kAKSKeyAclParamCredentialMaxAge, _kAKSKeyAclParamKofN,
-                          _kAKSKeyAclParamRequirePasscode, _kAKSKeyAuthData, _kAKSKeyData, _kAKSKeyExternalData, _kAKSKeyFlags,
-                          _kAKSKeyIterations, _kAKSKeyKeybagClass, _kAKSKeyKeybagHandle, _kAKSKeyOpAttest, _kAKSKeyOpComputeKey,
-                          _kAKSKeyOpCreate, _kAKSKeyOpDecrypt, _kAKSKeyOpDefaultAcl, _kAKSKeyOpDelete, _kAKSKeyOpEncrpyt,
-                          _kAKSKeyOpEncrypt, _kAKSKeyOpSetKeyClass, _kAKSKeyOpSign, _kAKSKeyOpSync, _kAKSKeyOpTranscrypt,
-                          _kAKSKeyOpUnwrap, _kAKSKeyOpWrap, _kAKSKeyOperation, _kAKSKeyPad, _kAKSKeyPasscode,
-                          _kAKSKeyProtectedData, _kAKSKeyPublicKey, _kAKSKeyRefKey, _kAKSKeyRefKeyMac, _kAKSKeySalt, _kAKSKeyTag,
-                          _kAKSKeyType, _kAKSKeyUUID, _kAKSKeyVersion, _kAKSKeyWrappedKey, _kTKAttrKeyUsage, _serializeError ]
+                          _TKTokenTypeKey, _TKTransportSlotName ]
     objc-classes:       [ _TKBERTLVRecord, _TKCompactTLVRecord, _TKDataSource, _TKPowerMonitor, _TKSimpleTLVRecord, _TKSmartCard,
                           _TKSmartCardATR, _TKSmartCardATRInterfaceGroup, _TKSmartCardPINFormat, _TKSmartCardSessionEngine,
                           _TKSmartCardSessionRequest, _TKSmartCardSlot, _TKSmartCardSlotEngine, _TKSmartCardSlotManager,
-                          _TKSmartCardSlotProxy, _TKSmartCardToken, _TKSmartCardTokenDriver, _TKSmartCardTokenSession,
-                          _TKSmartCardUserInteraction, _TKSmartCardUserInteractionForConfirmation,
+                          _TKSmartCardSlotProxy, _TKSmartCardSlotScreen, _TKSmartCardToken, _TKSmartCardTokenDriver,
+                          _TKSmartCardTokenSession, _TKSmartCardUserInteraction, _TKSmartCardUserInteractionForConfirmation,
                           _TKSmartCardUserInteractionForPINOperation, _TKSmartCardUserInteractionForSecurePINChange,
                           _TKSmartCardUserInteractionForSecurePINVerification, _TKSmartCardUserInteractionForStringEntry,
                           _TKSmartCardWithError, _TKTLVRecord, _TKToken, _TKTokenAuthOperation, _TKTokenDriver,
@@ -81,12 +68,13 @@ exports:
                           _TKSmartCardSlotEngine._sessionRequests, _TKSmartCardSlotEngine._state,
                           _TKSmartCardSlotManager._connection, _TKSmartCardSlotManager._endpoints,
                           _TKSmartCardSlotManager._slotNames, _TKSmartCardSlotManager._slotNamesQueue,
-                          _TKSmartCardSlotProxy._cards, _TKSmartCardSlotProxy._slot, _TKSmartCardToken._AID,
-                          _TKSmartCardToken._smartCard, _TKSmartCardTokenSession._errorCard,
-                          _TKSmartCardTokenSession._hasSession, _TKSmartCardTokenSession._smartCard,
-                          _TKSmartCardUserInteraction._delegate, _TKSmartCardUserInteraction._initialTimeout,
-                          _TKSmartCardUserInteraction._interactionTimeout, _TKSmartCardUserInteractionForConfirmation._result,
-                          _TKSmartCardUserInteractionForConfirmation._slot,
+                          _TKSmartCardSlotProxy._cards, _TKSmartCardSlotProxy._slot, _TKSmartCardSlotScreen._physicalColumnCount,
+                          _TKSmartCardSlotScreen._physicalRowCount, _TKSmartCardSlotScreen._virtualColumnCount,
+                          _TKSmartCardSlotScreen._virtualRowCount, _TKSmartCardToken._AID, _TKSmartCardToken._smartCard,
+                          _TKSmartCardTokenSession._errorCard, _TKSmartCardTokenSession._hasSession,
+                          _TKSmartCardTokenSession._smartCard, _TKSmartCardUserInteraction._delegate,
+                          _TKSmartCardUserInteraction._initialTimeout, _TKSmartCardUserInteraction._interactionTimeout,
+                          _TKSmartCardUserInteractionForConfirmation._result, _TKSmartCardUserInteractionForConfirmation._slot,
                           _TKSmartCardUserInteractionForPINOperation._PINCompletion,
                           _TKSmartCardUserInteractionForPINOperation._PINMessageIndices,
                           _TKSmartCardUserInteractionForPINOperation._locale,
